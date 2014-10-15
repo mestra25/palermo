@@ -19,7 +19,7 @@
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
 
-     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/tabla_proveedor.css">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -58,13 +58,13 @@
                         <a href="administrar.html">Administrar</a>
                     </li>
                     <li>
-                        <a href="usuarios.html">Usuarios</a>
+                        <a href="usuarios.php">Usuarios</a>
                     </li>
                     <li>
                         <a href="inventario.html">Inventario</a>
                     </li>
                     <li>
-                                <a href="clientes.html">Clientes</a>
+                                <a href="clientes.php">Clientes</a>
                             </li>
                 </ul>
             </div>
@@ -78,16 +78,16 @@
             <center>
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="productos.html">Productos</a>
+                        <a href="productos.php">Productos</a>
                     </li>
                     <li>
-                        <a href="categoria.html">Categorias</a>
+                        <a href="categoria.php">Categorias</a>
                     </li>
                     <li>
-                        <a href="subcategoria.html">Subcategoria</a>
+                        <a href="subcategoria.php">Subcategoria</a>
                     </li>
                     <li>
-                        <a href="provedor.html">Proveedor</a>
+                        <a href="provedor.php">Proveedor</a>
                     </li>
      
                 </ul>
@@ -179,7 +179,7 @@
                        <td>Lettuce Green</td>
                        <td>Lettuce Green</td>
                        <td>Lettuce Green</td>
-                       <td><a href=""><img src="img/editar.gif"></a></td>
+                       <td><a href=""><img src="img/editar.png"></a></td>
                        <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
 
                    </tr>

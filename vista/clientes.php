@@ -16,18 +16,13 @@
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tabla_persona.css">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <script src="js/jquery-1.11.0.js"  type="text/javascript"></script>
+    <script src="js/formulario_cliente.js"  type="text/javascript"></script>
 
     </head>
 
@@ -59,13 +54,13 @@
                                 <a href="administrar.html">Administrar</a>
                             </li>
                             <li>
-                                <a href="usuarios.html">Usuarios</a>
+                                <a href="usuarios.php">Usuarios</a>
                             </li>
                             <li>
                                 <a href="inventario.html">Inventario</a>
                             </li>
                             <li>
-                                <a href="clientes.html">Clientes</a>
+                                <a href="clientes.php">Clientes</a>
                             </li>
                         </ul>
                     </div>
@@ -85,7 +80,7 @@
 
                     <input type="button" value="Cancelar" class="btn" id="cancelar" style="display:none" onclick="mostrar_boton_buscar()" >
 
-                    <input type="input" placeholder="Cedula Usuario a Buscar" class="campo" id="buscar_" style="display:none">
+                    <input type="input" placeholder="Cedula Cliente a Buscar" class="campo" id="buscar_" style="display:none">
 
 
                 </div>
@@ -102,6 +97,8 @@
                           <input name="txtcedula" id="txtcedula" title="Se requiere numero de cedula" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Cedula" required>
                           <br></br> 
                           <input name="txtnombre" id="txtnombre" title="Se requiere nombre de cliente" class="campos_edi" placeholder="Nombre" required>
+                          <br></br>
+                          <input name="txtapellido" id="txtapellido" title="Se requiere apelldido" class="campos_edi" placeholder="Apellido" required>
                           <br></br> 
                           <input name="txtcelular" id="txtcelular" title="Se requiere celular de cliente" class="campos_edi" placeholder="Celular" required>
                           <br></br> 
@@ -109,11 +106,11 @@
                           <br></br> 
                           <input name="txtemail" id="txtemail" title="Se requiere email de cliente" class="campos_edi" placeholder="E-mail" required>
                           <br></br> 
-                          <input type="button" name="" value="Guardar"  class="btn">
+                          <input type="button" name="" value="Guardar" id="btn"  class="btn">
                           <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
                       </form>
                   </div>
-
+<span id="respuesta"></span>
                   <div id="page-wrap">
                       <h2>Lista de Clientes</h2>
 
@@ -122,10 +119,12 @@
                       <table id="tabla">
                         <thead>
                           <tr>
-                            <th>Codigo</th>
-                            <th>Creado</th>
-                            <th>Modificado</th>
-                            <th>Observaciones</th>
+                            <th>Cedula</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Celular</th>
+                            <th>Direccion</th>
+                            <th>E-mail</th>
                             <th>Modificar</th>
                             <th>Eliminar</th>
 
@@ -138,9 +137,11 @@
                           <tr>
                             <td class="codigo">James</td>
                             <td>Matman</td>
+                            <td>Matman</td>
+                            <td>Matman</td>
                             <td>Chief Sandwich Eater</td>
                             <td>Lettuce Green</td>
-                            <td><a href=""><img src="img/editar.gif"></a></td>
+                            <td><a href=""><img src="img/editar.png"></a></td>
                             <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
 
                         </tr>
@@ -175,7 +176,6 @@
 </footer>
 
 <!-- jQuery Version 1.11.0 -->
-<script src="js/jquery-1.11.0.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>

@@ -1,5 +1,4 @@
 <?php
-
 require_once '/../CLASES/Proveedor.php';
 require_once '/../conexion.php';
 

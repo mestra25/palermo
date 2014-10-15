@@ -1,45 +1,44 @@
 <?php
-require_once '/../CLASES/usuario.php';
+require_once '/../CLASES/cliente.php';
 require_once '/../conexion.php';
 
-class usuarioDAO {
+class clienteDao {
 
 
-    const tabla = "usuario";
+    const tabla = "cliente";
 
-    function guardar($Objusuario){
+    function guardar($Objcliente){
             $conexion = new conexion();
-            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cedula,  nombre, apellido, celular, direccion, email, rol) VALUES(:cedula, :nombre, :apellido, :direccion, :celular,:email, :rol)');
-            $consulta->bindParam(':cedula', $Objusuario->getCedula());
-            $consulta->bindParam(':nombre', $Objusuario->getNombre());
-            $consulta->bindParam(':apellido', $Objusuario->getApellido());
-            $consulta->bindParam(':celular', $Objusuario->getCelular());
-            $consulta->bindParam(':direccion', $Objusuario->getDireccion());
-            $consulta->bindParam(':email', $Objusuario->getEmail());
-            $consulta->bindParam(':rol', $Objusuario->getRol());
+            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cedula,  nombre, apellido, celular, direccion, email) VALUES(:cedula, :nombre, :apellido, :direccion, :celular,:email)');
+            $consulta->bindParam(':cedula', $Objcliente->getCedula());
+            $consulta->bindParam(':nombre', $Objcliente->getNombre());
+            $consulta->bindParam(':apellido', $Objcliente->getApellido());
+            $consulta->bindParam(':celular', $Objcliente->getCelular());
+            $consulta->bindParam(':direccion', $Objcliente->getDireccion());
+            $consulta->bindParam(':email', $Objcliente->getEmail());
             $consulta->execute();
             $conexion = null;
     }
 
-    function eliminar($Objusuario) {
+    function eliminar($Objcliente) {
         $conexion = new Conexion();
         $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE cedula = :cedula');
-        $consulta->bindParam(':cedula', $Objusuario->getCedula());
+        $consulta->bindParam(':cedula', $Objcliente->getCedula());
         $consulta->execute();
         $conexion = null;
     }
 
-    function modificar($Objusuario){
+    function modificar($Objcliente){
       
       $conexion = new conexion();
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET nombre = :nombre, apellido = :apellido, celular = :celular, 
         direccion = :direccion, email = :email WHERE cedula = :cedula');
-        $consulta->bindParam(':cedula', $Objusuario->getCedula());
-        $consulta->bindParam(':nombre', $Objusuario->getNombre());
-        $consulta->bindParam(':apellido', $Objusuario->getApellido());
-        $consulta->bindParam(':celular', $Objusuario->getCelular());
-        $consulta->bindParam(':direccion', $Objusuario->getDireccion());
-        $consulta->bindParam(':email', $Objusuario->getEmail());
+        $consulta->bindParam(':cedula', $Objcliente->getCedula());
+        $consulta->bindParam(':nombre', $Objcliente->getNombre());
+        $consulta->bindParam(':apellido', $Objcliente->getApellido());
+        $consulta->bindParam(':celular', $Objcliente->getCelular());
+        $consulta->bindParam(':direccion', $Objcliente->getDireccion());
+        $consulta->bindParam(':email', $Objcliente->getEmail());
         $consulta->execute();
         $conexion = null;
       
