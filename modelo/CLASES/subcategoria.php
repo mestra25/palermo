@@ -1,70 +1,59 @@
 <?php
-require_once('persona.php');
 
-class celebrante extends persona {
-private $idParroquia;
-private $PersonaCedula;
-private $Estado;
+class subcategoria{
 
-function __construct() {
-	 $this->idsubcategoria=0;
-    $this->idcategoria=0;
-    $this->descripcion="";
-    $this->creado="";
-    $this->modificado="";
-    $this->observacion="";
-
-}
-function setIdsubcategoria($idsubcategoria){
-$this->idsubcategoria= $idsubcategoria;
-}
-function setIdcategoria($idcategoria){
-$this->idcategoria= $idcategoria;
-}
+	private $descripcion;
+	private $observacion;
+	private $fcreado;
+	private $fmodificado;
 
 
-function setDescripcion($descripcion){
-$this->descripcion= $descripcion;
-}
 
-function setEstado($Estado){
-$this->Estado= $Estado;
-}
+	function __construct(){
 
-function setCreado($creado){
-$this->creado= $creado;
-}
-function setModificado($modificado){
-$this->modificado= $modificado;
-}
-function setObservacion($observacion){
-$this->observacion= $observacion;
-}
+		$this->descripcion="";
+		$this->observacion="";
+		$this->fcreado="";
+		$this->fmodificado="";
 
-function getIdsubcategoria(){
-	return $this->idsubcategoria;
-}
+	}
 
-function getIdcategoria(){
-	return $this->idcategoria;
-}
+	function setdescripcion($descripcion){
+		$this->descripcion=$descripcion;
+	}
 
-function getDescripcion(){
-	return $this->descripcion;
-}
+	function setobservacion($observacion){
+		$this->observacion=$observacion;
+	}
 
-function getCreado(){
-return $this->creado;
-}
-function getModificado(){
-return $this->modificado;
-}
+	function setfcreado($fcreado){
+		$this->fcreado=$fcreado;
+	}	
+	
+	function setfmodificado($fmodificado){
+		$this->fmodificado=$fmodificado;
+	}
+	
 
-function getObservacion(){
-return $this->observacion;
-}
+	function getdescripcion(){
+		return $this->descripcion;
+	}
 
-      
-}//fin de la clase
+
+	function getobservacion(){
+		return $this->observacion;
+	}
+
+	function getfcreado(){
+		return $this->fcreado;
+	}
+
+	function getfmodificado(){
+		return $this->fmodificado;
+	}
+
+
+}
 
 ?>
+
