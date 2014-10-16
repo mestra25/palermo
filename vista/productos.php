@@ -161,7 +161,7 @@
                 <br></br> 
                 <input name="txtmedida" id="txtmedida" title="Se requiere Unidad de Medida" class="campos_edi" placeholder="Medida" required>
                 <br></br> 
-                <input name="txtpdescuento" id="txtdescuento" title="Se requiere Porcentaje de Descuento" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Descuento" required>
+                <input name="txtpdescuento" id="txtpdescuento" title="Se requiere Porcentaje de Descuento" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Descuento" required>
                 <br></br> 
                 <input name="txtobservacion" id="txtobservacion" title="Se requiere las observaciones" class="campos_edi" placeholder="Observaciones" required>
 
@@ -172,9 +172,9 @@
               </form>
             </div>
 
+              <h2>Lista de Productos</h2>
 
             <div id="page-wrap">
-              <h2>Lista de Productos</h2>
 
               <br></br>
               <table id="tabla">
