@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -55,7 +55,7 @@
                         <a href="administrar.html">Administrar</a>
                     </li>
                     <li>
-                        <a href="usuarios.hphptml">Usuarios</a>
+                        <a href="usuarios.php">Usuarios</a>
                     </li>
                     <li>
                         <a href="inventario.html">Inventario</a>

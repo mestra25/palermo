@@ -13,6 +13,7 @@ function ocultar(){
 document.getElementById('formulario').style.display = 'none';
 document.getElementById('page-wrap').style.display = 'block';
 document.getElementById('buscar').style.display = 'inline';
+$(".campos_edi").val("");
 
 }
 
