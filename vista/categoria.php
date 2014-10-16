@@ -22,166 +22,165 @@
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-<script src="js/jquery-1.11.0.js"></script>
-<script type="text/javascript" src="js/formulario_categoria.js"></script>
+    <script src="js/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="js/formulario_categoria.js"></script>
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <div class="brand"><a href=""><img src="img/logo.png"></a></div>
-        <!-- Navigation -->
-        <nav class="navbar navbar-default" role="navigation">
+    <div class="brand"><a href=""><img src="img/logo.png"></a></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
 
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-<div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                    <a class="navbar-brand" href="index.html">Data Sistemas</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <center>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <a href="index.html">Inicio</a>
-                            </li>
-                            <li>
-                                <a href="administrar.html">Administrar</a>
-                            </li>
-                            <li>
-                                <a href="usuarios.php">Usuarios</a>
-                            </li>
-                            <li>
-                                <a href="inventario.html">Inventario</a>
-                            </li>
-                            <li>
-                                <a href="clientes.php">Clientes</a>
-                            </li>
-                        </ul>
-                    </div>
-                </center>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
-       <div class="contenido">
-         <div>
-            <center>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="productos.php">Productos</a>
-                    </li>
-                    <li>
-                        <a href="categoria.php">Categorias</a>
-                    </li>
-                    <li>
-                        <a href="subcategoria.php">Subcategoria</a>
-                    </li>
-                    <li>
-                        <a href="provedor.php">Proveedor</a>
-                    </li>
-     
-                </ul>
-            </center>
-        </div>
-    </div>
         <div class="container">
-
-           <div class="contenido">
-            <div class="botones_form">
-                <input type="submit" value="Agregar Categoria" class="btn" onclick="mostrar()">
-
-                <input type="submit" value="Buscar" class="btn" onclick="mostrar_buscar()" id="buscar" >
-
-                <input type="submit" value="Cancelar" class="btn" id="cancelar" style="display:none" onclick="mostrar_boton_buscar()" >
-
-                <input type="input" placeholder="Codigo Categroia a Buscar" class="campo" id="buscar_" style="display:none">
-
-
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">Data Sistemas</a>
             </div>
-
-          <div id="page-wrap">
-          <center>
-              <h2>Lista de Categorias</h2>
-</center>
-
-              <br></br>
-              <table id="tabla">
-                <thead>
-                  <tr>
-                    <th>Codigo</th>
-                    <th>Creado</th>
-                    <th>Modificado</th>
-                    <th>Observaciones</th>
-                    <th>Modificar</th>
-                    <th>Eliminar</th>
-                    
-
-                </tr>
-            </thead>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <center>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="administrar.html">Administrar</a>
+                        </li>
+                        <li>
+                            <a href="usuarios.php">Usuarios</a>
+                        </li>
+                        <li>
+                            <a href="inventario.html">Inventario</a>
+                        </li>
+                        <li>
+                            <a href="clientes.php">Clientes</a>
+                        </li>
+                    </ul>
+                </div>
+            </center>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <div class="contenido">
+       <div>
+        <center>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="productos.php">Productos</a>
+                </li>
+                <li>
+                    <a href="categoria.php">Categorias</a>
+                </li>
+                <li>
+                    <a href="subcategoria.php">Subcategoria</a>
+                </li>
+                <li>
+                    <a href="provedor.php">Proveedor</a>
+                </li>
                 
-            <tbody>
-              <tr>
-                 <?php
-                 $i=0;
-                while ($i <= 10) {
-                $i++;
-                
-                    ?>
-                    <tbody>
+            </ul>
+        </center>
+    </div>
+</div>
+<div class="container">
 
-                      <tr>
-                        <td class="codigo">j</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href=""><img src="img/editar.png"></a></td>
-                        <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
+ <div class="contenido">
+    <div class="botones_form">
+        <input type="submit" value="Agregar Categoria" class="btn" onclick="mostrar()">
 
-                    </tr>
+        <input type="submit" value="Buscar" class="btn" onclick="mostrar_buscar()" id="buscar" >
 
-                </tbody>
-                <?php
-         }
-            ?>
+        <input type="submit" value="Cancelar" class="btn" id="cancelar" style="display:none" onclick="mostrar_boton_buscar()" >
+
+        <input type="input" placeholder="Codigo Categroia a Buscar" class="campo" id="buscar_" style="display:none">
+
+
+    </div>
+
+    <div id="page-wrap">
+      <center>
+          <h2>Lista de Categorias</h2>
+      </center>
+
+      <br></br>
+      <table id="tabla">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Creado</th>
+            <th>Modificado</th>
+            <th>Observaciones</th>
+            <th>Modificar</th>
+            <th>Eliminar</th>
+            
         </tr>
-    </tbody>
+    </thead>
+    
+    <tbody>
+      <tr>
+       <?php
+       require_once("php/lista_categoria.php");
+       $i=0;
+       while ($i <= 10) {
+        $i++;
+        ?>
+        <tbody>
 
- 
+          <tr>
+            <td class="codigo"><?php echo $registro["descripcion"];?></td>
+            <td><?php echo $registro["observacion"];?></td>
+            <td><?php echo $registro["fcreado"];?></td>
+            <td><?php echo $registro["fmodificado"];?></td>
+            <td><a href=""><img src="img/editar.png"></a></td>
+            <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
+
+        </tr>
+
+    </tbody>
+    <?php
+}    
+?>
+</tr>
+</tbody>
+
+
 </table>
 
-              <br></br>
+<br></br>
 </div>
 
 
-            <center>
-                <div id="formulario" style="display:none">
-                    <form>
-                      <br></br>              
+<center>
+    <div id="formulario" style="display:none">
+        <form>
+          <br></br>              
 
-                      <input title="Se requiere descripcion de categoria" class="campos_edi" placeholder="Descripcion" required>
-                      <br></br> 
-                      <input title="Se requiere observacion" class="campos_edi" placeholder="Observacion" required>
-                      <br></br> 
-
-
-                      <input type="submit" name="" value="Guardar" id="btn" class="btn">
-                      <input type="submit" name="" value="Cancelar" class="btn" onclick="ocultar()">
-  </form>
-                  </div>
-              </center>
+          <input title="Se requiere descripcion de categoria" class="campos_edi" placeholder="Descripcion" required>
+          <br></br> 
+          <input title="Se requiere observacion" class="campos_edi" placeholder="Observacion" required>
+          <br></br> 
 
 
-      </div>
+          <input type="submit" name="" value="Guardar" id="btn" class="btn">
+          <input type="submit" name="" value="Cancelar" class="btn" onclick="ocultar()">
+      </form>
   </div>
-  
+</center>
+
+
+</div>
+</div>
+
 
 </div><!-- end contenedor-->
 
@@ -208,7 +207,7 @@ $('.carousel').carousel({
     })
 </script>
 <script type="text/javascript" src="js/mostrar_ocultar.js"></script>
-   <script type="text/javascript" src="js/buscar.js"></script>
+<script type="text/javascript" src="js/buscar.js"></script>
 
 </body>
 
