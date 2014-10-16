@@ -16,6 +16,8 @@
         {
         // con la clase .nombre le decimos en cual de las celdas buscar y si no coincide, ocultamos el tr que contiene a esa celda. 
         $("#tabla tr td.codigo").not(":Contains('"+search+"')").parent().hide();
+        }else{
+            
         }
 
 });

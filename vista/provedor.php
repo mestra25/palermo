@@ -168,23 +168,32 @@
                  </thead>
                  <tbody>
                   <tr>
+                         <?php
+       require("php/lista_proveedor.php");
+     
+       foreach ($consulta as $registro) {
+       
+        ?>
                     <tbody>
                       <tr>
-                       <td class="codigo">James</td>
-                       <td>Matman</td>
-                       <td>Chief Sandwich Eater</td>
-                       <td>Lettuce Green</td>
-                       <td>Lettuce Green</td>
-                       <td>Lettuce Green</td>
-                       <td>Lettuce Green</td>
-                       <td>Lettuce Green</td>
-                       <td>Lettuce Green</td>
+                       <td class="codigo"><?php echo $registro["nit"];?></td>
+                       <td><?php echo $registro["direccion"];?></td>
+                       <td><?php echo $registro["telefono"];?></td>
+                       <td><?php echo $registro["email"];?></td>
+                       <td><?php echo $registro["web"];?></td>
+                       <td><?php echo $registro["contac"];?></td>
+                       <td><?php echo $registro["replegal"];?></td>
+                       <td><?php echo $registro["cedRep"];?></td>
+                       <td><?php echo $registro["celRep"];?></td>
                        <td><a href=""><img src="img/editar.png"></a></td>
                        <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
 
                    </tr>
 
                </tbody>
+                 <?php
+}    
+?>
            </tr>
        </tbody>
    </table>

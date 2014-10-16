@@ -129,12 +129,12 @@
     <tbody>
       <tr>
        <?php
-       require_once("php/lista_categoria.php");
-       $i=0;
-       while ($i <= 10) {
-        $i++;
+       require("php/lista_categoria.php");
+     
+       foreach ($consulta as $registro) {
+       
         ?>
-        <tbody>
+        <tbody> 
 
           <tr>
             <td class="codigo"><?php echo $registro["descripcion"];?></td>

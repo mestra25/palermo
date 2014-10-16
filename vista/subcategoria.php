@@ -21,6 +21,7 @@
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.0.js"></script>
 
 
 </head>
@@ -146,12 +147,12 @@
                   <tr>
                     <tbody>
                       <tr>
-                        <td class="codigo">James</td>
-                        <td>Matman</td>
-                        <td>Chief Sandwich Eater</td>
-                        <td>Lettuce Green</td>
-                        <td>Trek</td>
-                        <td>Digby Green</td>
+                        <td class="codigo"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td><a href=""><img src="img/editar.png"></a></td>
                         <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
 
@@ -187,7 +188,6 @@
     </footer>
 
     <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
