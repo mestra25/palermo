@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS `categoria` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 
-
 CREATE TABLE IF NOT EXISTS `cliente` (
   `cedula` int(20) NOT NULL,
   `nombre` varchar(20) NOT NULL,
@@ -17,7 +16,6 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `direccion` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 
 CREATE TABLE IF NOT EXISTS `movimiento_inventario` (
@@ -34,6 +32,31 @@ CREATE TABLE IF NOT EXISTS `movimiento_inventario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 
+CREATE TABLE IF NOT EXISTS `producto` (
+`id_producto` int(20) NOT NULL,
+  `id_categoria` int(20) NOT NULL,
+  `id_subcategoria` int(20) NOT NULL,
+  `id_proveedor` int(20) NOT NULL,
+  `codigo` varchar(20) NOT NULL,
+  `descripcion` varchar(20) NOT NULL,
+  `v_costo` int(20) NOT NULL,
+  `venta_1` int(20) NOT NULL,
+  `venta_2` int(20) NOT NULL,
+  `venta_3` int(20) NOT NULL,
+  `venta_4` int(20) NOT NULL,
+  `p_utilidad` int(20) NOT NULL,
+  `medida` varchar(20) NOT NULL,
+  `p_descuento` int(20) NOT NULL,
+  `stock_min` int(20) NOT NULL,
+  `stock_max` int(20) NOT NULL,
+  `fcreado` varchar(20) NOT NULL,
+  `fmodificado` varchar(20) NOT NULL,
+  `existencia` int(20) NOT NULL,
+  `reserva` int(20) NOT NULL,
+  `observacion` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
 CREATE TABLE IF NOT EXISTS `proveedor` (
 `id_proveedor` int(255) NOT NULL,
   `nit` varchar(50) NOT NULL,
@@ -47,13 +70,14 @@ CREATE TABLE IF NOT EXISTS `proveedor` (
   `celRep` int(50) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
+
 CREATE TABLE IF NOT EXISTS `subcategoria` (
 `id_subcategoria` int(50) NOT NULL,
   `descripcion` varchar(250) NOT NULL,
   `observacion` varchar(20) NOT NULL,
-  `fcreado` date NOT NULL,
-  `fmodificado` date NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `fcreado` varchar(20) NOT NULL,
+  `fmodificado` varchar(20) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -66,20 +90,17 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `rol` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
-INSERT INTO `usuario` (`cedula`, `nombre`, `apellido`, `celular`, `direccion`, `email`, `rol`) VALUES
-(8787, 'jbjbjb', 'jb', 0, 'jb', 'jb', 'jb');
-
-
 ALTER TABLE `categoria`
  ADD PRIMARY KEY (`id_categoria`);
 
 ALTER TABLE `cliente`
  ADD PRIMARY KEY (`cedula`);
 
-
 ALTER TABLE `movimiento_inventario`
  ADD PRIMARY KEY (`id_consecutivo`);
+
+ALTER TABLE `producto`
+ ADD PRIMARY KEY (`id_producto`);
 
 ALTER TABLE `proveedor`
  ADD PRIMARY KEY (`id_proveedor`);
@@ -96,8 +117,11 @@ MODIFY `id_categoria` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
 ALTER TABLE `movimiento_inventario`
 MODIFY `id_consecutivo` int(20) NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE `producto`
+MODIFY `id_producto` int(20) NOT NULL AUTO_INCREMENT;
+
 ALTER TABLE `proveedor`
 MODIFY `id_proveedor` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 
 ALTER TABLE `subcategoria`
-MODIFY `id_subcategoria` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_subcategoria` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
