@@ -191,7 +191,9 @@
                    </tr>
 
                </tbody>
+                <span><?php echo $registro[1];?> </span>
                  <?php
+echo "lmlml";
 }    
 ?>
            </tr>

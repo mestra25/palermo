@@ -117,9 +117,10 @@
         <thead>
           <tr>
             <th>Codigo</th>
+            <th>Descripcion</th>
+            <th>Observaciones</th>
             <th>Creado</th>
             <th>Modificado</th>
-            <th>Observaciones</th>
             <th>Modificar</th>
             <th>Eliminar</th>
             
@@ -137,7 +138,8 @@
         <tbody> 
 
           <tr>
-            <td class="codigo"><?php echo $registro["descripcion"];?></td>
+            <td class="codigo"><?php echo $registro["id_categoria"];?></td>
+            <td><?php echo $registro["descripcion"];?></td>
             <td><?php echo $registro["observacion"];?></td>
             <td><?php echo $registro["fcreado"];?></td>
             <td><?php echo $registro["fmodificado"];?></td>
@@ -165,9 +167,9 @@
         <form>
           <br></br>              
 
-          <input title="Se requiere descripcion de categoria" class="campos_edi" placeholder="Descripcion" required>
+          <input id="txtdescripcion" name="txtdescripcion" title="Se requiere descripcion de categoria" class="campos_edi" placeholder="Descripcion" required>
           <br></br> 
-          <input title="Se requiere observacion" class="campos_edi" placeholder="Observacion" required>
+          <input id="txtobservacion" name="txtobservacion" title="Se requiere observacion" class="campos_edi" placeholder="Observacion" required>
           <br></br> 
 
 
@@ -175,6 +177,7 @@
           <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
       </form>
   </div>
+  <span id="respuesta"></span>
 </center>
 
 

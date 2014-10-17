@@ -1,10 +1,11 @@
 jQuery(document).ready(function() {
 
     $("#btn").click(function() {
-     var d = new Date(); 
-     $fecha =(d.getDate()+"/"+d.getMonth()+"/"+d.getFullYear()+" , "+d.getHours()+":"+d.getMinutes());
+     
      var _descripcion=$("#txtdescripcion").val();
      var _observacion= $("#txtobservacion").val();
+     var d = new Date(); 
+     $fecha =(d.getDate()+"/"+d.getMonth()+"/"+d.getFullYear()+" , "+d.getHours()+":"+d.getMinutes());
      var _fcreado = $fecha;
      var _fmodificado= $fecha;
     

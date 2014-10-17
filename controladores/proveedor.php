@@ -4,9 +4,6 @@
 
    $objproveedor = new proveedor();
    $ProveedorDao = new proveedorDao;
-   $nit = $_POST["nit"];
-
-    
 	
     $objproveedor->setNit($_POST['nit']);
     $objproveedor->setDireccion($_POST['direccion']);

@@ -1,94 +1,75 @@
 <?php
-
-require_once '/../CLASES/Proveedor.php';
+require_once '/../CLASES/categoria.php';
 require_once '/../conexion.php';
 
-class proveedorDao {
+class categoriaDao {
 
-    const tabla="proveedor";
 
-    function guardar($Objproveedor){
+    const tabla = "categoria";
+
+    function guardar($Objcategoria){
             $conexion = new conexion();
-            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' ( nit, direccion,telefono ,email ,web ,contac ,replegal ,cedRep ,celRep ) 
-              VALUES( :nit,:direccion, :telefono ,:email ,:web ,:contac ,:replegal ,:cedRep ,:celRep )');
-            $consulta->bindParam(':nit', $Objproveedor->getnit());
-            $consulta->bindParam(':direccion', $Objproveedor->getDireccion());
-            $consulta->bindParam(':telefono', $Objproveedor->getTelefono());
-            $consulta->bindParam(':email', $Objproveedor->getEmail());
-            $consulta->bindParam(':web', $Objproveedor->getWeb());
-            $consulta->bindParam(':contac', $Objproveedor->getContac());
-            $consulta->bindParam(':replegal', $Objproveedor->getRepleg());
-            $consulta->bindParam(':cedRep', $Objproveedor->getCedRepl());
-            $consulta->bindParam(':celRep', $Objproveedor->getCelRep());
+            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (descripcion,  observacion, fcreado, fmodificado) VALUES(:descripcion, :observacion, :fcreado, :fmodificado)');
+            $consulta->bindParam(':descripcion', $Objcategoria->getdescripcion());
+            $consulta->bindParam(':observacion', $Objcategoria->getobservacion());
+            $consulta->bindParam(':fcreado', $Objcategoria->getfcreado());
+            $consulta->bindParam(':fmodificado', $Objcategoria->getfmodificado());
             $consulta->execute();
             $conexion = null;
     }
 
-    function eliminar($Objproveedor) {
+    function eliminar($Objcategoria) {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE idProveedor = :idProveedor');
-        $consulta->bindParam(':idProveedor', $Objproveedor->getidProveedor());
+        $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE descripcion = :descripcion');
+        $consulta->bindParam(':descripcion', $Objcategoria->getdescripcion());
         $consulta->execute();
         $conexion = null;
     }
 
-    function modificar($Objproveedor){
-      $idproveedor;
-  
+    function modificar($Objcategoria){
+      
       $conexion = new conexion();
-      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET nit = :nit, direccion = :direccion , telefono = :telefono , email = :email , web = :web , 
-        contac = :contac , replegal = :replegal , cedRep = :cedRep , cedRep = :cedRep WHERE idProveedor = :PersonaCedula');
-      $consulta->bindParam(':PersonaCedula', $Objproveedor->getPersonaCedula());
-      $consulta->bindParam(':Estado', $Objproveedor->getEstado());
-      $consulta->execute();
-      $conexion = null;
+      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET observacion = :observacion, fcreado = :fcreado, fmodificado = :fmodificado, 
+        direccion = :direccion, email = :email WHERE descripcion = :descripcion');
+        $consulta->bindParam(':descripcion', $Objcategoria->getdescripcion());
+        $consulta->bindParam(':observacion', $Objcategoria->getobservacion());
+        $consulta->bindParam(':fcreado', $Objcategoria->getfcreado());
+        $consulta->bindParam(':fmodificado', $Objcategoria->getfmodificado());
+        $consulta->bindParam(':direccion', $Objcategoria->getDireccion());
+        $consulta->bindParam(':email', $Objcategoria->getEmail());
+        $consulta->execute();
+        $conexion = null;
       
     }
 
-    function buscar($Cedula){
+    function buscar($descripcion){
       $conexion = new conexion();
-      $consulta = $conexion->prepare('SELECT idProveedor, nit, direccion,telefono ,email ,web ,contac ,replegal ,cedRep ,celRep FROM ' . self::tabla . ' WHERE nit = :=nit');
-         $consulta->bindParam(':idProveedor', $Objproveedor->getidProveedor());
-            $consulta->bindParam(':direccion', $Objproveedor->getDireccion());
-            $consulta->bindParam(':telefono', $Objproveedor->getTelefono());
-            $consulta->bindParam(':email', $Objproveedor->getEmail());
-            $consulta->bindParam(':web', $Objproveedor->getWeb());
-            $consulta->bindParam(':contac', $Objproveedor->getContac());
-            $consulta->bindParam(':replegal', $Objproveedor->getTelefono());
-            $consulta->bindParam(':cedRep', $Objproveedor->getCedRepl());
-            $consulta->bindParam(':celRep', $Objproveedor->getCelRep());
+      $consulta = $conexion->prepare('SELECT descripcion, observacion, fcreado, fmodificado FROM ' . self::tabla . ' WHERE descripcion = :descripcion');
+      $consulta->bindParam(':descripcion', $descripcion); 
       $consulta->execute();
       $registro = $consulta->fetch(PDO::FETCH_OBJ);
-    
+          
+            return $registro;
+
+        $conexion = null;
+
+    }
+
+    function listar(){
+      $conexion = new conexion();
+      $consulta = $conexion->prepare('SELECT descripcion, observacion, fcreado, fmodificado FROM ' . self::tabla );
+        $consulta->execute();
+        $registro = $consulta->fetchAll();
+         
       if ($registro) {
-            return  $registro;
+            return $registro;
         } else {
           return false;
         }
 
         $conexion = null;
-      }
-
-      
-
-    function listar(){
-      $conexion = new conexion();
-      $consulta = $conexion->prepare('SELECT idProveedor, nit, direccion,telefono ,email ,web ,contac ,replegal ,cedRep ,celRep FROM ' . self::tabla );
-      $consulta->execute();
-      $registro = $consulta->fetchAll(PDO::FETCH_OBJ);
-      
-      return  $registro;
-      $conexion = null;
 
     }
-
-
-
-
 }
-
-
-
-
 
 ?>

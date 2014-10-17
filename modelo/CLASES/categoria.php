@@ -1,99 +1,59 @@
 <?php
-class proveedor {
+
+class categoria{
+
+    private $descripcion;
+    private $observacion;
+    private $fcreado;
+    private $fmodificado;
 
 
-    private $idproveedor;
-    private $nit;
-    private $direccion;
-    private $telefono;
-    private $email;
-    private $web;
-    private $contac;
-    private $replegal;
-    private $cedRep;
-    private $celRep;
-function __construct() {
-    
-    $this->nit="";
-    $this->direccion="";
-    $this->telefono=0;
-    $this->email="";
-    $this->web="";
-    $this->contac="";
-    $this->replegal="";
-    $this->cedRep=0;
-    $this->celrep=0;
-    $this->idproveedor=0;
+
+    function __construct(){
+
+        $this->descripcion="";
+        $this->observacion="";
+        $this->fcreado="";
+        $this->fmodificado="";
 
     }
 
-function setNit($nit){
-$this->nit= $nit;
-}
-function setDireccion($direccion){
-$this->direccion= $direccion;
-}
-function setTelefono($telefono){
-$this->telefono= $telefono;
-}
-function setEmail($email){
-$this->email= $email;
-}
-function setWeb($web){
-$this->web= $web;
-}
-function setContac($contac){
-$this->contac= $contac;
-}
-function setReplegal($replegal){
-$this->replegal= $replegal;
-}
-function setCedRep($cedRep){
-$this->cedRep= $cedRep;
-}
-function setCelrep($celrep){
-$this->celrep= $celrep;
-}
-function setIdproveedor($idproveedor){
-$this->idproveedor= $idproveedor;
-}
+    function setdescripcion($descripcion){
+        $this->descripcion=$descripcion;
+    }
 
-function getIdproveedor(){
-return $this->idproveedor;
-}
+    function setobservacion($observacion){
+        $this->observacion=$observacion;
+    }
 
-function getNit(){
-return $this->nit;
-}
+    function setfcreado($fcreado){
+        $this->fcreado=$fcreado;
+    }   
+    
+    function setfmodificado($fmodificado){
+        $this->fmodificado=$fmodificado;
+    }
+    
 
-function getDireccion(){
-return $this->direccion;
-}
+    function getdescripcion(){
+        return $this->descripcion;
+    }
 
-function getTelefono(){
-return $this->telefono;
-}
-function getEmail(){
-return $this->email;
-}
 
-function getWeb(){
-return $this->web;
-}
+    function getobservacion(){
+        return $this->observacion;
+    }
 
-function getContac(){
-return $this->idproveedor;
-}
+    function getfcreado(){
+        return $this->fcreado;
+    }
 
-function getReplegal(){
-return $this->idproveedor;
-}
-function getCedrep(){
-return $this->idproveedor;
-}
-function getCelrep(){
-return $this->celrep ;
-}
+    function getfmodificado(){
+        return $this->fmodificado;
+    }
+
 
 }
+
 ?>
+
