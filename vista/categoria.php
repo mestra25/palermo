@@ -107,10 +107,10 @@
 
     </div>
 
+<div>
+         <h2>Lista de Categorias</h2>
+
     <div id="page-wrap">
-      <center>
-          <h2>Lista de Categorias</h2>
-      </center>
 
       <br></br>
       <table id="tabla">
@@ -131,9 +131,7 @@
       <tr>
        <?php
        require("php/lista_categoria.php");
-     
        foreach ($consulta as $registro) {
-       
         ?>
         <tbody> 
 
@@ -143,7 +141,7 @@
             <td><?php echo $registro["observacion"];?></td>
             <td><?php echo $registro["fcreado"];?></td>
             <td><?php echo $registro["fmodificado"];?></td>
-            <td><a href=""><img src="img/editar.png"></a></td>
+            <td><a href="" id="editar"><img src="img/editar.png"></a></td>
             <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
 
         </tr>
@@ -160,7 +158,7 @@
 
 <br></br>
 </div>
-
+</div>
 
 <center>
     <div id="formulario" style="display:none">

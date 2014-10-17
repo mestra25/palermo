@@ -83,13 +83,15 @@ p {
     td:nth-of-type(7):before { content: "Venta 4"; }
     td:nth-of-type(8):before { content: "P. Utilidades"; }
     td:nth-of-type(9):before { content: "P. Descuento"; }
-    td:nth-of-type(10):before { content: "F. Creacion"; }
-    td:nth-of-type(11):before { content: "F. Modificado"; }
-    td:nth-of-type(12):before { content: "Existencia"; }
-    td:nth-of-type(13):before { content: "Reserva"; }
-    td:nth-of-type(14):before { content: "Observaciones"; }
-    td:nth-of-type(15):before { content: "Modificar"; }
-    td:nth-of-type(16):before { content: "Eliminar"; }
+    td:nth-of-type(10):before { content: "Stock Min"; }
+    td:nth-of-type(11):before { content: "Stock Max"; }
+    td:nth-of-type(12):before { content: "F. Creacion"; }
+    td:nth-of-type(13):before { content: "F. Modificado"; }
+    td:nth-of-type(14):before { content: "Existencia"; }
+    td:nth-of-type(15):before { content: "Reserva"; }
+    td:nth-of-type(16):before { content: "Observaciones"; }
+    td:nth-of-type(17):before { content: "Modificar"; }
+    td:nth-of-type(18):before { content: "Eliminar"; }
   }
   
   /* Smartphones (portrait and landscape) ----------- */

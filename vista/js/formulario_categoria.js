@@ -22,7 +22,9 @@ jQuery(document).ready(function() {
       }
     });
 
-    });
-    
+});
+    $("#editar").click(function() {
+    alert("editar");
+});
 
 });
