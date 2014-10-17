@@ -21,7 +21,7 @@
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/tabla_productos.css">
-  <script src="js/jquery-1.11.0.js"></script>
+  <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
   <script src="js/formulario_producto.js"  type="text/javascript"></script>
 
 </head>
@@ -166,20 +166,21 @@
        </select>                      
 
        <br></br> 
-
+       <input type="text" title="Se requiere un codigo"  name="txtcodigo" id="txtcodigo" class="campos_edi" placeholder="Codigo" required>
+       <br></br> 
        <input type="text" title="Se requiere una descripcion" onkeydown="return validarLetras(event)" name="txtdescripcion" id="txtdescripcion" class="campos_edi" placeholder="Descripcion" required>
        <br></br> 
        <input name="txtvcosto" id="txtvcosto" title="Se requiere valor costo" onkeydown="return validarNumeros(event)" type="text" class="campos_edi" placeholder="Valor Costo" required>
        <br></br> 
        <input name="txtventa1" id="txtventa1" title="Se requiere Precio Venta 1" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 1" required>
        <br></br> 
-       <input name="venta2" id="txtventa2" title="Se requiere Precio Venta 2" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 2" required>
+       <input name="txtventa2" id="txtventa2" title="Se requiere Precio Venta 2" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 2" required>
        <br></br> 
-       <input name="venta3" id="txtventa3" title="Se requiere Precio Venta 3" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 3" required>
+       <input name="txtventa3" id="txtventa3" title="Se requiere Precio Venta 3" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 3" required>
        <br></br> 
        <input name="txtventa4" id="txtventa4" title="Se requiere Precio Venta 4" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 4" required>
        <br></br> 
-       <input name="txtputilidad" id="txtp_utilidad" title="Se requiere Porcentaje de Utilidad" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Utilidad" required>
+       <input name="txtp_utilidad" id="txtp_utilidad" title="Se requiere Porcentaje de Utilidad" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Utilidad" required>
        <br></br>
        <input name="txtstock_min" id="txtstock_min" title="Se requiere Stock Minimo" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Stock Minimo" required>
        <br></br>
@@ -187,13 +188,13 @@
        <br></br> 
        <input name="txtmedida" id="txtmedida" title="Se requiere Unidad de Medida" class="campos_edi" placeholder="Medida" required>
        <br></br> 
-       <input name="txtpdescuento" id="txtp_descuento" title="Se requiere Porcentaje de Descuento" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Descuento" required>
+       <input name="txtp_descuento" id="txtp_descuento" title="Se requiere Porcentaje de Descuento" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Descuento" required>
        <br></br> 
        <input name="txtobservacion" id="txtobservacion" title="Se requiere las observaciones" class="campos_edi" placeholder="Observaciones" required>
 
        <br></br>
 
-       <input type="button" name="" value="Guardar"  class="btn">
+       <input type="button" id="btn" value="Guardar"  class="btn">
        <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
      </form>
    </div>
@@ -232,18 +233,18 @@
         <tr>
           <tbody>
             <tr>
-              <td class="codigo">James</td>
-              <td>Matman</td>
-              <td>Chief Sandwich Eater</td>
-              <td>Lettuce Green</td>
-              <td>Trek</td>
-              <td>Digby Green</td>
-              <td>January 13, 1979</td>
-              <td>Gotham City</td>
-              <td>stock</td>
-              <td>stock</td>
-              <td>3.1</td>
-              <td>RBX-12</td>
+              <td class="codigo">a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
+              <td>a</td>
               <td>a</td>
               <td>a</td>
               <td>a</td>
@@ -264,6 +265,7 @@
 </div>
 </div>
 
+<span id="respuesta">span</span>
 
 
 <footer>
@@ -276,7 +278,6 @@
     </div>
   </div>
 </footer>
-
 <!-- jQuery Version 1.11.0 -->
 
 <!-- Bootstrap Core JavaScript -->
