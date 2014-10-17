@@ -171,8 +171,8 @@
           <br></br> 
 
 
-          <input type="submit" name="" value="Guardar" id="btn" class="btn">
-          <input type="submit" name="" value="Cancelar" class="btn" onclick="ocultar()">
+          <input type="button" name="" value="Guardar" id="btn" class="btn">
+          <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
       </form>
   </div>
 </center>
