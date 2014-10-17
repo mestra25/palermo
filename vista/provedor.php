@@ -185,7 +185,7 @@
                        <td><?php echo $registro["replegal"];?></td>
                        <td><?php echo $registro["cedRep"];?></td>
                        <td><?php echo $registro["celRep"];?></td>
-                       <td><a href=""><img src="img/editar.png"></a></td>
+                       <td><a id ="btneditar" href=""><img src="img/editar.png"></a></td>
                        <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
 
                    </tr>

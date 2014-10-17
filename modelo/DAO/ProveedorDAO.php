@@ -19,7 +19,21 @@ class proveedorDao {
             $consulta->bindParam(':replegal', $Objproveedor->getReplegal());
             $consulta->bindParam(':cedRep', $Objproveedor->getCedrep());
             $consulta->bindParam(':celRep', $Objproveedor->getCelrep());
-            $consulta->execute();
+            
+             if ($consulta->execute())
+            {
+              echo " 
+                <script language='JavaScript'> 
+                alert('Registro creado correctamente'); 
+                </script>";
+            }else{
+               echo " 
+                <script language='JavaScript'> 
+                alert('Error al crear el registro.'); 
+                </script>";
+            }
+
+
             $conexion = null;
     }
 

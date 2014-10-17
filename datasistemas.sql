@@ -1,5 +1,5 @@
 
-CREATE TABLE IF NOT EXISTS `categoria` (
+CREATE TABLE `categoria` (
   `descripcion` varchar(250) NOT NULL,
 `id_categoria` int(20) NOT NULL,
   `observacion` varchar(20) NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `categoria` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 
-CREATE TABLE IF NOT EXISTS `cliente` (
+CREATE TABLE  `cliente` (
   `cedula` int(20) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `apellido` varchar(20) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE IF NOT EXISTS `movimiento_inventario` (
+CREATE TABLE  `movimiento_inventario` (
 `id_consecutivo` int(20) NOT NULL,
   `tipo_movimiento` varchar(20) NOT NULL,
   `usuario` varchar(30) NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `movimiento_inventario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 
-CREATE TABLE IF NOT EXISTS `producto` (
+CREATE TABLE `producto` (
 `id_producto` int(20) NOT NULL,
   `id_categoria` int(20) NOT NULL,
   `id_subcategoria` int(20) NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `producto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 
-CREATE TABLE IF NOT EXISTS `proveedor` (
+CREATE TABLE  `proveedor` (
 `id_proveedor` int(255) NOT NULL,
   `nit` varchar(50) NOT NULL,
   `direccion` varchar(60) NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `proveedor` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 
-CREATE TABLE IF NOT EXISTS `subcategoria` (
+CREATE TABLE  `subcategoria` (
 `id_subcategoria` int(50) NOT NULL,
   `descripcion` varchar(250) NOT NULL,
   `observacion` varchar(20) NOT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `subcategoria` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 
-CREATE TABLE IF NOT EXISTS `usuario` (
+CREATE TABLE  `usuario` (
   `cedula` int(20) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `apellido` varchar(20) NOT NULL,
