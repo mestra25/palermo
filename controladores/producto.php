@@ -23,12 +23,6 @@
     $objproducto->setfcreado($_POST['fcreado']);
     $objproducto->setfmodificado($_POST['fmodificado']);
 
-
-
-
-
-
-
     $productoDao->guardar($objproducto);
 
 ?>
