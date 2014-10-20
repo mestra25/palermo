@@ -33,7 +33,6 @@ class proveedorDao {
                 </script>";
             }
 
-
             $conexion = null;
     }
 
@@ -46,14 +45,35 @@ class proveedorDao {
     }
 
     function modificar($Objproveedor){
-      $idproveedor;
+      
   
       $conexion = new conexion();
-      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET nit = :nit, direccion = :direccion , telefono = :telefono , email = :email , web = :web , 
-        contac = :contac , replegal = :replegal , cedRep = :cedRep , cedRep = :cedRep WHERE idProveedor = :PersonaCedula');
-      $consulta->bindParam(':PersonaCedula', $Objproveedor->getPersonaCedula());
-      $consulta->bindParam(':Estado', $Objproveedor->getEstado());
-      $consulta->execute();
+      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET  direccion = :direccion , telefono = :telefono , email = :email , web = :web , 
+      contac = :contac , replegal = :replegal , cedRep = :cedRep , cedRep = :cedRep WHERE nit = :nit');
+      $consulta->bindParam(':nit', $Objproveedor->getnit());
+            $consulta->bindParam(':direccion', $Objproveedor->getDireccion());
+            $consulta->bindParam(':telefono', $Objproveedor->getTelefono());
+            $consulta->bindParam(':email', $Objproveedor->getEmail());
+            $consulta->bindParam(':web', $Objproveedor->getWeb());
+            $consulta->bindParam(':contac', $Objproveedor->getContac());
+            $consulta->bindParam(':replegal', $Objproveedor->getReplegal());
+            $consulta->bindParam(':cedRep', $Objproveedor->getCedrep());
+            $consulta->bindParam(':celRep', $Objproveedor->getCelrep());
+            
+      /*if ($consulta->execute())
+            {
+              echo " 
+                <script language='JavaScript'> 
+                alert('Registro modificado correctamente.'); 
+                </script>";
+            }else{
+               echo " 
+                <script language='JavaScript'> 
+                alert('Error al modificar el registro.'); 
+                </script>";
+            }*/
+              $consulta->execute();
+      
       $conexion = null;
       
     }

@@ -20,11 +20,13 @@
     <link href="css/business-casual.css" rel="stylesheet">
 
      <link rel="stylesheet" href="css/tabla_proveedor.css">
-
+     <link rel="stylesheet" href="css/jquery-ui-1.11.2.css">
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"  type="text/javascript"></script>
+     <script src="js/jquery-ui-1.10.2.js"  type="text/javascript"></script>
+     <script src="js/jquery-ui-1.11.2.js"  type="text/javascript"></script>
     <script src="js/formulario_proveedor.js"  type="text/javascript"></script>
    
 
@@ -137,7 +139,7 @@
                    
                     <br></br>
                 
-                    <input type="button" name="btnguardar" value="Guardar" id="btn" class="btn">
+                    <input type="button" name="btnguardar" value="Guardar"  id="btn" class="btn">
                     <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
                     <div id="respuesta"></div>
  </form>
@@ -185,8 +187,8 @@
                        <td><?php echo $registro["replegal"];?></td>
                        <td><?php echo $registro["cedRep"];?></td>
                        <td><?php echo $registro["celRep"];?></td>
-                       <td><a id ="btneditar" href=""><img src="img/editar.png"></a></td>
-                       <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
+                       <td><a  href="editarProveedor.php?nit=<?php echo $registro["nit"];?>" href=""><img src="img/editar.png"></a></td>
+                       <td><a  src="img/delete.png"><img src="img/delete.png"></a></td>
 
                    </tr>
 
@@ -207,7 +209,9 @@
 
     </div>
 </div>
-        
+        <div id="dialog" title="Basic dialog">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
 
         </div><!-- end contenedor-->
 
