@@ -115,7 +115,7 @@
 
           <br></br>              
 
-          <select title="Se requiere Seleccion de Categoria" required class="campos">          
+          <select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos">          
 
            <option value="">Categoria</option>
            <?php
@@ -123,17 +123,16 @@
           
           foreach ($consulta as $registro) {
 
-           echo " <option>".$registro['descripcion']."</option>";
+           echo " <option value=".$registro['id_categoria'].">".$registro['descripcion']."</option>";
          }
          ?>
-           <input type="hidden" id="txtid_categoria" name="txtid_categoria" value=<?php $registro['id_categoria']; ?>>
 
          </select>  
 
          <br></br>              
 
          
-         <select title="Se requiere Seleccion de Subcategoria"< required class="campos">          
+         <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria"< required class="campos">          
 
           <option value="" >Subcategoria</option>
           <?php
@@ -141,16 +140,16 @@
           
           foreach ($consulta as $registro) {
 
-           echo " <option>".$registro['descripcion']."</option>";
+           echo " <option value=".$registro['id_subcategoria'].">".$registro['descripcion']."</option>";
+
          }
          ?>
-          <input type="hidden" id="txtid_subcategoria" name="txtid_subcategoria" value=<?php $registro['id_subcategoria'] ?>>
 
         </select>
         <br></br>              
 
         
-        <select title="Se requiere un Proveedor"< required class="campos">          
+        <select id="txtid_proveedor" title="Se requiere un Proveedor"< required class="campos">          
 
           <option value="" >Proveedor</option>
 
@@ -159,14 +158,11 @@
 
           foreach ($consulta as $registro) {
 
-           echo " <option>".$registro['nit']."</option>";
+           echo " <option value=".$registro['id_proveedor'].">".$registro['nit']."</option>";
          }
          ?>
-         <input type="hidden" id="txtid_proveedor" name="txt_proveedor" value=<?php $registro['id_proveedor'] ?>>
        </select>                      
 
-       <br></br> 
-       <input type="text" title="Se requiere un codigo"  name="txtcodigo" id="txtcodigo" class="campos_edi" placeholder="Codigo" required>
        <br></br> 
        <input type="text" title="Se requiere una descripcion" onkeydown="return validarLetras(event)" name="txtdescripcion" id="txtdescripcion" class="campos_edi" placeholder="Descripcion" required>
        <br></br> 
@@ -187,6 +183,8 @@
        <input name="txtstock_max" id="txtstock_max" title="Se requiere Stock Minimo" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Stock Maximo" required>
        <br></br> 
        <input name="txtmedida" id="txtmedida" title="Se requiere Unidad de Medida" class="campos_edi" placeholder="Medida" required>
+       <br></br> 
+       <input name="txtexistencia" id="txtexistencia" title="Se requiere Cantidad de Producto" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Cantidad de Producto" required>
        <br></br> 
        <input name="txtp_descuento" id="txtp_descuento" title="Se requiere Porcentaje de Descuento" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Descuento" required>
        <br></br> 
@@ -265,7 +263,7 @@
 </div>
 </div>
 
-<span id="respuesta">span</span>
+<span id="respuesta"></span>
 
 
 <footer>

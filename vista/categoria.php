@@ -108,10 +108,12 @@
     </div>
 
 <div>
-         <h2>Lista de Categorias</h2>
+         
 
     <div id="page-wrap">
-
+        <center>
+<h2>Lista de Categorias</h2>
+</center>
       <br></br>
       <table id="tabla">
         <thead>

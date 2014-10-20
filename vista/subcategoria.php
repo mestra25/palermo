@@ -154,7 +154,8 @@
         <tbody> 
 
           <tr>
-            <td class="codigo"><?php echo $registro["id_categoria"];?></td>
+            <td class="codigo"><?php echo $registro["id_subcategoria"];?></td>
+            <td><?php echo $registro["id_categoria"];?></td>
             <td><?php echo $registro["descripcion"];?></td>
             <td><?php echo $registro["observacion"];?></td>
             <td><?php echo $registro["fcreado"];?></td>
