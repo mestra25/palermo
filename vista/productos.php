@@ -214,6 +214,7 @@
           <th>Venta 3</th>
           <th>Venta 4</th>
           <th>P. Utilidad</th>
+          <th>Medida</th>
           <th>P. Descuento</th>
           <th>Stock Min</th>
           <th>Stock Max</th>
@@ -229,31 +230,42 @@
       </thead>
       <tbody>
         <tr>
+
+  <?php
+       require("php/lista_producto.php");
+     
+       foreach ($consulta as $registro) {
+       
+        ?>
           <tbody>
             <tr>
-              <td class="codigo">a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
+              <td class="codigo"><?php echo $registro["codigo"];?></td>
+              <td><?php echo $registro["descripcion"];?></td>
+              <td><?php echo $registro["v_costo"];?></td>
+              <td><?php echo $registro["venta_1"];?></td>
+              <td><?php echo $registro["venta_2"];?></td>
+              <td><?php echo $registro["venta_3"];?></td>
+              <td><?php echo $registro["venta_4"];?></td>
+              <td><?php echo $registro["p_utilidad"];?></td>
+              <td><?php echo $registro["medida"];?></td>
+              <td><?php echo $registro["p_descuento"];?></td>
+              <td><?php echo $registro["stock_min"];?></td>
+              <td><?php echo $registro["stock_max"];?></td>
+              <td><?php echo $registro["fcreado"];?></td>
+              <td><?php echo $registro["fmodificado"];?></td>
+              <td><?php echo $registro["existencia"];?></td>
+              <td><?php echo $registro["reserva"];?></td>
+              <td><?php echo $registro["observacion"];?></td>
               <td><a href=""><img src="img/editar.png"></a></td>
               <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
 
             </tr>
 
           </tbody>
+<?php
 
+}    
+?>
         </tr>
       </tbody>
     </table>
