@@ -46,7 +46,7 @@ function CustomAlert(){
 var Alert = new CustomAlert();
 
 Alert.render("Datos Guardados Satisfactoriamente");
-var pagina="../vista/usuario.php";
+var pagina="../vista/usuarios.php";
 location.href=pagina;
 
     });
