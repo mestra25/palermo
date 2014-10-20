@@ -28,7 +28,14 @@
 </head>
 
 <body>
-
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+</div>
     <div class="brand"><a href=""><img src="img/logo.png"></a></div>
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -165,6 +172,7 @@
 <center>
     <div id="formulario" style="display:none">
         <form>
+            <h2>Agregar Categoria</h2>
           <br></br>              
 
           <input id="txtdescripcion" name="txtdescripcion" title="Se requiere descripcion de categoria" class="campos_edi" placeholder="Descripcion" required>

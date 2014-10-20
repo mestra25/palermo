@@ -27,7 +27,14 @@
     </head>
 
     <body>
-
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+</div>
         <div class="brand" id="img"><a href=""><img src="img/logo.png"></a></div>
         <!-- Navigation -->
         <nav class="navbar navbar-default" role="navigation">
