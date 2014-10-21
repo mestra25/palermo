@@ -1,15 +1,35 @@
 <?php
 require_once('producto.php');
-class testigo extends persona {
-    private $PersonaCedula;
-    private $ContrayenteCedula;
-    private $Tipo;
+class producto {
+    private $IdProducto;
+    private $Idcategoria;
+    private $Idsubcategoria;
+    private $Idproveedor;
+    private $Codigo;
+    private $Descripcion;
+    private $Vcosto;
+    private $Venta1;
+    private $Venta2;
+    private $Venta3;
+    private $Venta4;
+    private $Precutil;
+    private $Medidad;
+    private $Porcdescuento;
+    private $Stockmin;
+    private $Stockmax;
+    private $Creadofec;
+    private $Modificado;
+    private $Existencia;
+    private $Reserva;
+    private $Observaciones;
   
 
 function __construct() {
    $this->IdProducto = 0;
    $this->Idcategoria = 0;
    $this->Idsubcategoria=0;
+   $this->Idproveedor=0;
+   $this->Codigo="";
    $this->Descripcion="";
    $this->Vcosto=0;
    $this->Venta1=0;
@@ -17,7 +37,7 @@ function __construct() {
    $this->Venta3=0;
    $this->Venta4=0;
    $this->Precutil=0;
-   $this->Medidad=0;
+   $this->Medidad="";
    $this->Porcdescuento=0;
    $this->Stockmin=0;
    $this->Stockmax=0;
@@ -42,6 +62,12 @@ function setIdsubcategoria($Idsubcategoria){
 $this->Idsubcategoria= $Idsubcategoria;
 }
 
+function setIdproveedor($Idproveedor){
+$this->Idproveedor= $Idproveedor;
+}
+function setCodigo($Codigo){
+$this->Codigo= $Codigo;
+}
 function setDescripcion($Descripcion){
 $this->Descripcion= $Descripcion;
 }
@@ -56,7 +82,7 @@ $this->Venta1= $Venta1;
 function setVenta2($Venta2){
 $this->Venta2= $Venta2;
 }
-function setVenta3($Venta){
+function setVenta3($Venta3){
 $this->Venta3= $Venta3;
 }
 function setVenta4($Venta4){
@@ -113,9 +139,17 @@ return $this->Idcategoria;
 function getIdsubcategoria(){
 return $this->Idsubcategoria;
 }
-
+function getIdproveedor(){
+return $this->Idproveedor;
+}
 function getVcosto(){
 return $this->Vcosto;
+}
+function getCodigo(){
+return $this->Codigo;
+}
+function getDescripcion(){
+return $this->Descripcion;
 }
 function getVenta1(){
 return $this->Venta1;
@@ -124,7 +158,6 @@ function getVenta2(){
 return $this->Venta2;
 }
 
-
 function getVenta3(){
 return $this->Venta3;
 }
@@ -132,11 +165,8 @@ function getVenta4(){
 return $this->Venta4;
 }
 
-
- 
-   
 function getPrecutil(){
-return $this->Precuti;
+return $this->Precutil;
 }
 function getMedidad(){
 return $this->Medidad;
@@ -172,6 +202,6 @@ function getObservaciones(){
 return $this->Observaciones;
 }
 
-}
+
 } //fin de la clase
 ?>

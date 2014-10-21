@@ -28,7 +28,14 @@
 </head>
 
 <body>
-    
+    <div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+</div>
     <div class="brand"><a href=""><img src="img/logo.png"></a></div>
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -112,6 +119,7 @@
                 <center>
                     <div id="formulario" style="display:none">
                         <form>
+                            <h2>Agregar Subcategoria</h2>
                           <br></br>              
  
                     <input id="txtdescripcion" name="txtdescripcion" title="Se requiere descripcion de subcategoria" class="campos_edi" placeholder="Descripcion" required>
@@ -154,7 +162,8 @@
         <tbody> 
 
           <tr>
-            <td class="codigo"><?php echo $registro["id_categoria"];?></td>
+            <td class="codigo"><?php echo $registro["id_subcategoria"];?></td>
+            <td><?php echo $registro["id_categoria"];?></td>
             <td><?php echo $registro["descripcion"];?></td>
             <td><?php echo $registro["observacion"];?></td>
             <td><?php echo $registro["fcreado"];?></td>

@@ -44,7 +44,7 @@ require_once("../modelo/conexion.php");
   ?>
     <fieldset style="width:480px"   >
         <legend>Editar Empleado</legend>
-        <form >
+        <form id="EditarProveedor" >
           <div>
         <label for="name">NIt de Proveedor</label>
         <input type="text" name="nit" id="txtnit" value="<?php echo $row['nit'];?>" class="text ui-widget-content ui-corner-all">

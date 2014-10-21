@@ -27,7 +27,14 @@
 </head>
 
 <body>
-
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+</div>
   <div class="brand" id="img"><a href=""><img src="img/logo.png"></a></div>
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -115,7 +122,7 @@
 
           <br></br>              
 
-          <select title="Se requiere Seleccion de Categoria" required class="campos">          
+          <select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos">          
 
            <option value="">Categoria</option>
            <?php
@@ -123,17 +130,16 @@
           
           foreach ($consulta as $registro) {
 
-           echo " <option>".$registro['descripcion']."</option>";
+           echo " <option value=".$registro['id_categoria'].">".$registro['descripcion']."</option>";
          }
          ?>
-           <input type="hidden" id="txtid_categoria" name="txtid_categoria" value=<?php $registro['id_categoria']; ?>>
 
          </select>  
 
          <br></br>              
 
          
-         <select title="Se requiere Seleccion de Subcategoria"< required class="campos">          
+         <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria"< required class="campos">          
 
           <option value="" >Subcategoria</option>
           <?php
@@ -141,16 +147,16 @@
           
           foreach ($consulta as $registro) {
 
-           echo " <option>".$registro['descripcion']."</option>";
+           echo " <option value=".$registro['id_subcategoria'].">".$registro['descripcion']."</option>";
+
          }
          ?>
-          <input type="hidden" id="txtid_subcategoria" name="txtid_subcategoria" value=<?php $registro['id_subcategoria'] ?>>
 
         </select>
         <br></br>              
 
         
-        <select title="Se requiere un Proveedor"< required class="campos">          
+        <select id="txtid_proveedor" title="Se requiere un Proveedor"< required class="campos">          
 
           <option value="" >Proveedor</option>
 
@@ -159,14 +165,11 @@
 
           foreach ($consulta as $registro) {
 
-           echo " <option>".$registro['nit']."</option>";
+           echo " <option value=".$registro['id_proveedor'].">".$registro['nit']."</option>";
          }
          ?>
-         <input type="hidden" id="txtid_proveedor" name="txt_proveedor" value=<?php $registro['id_proveedor'] ?>>
        </select>                      
 
-       <br></br> 
-       <input type="text" title="Se requiere un codigo"  name="txtcodigo" id="txtcodigo" class="campos_edi" placeholder="Codigo" required>
        <br></br> 
        <input type="text" title="Se requiere una descripcion" onkeydown="return validarLetras(event)" name="txtdescripcion" id="txtdescripcion" class="campos_edi" placeholder="Descripcion" required>
        <br></br> 
@@ -188,6 +191,8 @@
        <br></br> 
        <input name="txtmedida" id="txtmedida" title="Se requiere Unidad de Medida" class="campos_edi" placeholder="Medida" required>
        <br></br> 
+       <input name="txtexistencia" id="txtexistencia" title="Se requiere Cantidad de Producto" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Cantidad de Producto" required>
+       <br></br> 
        <input name="txtp_descuento" id="txtp_descuento" title="Se requiere Porcentaje de Descuento" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Descuento" required>
        <br></br> 
        <input name="txtobservacion" id="txtobservacion" title="Se requiere las observaciones" class="campos_edi" placeholder="Observaciones" required>
@@ -196,6 +201,7 @@
 
        <input type="button" id="btn" value="Guardar"  class="btn">
        <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+
      </form>
    </div>
 
@@ -216,6 +222,7 @@
           <th>Venta 3</th>
           <th>Venta 4</th>
           <th>P. Utilidad</th>
+          <th>Medida</th>
           <th>P. Descuento</th>
           <th>Stock Min</th>
           <th>Stock Max</th>
@@ -231,31 +238,42 @@
       </thead>
       <tbody>
         <tr>
+
+  <?php
+       require("php/lista_producto.php");
+     
+       foreach ($consulta as $registro) {
+       
+        ?>
           <tbody>
             <tr>
-              <td class="codigo">a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
+              <td class="codigo"><?php echo $registro["codigo"];?></td>
+              <td><?php echo $registro["descripcion"];?></td>
+              <td><?php echo $registro["v_costo"];?></td>
+              <td><?php echo $registro["venta_1"];?></td>
+              <td><?php echo $registro["venta_2"];?></td>
+              <td><?php echo $registro["venta_3"];?></td>
+              <td><?php echo $registro["venta_4"];?></td>
+              <td><?php echo $registro["p_utilidad"];?></td>
+              <td><?php echo $registro["medida"];?></td>
+              <td><?php echo $registro["p_descuento"];?></td>
+              <td><?php echo $registro["stock_min"];?></td>
+              <td><?php echo $registro["stock_max"];?></td>
+              <td><?php echo $registro["fcreado"];?></td>
+              <td><?php echo $registro["fmodificado"];?></td>
+              <td><?php echo $registro["existencia"];?></td>
+              <td><?php echo $registro["reserva"];?></td>
+              <td><?php echo $registro["observacion"];?></td>
               <td><a href=""><img src="img/editar.png"></a></td>
               <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
 
             </tr>
 
           </tbody>
+<?php
 
+}    
+?>
         </tr>
       </tbody>
     </table>
@@ -265,7 +283,7 @@
 </div>
 </div>
 
-<span id="respuesta">span</span>
+<span id="respuesta"></span>
 
 
 <footer>

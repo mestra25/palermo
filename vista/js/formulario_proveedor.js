@@ -3,6 +3,8 @@ jQuery(document).ready(function()
 {
 
 
+   
+  
     $("#btn").click(function() {
      var _nit=$("#txtnit").val();
      var _direccion= $("#txtdireccion").val();
@@ -52,12 +54,13 @@ jQuery(document).ready(function()
         $("#rpt").html(datos);
       }
     });
-    
+   
+ 
     alert("klfkqej");
+    
     });
     
 
-   
-
+  
     
 });

@@ -27,7 +27,14 @@
     </head>
 
     <body>
-
+<div id="dialogoverlay"></div>
+<div id="dialogbox">
+  <div>
+    <div id="dialogboxhead"></div>
+    <div id="dialogboxbody"></div>
+    <div id="dialogboxfoot"></div>
+  </div>
+</div>
         <div class="brand" id="img"><a href=""><img src="img/logo.png"></a></div>
         <!-- Navigation -->
         <nav class="navbar navbar-default" role="navigation">
@@ -133,20 +140,30 @@
                     </thead>
                     <tbody>
                       <tr>
+                                                 <?php
+       require("php/lista_cliente.php");
+     
+       foreach ($consulta as $registro) {
+       
+        ?>
                         <tbody>
                           <tr>
-                            <td class="codigo">James</td>
-                            <td>Matman</td>
-                            <td>Matman</td>
-                            <td>Matman</td>
-                            <td>Chief Sandwich Eater</td>
-                            <td>Lettuce Green</td>
+                           <td class="codigo"><?php echo $registro["cedula"];?></td>
+                            <td><?php echo $registro["nombre"];?></td>
+                            <td><?php echo $registro["apellido"];?></td>
+                            <td><?php echo $registro["celular"];?></td>
+                            <td><?php echo $registro["direccion"];?></td>
+                            <td><?php echo $registro["email"];?></td>
                             <td><a href=""><img src="img/editar.png"></a></td>
                             <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
+
 
                         </tr>
 
                     </tbody>
+                        <?php
+}    
+?>
                 </tr>
             </tbody>
         </table>

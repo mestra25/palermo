@@ -49,7 +49,7 @@ class proveedorDao {
   
       $conexion = new conexion();
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET  direccion = :direccion , telefono = :telefono , email = :email , web = :web , 
-      contac = :contac , replegal = :replegal , cedRep = :cedRep , cedRep = :cedRep WHERE nit = :nit');
+      contac = :contac , replegal = :replegal , cedRep = :cedRep , celRep = :celRep WHERE nit = :nit');
       $consulta->bindParam(':nit', $Objproveedor->getnit());
             $consulta->bindParam(':direccion', $Objproveedor->getDireccion());
             $consulta->bindParam(':telefono', $Objproveedor->getTelefono());
@@ -60,7 +60,7 @@ class proveedorDao {
             $consulta->bindParam(':cedRep', $Objproveedor->getCedrep());
             $consulta->bindParam(':celRep', $Objproveedor->getCelrep());
             
-      /*if ($consulta->execute())
+      if ($consulta->execute())
             {
               echo " 
                 <script language='JavaScript'> 
@@ -71,7 +71,7 @@ class proveedorDao {
                 <script language='JavaScript'> 
                 alert('Error al modificar el registro.'); 
                 </script>";
-            }*/
+            }
               $consulta->execute();
       
       $conexion = null;
