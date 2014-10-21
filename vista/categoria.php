@@ -16,7 +16,6 @@
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
-
     <link rel="stylesheet" href="css/tabla_categoria.css">
 
     <!-- Fonts -->

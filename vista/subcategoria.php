@@ -24,11 +24,10 @@
     <script src="js/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="js/formulario_subcategoria.js"></script>
 
-
 </head>
 
 <body>
-    <div id="dialogoverlay"></div>
+<div id="dialogoverlay"></div>
 <div id="dialogbox">
   <div>
     <div id="dialogboxhead"></div>
@@ -110,9 +109,6 @@
                     
                     <input type="input" placeholder="Codigo Subcategoria a Buscar" class="campo" id="buscar_" style="display:none">
 
-                    
-            
-                    
 
                 </div>
 

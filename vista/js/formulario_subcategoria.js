@@ -11,7 +11,6 @@ jQuery(document).ready(function() {
     
      var parametros={ descripcion :_descripcion , observacion: _observacion , fcreado : _fcreado , fmodificado :_fmodificado };
      var archivo='../controladores/subcategoria.php';
-      alert("dd");
 
      $.ajax({
       type :"POST",
