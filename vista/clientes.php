@@ -16,7 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/tabla_persona.css">
+    <link rel="stylesheet" href="css/tabla_cliente.css">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -64,7 +64,7 @@
                                 <a href="usuarios.php">Usuarios</a>
                             </li>
                             <li>
-                                <a href="inventario.html">Inventario</a>
+                                <a href="inventario.php">Inventario</a>
                             </li>
                             <li>
                                 <a href="clientes.php">Clientes</a>

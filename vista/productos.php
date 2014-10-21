@@ -63,7 +63,7 @@
               <a href="usuarios.php">Usuarios</a>
             </li>
             <li>
-              <a href="inventario.html">Inventario</a>
+              <a href="inventario.php">Inventario</a>
             </li>
             <li>
               <a href="clientes.php">Clientes</a>

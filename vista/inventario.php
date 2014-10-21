@@ -12,21 +12,19 @@
     <title>DataSistemas</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-
     
+
 </head>
 
 <body>
-    
-    <div class="brand"><a href=""><img src="img/logo.png"></a></div>
+
+    <div class="brand" id="img"><a href=""><img src="img/logo.png"></a></div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -56,7 +54,7 @@
                             <a href="usuarios.php">Usuarios</a>
                         </li>
                         <li>
-                            <a href="inventario.php">Inventario</a>
+                            <a href="inventario.html">Inventario</a>
                         </li>
                         <li>
                             <a href="clientes.php">Clientes</a>
@@ -71,53 +69,69 @@
 
     <div class="container">
 
-        <div class="contenido">
-            <div>
-                <center>
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="productos.php">Productos</a>
-                        </li>
-                        <li>
-                            <a href="categoria.php">Categorias</a>
-                        </li>
-                        <li>
-                            <a href="subcategoria.php">Subcategoria</a>
-                        </li>
-                        <li>
-                            <a href="provedor.php">Provedor</a>
-                        </li>
-                    </ul>
-                </center>
+       <div class="contenido">
+        
+        <center><h2>Asignar nueva Tarea</h2>
+
+            <select id="usuario" onchange="mostrar()">
+
+                <option>Seleccione tipo de Usuario</option>
+                <option value="usuario">Usuario</option>
+                <option value="cliente">Cliente</option>
+                
+            </select>
+        </center>
+        
+        <select id="id_usuario" onchange="mostrar()">
+
+            <?php
+            require("/php/lista_usuario.php");
+            
+            foreach ($consulta as $registro) {
+
+             echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
+         }
+         ?>
+
+     </select>
+
+     
+     <form id="formulario_cliente">
+        <h2>cliente</h2>
+    </form>
+    <form id="formulario_usuario">
+        <h2>usuaio</h2>
+    </form>
+
+</div>
+
+</div><!-- end contenedor-->
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p>Copyright &copy; Diego Narvaez - Maria Fernanda Mendoza 2014 </p>
+
             </div>
         </div>
+    </div>
+</footer>
 
-    </div><!-- end contenedor-->
+<!-- jQuery Version 1.11.0 -->
+<script src="js/jquery-1.11.0.js"></script>
 
-    
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Diego Narvaez - Maria Fernanda Mendoza 2014 </p>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
+<!-- Script to Activate the Carousel -->
+<script>
+$('.carousel').carousel({
         interval: 5000 //changes the speed
     })
-    </script>
+</script>
+<script type="text/javascript" src="js/inventario.js"></script>
 
 </body>
 
