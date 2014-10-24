@@ -104,7 +104,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="">
 
     	<div class="contenido">
                 <div class="botones_form">
