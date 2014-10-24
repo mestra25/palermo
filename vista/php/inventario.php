@@ -85,55 +85,55 @@
       <div id="formulario">
         <br></br> 
         <h2>Realizar Movimiento</h2>
-<br></br>
+        <br></br>
         <form>
 
-<select id="txtid_medida" title="Se requiere una Medida" required class="campos">          
+          <select id="txtid_medida" title="Se requiere una Medida" required class="campos">          
 
-        <option value="" >Medida</option>
+            <option value="" >Medida</option>
 
-        <?php
-        require("tem_2.php");
+            <?php
+            require("tem_2.php");
 
-        foreach ($consulta as $registro) {
+            foreach ($consulta as $registro) {
 
-         echo " <option value=".$registro['id_medida'].">".$registro['descripcion']."</option>";
-       }
-       ?>
-     </select>  
-<?php
+             echo " <option value=".$registro['id_medida'].">".$registro['descripcion']."</option>";
+           }
+           ?>
+         </select>  
+         <?php
 
-require("tem.php");
+         require("tem.php");
 
-?>
+         ?>
 
-           <br></br> 
-           <p>Existencia:  <input type="text" name="txtexistencia" class="campos_edi" id="txtexistencia" value="<?php echo $registro['existencia']?>" readonly></p>
-           <br></br> 
-           <p>Impuesto:  <input type="text" name="txtimpuesto" id="txtimpuesto" value="" class="campos_edi"></p>
-           <br></br>
-           <p>Cantidad:  <input type="text" name="txtcantidad" id="txtcantidad" value="" class="campos_edi"></p>
-           <br></br>
-           <p>Reserva:  <input type="text" name="txtreserva" id="txtreserva" class="campos_edi" value="<?php echo $registro['reserva']?>" readonly></p>
-           <br></br> 
-           <p>Categoria:  <input type="text" name="txtcategoria" id="txtcategoria" value="<?php echo $registro_1['descripcion']?>" class="campos_edi" readonly></p>
-           <br></br>
-           <p>Subcategoria:  <input type="text" name="txtsubcategoria" id="txtsubcategoria" value="<?php echo $registro_2['descripcion']?>" class="campos_edi" readonly></p>
-           <br></br>
-           <p>Proveedor:  <input type="text" name="txtproveedor" id="txtproveedor" value="<?php echo $registro_3['nit']?>" class="campos_edi" readonly></p>
-           <br></br> 
-           <p>Descripcion:  <input type="text" name="txtdescripcion" id="txtdescripcion" value="<?php echo $registro['descripcion']?>" class="campos_edi" readonly></p>
-           <br></br> 
-           <p>P. Venta 1: <input type="text" name="txtventa1" id="txtventa1" value="<?php echo $registro['venta_1']?>" class="campos_edi" readonly></p>
-           <br></br> 
-           <p>P. Venta 2: <input type="text" name="txtventa2" id="txtventa2" value="<?php echo $registro['venta_2']?>" class="campos_edi" readonly></p>
-           <br></br> 
-           <p>P. Venta 3: <input type="text" name="txtventa3" id="txtventa3" value="<?php echo $registro['venta_3']?>" class="campos_edi" readonly></p>
-           <br></br> 
-           <p>P. Venta 4: <input type="text" name="txtventa4" id="txtventa4" value="<?php echo $registro['venta_4']?>" class="campos_edi" readonly></p>
-           <br></br> 
-           <input type="button" id="btn" value="Guardar"  class="btn">
-           <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+         <br></br> 
+         <p>Existencia:  <input type="text" name="txtexistencia" class="campos_edi" id="txtexistencia" value="<?php echo $registro['existencia']?>" readonly></p>
+         <br></br> 
+         <p>Impuesto:  <input type="text" name="txtimpuesto" id="txtimpuesto" value="" class="campos_edi"></p>
+         <br></br>
+         <p>Cantidad:  <input type="text" name="txtcantidad" id="txtcantidad" value="" class="campos_edi"></p>
+         <br></br>
+         <p>Reserva:  <input type="text" name="txtreserva" id="txtreserva" class="campos_edi" value="<?php echo $registro['reserva']?>" readonly></p>
+         <br></br> 
+         <p>Categoria:  <input type="text" name="txtcategoria" id="txtcategoria" value="<?php echo $registro_1['descripcion']?>" class="campos_edi" readonly></p>
+         <br></br>
+         <p>Subcategoria:  <input type="text" name="txtsubcategoria" id="txtsubcategoria" value="<?php echo $registro_2['descripcion']?>" class="campos_edi" readonly></p>
+         <br></br>
+         <p>Proveedor:  <input type="text" name="txtproveedor" id="txtproveedor" value="<?php echo $registro_3['nit']?>" class="campos_edi" readonly></p>
+         <br></br> 
+         <p>Descripcion:  <input type="text" name="txtdescripcion" id="txtdescripcion" value="<?php echo $registro['descripcion']?>" class="campos_edi" readonly></p>
+         <br></br> 
+         <p>P. Venta 1: <input type="text" name="txtventa1" id="txtventa1" value="<?php echo $registro['venta_1']?>" class="campos_edi" readonly></p>
+         <br></br> 
+         <p>P. Venta 2: <input type="text" name="txtventa2" id="txtventa2" value="<?php echo $registro['venta_2']?>" class="campos_edi" readonly></p>
+         <br></br> 
+         <p>P. Venta 3: <input type="text" name="txtventa3" id="txtventa3" value="<?php echo $registro['venta_3']?>" class="campos_edi" readonly></p>
+         <br></br> 
+         <p>P. Venta 4: <input type="text" name="txtventa4" id="txtventa4" value="<?php echo $registro['venta_4']?>" class="campos_edi" readonly></p>
+         <br></br> 
+         <input type="button" id="btn" value="Guardar"  class="btn">
+         <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
 
        </form>
      </div>
