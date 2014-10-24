@@ -103,9 +103,9 @@
 
             <br></br>              
             <select title="Se requiere Seleccion de Categoria" required class="campos_edi">  
-              <option id="txtrol" name="txtrol" value=""></option> 
-              <option id="txtrol" name="txtrol" value=""></option> 
-              <option id="txtrol" name="txtrol" value=""></option> 
+              <option id="txtrol" name="txtrol" value="administrador">Administrador</option> 
+              <option id="txtrol" name="txtrol" value="administrador-inventario">Administrador Inventario</option> 
+              <option id="txtrol" name="txtrol" value="usuario">Usuario</option> 
 
             </select> 
             <br></br>  

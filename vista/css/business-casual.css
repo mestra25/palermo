@@ -309,9 +309,10 @@ th, td { white-space: nowrap; }
 #dialogbox > div > #dialogboxbody{ background:#333; padding:20px; color:#FFF; }
 #dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }
 
-#usuario{
+#usuario, #movimiento, #id_usuario,#id_cliente{
     border-radius: 10px;
     margin: 0px auto;
     padding:10px;
-
+    margin-top: 10px;
 }
+

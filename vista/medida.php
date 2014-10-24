@@ -16,13 +16,13 @@
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/tabla_categoria.css">
+    <link rel="stylesheet" href="css/tabla_medida.css">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"></script>
-    <script type="text/javascript" src="js/formulario_categoria.js"></script>
+    <script type="text/javascript" src="js/formulario_medida.js"></script>
 
 </head>
 
@@ -104,13 +104,13 @@
 
    <div class="contenido">
     <div class="botones_form">
-        <input type="submit" value="Agregar Categoria" class="btn" onclick="mostrar()">
+        <input type="submit" value="Agregar Medida" class="btn" onclick="mostrar()">
 
         <input type="submit" value="Buscar" class="btn" onclick="mostrar_buscar()" id="buscar" >
 
         <input type="submit" value="Cancelar" class="btn" id="cancelar" style="display:none" onclick="mostrar_boton_buscar()" >
 
-        <input type="input" placeholder="Codigo Categroia a Buscar" class="campo" id="buscar_" style="display:none">
+        <input type="input" placeholder="Codigo Medida a Buscar" class="campo" id="buscar_" style="display:none">
 
 
     </div>
@@ -120,7 +120,7 @@
 
         <div id="page-wrap">
             <center>
-                <h2>Lista de Categorias</h2>
+                <h2>Lista de Medidas</h2>
             </center>
             <br></br>
             <table id="tabla">
@@ -128,10 +128,6 @@
                   <tr>
                     <th>Codigo</th>
                     <th>Descripcion</th>
-                    <th>Observaciones</th>
-                    <th>Creado</th>
-                    <th>Modificado</th>
-                    <th>Modificar</th>
                     <th>Eliminar</th>
                     
                 </tr>
@@ -140,18 +136,14 @@
             <tbody>
               <tr>
                  <?php
-                 require("php/lista_categoria.php");
+                 require("php/lista_medida.php");
                  foreach ($consulta as $registro) {
                     ?>
                     <tbody> 
 
                       <tr>
-                        <td class="codigo"><?php echo $registro["id_categoria"];?></td>
+                        <td class="codigo"><?php echo $registro["id_medida"];?></td>
                         <td><?php echo $registro["descripcion"];?></td>
-                        <td><?php echo $registro["observacion"];?></td>
-                        <td><?php echo $registro["fcreado"];?></td>
-                        <td><?php echo $registro["fmodificado"];?></td>
-                        <td><a href="" id="editar"><img src="img/editar.png"></a></td>
                         <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
 
                     </tr>
@@ -169,19 +161,17 @@
 <br></br>
 </div>
 </div>
-
+<span id="respuesta"></span>
 <center>
     <div id="formulario" style="display:none">
         <form>
-            <h2>Agregar Categoria</h2>
+            <h2>Agregar 
+                Medida</h2>
             <br></br>              
 
             <input id="txtdescripcion" name="txtdescripcion" title="Se requiere descripcion de categoria" class="campos_edi" placeholder="Descripcion" required>
             <br></br> 
-            <input id="txtobservacion" name="txtobservacion" title="Se requiere observacion" class="campos_edi" placeholder="Observacion" required>
-            <br></br> 
-
-
+            
             <input type="button" name="" value="Guardar" id="btn" class="btn">
             <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
         </form>

@@ -27,14 +27,14 @@
 </head>
 
 <body>
-<div id="dialogoverlay"></div>
-<div id="dialogbox">
-  <div>
-    <div id="dialogboxhead"></div>
-    <div id="dialogboxbody"></div>
-    <div id="dialogboxfoot"></div>
+  <div id="dialogoverlay"></div>
+  <div id="dialogbox">
+    <div>
+      <div id="dialogboxhead"></div>
+      <div id="dialogboxbody"></div>
+      <div id="dialogboxfoot"></div>
+    </div>
   </div>
-</div>
   <div class="brand" id="img"><a href=""><img src="img/logo.png"></a></div>
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -91,11 +91,14 @@
         <li>
           <a href="provedor.php">Proveedor</a>
         </li>
+        <li>
+          <a href="medida.php">Medida</a>
+        </li>
       </ul>
     </center>
   </div>
 </div>
-<div class="container">
+<div class="">
 
   <div class="contenido">
 
@@ -126,20 +129,20 @@
 
            <option value="">Categoria</option>
            <?php
-          require("php/lista_categoria.php");
-          
-          foreach ($consulta as $registro) {
+           require("php/lista_categoria.php");
+           
+           foreach ($consulta as $registro) {
 
-           echo " <option value=".$registro['id_categoria'].">".$registro['descripcion']."</option>";
-         }
-         ?>
+             echo " <option value=".$registro['id_categoria'].">".$registro['descripcion']."</option>";
+           }
+           ?>
 
          </select>  
 
          <br></br>              
 
          
-         <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria"< required class="campos">          
+         <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria" required class="campos">          
 
           <option value="" >Subcategoria</option>
           <?php
@@ -152,99 +155,111 @@
          }
          ?>
 
-        </select>
-        <br></br>              
+       </select>
+       <br></br>              
 
-        
-        <select id="txtid_proveedor" title="Se requiere un Proveedor"< required class="campos">          
-
-          <option value="" >Proveedor</option>
-
-          <?php
-          require("php/lista_proveedor.php");
-
-          foreach ($consulta as $registro) {
-
-           echo " <option value=".$registro['id_proveedor'].">".$registro['nit']."</option>";
-         }
-         ?>
-       </select>                      
-
-       <br></br> 
-       <input type="text" title="Se requiere una descripcion" onkeydown="return validarLetras(event)" name="txtdescripcion" id="txtdescripcion" class="campos_edi" placeholder="Descripcion" required>
-       <br></br> 
-       <input name="txtvcosto" id="txtvcosto" title="Se requiere valor costo" onkeydown="return validarNumeros(event)" type="text" class="campos_edi" placeholder="Valor Costo" required>
-       <br></br> 
-       <input name="txtventa1" id="txtventa1" title="Se requiere Precio Venta 1" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 1" required>
-       <br></br> 
-       <input name="txtventa2" id="txtventa2" title="Se requiere Precio Venta 2" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 2" required>
-       <br></br> 
-       <input name="txtventa3" id="txtventa3" title="Se requiere Precio Venta 3" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 3" required>
-       <br></br> 
-       <input name="txtventa4" id="txtventa4" title="Se requiere Precio Venta 4" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 4" required>
-       <br></br> 
-       <input name="txtp_utilidad" id="txtp_utilidad" title="Se requiere Porcentaje de Utilidad" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Utilidad" required>
-       <br></br>
-       <input name="txtstock_min" id="txtstock_min" title="Se requiere Stock Minimo" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Stock Minimo" required>
-       <br></br>
-       <input name="txtstock_max" id="txtstock_max" title="Se requiere Stock Minimo" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Stock Maximo" required>
-       <br></br> 
-       <input name="txtmedida" id="txtmedida" title="Se requiere Unidad de Medida" class="campos_edi" placeholder="Medida" required>
-       <br></br> 
-       <input name="txtexistencia" id="txtexistencia" title="Se requiere Cantidad de Producto" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Cantidad de Producto" required>
-       <br></br> 
-       <input name="txtp_descuento" id="txtp_descuento" title="Se requiere Porcentaje de Descuento" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Descuento" required>
-       <br></br> 
-       <input name="txtobservacion" id="txtobservacion" title="Se requiere las observaciones" class="campos_edi" placeholder="Observaciones" required>
-
-       <br></br>
-
-       <input type="button" id="btn" value="Guardar"  class="btn">
-       <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
-
-     </form>
-   </div>
-
-
-   <div id="page-wrap">
-<center> 
-  <h2>Lista de Productos</h2>
-</center>
-    <br></br>
-    <table id="tabla">
-      <thead>
-        <tr>
-          <th>Codigo</th>
-          <th>Descripcion</th>
-          <th>V. Costo</th>
-          <th>Venta 1</th>
-          <th>Venta 2</th>
-          <th>Venta 3</th>
-          <th>Venta 4</th>
-          <th>P. Utilidad</th>
-          <th>Medida</th>
-          <th>P. Descuento</th>
-          <th>Stock Min</th>
-          <th>Stock Max</th>
-          <th>F. Creacion</th>
-          <th>F. Modificacion</th>
-          <th>Existencia</th>
-          <th>Reserva</th>
-          <th>Observaciones</th>
-          <th>Modificar</th>
-          <th>Eliminar</th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-
-  <?php
-       require("php/lista_producto.php");
-     
-       foreach ($consulta as $registro) {
        
-        ?>
+       <select id="txtid_proveedor" title="Se requiere un Proveedor" required class="campos">          
+
+        <option value="" >Proveedor</option>
+
+        <?php
+        require("php/lista_proveedor.php");
+
+        foreach ($consulta as $registro) {
+
+         echo " <option value=".$registro['id_proveedor'].">".$registro['nit']."</option>";
+       }
+       ?>
+     </select> 
+     <br></br>   
+     <select id="txtid_medida" title="Se requiere una Medida" required class="campos">          
+
+        <option value="" >Medida</option>
+
+        <?php
+        require("php/lista_medida.php");
+
+        foreach ($consulta as $registro) {
+
+         echo " <option value=".$registro['id_medida'].">".$registro['descripcion']."</option>";
+       }
+       ?>
+     </select>   
+     <br></br>                   
+
+     <input type="text" title="Se requiere una descripcion" onkeydown="return validarLetras(event)" name="txtdescripcion" id="txtdescripcion" class="campos_edi" placeholder="Descripcion" required>
+     <br></br> 
+     <input name="txtvcosto" id="txtvcosto" title="Se requiere valor costo" onkeydown="return validarNumeros(event)" type="text" class="campos_edi" placeholder="Valor Costo" required>
+     <br></br> 
+     <input name="txtventa1" id="txtventa1" title="Se requiere Precio Venta 1" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 1" required>
+     <br></br> 
+     <input name="txtventa2" id="txtventa2" title="Se requiere Precio Venta 2" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 2" required>
+     <br></br> 
+     <input name="txtventa3" id="txtventa3" title="Se requiere Precio Venta 3" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 3" required>
+     <br></br> 
+     <input name="txtventa4" id="txtventa4" title="Se requiere Precio Venta 4" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 4" required>
+     <br></br> 
+     <input name="txtp_utilidad" id="txtp_utilidad" title="Se requiere Porcentaje de Utilidad" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Utilidad" required>
+     <br></br>
+     <input name="txtstock_min" id="txtstock_min" title="Se requiere Stock Minimo" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Stock Minimo" required>
+     <br></br>
+     <input name="txtstock_max" id="txtstock_max" title="Se requiere Stock Minimo" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Stock Maximo" required>
+     <br></br> 
+
+     <input name="txtexistencia" id="txtexistencia" title="Se requiere Cantidad de Producto" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Cantidad de Producto" required>
+     <br></br> 
+     <input name="txtp_descuento" id="txtp_descuento" title="Se requiere Porcentaje de Descuento" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Descuento" required>
+     <br></br> 
+     <input name="txtobservacion" id="txtobservacion" title="Se requiere las observaciones" class="campos_edi" placeholder="Observaciones" required>
+     <br></br>
+
+     <input type="button" id="btn" value="Guardar"  class="btn">
+     <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+
+   </form>
+ </div>
+
+
+ <div id="page-wrap">
+  <center> 
+    <h2>Lista de Productos</h2>
+  </center>
+  <br></br>
+  <table id="tabla">
+    <thead>
+      <tr>
+        <th>Codigo</th>
+        <th>Descripcion</th>
+        <th>V. Costo</th>
+        <th>Venta 1</th>
+        <th>Venta 2</th>
+        <th>Venta 3</th>
+        <th>Venta 4</th>
+        <th>P. Utilidad</th>
+        <th>Medida</th>
+        <th>P. Descuento</th>
+        <th>Stock Min</th>
+        <th>Stock Max</th>
+        <th>F. Creacion</th>
+        <th>F. Modificacion</th>
+        <th>Existencia</th>
+        <th>Reserva</th>
+        <th>Observaciones</th>
+        <th>Modificar</th>
+        <th>Eliminar</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <?php
+        require("php/lista_producto.php");
+        
+        foreach ($consulta as $registro) {
+         
+          ?>
           <tbody>
             <tr>
               <td class="codigo"><?php echo $registro["codigo"];?></td>
@@ -270,15 +285,15 @@
             </tr>
 
           </tbody>
-<?php
+          <?php
 
-}    
-?>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <br></br>
+        }    
+        ?>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br></br>
 </center>
 </div>
 </div>

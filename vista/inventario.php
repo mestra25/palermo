@@ -3,105 +3,199 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>DataSistemas</title>
+  <title>DataSistemas</title>
+  <link rel="stylesheet" href="css/tabla_productos.css">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet"> 
 
-    <!-- Custom CSS -->
-    <link href="css/business-casual.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/business-casual.css" rel="stylesheet">
 
-    <!-- Fonts -->
-    
+  <!-- Fonts -->
+  
 
 </head>
 
 <body>
 
-    <div class="brand" id="img"><a href=""><img src="img/logo.png"></a></div>
+  <div class="brand" id="img"><a href=""><img src="img/logo.png"></a></div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Data Sistemas</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <center>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="index.html">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="administrar.html">Administrar</a>
-                        </li>
-                        <li>
-                            <a href="usuarios.php">Usuarios</a>
-                        </li>
-                        <li>
-                            <a href="inventario.html">Inventario</a>
-                        </li>
-                        <li>
-                            <a href="clientes.php">Clientes</a>
-                        </li>
-                    </ul>
-                </div>
-            </center>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
+  <!-- Navigation -->
+  <nav class="navbar navbar-default" role="navigation">
     <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+        <a class="navbar-brand" href="index.html">Data Sistemas</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <center>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="index.html">Inicio</a>
+            </li>
+            <li>
+              <a href="administrar.html">Administrar</a>
+            </li>
+            <li>
+              <a href="usuarios.php">Usuarios</a>
+            </li>
+            <li>
+              <a href="inventario.php">Inventario</a>
+            </li>
+            <li>
+              <a href="clientes.php">Clientes</a>
+            </li>
+          </ul>
+        </div>
+      </center>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
 
-       <div class="contenido">
+  <div class="">
+
+   <div class="contenido">
+
+    <center><h2>Movimineto de Inventario</h2>
+
+      <br></br>
+      <select id="movimiento" onchange="mostrar()">
+
+        <option>Seleccione tipo de Movimiento</option>
+        <option value="entrada">Entrada</option>
+        <option value="salida">Salida</option>
         
-        <center><h2>Asignar nueva Tarea</h2>
+      </select>
 
-            <select id="usuario" onchange="mostrar()">
 
-                <option>Seleccione tipo de Usuario</option>
-                <option value="usuario">Usuario</option>
-                <option value="cliente">Cliente</option>
-                
-            </select>
-        </center>
-        
-        <select id="id_usuario" onchange="mostrar()">
+    </center>
 
-            <?php
-            require("/php/lista_usuario.php");
-            
-            foreach ($consulta as $registro) {
+    <!-- Formulario para Cliente  -->
 
-             echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
-         }
-         ?>
+    <form id="formulario_cliente" style="display:none;">
+      <h2>cliente</h2>
+      <select id="id_cliente"  onchange="mostrar()">
+
+        <?php
+        require("/php/lista_cliente.php");
+
+        foreach ($consulta as $registro) {
+
+         echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
+       }
+       ?>
 
      </select>
+   </form>
 
-     
-     <form id="formulario_cliente">
-        <h2>cliente</h2>
-    </form>
-    <form id="formulario_usuario">
-        <h2>usuaio</h2>
-    </form>
+   <!-- Formulario para Usuario  -->
+
+   <form id="formulario_usuario" style="display:none;">
+    <center>
+      <h2>usuario</h2>
+
+      <select id="id_usuario" onchange="mostrar()">
+
+        <?php
+        require("/php/lista_usuario.php");
+        
+        foreach ($consulta as $registro) {
+
+         echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
+       }
+
+       ?>
+
+     </select>
+   </center>
+   
+   <div id="tabla">
+     <div id="page-wrap">
+      <center> 
+        <h2>Lista de Productos</h2>
+      </center>
+      <input type="button" value="Buscar" class="btn" onclick="mostrar_buscar()" id="buscar" >
+
+      <input type="button" value="Cancelar" class="btn" id="cancelar" style="display:none" onclick="mostrar_boton_buscar()" >
+
+      <input type="input" placeholder="Codigo Producto a Buscar" class="campo" id="buscar_" style="display:none">
+      <br></br>
+
+      <table id="tabla">
+        <thead>
+          <tr>
+            <th> Reservar </th>
+            <th> Codigo </th>
+            <th> Descripcion </th>
+            <th> V. Costo </th>
+            <th> Venta 1 </th>
+            <th> Venta 2 </th>
+            <th> Venta 3 </th>
+            <th> Venta 4 </th>
+            <th> Medida </th>
+            <th> Stock Min </th>
+            <th> Stock Max </th>
+            <th> Existencia </th>
+            <th> Reserva </th>
+            <th> Observaciones </th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+
+            <?php
+            require("php/lista_producto.php");
+
+            foreach ($consulta as $registro) {
+
+              ?>
+              <tbody>
+                <td><a name="id_producto" href="php/inventario.php?id_producto=<?php echo $registro['id_producto']; ?>" onclick="reservar()"><img src="img/reserva.png"></a></td>
+                <td class="codigo"><?php echo $registro["codigo"];?></td>
+                <td><?php echo $registro["descripcion"];?></td>
+                <td><?php echo $registro["v_costo"];?></td>
+                <td><?php echo $registro["venta_1"];?></td>
+                <td><?php echo $registro["venta_2"];?></td>
+                <td><?php echo $registro["venta_3"];?></td>
+                <td><?php echo $registro["venta_4"];?></td>
+                <td><?php echo $registro["medida"];?></td>
+                <td><?php echo $registro["stock_min"];?></td>
+                <td><?php echo $registro["stock_max"];?></td>
+                <td><?php echo $registro["existencia"];?></td>
+                <td><?php echo $registro["reserva"];?></td>
+                <td><?php echo $registro["observacion"];?></td>
+
+              </tr>
+
+            </tbody>
+            <?php
+          }    
+          ?>
+        </tr>
+      </tbody>
+    </table>
+
+    <br></br> 
+  </div>
+</div>
+</form>
 
 </div>
 
@@ -109,14 +203,14 @@
 
 
 <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <p>Copyright &copy; Diego Narvaez - Maria Fernanda Mendoza 2014 </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <p>Copyright &copy; Diego Narvaez - Maria Fernanda Mendoza 2014 </p>
 
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </footer>
 
 <!-- jQuery Version 1.11.0 -->
@@ -129,9 +223,10 @@
 <script>
 $('.carousel').carousel({
         interval: 5000 //changes the speed
-    })
+      })
 </script>
 <script type="text/javascript" src="js/inventario.js"></script>
+<script type="text/javascript" src="js/buscar.js"></script>
 
 </body>
 

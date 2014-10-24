@@ -14,7 +14,7 @@ jQuery(document).ready(function() {
     var _stock_min= $("#txtstock_min").val();
     var _stock_max= $("#txtstock_max").val();
     var _existencia= $("#txtexistencia").val();
-    var _medida= $("#txtmedida").val();
+    var _medida= $("#txtid_medida").val();
     var _p_descuento= $("#txtp_descuento").val();
     var _observacion= $("#txtobservacion").val();
     var d = new Date(); 
