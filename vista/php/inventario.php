@@ -88,30 +88,16 @@
         <br></br>
         <form>
 
-          <select id="txtid_medida" title="Se requiere una Medida" required class="campos">          
-
-            <option value="" >Medida</option>
-
-            <?php
-            require("tem_2.php");
-
-            foreach ($consulta as $registro) {
-
-             echo " <option value=".$registro['id_medida'].">".$registro['descripcion']."</option>";
-           }
-           ?>
-         </select>  
          <?php
 
          require("tem.php");
 
          ?>
-
+        <br></br> 
+         <p>Medida:  <input type="text" name="txtmedida" class="campos_edi" id="txtmedida" value="<?php echo $registro_4['descripcion']?>" readonly></p>
          <br></br> 
          <p>Existencia:  <input type="text" name="txtexistencia" class="campos_edi" id="txtexistencia" value="<?php echo $registro['existencia']?>" readonly></p>
          <br></br> 
-         <p>Impuesto:  <input type="text" name="txtimpuesto" id="txtimpuesto" value="" class="campos_edi"></p>
-         <br></br>
          <p>Cantidad:  <input type="text" name="txtcantidad" id="txtcantidad" value="" class="campos_edi"></p>
          <br></br>
          <p>Reserva:  <input type="text" name="txtreserva" id="txtreserva" class="campos_edi" value="<?php echo $registro['reserva']?>" readonly></p>

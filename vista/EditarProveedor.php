@@ -47,7 +47,7 @@ require_once("../modelo/conexion.php");
         <form id="EditarProveedor" >
           <div>
         <label for="name">NIt de Proveedor</label>
-        <input type="text" name="nit" id="txtnit" value="<?php echo $row['nit'];?>" class="text ui-widget-content ui-corner-all">
+        <input type="text" name="nit" id="txtnit" value="<?php echo $row['nit'];?>" class="text ui-widget-content ui-corner-all" readonly>
         <br></br>
         <label for="email">Direccion</label>
         <input type="text" name="email" id="txtdireccion" value="<?php echo $row["direccion"];?>" class="text ui-widget-content ui-corner-all">

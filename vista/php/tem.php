@@ -9,6 +9,7 @@ foreach ($consulta as $registro) {
 	$id_cat=$registro['id_categoria'];
 	$id_sub=$registro['id_subcategoria'];
 	$id_prove=$registro['id_proveedor'];
+	$id_med=$registro['medida'];
 }
 $consulta_1 = $conexion->prepare('SELECT * FROM categoria where id_categoria="'.$id_cat.'"');
 $consulta_1->execute();
@@ -25,5 +26,9 @@ $consulta_3->execute();
 $registro_3 = $consulta_3;
 foreach ($consulta_3 as $registro_3) {
 }
-
+$consulta_4 = $conexion->prepare('SELECT * FROM medida where id_medida="'.$id_med.'"');
+$consulta_4->execute();
+$registro_4 = $consulta_4;
+foreach ($consulta_4 as $registro_4) {
+}
 ?>
