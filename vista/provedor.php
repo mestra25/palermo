@@ -199,7 +199,7 @@
                  <td><?php echo $registro["cedRep"];?></td>
                  <td><?php echo $registro["celRep"];?></td>
                  <td><a  href="editarProveedor.php?nit=<?php echo $registro["nit"];?>" ><img src="img/editar.png"></a></td>
-                 <td><a  src="img/delete.png"><img src="img/delete.png"></a></td>
+                 <td><a    href="../controladores/proveedor.php?action=Eliminar&nit=<?php echo $registro["nit"];?>"><img src="img/delete.png"></a></td>
 
              </tr>
 

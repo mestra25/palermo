@@ -20,7 +20,7 @@ class proveedorDao {
             $consulta->bindParam(':cedRep', $Objproveedor->getCedrep());
             $consulta->bindParam(':celRep', $Objproveedor->getCelrep());
             
-if ($consulta) {
+if ($consulta->execute()) {
      echo "<script language='javascript'>"; 
      echo "function CustomAlert(){
       this.render = function(dialog){
