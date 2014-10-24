@@ -3,7 +3,7 @@
   require_once("../Modelo/DAO/ProveedorDAO.php");
 
    $objproveedor = new proveedor();
-   $ProveedorDao = new proveedorDao;
+   $ProveedorDao = new proveedorDao();
 
    if ($_GET['action'] =='Guardar'){
     
@@ -53,7 +53,7 @@ if ($_GET['action'] == 'Editar'){
 
     $objproveedor->setNit($_GET['nit']);
     
-   $ProveedorDao->modificar($objproveedor);
+   $ProveedorDao->eliminar($objproveedor);
 
 
 
