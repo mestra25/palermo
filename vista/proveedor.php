@@ -196,8 +196,9 @@
                        <td><?php echo $registro["cedRep"];?></td>
                        <td><?php echo $registro["celRep"];?></td>
                        <td><a  href="editarProveedor.php?nit=<?php echo $registro["nit"];?>" ><img src="img/editar.png"></a></td>
-                       <td><a  href="../controladores/proveedor.php?action=Eliminar&nit=<?php echo $registro["nit"];?>"><img src="img/delete.png"></td>
-
+                       <td><a  href="../controladores/proveedor.php?action=Eliminar&nit=<?php echo $registro["nit"];?>" onclick="return confirm('Desea eliminar el articulo?');" ><img src="img/delete.png"></td>
+                    
+     </td>
                    </tr>
 
                </tbody>

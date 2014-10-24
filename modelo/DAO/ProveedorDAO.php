@@ -44,71 +44,6 @@ if ($consulta->execute()) {
     var Alert = new CustomAlert();
 
     Alert.render('Datos Guardados Satisfactoriamente');
-    var pagina='../vista/provedor.php';
-    location.href=pagina;
-    "; 
-    echo "</script>";  
-  }else{
-   echo "<script language='javascript'>"; 
-   echo "function CustomAlert(){
-    this.render = function(dialog){
-      var winW = window.innerWidth;
-      var winH = window.innerHeight;
-      var dialogoverlay = document.getElementById('dialogoverlay');
-      var dialogbox = document.getElementById('dialogbox');
-      dialogoverlay.style.display = 'block';
-      dialogoverlay.style.height = winH+'px';
-      dialogbox.style.left = (winW/2) - (550 * .5)+'px';
-      dialogbox.style.top = '100px';
-      dialogbox.style.display = 'block';
-      document.getElementById('dialogboxhead').innerHTML = 'Proveedor';
-      document.getElementById('dialogboxbody').innerHTML = dialog;
-    }
-    this.ok = function(){
-      document.getElementById('dialogbox').style.display = 'none';
-      document.getElementById('dialogoverlay').style.display = 'none';
-    }
-  }
-  var Alert = new CustomAlert();
-
-  Alert.render('Error al Guardar los Datos');
-  var pagina='../vista/provedor.php';
-  location.href=pagina;
-  "; 
-  echo "</script>";  
-}
-            $conexion = null;
-    }
-
-    function eliminar($Objproveedor) {
-        $conexion = new Conexion();
-        $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE nit = :nit');
-        $consulta->bindParam(':nit', $Objproveedor->getnit());
-        
-        if ($consulta->execute()) {
-     echo "<script language='javascript'>"; 
-     echo "function CustomAlert(){
-      this.render = function(dialog){
-        var winW = window.innerWidth;
-        var winH = window.innerHeight;
-        var dialogoverlay = document.getElementById('dialogoverlay');
-        var dialogbox = document.getElementById('dialogbox');
-        dialogoverlay.style.display = 'block';
-        dialogoverlay.style.height = winH+'px';
-        dialogbox.style.left = (winW/2) - (550 * .5)+'px';
-        dialogbox.style.top = '100px';
-        dialogbox.style.display = 'block';
-        document.getElementById('dialogboxhead').innerHTML = 'Proveedor';
-        document.getElementById('dialogboxbody').innerHTML = dialog;
-      }
-      this.ok = function(){
-        document.getElementById('dialogbox').style.display = 'none';
-        document.getElementById('dialogoverlay').style.display = 'none';
-      }
-    }
-    var Alert = new CustomAlert();
-
-    Alert.render('Datos Guardados Satisfactoriamente');
     var pagina='../vista/proveedor.php';
     location.href=pagina;
     "; 
@@ -145,6 +80,31 @@ if ($consulta->execute()) {
             $conexion = null;
     }
 
+    function eliminar($Objproveedor) {
+        $conexion = new Conexion();
+        $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE nit = :nit');
+        $consulta->bindParam(':nit', $Objproveedor->getnit());
+        
+        if ($consulta->execute())
+            {
+              echo " 
+                <script language='JavaScript'> 
+                alert('Registro Eliminado correctamente.'); 
+                window.location='../vista/proveedor.php'
+                </script>";
+            }else{
+               echo " 
+                <script language='JavaScript'> 
+                alert('Error al eliminar el registro.'); 
+                window.location='../vista/proveedor.php'
+                </script>";
+            }
+              $consulta->execute();
+      
+      $conexion = null;
+      
+    }
+
     function modificar($Objproveedor){
       
   
@@ -166,11 +126,13 @@ if ($consulta->execute()) {
               echo " 
                 <script language='JavaScript'> 
                 alert('Registro modificado correctamente.'); 
+                window.location='../vista/proveedor.php'
                 </script>";
             }else{
                echo " 
                 <script language='JavaScript'> 
                 alert('Error al modificar el registro.'); 
+                window.location='../vista/proveedor.php'
                 </script>";
             }
               $consulta->execute();
