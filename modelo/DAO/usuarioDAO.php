@@ -42,7 +42,7 @@ class usuarioDAO {
     var Alert = new CustomAlert();
 
     Alert.render('Datos Guardados Satisfactoriamente');
-    var pagina='../vista/usuario.php';
+    var pagina='../vista/usuarios.php';
     location.href=pagina;
     "; 
     echo "</script>";  
@@ -70,7 +70,7 @@ class usuarioDAO {
   var Alert = new CustomAlert();
 
   Alert.render('Error al Guardar los Datos');
-  var pagina='../vista/usuario.php';
+  var pagina='../vista/usuarios.php';
   location.href=pagina;
   "; 
   echo "</script>";  
