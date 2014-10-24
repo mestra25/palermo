@@ -57,7 +57,7 @@ class productoDao {
     var Alert = new CustomAlert();
 
     Alert.render('Datos Guardados Satisfactoriamente');
-    var pagina='../vista/producto.php';
+    var pagina='../vista/productos.php';
     location.href=pagina;
     "; 
     echo "</script>";  
@@ -85,7 +85,7 @@ class productoDao {
   var Alert = new CustomAlert();
 
   Alert.render('Error al Guardar los Datos');
-  var pagina='../vista/producto.php';
+  var pagina='../vista/productos.php';
   location.href=pagina;
   "; 
   echo "</script>";  

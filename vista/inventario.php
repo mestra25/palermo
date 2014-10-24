@@ -10,7 +10,7 @@
   <meta name="author" content="">
 
   <title>DataSistemas</title>
-  <link rel="stylesheet" href="css/tabla_productos.css">
+  <link rel="stylesheet" href="css/tabla_inventario.css">
 
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet"> 
@@ -19,7 +19,7 @@
   <link href="css/business-casual.css" rel="stylesheet">
 
   <!-- Fonts -->
-  
+
 
 </head>
 
@@ -80,9 +80,9 @@
         <option>Seleccione tipo de Movimiento</option>
         <option value="entrada">Entrada</option>
         <option value="salida">Salida</option>
-        
-      </select>
 
+      </select>
+<br></br>
 
     </center>
 
@@ -110,11 +110,11 @@
     <center>
       <h2>usuario</h2>
 
-      <select id="id_usuario" onchange="mostrar()">
+        <select id="id_usuario" onchange="mostrar()">
 
         <?php
         require("/php/lista_usuario.php");
-        
+
         foreach ($consulta as $registro) {
 
          echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
@@ -124,7 +124,7 @@
 
      </select>
    </center>
-   
+
    <div id="tabla">
      <div id="page-wrap">
       <center> 
@@ -149,8 +149,6 @@
             <th> Venta 3 </th>
             <th> Venta 4 </th>
             <th> Medida </th>
-            <th> Stock Min </th>
-            <th> Stock Max </th>
             <th> Existencia </th>
             <th> Reserva </th>
             <th> Observaciones </th>
@@ -167,6 +165,7 @@
 
               ?>
               <tbody>
+                <tr>
                 <td><a name="id_producto" href="php/inventario.php?id_producto=<?php echo $registro['id_producto']; ?>" onclick="reservar()"><img src="img/reserva.png"></a></td>
                 <td class="codigo"><?php echo $registro["codigo"];?></td>
                 <td><?php echo $registro["descripcion"];?></td>
@@ -176,8 +175,6 @@
                 <td><?php echo $registro["venta_3"];?></td>
                 <td><?php echo $registro["venta_4"];?></td>
                 <td><?php echo $registro["medida"];?></td>
-                <td><?php echo $registro["stock_min"];?></td>
-                <td><?php echo $registro["stock_max"];?></td>
                 <td><?php echo $registro["existencia"];?></td>
                 <td><?php echo $registro["reserva"];?></td>
                 <td><?php echo $registro["observacion"];?></td>
@@ -191,7 +188,6 @@
         </tr>
       </tbody>
     </table>
-
     <br></br> 
   </div>
 </div>
