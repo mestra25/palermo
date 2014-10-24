@@ -3,7 +3,7 @@
   require_once("../Modelo/DAO/ProductoDAO.php");
 
    $objproducto = new producto();
-   $productoDao = new ProductoDao;
+   $productoDao = new ProductoDAO;
     
 	$objproducto->setIdCategoria($_POST['id_categoria']);
     $objproducto->setIdSubcategoria($_POST['id_subcategoria']);

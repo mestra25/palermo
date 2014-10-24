@@ -49,6 +49,9 @@ require_once("../modelo/conexion.php");
         <label for="name">NIt de Proveedor</label>
         <input type="text" name="nit" id="txtnit" value="<?php echo $row['nit'];?>" class="text ui-widget-content ui-corner-all" readonly>
         <br></br>
+        <label for="name">Nombre Proveedor</label>
+        <input type="text" name="nombre_empresa" id="txtnombre_empresa" value="<?php echo $row['nombre_empresa'];?>" class="text ui-widget-content ui-corner-all">
+        <br></br>
         <label for="email">Direccion</label>
         <input type="text" name="email" id="txtdireccion" value="<?php echo $row["direccion"];?>" class="text ui-widget-content ui-corner-all">
         <br></br>

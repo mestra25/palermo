@@ -4,6 +4,7 @@ class proveedor {
 
     private $idproveedor;
     private $nit;
+    private $nombre_empresa;
     private $direccion;
     private $telefono;
     private $email;
@@ -15,6 +16,7 @@ class proveedor {
 function __construct() {
     
     $this->nit="";
+    $this->nombre_empresa="";
     $this->direccion="";
     $this->telefono=0;
     $this->email="";
@@ -29,6 +31,9 @@ function __construct() {
 
 function setNit($nit){
 $this->nit= $nit;
+}
+function setNombreEmpresa($nombre_empresa){
+$this->nombre_empresa= $nombre_empresa;
 }
 function setDireccion($direccion){
 $this->direccion= $direccion;
@@ -62,6 +67,9 @@ function getIdproveedor(){
 return $this->idproveedor;
 }
 
+function getNombreEmpresa(){
+return $this->nombre_empresa;
+}
 function getNit(){
 return $this->nit;
 }

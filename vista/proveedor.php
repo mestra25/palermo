@@ -127,6 +127,8 @@
 
                     <input name="txtnit" id="txtnit" title="Se requiere Nit de la empresa" class="campos_edi" placeholder="Nit" required>
                     <br></br> 
+                    <input name="txtnombre_empresa" id="txtnombre_empresa" title="Se requiere Nombre de la empresa" class="campos_edi" placeholder="Nombre de la Empresa" required>
+                    <br></br>
                     <input name="txtdireccion" id="txtdireccion" title="Se requiere direccion" class="campos_edi" placeholder="Direccion" required>
                     <br></br> 
                     <input name"txttelefono" id="txttelefono" title="Se requiere telefono" onkeydown="" type="text" class="campos_edi" placeholder="Telefono" required>
@@ -163,6 +165,7 @@
                     <thead>
                       <tr>
                          <th>Nit</th>
+                         <th>Nombre Proveedor</th>
                          <th>Direccion</th>
                          <th>Telefono</th>
                          <th>E-mail</th>
@@ -187,6 +190,7 @@
                     <tbody>
                       <tr>
                        <td class="codigo"><?php echo $registro["nit"];?></td>
+                       <td><?php echo $registro["nombre_empresa"];?></td>
                        <td><?php echo $registro["direccion"];?></td>
                        <td><?php echo $registro["telefono"];?></td>
                        <td><?php echo $registro["email"];?></td>
@@ -209,6 +213,7 @@
 ?>
            </tr>
        </tbody>
+
    </table>
 
 </div>
