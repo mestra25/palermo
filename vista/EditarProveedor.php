@@ -23,17 +23,74 @@ require_once("../modelo/conexion.php");
     }
   }
  ?>
+
  <!DOCTYPE html>
 <html lang="en">
     <head>
       <meta charset="UTF-8" />
         <title>Editar Proveedor</title>
+         <link href="css/bootstrap.min.css" rel="stylesheet"> 
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+     <link rel="stylesheet" href="css/tabla_proveedor.css">
+     <link rel="stylesheet" href="css/jquery-ui-1.11.2.css">
+    <!-- Fonts -->
+     <link rel="stylesheet" href="css/jquery-ui.css">
         <meta http-equiv="X-UA-Compatible" content="IE=9,crome" />
         <script src="js/jquery-1.11.0.js"  type="text/javascript"></script>
-     <script src="js/jquery-ui-1.10.2.js"  type="text/javascript"></script>
-     <script src="js/jquery-ui-1.11.2.js"  type="text/javascript"></script>
+     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  
     <script src="js/formulario_proveedor.js"  type="text/javascript"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
    
+ <script type="text/javascript">
+  
+  $(document).ready(function(){
+    $( "#dialog" ).dialog({
+        width :  600 , 
+        height :  700 , 
+        modal :  true });
+    
+  });
+</script>
+<style>
+/*para cambiar el fondo del cuadro de diálogo*/
+
+.ui-dialog
+{
+background: #000000;}
+
+/*Para cambiar el contenido del cuadro de diálogo, tamaño de fuente, color de fuente, ...*/
+
+.ui-dialog .ui-widget-content
+
+{
+
+color: #FFFFFF;
+
+font-family: arial;
+
+}
+
+.ui-dialog .ui-widget-header
+{background: #005533;}
+
+.ui-dialog .ui-dialog-titlebar
+
+{
+
+color: #FFFFFF;
+
+font-family: arial;
+
+}</style>
+
+ 
 
    
   <?php
@@ -42,9 +99,9 @@ require_once("../modelo/conexion.php");
       echo $result;
     else :
   ?>
-    <fieldset style="width:480px"   >
-        <legend>Editar Empleado</legend>
-        <form id="EditarProveedor" >
+    
+        <form id="dialog"  width ="100px" 
+        height="300px" >
           <div>
         <label for="name">NIt de Proveedor</label>
         <input type="text" name="nit" id="txtnit" value="<?php echo $row['nit'];?>" class="text ui-widget-content ui-corner-all" readonly>
@@ -83,9 +140,8 @@ require_once("../modelo/conexion.php");
         </form>
       </fieldset>
 
-      <p><a href="phpParameters-05.php">&lt;&lt; Regresar</a></p>
+      
     <?php endif;?>
     <body>
 </html>
  
-  

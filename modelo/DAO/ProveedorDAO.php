@@ -88,11 +88,30 @@ if ($consulta->execute()) {
         
         if ($consulta->execute())
             {
-              echo " 
-                <script language='JavaScript'> 
-                alert('Registro Eliminado correctamente.'); 
-                window.location='../vista/proveedor.php'
-                </script>";
+
+              echo " <html>
+<head> <title>HTML con PHP – aprenderaprogramar.com</title><style type="text/css">
+ .exito{
+       font-family:Arial, Helvetica, sans-serif; 
+       font-size:13px;
+       border: 1px solid;
+       margin: 10px 0px;
+       padding:15px 10px 15px 50px;
+       background-repeat: no-repeat;
+       background-position: 10px center;
+       position:relative;
+}
+
+.exito {
+       color: #4F8A10;
+       background-color: #DFF2BF;
+       background-image:url('exito.png');
+}
+
+</style> </head>
+<body> <div class='exito'>Mensaje de Ã©xito de la operaciÃ³n realizada</div> </body>
+</html>
+                ";
             }else{
                echo " 
                 <script language='JavaScript'> 
@@ -136,6 +155,7 @@ if ($consulta->execute()) {
                 alert('Error al modificar el registro.'); 
                 window.location='../vista/proveedor.php'
                 </script>";
+              
             }
               $consulta->execute();
       
