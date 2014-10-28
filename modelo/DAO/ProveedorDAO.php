@@ -90,7 +90,7 @@ if ($consulta->execute()) {
             {
 
               echo " <html>
-<head> <title>HTML con PHP – aprenderaprogramar.com</title><style type="text/css">
+<head> <title>HTML con PHP – aprenderaprogramar.com</title><style type='text/css'>
  .exito{
        font-family:Arial, Helvetica, sans-serif; 
        font-size:13px;
