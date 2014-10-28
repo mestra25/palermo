@@ -123,19 +123,34 @@ class productoDao {
       
     }
 function reservar($Objproducto){
-      
-      $conexion = new conexion();
+
+
+    $conexion = new conexion();
+
+          
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET reserva = :reserva WHERE id_producto = :id_producto');
       $consulta->bindParam(':reserva', $Objproducto->getReserva());
       $consulta->bindParam(':id_producto', $Objproducto->getIdProducto());
-      $consulta->execute();
+      if($consulta->execute()){
 
-      $conexion = null;
+     
       echo " 
                 <script language='JavaScript'> 
-                alert('Registro modificado correctamente.'); 
-                window.location='../vista/producto.php'
+                alert('Registro Reservado correctamente.'); 
+                window.location='../vista/productos.php'
                 </script>";
+              
+            }else{
+ 
+      echo " 
+                <script language='JavaScript'> 
+                alert('vales copa'); 
+                window.location='../vista/productos.php'
+                </script>";
+
+}
+            
+                 $conexion = null;
     }
 
     function buscar($Cedula){
