@@ -74,7 +74,7 @@
                         <a href="usuarios.php">Usuarios</a>
                     </li>
                     <li>
-                        <a href="inventario.html">Inventario</a>
+                        <a href="inventario.php">Inventario</a>
                     </li>
                     <li>
                                 <a href="clientes.php">Clientes</a>
@@ -145,12 +145,9 @@
                     <br></br>
                     <input name="txtreplegal" id="txtreplegal" title="Se requiere nombre representante legal" class="campos_edi" placeholder="Representante Legal" required>
                     <br></br>
-                    
                     <input  name="txtcedrep" id ="txtcedrep"title="Se requiere cedula representante legal" class="campos_edi" placeholder="Cedula Representante" required>
                      <br></br>
-
                     <input name="txtcelrep" id="txtcelrep" title="Se requiere celular representante legal" class="campos_edi" placeholder="Representante Legal" required>
-                   
                     <br></br>
                 
                     <input type="button" name="btnguardar" value="Guardar"  id="btn" class="btn">

@@ -3,8 +3,10 @@
   require_once("../Modelo/DAO/ProductoDAO.php");
 
    $objproducto = new producto();
-   $productoDao = new ProductoDAO;
-    
+   $productoDao = new ProductoDao;
+
+    if ($_GET['action'] =='Guardar'){
+
 	$objproducto->setIdCategoria($_POST['id_categoria']);
     $objproducto->setIdSubcategoria($_POST['id_subcategoria']);
     $objproducto->setIdproveedor($_POST['id_proveedor']);
@@ -26,5 +28,15 @@
     $objproducto->setModificado($_POST['fmodificado']);
 
     $productoDao->guardar($objproducto);
+}
+
+
+if ($_GET['action'] =='Reservar'){
+
+    $objproducto->setIdProducto($_POST['id_producto']);
+    $objproducto->setReserva($_POST['reserva']);
+
+$productoDao->reservar($objproducto);
+}
 
 ?>

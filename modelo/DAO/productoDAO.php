@@ -122,6 +122,21 @@ class productoDao {
         $conexion = null;
       
     }
+function reservar($Objproducto){
+      
+      $conexion = new conexion();
+      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET reserva = :reserva WHERE id_producto = :id_producto');
+      $consulta->bindParam(':reserva', $Objproducto->getReserva());
+      $consulta->bindParam(':id_producto', $Objproducto->getIdProducto());
+      $consulta->execute();
+
+      $conexion = null;
+      echo " 
+                <script language='JavaScript'> 
+                alert('Registro modificado correctamente.'); 
+                window.location='../vista/producto.php'
+                </script>";
+    }
 
     function buscar($Cedula){
       $conexion = new conexion();

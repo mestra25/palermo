@@ -90,7 +90,7 @@
                 <a href="subcategoria.php">Subcategoria</a>
             </li>
             <li>
-                <a href="provedor.php">Proveedor</a>
+                <a href="proveedor.php">Proveedor</a>
             </li>
             <li>
                 <a href="medida.php">Medida</a>

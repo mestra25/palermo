@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
     var _fcreado=$fecha;
     var _fmodificado=$fecha;
     var parametros={ id_categoria : _id_categoria , id_subcategoria: _id_subcategoria , id_proveedor : _id_proveedor , codigo:_codigo, descripcion :_descripcion , v_costo : _v_costo , venta_1: _venta_1 ,venta_2 :_venta_2 , venta_3:_venta_3 , venta_4:_venta_4 ,p_utilidad:_p_utilidad , stock_min:_stock_min, stock_max : _stock_max, existencia:_existencia, medida : _medida, p_descuento : _p_descuento, observacion : _observacion,fcreado:_fcreado,fmodificado:_fmodificado };
-    var archivo='../controladores/producto.php';
+    var archivo='../controladores/producto.php?action=Guardar';
     $.ajax({
       type :"POST",
       url : archivo,
@@ -32,36 +32,8 @@ jQuery(document).ready(function() {
       }
     });
 
-function CustomAlert(){
-  this.render = function(dialog){
-    var winW = window.innerWidth;
-      var winH = window.innerHeight;
-    var dialogoverlay = document.getElementById('dialogoverlay');
-      var dialogbox = document.getElementById('dialogbox');
-    dialogoverlay.style.display = "block";
-      dialogoverlay.style.height = winH+"px";
-    dialogbox.style.left = (winW/2) - (550 * .5)+"px";
-      dialogbox.style.top = "100px";
-      dialogbox.style.display = "block";
-    document.getElementById('dialogboxhead').innerHTML = "Productos";
-      document.getElementById('dialogboxbody').innerHTML = dialog;
-  }
-  this.ok = function(){
-    document.getElementById('dialogbox').style.display = "none";
-    document.getElementById('dialogoverlay').style.display = "none";
-  }
-}
-var Alert = new CustomAlert();
-
-Alert.render("Datos Guardados Satisfactoriamente");
-var pagina="../vista/productos.php";
-location.href=pagina;
 
   });
-  
-
-
-
 
 
 });
