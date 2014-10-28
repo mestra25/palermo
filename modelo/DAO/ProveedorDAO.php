@@ -113,6 +113,7 @@ if ($consulta->execute()) {
       contac = :contac , replegal = :replegal , cedRep = :cedRep , celRep = :celRep WHERE nit = :nit');
       $consulta->bindParam(':nit', $Objproveedor->getnit());
             $consulta->bindParam(':direccion', $Objproveedor->getDireccion());
+            $consulta->bindParam(':nombre_empresa', $Objproveedor->getNombreEmpresa());
             $consulta->bindParam(':telefono', $Objproveedor->getTelefono());
             $consulta->bindParam(':email', $Objproveedor->getEmail());
             $consulta->bindParam(':web', $Objproveedor->getWeb());
