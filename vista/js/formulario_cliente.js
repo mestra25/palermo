@@ -11,7 +11,7 @@ jQuery(document).ready(function() {
     
 
      var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email};
-     var archivo='../controladores/cliente.php';
+     var archivo='../controladores/cliente.php?action=Guardar';
    
 
      $.ajax({
@@ -22,34 +22,35 @@ jQuery(document).ready(function() {
         $("#respuesta").html(datos);
       }
     });
+     });
 
 
-function CustomAlert(){
-  this.render = function(dialog){
-    var winW = window.innerWidth;
-      var winH = window.innerHeight;
-    var dialogoverlay = document.getElementById('dialogoverlay');
-      var dialogbox = document.getElementById('dialogbox');
-    dialogoverlay.style.display = "block";
-      dialogoverlay.style.height = winH+"px";
-    dialogbox.style.left = (winW/2) - (550 * .5)+"px";
-      dialogbox.style.top = "100px";
-      dialogbox.style.display = "block";
-    document.getElementById('dialogboxhead').innerHTML = "Cliente";
-      document.getElementById('dialogboxbody').innerHTML = dialog;
-  }
-  this.ok = function(){
-    document.getElementById('dialogbox').style.display = "none";
-    document.getElementById('dialogoverlay').style.display = "none";
-  }
-}
-var Alert = new CustomAlert();
+$(".btneditar").click(function  () {
+      
+       var _cedula=$("#txtcedula").val();
+     var _nombre= $("#txtnombre").val();
+     var _apellido=$("#txtapellido").val();
+     var _celular=$("#txtcelular").val();
+     var _direccion= $("#txtdireccion").val();
+     var _email= $("#txtemail").val();
+    
 
-Alert.render("Datos Guardados Satisfactoriamente");
-var pagina="../vista/clientes.php";
-location.href=pagina;
+     var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email};
+     var archivo='../controladores/cliente.php?action=Editar';
+   
 
-
+     $.ajax({
+      type :"POST",
+      url : archivo,
+      data :parametros,
+      success : function( datos){
+        $("#respuesta").html(datos);
+      }
+    });
+   
+ 
+  
+    
     });
 
 });

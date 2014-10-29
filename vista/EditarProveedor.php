@@ -48,47 +48,7 @@ require_once("../modelo/conexion.php");
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
    
- <script type="text/javascript">
-  
-  $(document).ready(function(){
-    $( "#dialog" ).dialog({
-        width :  600 , 
-        height :  700 , 
-        modal :  true });
-    
-  });
-</script>
-<style>
-/*para cambiar el fondo del cuadro de diálogo*/
-
-.ui-dialog
-{
-background: #000000;}
-
-/*Para cambiar el contenido del cuadro de diálogo, tamaño de fuente, color de fuente, ...*/
-
-.ui-dialog .ui-widget-content
-
-{
-
-color: #FFFFFF;
-
-font-family: arial;
-
-}
-
-.ui-dialog .ui-widget-header
-{background: #005533;}
-
-.ui-dialog .ui-dialog-titlebar
-
-{
-
-color: #FFFFFF;
-
-font-family: arial;
-
-}</style>
+ 
 
  
 

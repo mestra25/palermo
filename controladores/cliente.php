@@ -3,8 +3,12 @@
   require_once("../modelo/DAO/clienteDAO.php");
 
    $objcliente = new cliente();
-   $clienteDAO = new clienteDAO;
+   $clienteDAO = new clienteDAO();
 	
+    
+ if ($_GET['action'] =='Guardar'){
+    
+  
     $objcliente->setcedula($_POST['cedula']);
     $objcliente->setnombre($_POST['nombre']);
     $objcliente->setapellido($_POST['apellido']);
@@ -14,5 +18,22 @@
 
 
     $clienteDAO->guardar($objcliente);
+
+}
+
+ if ($_GET['action'] =='Editar'){
+    
+  
+    $objcliente->setcedula($_POST['cedula']);
+    $objcliente->setnombre($_POST['nombre']);
+    $objcliente->setapellido($_POST['apellido']);
+    $objcliente->setcelular($_POST['celular']);
+    $objcliente->setdireccion($_POST['direccion']);
+    $objcliente->setemail($_POST['email']);
+
+
+    $clienteDAO->Editar($objcliente);
+
+}
 
 ?>
