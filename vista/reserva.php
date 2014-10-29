@@ -22,7 +22,7 @@
   <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/tabla_productos.css">
   <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
-  <script src="js/formulario_inventario.js"  type="text/javascript"></script>
+  <script src="js/formulario_rol_usuario.js"  type="text/javascript"></script>
 
 </head>
 
@@ -86,12 +86,30 @@
         <br></br> 
         <h2>Realizar Movimiento</h2>
         <form>
+<center>
+      <h2>usuario</h2>
 
+      <select id="txtid_usuario" onchange="mostrar()">
+       <option>Seleccione Usuario</option>
+
+       <?php
+       require("/php/lista_usuario.php");
+
+       foreach ($consulta as $registro) {
+
+         echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
+       }
+
+       ?>
+
+     </select>
+   </center>
          <?php
 
          require("php/tem.php");
 
          ?>
+         <input hidden type="text" name="txtidproducto" class="campos_edi" id="txtidproducto" value="<?php echo $registro['id_producto']?>" readonly>
          <input hidden type="text" name="txtidproducto" class="campos_edi" id="txtidproducto" value="<?php echo $registro['id_producto']?>" readonly>
          <p>Cantidad:  <input type="text" name="txtreservar" id="txtreservar" class="campos_edi"></p>
          <p>Medida:  <input type="text" name="txtmedida" class="campos_edi" id="txtmedida" value="<?php echo $registro_4['descripcion']?>" readonly></p>

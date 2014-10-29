@@ -210,6 +210,12 @@ footer p {
 
 .btn{
     margin: 10px;
+
+}
+
+.btn:hover{
+    background: gray;
+    color: white;
 }
 
 .campos{
@@ -254,10 +260,20 @@ text-decoration: none;
     border-radius: 20px;
     margin-left: 50px;
 }
+
 .campo{
     border-radius: 20px;
     padding: 10px;
     width: 215px;
+}
+
+.btn-conf{
+    background: lightgray;
+    margin: 6px 0px 6px 0px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: black;
+
 }
 
 #buscar{
@@ -268,10 +284,6 @@ text-decoration: none;
 }
 #page-wrap{
     overflow: auto;
-    width: 
-    
-    
-    ;
 }
 
 th, td { white-space: nowrap; }
