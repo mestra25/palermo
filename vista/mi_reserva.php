@@ -80,37 +80,58 @@
 
           <input type="input" placeholder="Codigo Producto a Buscar" class="campo" id="buscar_" style="display:none">
           <br></br>
+          <form method="POST" action="mi_reserva.php"></form>
+<center>
+      <h2>usuario</h2>
 
+      <select id="txtusuario" onchange="mostrar()">
+       <option>Seleccione Usuario</option>
+
+       <?php
+       require("/php/lista_usuario.php");
+
+       foreach ($consulta as $registro) {
+
+         echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
+       }
+
+       ?>
+
+     </select>
+   </center>
           <table id="tabla">
             <thead>
               <tr>
-                <th> Reservar </th>
                 <th> Codigo </th>
                 <th> Descripcion </th>
                 <th> Medida </th>
                 <th> Existencia </th>
                 <th> Reserva </th>
                 <th> Observaciones </th>
+                <th> Estado </th>
               </tr>
             </thead>
             <tbody>
               <tr>
 
                 <?php
-                require("php/lista_producto.php");
+
+                require("php/l_reserva.php");
 
                 foreach ($consulta as $registro) {
-       
+                  $id_producto=$registro['codigo'];
+                  require("php/l_producto.php");
                   ?>
                   <tbody>
                     <tr>
-                      <td><a name="id_producto" href="reserva.php?id_producto=<?php echo $registro['id_producto']; ?>" onclick="reservar()"><img src="img/reserva.png"></a></td>
                       <td class="codigo"><?php echo $registro["codigo"];?></td>
-                      <td><?php echo $registro["descripcion"];?></td>
-                      <td><?php echo $registro["medida"];?></td>
-                      <td><?php echo $registro["existencia"];?></td>
-                      <td><?php echo $registro["reserva"];?></td>
-                      <td><?php echo $registro["observacion"];?></td>
+                      <td><?php echo $registro_1["descripcion"];?></td>
+                      <td><?php echo $registro_1["medida"];?></td>
+                      <td><?php echo $registro_1["existencia"];?></td>
+                      <td><?php echo $registro_1["reserva"];?></td>
+                      <td><?php echo $registro_1["observacion"];?></td>
+                      <td><?php echo $registro["estado"];?></td>
+
                     </tr>
 
                   </tbody>

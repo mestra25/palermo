@@ -49,7 +49,7 @@ $existencia=$registro['existencia'];
 
 $tem=$res+$reserva;
 
-if ($existencia>$tem) {
+if ($existencia>=$tem) {
 
 $objproducto->setIdProducto($id);
 $objproducto->setReserva($tem);

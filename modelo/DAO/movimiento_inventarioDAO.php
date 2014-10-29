@@ -9,10 +9,11 @@ class movimiento_inventarioDao {
 
   function guardarusuario($Objmovimiento_inventario){
     $conexion = new conexion();
-    $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (codigo,usuario,cantidad,v_costo) VALUES(:codigo,:usuario,:cantidad,:v_costo)');
+    $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (codigo,usuario,cantidad,v_costo,estado) VALUES(:codigo,:usuario,:cantidad,:v_costo,:estado)');
     $consulta->bindParam(':codigo', $Objmovimiento_inventario->getCodigo());
     $consulta->bindParam(':usuario', $Objmovimiento_inventario->getusuario());
     $consulta->bindParam(':cantidad', $Objmovimiento_inventario->getcantidad());
+    $consulta->bindParam(':estado', $Objmovimiento_inventario->getestado());  
     $consulta->bindParam(':v_costo', $Objmovimiento_inventario->getv_costo());
 
     $consulta->execute();
@@ -99,6 +100,15 @@ function modificar($Objmovimiento_inventario){
   $conexion = null;
   
 }
+
+function confirmar($Objmovimiento_inventario){
+  
+  $conexion = new conexion();
+  $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET estado = :estado WHERE codigo = :codigo');
+  $consulta->bindParam(':estado', $Objmovimiento_inventario->getestado());
+  $consulta->execute();
+  $conexion = null;
+  }
 
 function buscar($descripcion){
   $conexion = new conexion();
