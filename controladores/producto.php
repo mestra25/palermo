@@ -34,11 +34,11 @@
 if ($_GET['action'] =='Reservar'){
 
 require_once("../modelo/conexion.php");
-$id=$_POST['id_producto'];
+$id_producto=$_POST['id_producto'];
 $res=$_POST['reserva'];
 
 $conexion = new conexion();
-$consulta = $conexion->prepare('SELECT * FROM producto WHERE id_producto = "'.$id.'"' );
+$consulta = $conexion->prepare('SELECT * FROM producto WHERE id_producto = "'.$id_producto.'"' );
 $consulta->execute();
 $registro = $consulta;
 
@@ -46,18 +46,17 @@ foreach ($consulta as $registro) {
 $reserva=$registro['reserva'];
 $existencia=$registro['existencia'];
 }
-
+$aux=$existencia-$reserva;
 $tem=$res+$reserva;
 
 if ($existencia>=$tem) {
 
-$objproducto->setIdProducto($id);
+$objproducto->setIdProducto($id_producto);
 $objproducto->setReserva($tem);
 $productoDao->reservar($objproducto);
 
 }else{
-
-    $aux=$existencia-$reserva;
+ 
     echo "      <script language='JavaScript'> 
                 alert('No hay suficiente material para la reserva el maximo que puede reservar es: ".$aux."'); 
                 window.location='../vista/inventario.php'

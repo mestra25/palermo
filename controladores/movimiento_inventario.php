@@ -6,6 +6,7 @@ $objmovimiento_inventario = new movimiento_inventario();
 $movimiento_inventarioDao = new movimiento_inventarioDao;
 
 if ($_GET['action'] =='GuardarUsuario'){
+
     $id_producto=$_POST['id_producto'];
     $id_usuario=$_POST['id_usuario'];
     $cantidad=$_POST['reserva'];
@@ -19,7 +20,7 @@ if ($_GET['action'] =='GuardarUsuario'){
     foreach ($consulta as $registro) {
         $reserva=$registro['reserva'];
         $existencia=$registro['existencia'];
-
+    }
 
         $tem=$existencia-$reserva;
 
@@ -36,30 +37,59 @@ if ($_GET['action'] =='GuardarUsuario'){
         }else{
             echo "      <script language='JavaScript'> 
             alert('No hay suficiente material para la reserva el maximo que puede reservar es: ".$tem."'); 
-            window.location='../vista/inventario.php'
+            window.location='../vista/rol_usuario.php'
             </script>";
         }
-    }
 }    
 
 if ($_GET['action'] =='Confirmar'){
 
-    $codigo=$_POST['id_producto'];
+    $codigo=$_POST['codigo'];
+    $id_producto=$_POST['id_producto'];
     $estado="aprovado";
-    $objmovimiento_inventario->setcantidad($codigo);
+    $cantidad=$_POST['reserva'];
+
+    require_once("../modelo/conexion.php");
+    $conexion = new conexion();
+    $consulta = $conexion->prepare('SELECT * FROM producto WHERE id_producto="'.$id_producto.'"');
+    $consulta->execute();
+    $registro = $consulta;
+
+    foreach ($consulta as $registro) {
+        $reserva=$registro['reserva'];
+        $existencia=$registro['existencia'];
+    }
+
+    $tem=$existencia-$reserva;
+
+    if($tem>=$cantidad){
+  
+    $objmovimiento_inventario->setcodigo($codigo);
     $objmovimiento_inventario->setestado($estado);
     $movimiento_inventarioDao->confirmar($objmovimiento_inventario);
+}
 
+
+}
+
+
+if ($_GET['action'] =='Rechazar'){
+
+    $codigo=$_POST['codigo'];
+    $estado="rechazado";
+    $objmovimiento_inventario->setcodigo($codigo);
+    $objmovimiento_inventario->setestado($estado);
+    $movimiento_inventarioDao->rechazar($objmovimiento_inventario);
 }
 
 if ($_GET['action'] =='Reservar'){
 
     require_once("../modelo/conexion.php");
-    $id=$_POST['id_producto'];
+    $id_producto=$_POST['id_producto'];
     $res=$_POST['reserva'];
 
     $conexion = new conexion();
-    $consulta = $conexion->prepare('SELECT * FROM movimiento_inventario WHERE id_movimiento_inventario = "'.$id.'"' );
+    $consulta = $conexion->prepare('SELECT * FROM producto WHERE id_producto = "'.$id_producto.'"' );
     $consulta->execute();
     $registro = $consulta;
 
@@ -70,19 +100,12 @@ if ($_GET['action'] =='Reservar'){
 
     $tem=$res+$reserva;
 
-    if ($existencia>$tem) {
+    if ($existencia>=$tem) {
 
-        $objmovimiento_inventario->setIdmovimiento_inventario($id);
+        $objmovimiento_inventario->setCodigo($id_producto);
         $objmovimiento_inventario->setReserva($tem);
         $movimiento_inventarioDao->confirmar($objmovimiento_inventario);
 
-    }else{
-
-        $aux=$existencia-$reserva;
-        echo "      <script language='JavaScript'> 
-        alert('No hay suficiente material para la reserva el maximo que puede reservar es: ".$aux."'); 
-        window.location='../vista/inventario.php'
-        </script>";
     }
     $conexion=null;
 
