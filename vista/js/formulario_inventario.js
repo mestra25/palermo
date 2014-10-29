@@ -2,9 +2,8 @@ jQuery(document).ready(function() {
 
     $(".btnconfirmar").click(function() {
       alert("hola");
-     var _reserva=$(".txtcantidad").val();
-     var _id_producto=$("#txtcodigo").val();
-
+     var _reserva=$(this).attr("data-cantidad");
+     var _id_producto=$(this).attr("data-codigo");
 
      alert(_reserva);
      var producto='../controladores/producto.php?action=Reservar';

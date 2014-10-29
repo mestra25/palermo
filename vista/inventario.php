@@ -102,6 +102,7 @@
           <tr>
 
             <?php
+            $i=0;
             require_once("php/lista_reserva.php");
             foreach ($consulta as $registro) {
               $codigo=$registro['codigo'];
@@ -110,8 +111,6 @@
                 
               <tbody>
                 <tr>
-                  <td><input type="input" value="<?php echo $registro['cantidad'];?>" class="txtcantidad" ></td>
-                  <td><input type="input" value="<?php echo $registro['codigo'];?>" id="txtcodigo" ></td>
                   <td class="codigo"><?php echo $registro["codigo"];?></td>
                   <td><?php echo $registro["usuario"];?></td>
                   <td><?php echo $registro["cantidad"];?></td>
@@ -120,7 +119,7 @@
                   <td><?php echo $registro_1["medida"];?></td>
                   <td><?php echo $registro_1["existencia"];?></td>
                   <td><?php echo $registro_1["reserva"];?></td>
-                  <td><center><input  type="button" class="btnconfirmar" value="Confirmar"></center></td>
+                  <td><center><input  type="button" data-codigo="<?php echo $registro['codigo'];?>" data-cantidad="<?php echo $registro['cantidad'];?>" class="btnconfirmar" value="Confirmar"></center></td>
                   <td><center><input  type="button" class="btnrechazar" value="Rechazar"></center></td>
                   
                   
@@ -132,6 +131,7 @@
 
               </tbody>
               <?php
+              $i++;
             }    
             ?>
           </tr>
