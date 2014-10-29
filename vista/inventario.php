@@ -58,7 +58,7 @@
               <a href="inventario.php">Inventario</a>
             </li>
             <li>
-              <a href="clientes.php">Clientes</a>
+              <a href="cliente.php">Clientes</a>
             </li>
           </ul>
         </div>
@@ -72,7 +72,7 @@
 
    <div class="contenido">
 
-    <center><h2>Movimineto de Inventario</h2>
+    <center><h2>Movimiento de Inventario</h2>
 
       <br></br>
       <select id="movimiento" onchange="mostrar()">
@@ -82,7 +82,8 @@
         <option value="salida">Salida</option>
 
       </select>
-<br></br>
+        <input type="button" id="reset" value="Reiniciar" onclick="reset()" class="btn" style="display:none;">
+      <br></br>
 
     </center>
 
@@ -91,7 +92,6 @@
     <form id="formulario_cliente" style="display:none;">
       <h2>cliente</h2>
       <select id="id_cliente"  onchange="mostrar()">
-
         <?php
         require("/php/lista_cliente.php");
 
@@ -110,12 +110,13 @@
     <center>
       <h2>usuario</h2>
 
-        <select id="id_usuario" onchange="mostrar()">
+      <select id="id_usuario" onchange="mostrar()">
+       <option>Seleccione Usuario</option>
 
-        <?php
-        require("/php/lista_usuario.php");
+       <?php
+       require("/php/lista_usuario.php");
 
-        foreach ($consulta as $registro) {
+       foreach ($consulta as $registro) {
 
          echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
        }
@@ -166,31 +167,31 @@
               ?>
               <tbody>
                 <tr>
-                <td><a name="id_producto" href="php/inventario.php?id_producto=<?php echo $registro['id_producto']; ?>" onclick="reservar()"><img src="img/reserva.png"></a></td>
-                <td class="codigo"><?php echo $registro["codigo"];?></td>
-                <td><?php echo $registro["descripcion"];?></td>
-                <td><?php echo $registro["v_costo"];?></td>
-                <td><?php echo $registro["venta_1"];?></td>
-                <td><?php echo $registro["venta_2"];?></td>
-                <td><?php echo $registro["venta_3"];?></td>
-                <td><?php echo $registro["venta_4"];?></td>
-                <td><?php echo $registro["medida"];?></td>
-                <td><?php echo $registro["existencia"];?></td>
-                <td><?php echo $registro["reserva"];?></td>
-                <td><?php echo $registro["observacion"];?></td>
+                  <td><a name="id_producto" href="reserva.php?id_producto=<?php echo $registro['id_producto']; ?>" onclick="reservar()"><img src="img/reserva.png"></a></td>
+                  <td class="codigo"><?php echo $registro["codigo"];?></td>
+                  <td><?php echo $registro["descripcion"];?></td>
+                  <td><?php echo $registro["v_costo"];?></td>
+                  <td><?php echo $registro["venta_1"];?></td>
+                  <td><?php echo $registro["venta_2"];?></td>
+                  <td><?php echo $registro["venta_3"];?></td>
+                  <td><?php echo $registro["venta_4"];?></td>
+                  <td><?php echo $registro["medida"];?></td>
+                  <td><?php echo $registro["existencia"];?></td>
+                  <td><?php echo $registro["reserva"];?></td>
+                  <td><?php echo $registro["observacion"];?></td>
 
-              </tr>
+                </tr>
 
-            </tbody>
-            <?php
-          }    
-          ?>
-        </tr>
-      </tbody>
-    </table>
-    <br></br> 
+              </tbody>
+              <?php
+            }    
+            ?>
+          </tr>
+        </tbody>
+      </table>
+      <br></br> 
+    </div>
   </div>
-</div>
 </form>
 
 </div>

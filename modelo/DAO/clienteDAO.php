@@ -96,8 +96,24 @@ class clienteDao {
         $consulta->bindParam(':celular', $Objcliente->getCelular());
         $consulta->bindParam(':direccion', $Objcliente->getDireccion());
         $consulta->bindParam(':email', $Objcliente->getEmail());
-        $consulta->execute();
-        $conexion = null;
+       if ($consulta->execute())
+            {
+              echo " 
+                <script language='JavaScript'> 
+                alert('Registro modificado correctamente.'); 
+                window.location='../vista/cliente.php'
+                </script>";
+            }else{
+               echo " 
+                <script language='JavaScript'> 
+                alert('Error al modificar el registro.'); 
+                window.location='../vista/cliente.php'
+                </script>";
+              
+            }
+              $consulta->execute();
+      
+      $conexion = null;
       
     }
 

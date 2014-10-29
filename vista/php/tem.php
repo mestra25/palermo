@@ -1,5 +1,5 @@
 <?php 
-require_once("../../modelo/conexion.php");
+require_once("../modelo/conexion.php");
 $id=$_GET['id_producto'];
 $conexion = new conexion();
 $consulta = $conexion->prepare('SELECT * FROM producto where id_producto="'.$id.'"');

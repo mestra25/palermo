@@ -12,17 +12,17 @@
   <title>DataSistemas</title>
 
   <!-- Bootstrap Core CSS -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link href="../css/business-casual.css" rel="stylesheet">
+  <link href="css/business-casual.css" rel="stylesheet">
 
   <!-- Fonts -->
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="../css/tabla_productos.css">
-  <script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
-  <script src="../js/formulario_producto.js"  type="text/javascript"></script>
+  <link rel="stylesheet" href="css/tabla_productos.css">
+  <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+  <script src="js/formulario_inventario.js"  type="text/javascript"></script>
 
 </head>
 
@@ -35,7 +35,7 @@
       <div id="dialogboxfoot"></div>
     </div>
   </div>
-  <div class="brand" id="img"><a href=""><img src="../img/logo.png"></a></div>
+  <div class="brand" id="img"><a href=""><img src="img/logo.png"></a></div>
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -54,19 +54,19 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li>
-              <a href="../index.html">Inicio</a>
+              <a href="index.html">Inicio</a>
             </li>
             <li>
-              <a href="../administrar.html">Administrar</a>
+              <a href="administrar.html">Administrar</a>
             </li>
             <li>
-              <a href="../usuarios.php">Usuarios</a>
+              <a href="usuarios.php">Usuarios</a>
             </li>
             <li>
-              <a href="../inventario.php">Inventario</a>
+              <a href="inventario.php">Inventario</a>
             </li>
             <li>
-              <a href="../clientes.php">Clientes</a>
+              <a href="clientes.php">Clientes</a>
             </li>
           </ul>
         </div>
@@ -85,41 +85,31 @@
       <div id="formulario">
         <br></br> 
         <h2>Realizar Movimiento</h2>
-        <br></br>
         <form>
 
          <?php
 
-         require("tem.php");
+         require("php/tem.php");
 
          ?>
-        <br></br> 
+         <input hidden type="text" name="txtidproducto" class="campos_edi" id="txtidproducto" value="<?php echo $registro['id_producto']?>" readonly>
+         <p>Cantidad:  <input type="text" name="txtreservar" id="txtreservar" class="campos_edi"></p>
          <p>Medida:  <input type="text" name="txtmedida" class="campos_edi" id="txtmedida" value="<?php echo $registro_4['descripcion']?>" readonly></p>
-         <br></br> 
          <p>Existencia:  <input type="text" name="txtexistencia" class="campos_edi" id="txtexistencia" value="<?php echo $registro['existencia']?>" readonly></p>
-         <br></br> 
-         <p>Cantidad:  <input type="text" name="txtcantidad" id="txtcantidad" value="" class="campos_edi"></p>
-         <br></br>
          <p>Reserva:  <input type="text" name="txtreserva" id="txtreserva" class="campos_edi" value="<?php echo $registro['reserva']?>" readonly></p>
-         <br></br> 
          <p>Categoria:  <input type="text" name="txtcategoria" id="txtcategoria" value="<?php echo $registro_1['descripcion']?>" class="campos_edi" readonly></p>
-         <br></br>
          <p>Subcategoria:  <input type="text" name="txtsubcategoria" id="txtsubcategoria" value="<?php echo $registro_2['descripcion']?>" class="campos_edi" readonly></p>
-         <br></br>
          <p>Proveedor:  <input type="text" name="txtproveedor" id="txtproveedor" value="<?php echo $registro_3['nit']?>" class="campos_edi" readonly></p>
-         <br></br> 
          <p>Descripcion:  <input type="text" name="txtdescripcion" id="txtdescripcion" value="<?php echo $registro['descripcion']?>" class="campos_edi" readonly></p>
-         <br></br> 
          <p>P. Venta 1: <input type="text" name="txtventa1" id="txtventa1" value="<?php echo $registro['venta_1']?>" class="campos_edi" readonly></p>
-         <br></br> 
          <p>P. Venta 2: <input type="text" name="txtventa2" id="txtventa2" value="<?php echo $registro['venta_2']?>" class="campos_edi" readonly></p>
-         <br></br> 
          <p>P. Venta 3: <input type="text" name="txtventa3" id="txtventa3" value="<?php echo $registro['venta_3']?>" class="campos_edi" readonly></p>
-         <br></br> 
          <p>P. Venta 4: <input type="text" name="txtventa4" id="txtventa4" value="<?php echo $registro['venta_4']?>" class="campos_edi" readonly></p>
-         <br></br> 
-         <input type="button" id="btn" value="Guardar"  class="btn">
+         
+         <input type="button" name="reservar" id="reservar" value="Reservar"  class="btn">
          <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+
+         <span id="respuesta"></span>
 
        </form>
      </div>
@@ -127,10 +117,6 @@
      <br></br>
    </center>
  </div>
-
-
- <span id="respuesta"></span>
-
 
  <footer>
   <div class="container">
@@ -145,7 +131,7 @@
 <!-- jQuery Version 1.11.0 -->
 
 <!-- Bootstrap Core JavaScript -->
-<script src="../js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 <!-- Script to Activate the Carousel -->
 <script>
@@ -153,9 +139,9 @@ $('.carousel').carousel({
         interval: 5000 //changes the speed
       })
 </script>
-<script type="text/javascript" src="../js/validar.js"></script>
-<script type="text/javascript" src="../js/mostrar_ocultar.js"></script>
-<script type="text/javascript" src="../js/buscar.js"></script>
+<script type="text/javascript" src="js/validar.js"></script>
+<script type="text/javascript" src="js/mostrar_ocultar.js"></script>
+<script type="text/javascript" src="js/buscar.js"></script>
 </body>
 
 </html>

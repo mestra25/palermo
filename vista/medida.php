@@ -68,7 +68,7 @@
                         <a href="inventario.php">Inventario</a>
                     </li>
                     <li>
-                        <a href="clientes.php">Clientes</a>
+                        <a href="cliente.php">Clientes</a>
                     </li>
                 </ul>
             </div>

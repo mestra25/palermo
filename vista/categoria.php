@@ -68,7 +68,7 @@
                         <a href="inventario.php">Inventario</a>
                     </li>
                     <li>
-                        <a href="clientes.php">Clientes</a>
+                        <a href="cliente.php">Clientes</a>
                     </li>
                 </ul>
             </div>
@@ -91,7 +91,7 @@
                 <a href="subcategoria.php">Subcategoria</a>
             </li>
             <li>
-                <a href="provedor.php">Proveedor</a>
+                <a href="proveedor.php">Proveedor</a>
             </li>
             <li>
                 <a href="medida.php">Medida</a>

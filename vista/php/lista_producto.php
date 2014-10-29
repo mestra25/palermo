@@ -6,4 +6,5 @@ $consulta = $conexion->prepare('SELECT * FROM producto' );
 $consulta->execute();
 $registro = $consulta;
 
+$conexion=null;
 ?>

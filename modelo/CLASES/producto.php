@@ -1,5 +1,4 @@
 <?php
-require_once('producto.php');
 class producto {
     private $IdProducto;
     private $Idcategoria;
@@ -22,6 +21,7 @@ class producto {
     private $Existencia;
     private $Reserva;
     private $Observaciones;
+   
   
 
 function __construct() {
@@ -46,7 +46,6 @@ function __construct() {
    $this->Existencia=0;
    $this->Reserva=0;
    $this->Observaciones="";
-
 
 }
 
@@ -133,6 +132,9 @@ $this->Observaciones= $Observaciones;
 function getIdProducto(){
 return $this->IdProducto;
 }
+function getReserva(){
+return $this->Reserva;
+}
 function getIdcategoria(){
 return $this->Idcategoria;
 }
@@ -192,10 +194,6 @@ return $this->Modificado;
 
 function getExistencia(){
 return $this->Existencia;
-}
-
-function getReserva(){
-return $this->Reserva;
 }
 
 function getObservaciones(){

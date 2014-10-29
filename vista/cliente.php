@@ -154,8 +154,8 @@
                             <td><?php echo $registro["celular"];?></td>
                             <td><?php echo $registro["direccion"];?></td>
                             <td><?php echo $registro["email"];?></td>
-                           <td><a  href="EditarCliente.php?nit=<?php echo $registro["cedula"];?>" ><img src="img/editar.png"></a></td>
-                       <td><a  href="../controladores/cliente.php?action=Eliminar&nit=<?php echo $registro["nit"];?>" onclick="return confirm('Desea eliminar el articulo?');" ><img src="img/delete.png"></td>
+                           <td><a  href="EditarCliente.php?cedula=<?php echo $registro["cedula"];?>" ><img src="img/editar.png"></a></td>
+                       <td><a  href="../controladores/cliente.php?action=Eliminar&nit=<?php echo $registro["cedula"];?>" onclick="return confirm('Desea eliminar el articulo?');" ><img src="img/delete.png"></td>
 
 
                         </tr>

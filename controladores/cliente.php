@@ -32,7 +32,7 @@
     $objcliente->setemail($_POST['email']);
 
 
-    $clienteDAO->Editar($objcliente);
+    $clienteDAO->modificar($objcliente);
 
 }
 

@@ -66,7 +66,7 @@
               <a href="inventario.php">Inventario</a>
             </li>
             <li>
-              <a href="clientes.php">Clientes</a>
+              <a href="cliente.php">Clientes</a>
             </li>
           </ul>
         </div>
@@ -89,7 +89,7 @@
           <a href="subcategoria.php">Subcategoria</a>
         </li>
         <li>
-          <a href="provedor.php">Proveedor</a>
+          <a href="proveedor.php">Proveedor</a>
         </li>
         <li>
           <a href="medida.php">Medida</a>
@@ -206,7 +206,6 @@
      <br></br>
      <input name="txtstock_max" id="txtstock_max" title="Se requiere Stock Minimo" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Stock Maximo" required>
      <br></br> 
-
      <input name="txtexistencia" id="txtexistencia" title="Se requiere Cantidad de Producto" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Cantidad de Producto" required>
      <br></br> 
      <input name="txtp_descuento" id="txtp_descuento" title="Se requiere Porcentaje de Descuento" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Descuento" required>
@@ -230,6 +229,9 @@
     <thead>
       <tr>
         <th>Codigo</th>
+        <th>Categoria</th>
+        <th>Subcategoria</th>
+        <th>Proveedor</th>
         <th>Descripcion</th>
         <th>V. Costo</th>
         <th>Venta 1</th>
@@ -258,11 +260,26 @@
         require("php/lista_producto.php");
         
         foreach ($consulta as $registro) {
+        $id_cat=$registro['id_categoria'];
+        $id_sub=$registro['id_subcategoria'];
+        $id_prove=$registro['id_proveedor'];
          
           ?>
           <tbody>
             <tr>
               <td class="codigo"><?php echo $registro["codigo"];?></td>
+              <?php
+              require("php/p_categoria.php");
+              ?>
+              <td><?php echo $registro_1["descripcion"];?></td>
+              <?php
+              require("php/p_subcategoria.php");
+              ?>
+              <td><?php echo $registro_2["descripcion"];?></td>
+              <?php
+              require("php/p_proveedor.php");
+              ?>
+              <td><?php echo $registro_3["nombre_empresa"];?></td>
               <td><?php echo $registro["descripcion"];?></td>
               <td><?php echo $registro["v_costo"];?></td>
               <td><?php echo $registro["venta_1"];?></td>

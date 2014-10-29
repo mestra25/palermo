@@ -1,5 +1,6 @@
 jQuery(document).ready(function() {
 
+
     $("#btn").click(function() {
 
      var _cedula=$("#txtcedula").val();
@@ -8,7 +9,6 @@ jQuery(document).ready(function() {
      var _celular=$("#txtcelular").val();
      var _direccion= $("#txtdireccion").val();
      var _email= $("#txtemail").val();
-    
 
      var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email};
      var archivo='../controladores/cliente.php?action=Guardar';
@@ -25,9 +25,9 @@ jQuery(document).ready(function() {
      });
 
 
+
 $(".btneditar").click(function  () {
-      
-       var _cedula=$("#txtcedula").val();
+             var _cedula=$("#txtcedula").val();
      var _nombre= $("#txtnombre").val();
      var _apellido=$("#txtapellido").val();
      var _celular=$("#txtcelular").val();
@@ -35,10 +35,11 @@ $(".btneditar").click(function  () {
      var _email= $("#txtemail").val();
     
 
+
      var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email};
      var archivo='../controladores/cliente.php?action=Editar';
    
-
+      
      $.ajax({
       type :"POST",
       url : archivo,
@@ -46,11 +47,12 @@ $(".btneditar").click(function  () {
       success : function( datos){
         $("#respuesta").html(datos);
       }
+      
     });
    
  
   
-    
+
     });
 
 });

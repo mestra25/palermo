@@ -43,7 +43,7 @@ require_once("../modelo/conexion.php");
      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   
-    <script src="js/formulario_proveedor.js"  type="text/javascript"></script>
+    <script src="js/formulario_cliente.js"  type="text/javascript"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
@@ -66,18 +66,18 @@ require_once("../modelo/conexion.php");
 
                           <input name="txtcedula" id="txtcedula" value="<?php echo $row['cedula'];?>">
                           <br></br> 
-                          <input name="txtnombre" id="txtnombre" title="Se requiere nombre de cliente" class="campos_edi" placeholder="Nombre" required>
+                          <input name="txtnombre" id="txtnombre" value="<?php echo $row['nombre'];?>" >
                           <br></br>
-                          <input name="txtapellido" id="txtapellido" title="Se requiere apelldido" class="campos_edi" placeholder="Apellido" required>
+                          <input name="txtapellido" id="txtapellido" value="<?php echo $row['apellido'];?>">
                           <br></br> 
-                          <input name="txtcelular" id="txtcelular" title="Se requiere celular de cliente" class="campos_edi" placeholder="Celular" required>
+                          <input name="txtcelular" id="txtcelular" value="<?php echo $row['celular'];?>">
                           <br></br> 
-                          <input name="txtdireccion" id="txtdireccion" title="Se requiere direccion de cliente" class="campos_edi" placeholder="Direccion" required>
+                          <input name="txtdireccion" id="txtdireccion" value="<?php echo $row['direccion'];?>">
                           <br></br> 
-                          <input name="txtemail" id="txtemail" title="Se requiere email de cliente" class="campos_edi" placeholder="E-mail" required>
+                          <input name="txtemail" id="txtemail" value="<?php echo $row['email'];?>">
                           <br></br> 
-                          <input type="button" name="" value="Guardar" id="btn"  class="btn">
-                          <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+                         <input type="button" class="btneditar" value="Editar" >
+                           <div id="respuesta"></div>
                       </form>
       </fieldset>
 
