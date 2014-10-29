@@ -79,54 +79,55 @@ class categoriaDao {
         $conexion = new Conexion();
         $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE descripcion = :descripcion');
         $consulta->bindParam(':descripcion', $Objcategoria->getdescripcion());
-        $consulta->execute();
-        $conexion = null;
+       if ($consulta->execute())
+            {
+              echo " 
+                <script language='JavaScript'> 
+                alert('Registro Eliminado correctamente.'); 
+                window.location='../vista/categoria.php'
+                </script>";
+            }else{
+               echo " 
+                <script language='JavaScript'> 
+                alert('Error al eliminar el registro.'); 
+                window.location='../vista/categoria.php'
+                </script>";
+              
+            }
+              $consulta->execute();
+      
+      $conexion = null;
     }
 
     function modificar($Objcategoria){
       
       $conexion = new conexion();
-      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET observacion = :observacion, fcreado = :fcreado, fmodificado = :fmodificado, 
-        direccion = :direccion, email = :email WHERE descripcion = :descripcion');
-        $consulta->bindParam(':descripcion', $Objcategoria->getdescripcion());
-        $consulta->bindParam(':observacion', $Objcategoria->getobservacion());
-        $consulta->bindParam(':fcreado', $Objcategoria->getfcreado());
-        $consulta->bindParam(':fmodificado', $Objcategoria->getfmodificado());
-        $consulta->bindParam(':direccion', $Objcategoria->getDireccion());
-        $consulta->bindParam(':email', $Objcategoria->getEmail());
-        $consulta->execute();
-        $conexion = null;
+      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET descripcion = :descripcion, observacion = :observacion, fcreado = :fcreado, fmodificado = :fmodificado');
+      $consulta->bindParam(':descripcion', $Objcategoria->getdescripcion());
+            $consulta->bindParam(':observacion', $Objcategoria->getobservacion());
+            $consulta->bindParam(':fcreado', $Objcategoria->getfcreado());
+            $consulta->bindParam(':fmodificado', $Objcategoria->getfmodificado());
+           if ($consulta->execute())
+            {
+              echo " 
+                <script language='JavaScript'> 
+                alert('Registro modificado correctamente.'); 
+                window.location='../vista/categoria.php'
+                </script>";
+            }else{
+               echo " 
+                <script language='JavaScript'> 
+                alert('Error al modificar el registro.'); 
+                window.location='../vista/categoria.php'
+                </script>";
+              
+            }
+              $consulta->execute();
       
+      $conexion = null;
     }
 
-    function buscar($descripcion){
-      $conexion = new conexion();
-      $consulta = $conexion->prepare('SELECT descripcion, observacion, fcreado, fmodificado FROM ' . self::tabla . ' WHERE descripcion = :descripcion');
-      $consulta->bindParam(':descripcion', $descripcion); 
-      $consulta->execute();
-      $registro = $consulta->fetch(PDO::FETCH_OBJ);
-          
-            return $registro;
-
-        $conexion = null;
-
-    }
-
-    function listar(){
-      $conexion = new conexion();
-      $consulta = $conexion->prepare('SELECT descripcion, observacion, fcreado, fmodificado FROM ' . self::tabla );
-        $consulta->execute();
-        $registro = $consulta->fetchAll();
-         
-      if ($registro) {
-            return $registro;
-        } else {
-          return false;
-        }
-
-        $conexion = null;
-
-    }
+  
 }
 
 ?>

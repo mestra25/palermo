@@ -151,9 +151,8 @@
                         <td><?php echo $registro["observacion"];?></td>
                         <td><?php echo $registro["fcreado"];?></td>
                         <td><?php echo $registro["fmodificado"];?></td>
-                        <td><a href="" id="editar"><img src="img/editar.png"></a></td>
-                        <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
-
+                        <td><a  href="editarCategoria.php?id_categoria=<?php echo $registro["id_categoria"];?>" ><img src="img/editar.png"></a></td>
+                 <td><a  href="../controladores/categoria.php?action=Eliminar&id_categoria=<?php echo $registro["id_categoria"];?>" onclick="return confirm('Desea eliminar el articulo?');" ><img src="img/delete.png"></td>
                     </tr>
 
                 </tbody>
