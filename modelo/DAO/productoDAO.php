@@ -137,7 +137,6 @@ function reservar($Objproducto){
       echo " 
                 <script language='JavaScript'> 
                 alert('Registro Reservado correctamente.'); 
-                window.location='../vista/productos.php'
                 </script>";
               
             }else{

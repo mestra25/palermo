@@ -212,7 +212,17 @@ footer p {
     margin: 10px;
 
 }
-
+.btnconfirmar, .btnrechazar{
+    padding: 4px;
+    background: lightgray;
+    color: black;
+    margin: 5px 0px 5px 0px;
+    border-radius: 5px;
+}
+.btnconfirmar:hover, .btnrechazar:hover{
+background: gray;
+color: white;
+    }
 .btn:hover{
     background: gray;
     color: white;

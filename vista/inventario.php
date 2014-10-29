@@ -82,7 +82,7 @@
 
       <input type="input" placeholder="Codigo Producto a Buscar" class="campo" id="buscar_" style="display:none">
       <br></br>
-
+<form>
       <table id="tabla">
         <thead>
           <tr>
@@ -107,9 +107,12 @@
               $codigo=$registro['codigo'];
               require("php/r_producto.php");
               ?>
+                
               <tbody>
                 <tr>
-                  <td align="center" class="codigo"><?php echo $registro["codigo"];?></td>
+                  <td><input type="input" value="<?php echo $registro['cantidad'];?>" class="txtcantidad" ></td>
+                  <td><input type="input" value="<?php echo $registro['codigo'];?>" id="txtcodigo" ></td>
+                  <td class="codigo"><?php echo $registro["codigo"];?></td>
                   <td><?php echo $registro["usuario"];?></td>
                   <td><?php echo $registro["cantidad"];?></td>
                   <td><?php echo $registro_1["descripcion"];?></td>
@@ -117,8 +120,9 @@
                   <td><?php echo $registro_1["medida"];?></td>
                   <td><?php echo $registro_1["existencia"];?></td>
                   <td><?php echo $registro_1["reserva"];?></td>
-                  <td><center><input id="btnconfirmar" type="button" class="btn" value="Confirmar"></center></td>
-                  <td><center><input id="btnrechazar" type="button" class="btn" value="Rechazar"></center></td>
+                  <td><center><input  type="button" class="btnconfirmar" value="Confirmar"></center></td>
+                  <td><center><input  type="button" class="btnrechazar" value="Rechazar"></center></td>
+                  
                   
                  
                   
@@ -133,10 +137,11 @@
           </tr>
         </tbody>
       </table>
+      </form>
       <br></br> 
     </div>
   </div>
-
+<span id="respuesta"></span>
 </div>
 
 </div><!-- end contenedor-->
@@ -165,7 +170,7 @@ $('.carousel').carousel({
         interval: 5000 //changes the speed
       })
 </script>
-<script type="text/javascript" src="js/inventario.js"></script>
+<script type="text/javascript" src="js/formulario_inventario.js"></script>
 <script type="text/javascript" src="js/buscar.js"></script>
 
 </body>
