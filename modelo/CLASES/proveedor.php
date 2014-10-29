@@ -1,7 +1,5 @@
 <?php
 class proveedor {
-
-
     private $idproveedor;
     private $nit;
     private $nombre_empresa;

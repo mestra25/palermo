@@ -20,7 +20,6 @@
 
   <!-- Fonts -->
 
-
 </head>
 
 <body>
@@ -72,64 +71,10 @@
 
    <div class="contenido">
 
-    <center><h2>Movimiento de Inventario</h2>
-
-      <br></br>
-      <select id="movimiento" onchange="mostrar()">
-
-        <option>Seleccione tipo de Movimiento</option>
-        <option value="entrada">Entrada</option>
-        <option value="salida">Salida</option>
-
-      </select>
-        <input type="button" id="reset" value="Reiniciar" onclick="reset()" class="btn" style="display:none;">
-      <br></br>
-
-    </center>
-
-    <!-- Formulario para Cliente  -->
-
-    <form id="formulario_cliente" style="display:none;">
-      <h2>cliente</h2>
-      <select id="id_cliente"  onchange="mostrar()">
-        <?php
-        require("/php/lista_cliente.php");
-
-        foreach ($consulta as $registro) {
-
-         echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
-       }
-       ?>
-
-     </select>
-   </form>
-
-   <!-- Formulario para Usuario  -->
-
-   <form id="formulario_usuario" style="display:none;">
-    <center>
-      <h2>usuario</h2>
-
-      <select id="id_usuario" onchange="mostrar()">
-       <option>Seleccione Usuario</option>
-
-       <?php
-       require("/php/lista_usuario.php");
-
-       foreach ($consulta as $registro) {
-
-         echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
-       }
-
-       ?>
-
-     </select>
-   </center>
-
    <div id="tabla">
      <div id="page-wrap">
       <center> 
-        <h2>Lista de Productos</h2>
+        <h2>Solicitud de Reserva</h2>
       </center>
       <input type="button" value="Buscar" class="btn" onclick="mostrar_buscar()" id="buscar" >
 
@@ -141,44 +86,43 @@
       <table id="tabla">
         <thead>
           <tr>
-            <th> Reservar </th>
             <th> Codigo </th>
+            <th> Usuario </th>
+            <th> Cantidad </th>
             <th> Descripcion </th>
             <th> V. Costo </th>
-            <th> Venta 1 </th>
-            <th> Venta 2 </th>
-            <th> Venta 3 </th>
-            <th> Venta 4 </th>
             <th> Medida </th>
             <th> Existencia </th>
             <th> Reserva </th>
-            <th> Observaciones </th>
-
+            <th> Confirmar </th>
+            <th> Rechazar </th>
           </tr>
         </thead>
         <tbody>
           <tr>
 
             <?php
-            require("php/lista_producto.php");
-
+            require_once("php/lista_reserva.php");
             foreach ($consulta as $registro) {
-
+              $codigo=$registro['codigo'];
+              require("php/r_producto.php");
               ?>
               <tbody>
                 <tr>
-                  <td><a name="id_producto" href="reserva.php?id_producto=<?php echo $registro['id_producto']; ?>" onclick="reservar()"><img src="img/reserva.png"></a></td>
-                  <td class="codigo"><?php echo $registro["codigo"];?></td>
-                  <td><?php echo $registro["descripcion"];?></td>
-                  <td><?php echo $registro["v_costo"];?></td>
-                  <td><?php echo $registro["venta_1"];?></td>
-                  <td><?php echo $registro["venta_2"];?></td>
-                  <td><?php echo $registro["venta_3"];?></td>
-                  <td><?php echo $registro["venta_4"];?></td>
-                  <td><?php echo $registro["medida"];?></td>
-                  <td><?php echo $registro["existencia"];?></td>
-                  <td><?php echo $registro["reserva"];?></td>
-                  <td><?php echo $registro["observacion"];?></td>
+                  <td align="center" class="codigo"><?php echo $registro["codigo"];?></td>
+                  <td><?php echo $registro["usuario"];?></td>
+                  <td><?php echo $registro["cantidad"];?></td>
+                  <td><?php echo $registro_1["descripcion"];?></td>
+                  <td><?php echo $registro_1["v_costo"];?></td>
+                  <td><?php echo $registro_1["medida"];?></td>
+                  <td><?php echo $registro_1["existencia"];?></td>
+                  <td><?php echo $registro_1["reserva"];?></td>
+                  <td><center><input id="btnconfirmar" type="button" class="btn" value="Confirmar"></center></td>
+                  <td><center><input id="btnrechazar" type="button" class="btn" value="Rechazar"></center></td>
+                  
+                 
+                  
+                  <td></td>
 
                 </tr>
 
@@ -192,7 +136,6 @@
       <br></br> 
     </div>
   </div>
-</form>
 
 </div>
 
