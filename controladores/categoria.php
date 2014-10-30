@@ -18,7 +18,7 @@
 
 if($_GET['action'] =='Editar'){
     
-    
+   $objcategoria->setid_categoria($_POST['id_categoria']); 
 	 $objcategoria->setdescripcion($_POST['descripcion']);
     $objcategoria->setobservacion($_POST['observacion']);
     $objcategoria->setfcreado($_POST['fcreado']);
@@ -28,9 +28,9 @@ if($_GET['action'] =='Editar'){
 }
 if ($_GET['action'] == 'Eliminar'){
 
-    $objcategoria->setNit($_GET['id_categoria']);
+    $objcategoria->setid_categoria($_GET['id_categoria']);
     
-   $clienteDAO->Eliminar($objcliente);
+   $categoriaDAO->Eliminar($objcategoria);
 
   }
 ?>

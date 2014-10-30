@@ -5,14 +5,14 @@ require_once("../modelo/conexion.php");
   $row = null;
   $conn  = new conexion();
   // If 'buscar' is in the array $_POST proceed to make the query.
-  if (isset($_GET['id_categoria'])) {
+  if (isset($_GET['cedula'])) {
     // Create the query
-    $sql = 'SELECT * FROM categoria WHERE id_categoria = ?';
-    // we have to tell the PDO that we are going to send values to the query
+    $sql = 'SELECT * FROM usuario WHERE cedula = ?';
+    
     $stmt = $conn->prepare($sql);
-    // Now we execute the query passing an array toe execute();
-    $results = $stmt->execute(array($_GET['id_categoria']));
-    // Extract the values from $result
+    
+    $results = $stmt->execute(array($_GET['cedula']));
+    
     $row = $stmt->fetch();
     /*
     $error = $stmt->errorInfo();
@@ -28,13 +28,13 @@ require_once("../modelo/conexion.php");
 <html lang="en">
     <head>
       <meta charset="UTF-8" />
-        <title>Editar Categoria</title>
+        <title>Editar Usuario</title>
          <link href="css/bootstrap.min.css" rel="stylesheet"> 
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
 
-     <link rel="stylesheet" href="css/tabla_categoria.css">
+     <link rel="stylesheet" href="css/tabla_proveedor.css">
      <link rel="stylesheet" href="css/jquery-ui-1.11.2.css">
     <!-- Fonts -->
      <link rel="stylesheet" href="css/jquery-ui.css">
@@ -43,7 +43,7 @@ require_once("../modelo/conexion.php");
      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   
-    <script src="js/formulario_categoria.js"  type="text/javascript"></script>
+    <script src="js/formulario_usuario.js"  type="text/javascript"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
@@ -61,22 +61,34 @@ require_once("../modelo/conexion.php");
   ?>
     
         <form>
-            
-            <br></br>              
-            <input id="txtid_categoria" name="txtid_categoria" value="<?php echo $row['id_categoria'];?>" >
+
+            <br></br>             
+
+            </select> 
+            <br></br>  
+            <input name="txtcedula" id="txtcedula"  value="<?php echo $row['cedula'];?>">
+            <br></br> 
+            <input name="txtnombre" id="txtnombre" value="<?php echo $row['nombre'];?>">
             <br></br>
-            <input id="txtdescripcion" name="txtdescripcion" value="<?php echo $row['descripcion'];?>" >
+            <input name="txtapellido" id="txtapellido"  value="<?php echo $row['apellido'];?>">
             <br></br> 
-            <input id="txtobservacion" name="txtobservacion" value="<?php echo $row['observacion'];?>">
+            <input name="txtcelular" id="txtcelular"  value="<?php echo $row['celular'];?>">
             <br></br> 
-
-
+            <input name="txtdireccion" id="txtdireccion"  value="<?php echo $row['direccion'];?>">
+            <br></br> 
+            <input name="txtemail" id="txtemail"  value="<?php echo $row['email'];?>">
+            <br></br> 
             
-            <input type="button" class="btneditar" value="Editar" >
+            <select id="txtrol" title="Se requiere Seleccion de Categoria" required class="campos_edi">  
+              <option  value="administrador">Administrador</option> 
+              <option  value="administrador-inventario">Administrador Inventario</option> 
+              <option  value="usuario">Usuario</option> 
+            <br></br>                         
+            
+            <input type="button" class="btneditar" name="btneditar" value="Editar" >
         <div id="rpt"></div>
-        </form>
-        
-         
+          </form>
+      </fieldset>
 
       
     <?php endif;?>

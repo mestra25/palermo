@@ -168,8 +168,8 @@
                             <td><?php echo $registro["direccion"];?></td>
                             <td><?php echo $registro["email"];?></td>
                             <td><?php echo $registro["rol"];?></td>
-                            <td><a href=""><img src="img/editar.png"></a></td>
-                            <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
+                            <td><a  href="editarUsuario.php?cedula=<?php echo $registro["cedula"];?>" ><img src="img/editar.png"></a></td>
+                 <td><a  href="../controladores/usuario.php?action=Eliminar&cedula=<?php echo $registro["cedula"];?>" onclick="return confirm('Desea eliminar el usuario?');" ><img src="img/delete.png"></td>
 
                   </tr>
 

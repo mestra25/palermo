@@ -82,8 +82,25 @@ class usuarioDAO {
         $conexion = new Conexion();
         $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE cedula = :cedula');
         $consulta->bindParam(':cedula', $Objusuario->getCedula());
-        $consulta->execute();
-        $conexion = null;
+        if ($consulta->execute())
+            {
+              echo " 
+                <script language='JavaScript'> 
+                alert('Registro modificado correctamente.'); 
+                window.location='../vista/usuarios.php'
+                </script>";
+            }else{
+               echo " 
+                <script language='JavaScript'> 
+                alert('Error al modificar el registro.'); 
+                window.location='../vista/usuarios.php'
+                </script>";
+              
+            }
+              $consulta->execute();
+      
+      $conexion = null;
+      
     }
 
     function modificar($Objusuario){
@@ -97,8 +114,25 @@ class usuarioDAO {
         $consulta->bindParam(':celular', $Objusuario->getCelular());
         $consulta->bindParam(':direccion', $Objusuario->getDireccion());
         $consulta->bindParam(':email', $Objusuario->getEmail());
-        $consulta->execute();
-        $conexion = null;
+        if ($consulta->execute())
+            {
+              echo " 
+                <script language='JavaScript'> 
+                alert('Registro modificado correctamente.'); 
+                window.location='../vista/usuarios.php'
+                </script>";
+            }else{
+               echo " 
+                <script language='JavaScript'> 
+                alert('Error al modificar el registro.'); 
+                window.location='../vista/usuarios.php'
+                </script>";
+              
+            }
+              $consulta->execute();
+      
+      $conexion = null;
+      
       
     }
 
