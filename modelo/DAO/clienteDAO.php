@@ -81,7 +81,12 @@ class clienteDao {
         $conexion = new Conexion();
         $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE cedula = :cedula');
         $consulta->bindParam(':cedula', $Objcliente->getCedula());
-        $consulta->execute();
+        if($consulta->execute()){
+              echo " 
+                <script language='JavaScript'> 
+                window.location='../vista/cliente.php'
+                </script>";
+        }
         $conexion = null;
     }
 
