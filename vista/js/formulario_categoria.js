@@ -23,16 +23,18 @@ jQuery(document).ready(function() {
 
 });
     $(".btneditar").click(function() {
+
      alert("Hello! I am an alert box!!");
-     var _id_categoria=$("#txtid_categoria").val();
+    
+     var _id_categoria=$("#txtidcategoria").val();
      var _descripcion=$("#txtdescripcion").val();
      var _observacion= $("#txtobservacion").val();
      var d = new Date(); 
      $fecha =(d.getDate()+"/"+d.getMonth()+"/"+d.getFullYear()+" , "+d.getHours()+":"+d.getMinutes());
-     var _fcreado=$fecha;
      var _fmodificado=$fecha;
-    
-     var parametros={ id_categoria: _id_categoria ,descripcion : _descripcion , observacion: _observacion , fcreado : _fcreado , fmodificado :_fmodificado  };
+   
+     var parametros={ id_categoria: _id_categoria, descripcion : _descripcion , observacion: _observacion , fmodificado :_fmodificado  };
+
      var archivo='../controladores/categoria.php?action=Editar';
     
      $.ajax({

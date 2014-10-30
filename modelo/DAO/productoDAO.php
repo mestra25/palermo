@@ -126,29 +126,42 @@ function reservar($Objproducto){
 
 
     $conexion = new conexion();
-
-          
+         
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET reserva = :reserva WHERE id_producto = :id_producto');
       $consulta->bindParam(':reserva', $Objproducto->getReserva());
       $consulta->bindParam(':id_producto', $Objproducto->getIdProducto());
       if($consulta->execute()){
 
-     
-      echo " 
-                <script language='JavaScript'> 
-                alert('Registro Reservado correctamente.'); 
-                </script>";
-              
-            }else{
- 
-      echo " 
-                <script language='JavaScript'> 
-                alert('vales copa'); 
-                window.location='../vista/productos.php'
-                </script>";
+echo "<script language='javascript'>"; 
+     echo "function CustomAlert(){
+      this.render = function(dialog){
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var dialogoverlay = document.getElementById('dialogoverlay');
+        var dialogbox = document.getElementById('dialogbox');
+        dialogoverlay.style.display = 'block';
+        dialogoverlay.style.height = winH+'px';
+        dialogbox.style.left = (winW/2) - (550 * .5)+'px';
+        dialogbox.style.top = '100px';
+        dialogbox.style.display = 'block';
+        document.getElementById('dialogboxhead').innerHTML = 'Producto';
+        document.getElementById('dialogboxbody').innerHTML = dialog;
+      }
+      this.ok = function(){
+        document.getElementById('dialogbox').style.display = 'none';
+        document.getElementById('dialogoverlay').style.display = 'none';
+      }
+    }
+    var Alert = new CustomAlert();
 
-}
-            
+    Alert.render('Reserva Aprovada');
+    var pagina='../vista/inventario.php';
+    location.href=pagina;
+    "; 
+    echo "</script>"; 
+
+
+}            
                  $conexion = null;
     }
 

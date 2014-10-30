@@ -23,6 +23,14 @@
 </head>
 
 <body>
+  <div id="dialogoverlay"></div>
+  <div id="dialogbox">
+    <div>
+      <div id="dialogboxhead"></div>
+      <div id="dialogboxbody"></div>
+      <div id="dialogboxfoot"></div>
+    </div>
+  </div>
 
   <div class="brand" id="img"><a href=""><img src="img/logo.png"></a></div>
 
@@ -94,6 +102,8 @@
             <th> Medida </th>
             <th> Existencia </th>
             <th> Reserva </th>
+            <th>Disponible</th>
+            <th>Estado</th>
             <th> Confirmar </th>
             <th> Rechazar </th>
           </tr>
@@ -102,16 +112,18 @@
           <tr>
 
             <?php
+            $i=0;
             require_once("php/lista_reserva.php");
             foreach ($consulta as $registro) {
               $codigo=$registro['codigo'];
               require("php/r_producto.php");
+              $existencia=$registro_1['existencia'];
+              $reserva=$registro_1['reserva'];
+              $disponible=$existencia-$reserva;
               ?>
                 
               <tbody>
                 <tr>
-                  <td><input type="input" value="<?php echo $registro['cantidad'];?>" class="txtcantidad" ></td>
-                  <td><input type="input" value="<?php echo $registro['codigo'];?>" id="txtcodigo" ></td>
                   <td class="codigo"><?php echo $registro["codigo"];?></td>
                   <td><?php echo $registro["usuario"];?></td>
                   <td><?php echo $registro["cantidad"];?></td>
@@ -120,18 +132,15 @@
                   <td><?php echo $registro_1["medida"];?></td>
                   <td><?php echo $registro_1["existencia"];?></td>
                   <td><?php echo $registro_1["reserva"];?></td>
-                  <td><center><input  type="button" class="btnconfirmar" value="Confirmar"></center></td>
-                  <td><center><input  type="button" class="btnrechazar" value="Rechazar"></center></td>
+                  <td><?php echo $disponible;?></td>
+                  <td><?php echo $registro["estado"];?></td>
                   
-                  
-                 
-                  
-                  <td></td>
-
+                  <td><center><input  type="button"  data-idproducto="<?php echo $registro_1['id_producto'];?>" data-codigo="<?php echo $registro['id_consecutivo'];?>" data-cantidad="<?php echo $registro['cantidad'];?>" class="btnconfirmar" value="Confirmar"></center></td>
+                  <td><center><input  type="button"  data-idproducto="<?php echo $registro_1['id_producto'];?>" data-codigo="<?php echo $registro['id_consecutivo'];?>" class="btnrechazar" value="Rechazar"></center></td>
                 </tr>
-
               </tbody>
               <?php
+             
             }    
             ?>
           </tr>
@@ -141,9 +150,9 @@
       <br></br> 
     </div>
   </div>
-<span id="respuesta"></span>
-</div>
 
+</div>
+<span id="respuesta"></span>
 </div><!-- end contenedor-->
 
 
@@ -172,6 +181,7 @@ $('.carousel').carousel({
 </script>
 <script type="text/javascript" src="js/formulario_inventario.js"></script>
 <script type="text/javascript" src="js/buscar.js"></script>
+<script type="text/javascript" src="js/mostrar_ocultar.js"></script>
 
 </body>
 

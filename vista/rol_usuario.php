@@ -48,7 +48,7 @@
               <a href="index.html">Inicio</a>
             </li>
             <li>
-              <a href="inventario.php">Inventario</a>
+              <a href="rol_usuario.php">Inventario</a>
             </li>
              <li>
               <a href="mi_reserva.php">Reservas </a>

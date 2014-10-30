@@ -1,19 +1,17 @@
 jQuery(document).ready(function() {  
 
     $(".btnconfirmar").click(function() {
-      alert("hola");
-     var _reserva=$(".txtcantidad").val();
-     var _id_producto=$("#txtcodigo").val();
+     var _reserva=$(this).attr("data-cantidad");
+     var _id_producto=$(this).attr("data-idproducto");
+     var _codigo=$(this).attr("data-codigo");
 
-
-     alert(_reserva);
      var producto='../controladores/producto.php?action=Reservar';
      var movimiento='../controladores/movimiento_inventario.php?action=Confirmar';
 
      $.ajax({
       type :"POST",
       url : producto,
-      data :{id_producto : _id_producto , reserva : _reserva},
+      data :{ id_producto : _id_producto , reserva : _reserva },
       success : function(datos){
         $("#respuesta").html(datos);
       }
@@ -22,10 +20,32 @@ jQuery(document).ready(function() {
      $.ajax({
       type :"POST",
       url : movimiento,
-      data :{ id_producto : _id_producto }
+      data :{ id_producto : _id_producto, reserva : _reserva  , codigo: _codigo },
+      success : function(datos){
+        $("#respuesta").html(datos);
+      }
+    });
+
 
     });
 
+
+    $(".btnrechazar").click(function() {
+
+     var _codigo=$(this).attr("data-codigo");
+     var movimiento='../controladores/movimiento_inventario.php?action=Rechazar';
+
+     $.ajax({
+      type :"POST",
+      url : movimiento,
+      data :{codigo:_codigo },
+      success : function(datos){
+        $("#respuesta").html(datos);
+      }
     });
+
+    });
+
+
     });
 

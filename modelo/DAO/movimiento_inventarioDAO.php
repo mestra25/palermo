@@ -69,7 +69,7 @@ class movimiento_inventarioDao {
   var Alert = new CustomAlert();
 
   Alert.render('Error al Guardar los Datos');
-  var pagina='../vista/movimiento_inventario.php';
+  var pagina='../vista/rol_usuario.php';
   location.href=pagina;
   "; 
   echo "</script>";  
@@ -102,13 +102,55 @@ function modificar($Objmovimiento_inventario){
 }
 
 function confirmar($Objmovimiento_inventario){
-  
   $conexion = new conexion();
-  $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET estado = :estado WHERE codigo = :codigo');
+  $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET estado = :estado WHERE id_consecutivo = :codigo');
   $consulta->bindParam(':estado', $Objmovimiento_inventario->getestado());
+  $consulta->bindParam(':codigo', $Objmovimiento_inventario->getcodigo());
   $consulta->execute();
   $conexion = null;
+  
   }
+
+function rechazar($Objmovimiento_inventario){
+  
+  $conexion = new conexion();
+  $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET estado = :estado WHERE id_consecutivo = :codigo');
+  $consulta->bindParam(':estado', $Objmovimiento_inventario->getestado());
+  $consulta->bindParam(':codigo', $Objmovimiento_inventario->getcodigo());
+  if($consulta->execute()){
+
+    echo "<script language='javascript'>"; 
+   echo "function CustomAlert(){
+    this.render = function(dialog){
+      var winW = window.innerWidth;
+      var winH = window.innerHeight;
+      var dialogoverlay = document.getElementById('dialogoverlay');
+      var dialogbox = document.getElementById('dialogbox');
+      dialogoverlay.style.display = 'block';
+      dialogoverlay.style.height = winH+'px';
+      dialogbox.style.left = (winW/2) - (550 * .5)+'px';
+      dialogbox.style.top = '100px';
+      dialogbox.style.display = 'block';
+      document.getElementById('dialogboxhead').innerHTML = 'movimiento_inventario';
+      document.getElementById('dialogboxbody').innerHTML = dialog;
+    }
+    this.ok = function(){
+      document.getElementById('dialogbox').style.display = 'none';
+      document.getElementById('dialogoverlay').style.display = 'none';
+    }
+  }
+  var Alert = new CustomAlert();
+
+  Alert.render('Solicitud Rechazada');
+  var pagina='../vista/inventario.php';
+  location.href=pagina;
+  "; 
+  echo "</script>";  
+  }
+
+  $conexion = null;
+  }
+
 
 function buscar($descripcion){
   $conexion = new conexion();
