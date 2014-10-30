@@ -18,10 +18,9 @@
 
 if($_GET['action'] =='Editar'){
     
-    
-	 $objcategoria->setdescripcion($_POST['descripcion']);
+    $objcategoria->setid_categoria($_POST['id_categoria']);
+	  $objcategoria->setdescripcion($_POST['descripcion']);
     $objcategoria->setobservacion($_POST['observacion']);
-    $objcategoria->setfcreado($_POST['fcreado']);
     $objcategoria->setfmodificado($_POST['fmodificado']);
     
     $categoriaDAO->modificar($objcategoria);

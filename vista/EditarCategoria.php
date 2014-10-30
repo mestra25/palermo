@@ -1,23 +1,18 @@
 
 <?php
 require_once("../modelo/conexion.php");
+
   $result = "";
   $row = null;
   $conn  = new conexion();
-  // If 'buscar' is in the array $_POST proceed to make the query.
+
   if (isset($_GET['id_categoria'])) {
-    // Create the query
+
     $sql = 'SELECT * FROM categoria WHERE id_categoria = ?';
-    // we have to tell the PDO that we are going to send values to the query
     $stmt = $conn->prepare($sql);
-    // Now we execute the query passing an array toe execute();
     $results = $stmt->execute(array($_GET['id_categoria']));
-    // Extract the values from $result
     $row = $stmt->fetch();
-    /*
-    $error = $stmt->errorInfo();
-    echo $error[2];
-    */
+
     if (empty($row)) {
       $result = "No se encontraron resultados !!";
     }
@@ -63,7 +58,7 @@ require_once("../modelo/conexion.php");
         <form>
             
             <br></br>              
-
+            <input hidden id="txtidcategoria" name="txtidcategoria" value="<?php echo $row['id_categoria'];?>" >
             <input id="txtdescripcion" name="txtdescripcion" value="<?php echo $row['descripcion'];?>" >
             <br></br> 
             <input id="txtobservacion" name="txtobservacion" value="<?php echo $row['observacion'];?>">
