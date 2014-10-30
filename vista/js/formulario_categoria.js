@@ -23,7 +23,6 @@ jQuery(document).ready(function() {
 
 });
     $(".btneditar").click(function() {
-     alert("Hello! I am an alert box!!");
      var _id_categoria=$("#txtidcategoria").val();
      var _descripcion=$("#txtdescripcion").val();
      var _observacion= $("#txtobservacion").val();
