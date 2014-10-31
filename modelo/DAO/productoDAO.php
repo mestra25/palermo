@@ -95,9 +95,14 @@ class productoDao {
 
     function eliminar($Objproducto) {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE id_producto = :Cedula');
-        $consulta->bindParam(':Cedula', $Objproducto->getid_producto());
-        $consulta->execute();
+        $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE id_producto = :id_producto');
+        $consulta->bindParam(':id_producto', $Objproducto->getidproducto());
+        if($consulta->execute()){
+                        echo " 
+                <script language='JavaScript'> 
+                window.location='../vista/productos.php'
+                </script>";
+        }
         $conexion = null;
     }
 

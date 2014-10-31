@@ -113,7 +113,7 @@
             <input name="txtnombre" id="txtnombre" title="Se requiere nombre de cliente" class="campos_edi" placeholder="Nombre" required>
             <br></br>
             <input name="txtapellido" id="txtapellido" title="Se requiere apelldido" class="campos_edi" placeholder="Apellido" required>
-            <br></br> 5
+            <br></br> 
             <input name="txtcelular" id="txtcelular" title="Se requiere celular de cliente" class="campos_edi" onkeydown="return validarNumeros(event)" placeholder="Celular" required>
             <br></br> 
             <input name="txtdireccion" id="txtdireccion" title="Se requiere direccion de cliente" class="campos_edi" placeholder="Direccion" required>

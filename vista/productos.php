@@ -297,7 +297,7 @@
               <td><?php echo $registro["reserva"];?></td>
               <td><?php echo $registro["observacion"];?></td>
               <td><a href=""><img src="img/editar.png"></a></td>
-              <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
+              <td><a href="../controladores/producto.php?action=Eliminar&id_producto=<?php echo $registro["id_producto"];?>" onclick="return confirm('Desea eliminar el Producto?');" src="img/delete.png"><img src="img/delete.png"></a></td>
 
             </tr>
 

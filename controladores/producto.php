@@ -30,6 +30,14 @@
     $productoDao->guardar($objproducto);
 }
 
+if ($_GET['action'] == 'Eliminar'){
+
+    $objproducto->setidproducto($_GET['id_producto']);
+    
+   $productoDao->Eliminar($objproducto);
+
+  }
+
 
 if ($_GET['action'] =='Reservar'){
 
