@@ -127,15 +127,7 @@ echo "<script language='javascript'>";
     location.href=pagina;
     "; 
     echo "</script>"; 
-            }else{
-               echo " 
-                <script language='JavaScript'> 
-                alert('Error al modificar el registro.'); 
-                window.location='../vista/categoria.php'
-                </script>";
-              
             }
-      
       $conexion = null;
     }
 

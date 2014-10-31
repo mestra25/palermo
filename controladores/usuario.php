@@ -25,7 +25,6 @@
     $objusuario->setcelular($_POST['celular']);
     $objusuario->setdireccion($_POST['direccion']);
     $objusuario->setemail($_POST['email']);
-    $objusuario->setrol($_POST['rol']);
     $usuarioDAO->modificar($objusuario);
 
   }

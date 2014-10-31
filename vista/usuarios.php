@@ -102,11 +102,10 @@
           <form>
 
             <br></br>              
-            <select title="Se requiere Seleccion de Categoria" required class="campos_edi">  
-              <option id="txtrol" name="txtrol" value="administrador">Administrador</option> 
-              <option id="txtrol" name="txtrol" value="administrador-inventario">Administrador Inventario</option> 
-              <option id="txtrol" name="txtrol" value="usuario">Usuario</option> 
-
+            <select id="txtrol" title="Se requiere Seleccion de Categoria" required class="campos_edi">  
+              <option value="usuario">Usuario</option> 
+              <option value="administrador-inventario">Administrador Inventario</option> 
+              <option value="administrador">Administrador</option> 
             </select> 
             <br></br>  
             <input name="txtcedula" id="txtcedula" title="Se requiere numero de cedula" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Cedula" required>
