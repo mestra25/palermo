@@ -15,7 +15,7 @@
     $objusuario->setdireccion($_POST['direccion']);
     $objusuario->setemail($_POST['email']);
     $objusuario->setrol($_POST['rol']);
-    $objusuario->setpassword(md5($_POST['password']);
+    $objusuario->setpassword(md5($_POST['password']));
 
 
 
