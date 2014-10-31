@@ -73,9 +73,9 @@ require_once("../modelo/conexion.php");
                 <br></br> 
                 <input name="txtnombre_empresa" id="txtnombre_empresa" value="<?php echo $row['nombre_empresa'];?>">
                 <br></br>
-                <input name="txtdireccion" id="txtdireccion" value="<?php echo $row['cedula'];?>">
+                <input name="txtdireccion" id="txtdireccion" value="<?php echo $row['direccion'];?>">
                 <br></br> 
-                <input name"txttelefono" id="txttelefono"value="<?php echo $row['cedula'];?>">
+                <input name"txttelefono" id="txttelefono"value="<?php echo $row['telefono'];?>">
                 <br></br> 
                 <input name="txtemail" id="txtemail" value="<?php echo $row['email'];?>">
                 <br></br>
@@ -85,9 +85,9 @@ require_once("../modelo/conexion.php");
                 <br></br>
                 <input name="txtreplegal" id="txtreplegal" value="<?php echo $row['replegal'];?>">
                 <br></br>
-                <input  name="txtcedrep" id ="txtcedrep" value="<?php echo $row['cedrep'];?>">
+                <input  name="txtcedrep" id ="txtcedrep" value="<?php echo $row['cedRep'];?>">
                 <br></br>
-                <input name="txtcelrep" id="txtcelrep" value="<?php echo $row['celrep'];?>">
+                <input name="txtcelrep" id="txtcelrep" value="<?php echo $row['celRep'];?>">
                 <br></br>
                 
                 <input type="button" name="btnguardar" value="Guardar"  id="btn" class="btn">
