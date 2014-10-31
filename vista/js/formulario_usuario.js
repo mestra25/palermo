@@ -42,6 +42,7 @@ jQuery(document).ready(function() {
      var _celular=$("#txtcelular").val();
      var _direccion= $("#txtdireccion").val();
      var _email= $("#txtemail").val();
+     var _password= $("#txtpassword").val();
 
      var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email , password : _password   };
      var archivo='../controladores/usuario.php?action=Editar';
