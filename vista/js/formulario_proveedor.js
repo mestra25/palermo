@@ -28,7 +28,7 @@ jQuery(document).ready(function()
     });
 
     $(".btneditar").click(function  () {
-      
+      alert("js");
      var _nit=$("#txtnit").val();
      var _nombre_empresa=$("#txtnombre_empresa").val();
      var _direccion= $("#txtdireccion").val();
@@ -51,6 +51,8 @@ jQuery(document).ready(function()
         $("#rpt").html(datos);
       }
     });
+
+     alert("ajax");
    
  
   

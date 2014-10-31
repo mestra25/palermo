@@ -144,7 +144,7 @@
                       <tr>
                         <td class="codigo"><?php echo $registro["id_medida"];?></td>
                         <td><?php echo $registro["descripcion"];?></td>
-                        <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
+                        <td><a href="../controladores/medida.php?action=Eliminar&id_medida=<?php echo $registro["id_medida"];?>" onclick="return confirm('Desea eliminar la Medida?');" src="img/delete.png"><img src="img/delete.png"></a></td>
 
                     </tr>
 

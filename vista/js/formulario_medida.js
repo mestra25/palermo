@@ -5,7 +5,7 @@ jQuery(document).ready(function() {
      var _descripcion=$("#txtdescripcion").val();
     
      var parametros={ descripcion : _descripcion };
-     var archivo='../controladores/medida.php';
+     var archivo='../controladores/medida.php?action=Guardar';
    
      $.ajax({
       type :"POST",

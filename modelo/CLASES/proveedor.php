@@ -1,6 +1,5 @@
 <?php
 class proveedor {
-    private $idproveedor;
     private $nit;
     private $nombre_empresa;
     private $direccion;
@@ -59,10 +58,6 @@ $this->celrep= $celrep;
 }
 function setIdproveedor($idproveedor){
 $this->idproveedor= $idproveedor;
-}
-
-function getIdproveedor(){
-return $this->idproveedor;
 }
 
 function getNombreEmpresa(){

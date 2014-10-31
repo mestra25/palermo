@@ -8,10 +8,11 @@ class proveedorDao {
 
     function guardar($Objproveedor){
             $conexion = new conexion();
-            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' ( nit, direccion,telefono ,email ,web ,contac ,replegal ,cedRep ,celRep ) 
-              VALUES( :nit,:direccion, :telefono ,:email ,:web ,:contac ,:replegal ,:cedRep ,:celRep )');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' ( nit, direccion,nombre_empresa,telefono ,email ,web ,contac ,replegal ,cedRep ,celRep ) 
+              VALUES( :nit,:direccion,:nombre_empresa, :telefono ,:email ,:web ,:contac ,:replegal ,:cedRep ,:celRep )');
             $consulta->bindParam(':nit', $Objproveedor->getnit());
             $consulta->bindParam(':direccion', $Objproveedor->getDireccion());
+            $consulta->bindParam(':nombre_empresa', $Objproveedor->getNombreEmpresa());
             $consulta->bindParam(':telefono', $Objproveedor->getTelefono());
             $consulta->bindParam(':email', $Objproveedor->getEmail());
             $consulta->bindParam(':web', $Objproveedor->getWeb());
@@ -90,18 +91,10 @@ if ($consulta->execute()) {
     
               echo " 
                 <script language='JavaScript'> 
-                alert('Registro Eliminado correctamente.'); 
                 window.location='../vista/proveedor.php'
                 </script>";
 
-            }else{
-               echo " 
-                <script language='JavaScript'> 
-                alert('Error al eliminar el registro.'); 
-                window.location='../vista/proveedor.php'
-                </script>";
             }
-              $consulta->execute();
       
       $conexion = null;
       
@@ -113,7 +106,7 @@ if ($consulta->execute()) {
       $conexion = new conexion();
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET  nombre_empresa = :nombre_empresa ,direccion = :direccion , telefono = :telefono , email = :email , web = :web , 
       contac = :contac , replegal = :replegal , cedRep = :cedRep , celRep = :celRep WHERE nit = :nit');
-      $consulta->bindParam(':nit', $Objproveedor->getnit());
+            $consulta->bindParam(':nit', $Objproveedor->getnit());
             $consulta->bindParam(':direccion', $Objproveedor->getDireccion());
             $consulta->bindParam(':nombre_empresa', $Objproveedor->getNombreEmpresa());
             $consulta->bindParam(':telefono', $Objproveedor->getTelefono());
@@ -126,20 +119,35 @@ if ($consulta->execute()) {
             
       if ($consulta->execute())
             {
-              echo " 
-                <script language='JavaScript'> 
-                alert('Registro modificado correctamente.'); 
-                window.location='../vista/proveedor.php'
-                </script>";
-            }else{
-               echo " 
-                <script language='JavaScript'> 
-                alert('Error al modificar el registro.'); 
-                window.location='../vista/proveedor.php'
-                </script>";
+echo "<script language='javascript'>"; 
+     echo "function CustomAlert(){
+      this.render = function(dialog){
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var dialogoverlay = document.getElementById('dialogoverlay');
+        var dialogbox = document.getElementById('dialogbox');
+        dialogoverlay.style.display = 'block';
+        dialogoverlay.style.height = winH+'px';
+        dialogbox.style.left = (winW/2) - (550 * .5)+'px';
+        dialogbox.style.top = '100px';
+        dialogbox.style.display = 'block';
+        document.getElementById('dialogboxhead').innerHTML = 'Proveedor';
+        document.getElementById('dialogboxbody').innerHTML = dialog;
+      }
+      this.ok = function(){
+        document.getElementById('dialogbox').style.display = 'none';
+        document.getElementById('dialogoverlay').style.display = 'none';
+      }
+    }
+    var Alert = new CustomAlert();
+
+    Alert.render('Datos Editados Satisfactoriamente');
+    var pagina='../vista/proveedor.php';
+    location.href=pagina;
+    "; 
+    echo "</script>";  
               
             }
-              $consulta->execute();
       
       $conexion = null;
       

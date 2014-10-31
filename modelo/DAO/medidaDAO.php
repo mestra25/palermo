@@ -74,9 +74,14 @@ $conexion = null;
 
 function eliminar($Objmedida) {
   $conexion = new Conexion();
-  $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE descripcion = :descripcion');
-  $consulta->bindParam(':descripcion', $Objmedida->getdescripcion());
-  $consulta->execute();
+  $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE id_medida = :id_medida');
+  $consulta->bindParam(':id_medida', $Objmedida->getid_medida());
+ if($consulta->execute()){
+                 echo " 
+                <script language='JavaScript'> 
+                window.location='../vista/medida.php'
+                </script>";
+}
   $conexion = null;
 }
 
