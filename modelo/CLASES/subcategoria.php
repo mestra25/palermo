@@ -1,7 +1,7 @@
 <?php
 
 class subcategoria{
-
+	private $id_subcategoria;
 	private $descripcion;
 	private $observacion;
 	private $fcreado;
@@ -11,6 +11,7 @@ class subcategoria{
 
 	function __construct(){
 
+		$this->id_subcategoria=0;
 		$this->descripcion="";
 		$this->observacion="";
 		$this->fcreado="";
@@ -20,6 +21,10 @@ class subcategoria{
 
 	function setdescripcion($descripcion){
 		$this->descripcion=$descripcion;
+	}
+
+	function setid_subcategoria($id_subcategoria){
+		$this->id_subcategoria=$id_subcategoria;
 	}
 
 	function setobservacion($observacion){
@@ -39,6 +44,9 @@ class subcategoria{
 		return $this->descripcion;
 	}
 
+	function getid_subcategoria(){
+		return $this->id_subcategoria;
+	}
 
 	function getobservacion(){
 		return $this->observacion;

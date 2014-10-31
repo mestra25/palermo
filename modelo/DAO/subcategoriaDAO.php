@@ -77,9 +77,16 @@ class subcategoriaDao {
 
     function eliminar($Objsubcategoria) {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE descripcion = :descripcion');
-        $consulta->bindParam(':descripcion', $Objsubcategoria->getdescripcion());
-        $consulta->execute();
+        $consulta = $conexion->prepare('DELETE FROM ' . self::tabla . ' WHERE id_subcategoria = :id_subcategoria');
+        $consulta->bindParam(':id_subcategoria', $Objsubcategoria->getid_subcategoria());
+        if($consulta->execute()){
+
+              echo " 
+                <script language='JavaScript'> 
+                window.location='../vista/subcategoria.php'
+                </script>";
+        }
+
         $conexion = null;
     }
 
@@ -87,10 +94,10 @@ class subcategoriaDao {
       
       $conexion = new conexion();
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET descripcion = :descripcion, observacion = :observacion, fmodificado = :fmodificado WHERE id_subcategoria = :id_subcategoria');
-      $consulta->bindParam(':id_subcategoria', $Objcategoria->getid_subcategoria());
-      $consulta->bindParam(':descripcion', $Objcategoria->getdescripcion());
-      $consulta->bindParam(':observacion', $Objcategoria->getobservacion());
-      $consulta->bindParam(':fmodificado', $Objcategoria->getfmodificado());
+      $consulta->bindParam(':id_subcategoria', $Objsubcategoria->getid_subcategoria());
+      $consulta->bindParam(':descripcion', $Objsubcategoria->getdescripcion());
+      $consulta->bindParam(':observacion', $Objsubcategoria->getobservacion());
+      $consulta->bindParam(':fmodificado', $Objsubcategoria->getfmodificado());
            if ($consulta->execute())
             {
 echo "<script language='javascript'>"; 

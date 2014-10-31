@@ -141,7 +141,6 @@
             <thead>
               <tr>
                 <th>Codigo</th>
-                <th>Codigo Categoria</th>
                 <th>Descripcion</th>
                 <th>Creado</th>
                 <th>Modificado</th>
@@ -161,13 +160,12 @@
 
                   <tr>
                     <td class="codigo"><?php echo $registro["id_subcategoria"];?></td>
-                    <td><?php echo $registro["id_categoria"];?></td>
                     <td><?php echo $registro["descripcion"];?></td>
                     <td><?php echo $registro["observacion"];?></td>
                     <td><?php echo $registro["fcreado"];?></td>
                     <td><?php echo $registro["fmodificado"];?></td>
                     <td><a  href="EditarSubcategoria.php?id_subcategoria=<?php echo $registro["id_subcategoria"];?>" ><img src="img/editar.png"></a></td>
-                    <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
+                    <td><a href="../controladores/subcategoria.php?action=Eliminar&id_subcategoria=<?php echo $registro["id_subcategoria"];?>" onclick="return confirm('Desea eliminar subcategoria?');" src="img/delete.png"><img src="img/delete.png"></a></td>
 
                 </tr>
 

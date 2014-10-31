@@ -17,11 +17,18 @@
 
 if($_GET['action'] =='Editar'){
 
-    $objcategoria->setid_subcategoria($_POST['id_subcategoria']);
-	  $objcategoria->setdescripcion($_POST['descripcion']);
-    $objcategoria->setobservacion($_POST['observacion']);
-    $objcategoria->setfmodificado($_POST['fmodificado']);
+    $objsubcategoria->setid_subcategoria($_POST['id_subcategoria']);
+	  $objsubcategoria->setdescripcion($_POST['descripcion']);
+    $objsubcategoria->setobservacion($_POST['observacion']);
+    $objsubcategoria->setfmodificado($_POST['fmodificado']);
     
     $subcategoriaDAO->modificar($objsubcategoria);
 }
+if ($_GET['action'] == 'Eliminar'){
+
+    $objsubcategoria->setid_subcategoria($_GET['id_subcategoria']);
+    
+   $subcategoriaDAO->Eliminar($objsubcategoria);
+
+  }
 ?>

@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
      var _fmodificado= $fecha;
     
      var parametros={ descripcion :_descripcion , observacion: _observacion , fcreado : _fcreado , fmodificado :_fmodificado };
-     var archivo='../controladores/subcategoria.php';
+     var archivo='../controladores/subcategoria.php?action=Guardar';
 
      $.ajax({
       type :"POST",
@@ -24,14 +24,15 @@ jQuery(document).ready(function() {
     });
     
     $(".btneditar").click(function() {
-     var _id_categoria=$("#txtisubdcategoria").val();
+     var _id_subcategoria=$("#txtid_subcategoria").val();
+
      var _descripcion=$("#txtdescripcion").val();
      var _observacion= $("#txtobservacion").val();
      var d = new Date(); 
      $fecha =(d.getDate()+"/"+d.getMonth()+"/"+d.getFullYear()+" , "+d.getHours()+":"+d.getMinutes());
      var _fmodificado=$fecha;
     
-     var parametros={ id_subcategoria: _id_subcategoria, descripcion : _descripcion , observacion: _observacion , fmodificado :_fmodificado  };
+     var parametros={ id_subcategoria : _id_subcategoria, descripcion : _descripcion , observacion : _observacion , fmodificado : _fmodificado  };
      var archivo='../controladores/subcategoria.php?action=Editar';
     
      $.ajax({
