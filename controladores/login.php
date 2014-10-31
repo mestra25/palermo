@@ -5,15 +5,14 @@ require_once '../modelo/conexion.php';
 
 
 $ced=$_POST["cedula"];
+
 $pass=$_POST["password"];
 $encpass=md5("$pass");
-$tem=md5("MAFE");
-echo $encpass;
-echo "     ";
-echo $tem;
+$tem=md5("1234");
 
-if ($pass = $tem) {
 
+if ($ced =="adm" && $encpass==$tem) {
+	
 	session_start();
 	$_SESSION['admin']="si";			
 
@@ -48,6 +47,9 @@ if ($encpass==$registro['password']) {
 		
 
 		
+	}else{
+
+		header("location:login_invalido.php");
 	}
 }  
 
