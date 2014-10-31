@@ -16,7 +16,7 @@ jQuery(document).ready(function() {
      if ( _password == _confpassword)
      {
 
-     var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email , rol : _rol, password : _password ,confpassword: _confpassword };
+     var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email , rol : _rol, password : _password  };
      var archivo='../controladores/usuario.php?action=Guardar';
    
 
@@ -29,7 +29,7 @@ jQuery(document).ready(function() {
       }
     });
     }else{
-      alert(" Verifique su contraseña");
+      alert(" Verifique si las contraseñas son iguales");
      
     }
     });
@@ -43,7 +43,7 @@ jQuery(document).ready(function() {
      var _direccion= $("#txtdireccion").val();
      var _email= $("#txtemail").val();
 
-     var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email  };
+     var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email , password : _password   };
      var archivo='../controladores/usuario.php?action=Editar';
    
      $.ajax({

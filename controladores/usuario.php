@@ -13,6 +13,8 @@
     $objusuario->setdireccion($_POST['direccion']);
     $objusuario->setemail($_POST['email']);
     $objusuario->setrol($_POST['rol']);
+    $objusuario->setpassword($_POST['password']);
+
 
 
     $usuarioDAO->guardar($objusuario);
@@ -25,6 +27,7 @@
     $objusuario->setcelular($_POST['celular']);
     $objusuario->setdireccion($_POST['direccion']);
     $objusuario->setemail($_POST['email']);
+    $objusuario->setpassword($_POST['password']);
     $usuarioDAO->modificar($objusuario);
 
   }

@@ -9,7 +9,7 @@ class usuarioDAO {
 
     function guardar($Objusuario){
             $conexion = new conexion();
-            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cedula,  nombre, apellido, celular, direccion, email, rol) VALUES(:cedula, :nombre, :apellido, :direccion, :celular,:email, :rol)');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cedula,  nombre, apellido, celular, direccion, email, rol , password) VALUES(:cedula, :nombre, :apellido, :direccion, :celular,:email, :rol , :password)');
             $consulta->bindParam(':cedula', $Objusuario->getCedula());
             $consulta->bindParam(':nombre', $Objusuario->getNombre());
             $consulta->bindParam(':apellido', $Objusuario->getApellido());
@@ -17,6 +17,7 @@ class usuarioDAO {
             $consulta->bindParam(':direccion', $Objusuario->getDireccion());
             $consulta->bindParam(':email', $Objusuario->getEmail());
             $consulta->bindParam(':rol', $Objusuario->getRol());
+            $consulta->bindParam(':password', $Objusuario->getPassword());
             $consulta->execute();
             if ($consulta) {
      echo "<script language='javascript'>"; 
@@ -98,13 +99,14 @@ class usuarioDAO {
       
       $conexion = new conexion();
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET nombre = :nombre, apellido = :apellido, celular = :celular, 
-        direccion = :direccion, email = :email WHERE cedula = :cedula');
+        direccion = :direccion, email = :email ,password = :password WHERE cedula = :cedula');
         $consulta->bindParam(':cedula', $Objusuario->getCedula());
         $consulta->bindParam(':nombre', $Objusuario->getNombre());
         $consulta->bindParam(':apellido', $Objusuario->getApellido());
         $consulta->bindParam(':celular', $Objusuario->getCelular());
         $consulta->bindParam(':direccion', $Objusuario->getDireccion());
         $consulta->bindParam(':email', $Objusuario->getEmail());
+        $consulta->bindParam(':password', $Objusuario->getPassword());
 
         if ($consulta->execute())
             {

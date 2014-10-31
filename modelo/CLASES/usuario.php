@@ -9,6 +9,7 @@ class usuario{
     private $Direccion;
     private $Email;
     private $Rol;
+    private $Password;
 
     function __construct(){
 
@@ -19,6 +20,7 @@ class usuario{
         $this->Direccion="";
         $this->Email="";
         $this->Rol="";
+        $this->Password="";
     }
 
     function setCedula($Cedula){
@@ -48,6 +50,9 @@ class usuario{
     function setRol($Rol){
         $this->Rol=$Rol;
     }
+     function setPassword($Password){
+        $this->Password=$Password;
+    }
 
     function getCedula(){
         return $this->Cedula;
@@ -76,6 +81,9 @@ class usuario{
 
     function getRol(){
         return $this->Rol;
+    }
+    function getPassword(){
+        return $this->Password;
     }
 }
 
