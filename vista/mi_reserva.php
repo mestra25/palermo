@@ -44,11 +44,9 @@
       <center>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
+            
             <li>
-              <a href="index.html">Inicio</a>
-            </li>
-            <li>
-              <a href="inventario.php">Inventario</a>
+              <a href="rol_usuario.php">Inventario</a>
             </li>
              <li>
               <a href="mi_reserva.php">Reservas </a>
@@ -82,22 +80,7 @@
           <br></br>
           <form method="POST" action="mi_reserva.php"></form>
 <center>
-      <h2>usuario</h2>
 
-      <select id="txtusuario" onchange="mostrar()">
-       <option>Seleccione Usuario</option>
-
-       <?php
-       require("/php/lista_usuario.php");
-
-       foreach ($consulta as $registro) {
-
-         echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
-       }
-
-       ?>
-
-     </select>
    </center>
           <table id="tabla">
             <thead>
@@ -121,12 +104,14 @@
                 foreach ($consulta as $registro) {
                   $id_producto=$registro['codigo'];
                   require("php/l_producto.php");
+                  $id_medi=$registro_1['medida'];
+                  require("php/p_medida.php");
                   ?>
                   <tbody>
                     <tr>
                       <td class="codigo"><?php echo $registro["codigo"];?></td>
                       <td><?php echo $registro_1["descripcion"];?></td>
-                      <td><?php echo $registro_1["medida"];?></td>
+                      <td><?php echo $registro_5["descripcion"];?></td>
                       <td><?php echo $registro_1["existencia"];?></td>
                       <td><?php echo $registro_1["reserva"];?></td>
                       <td><?php echo $registro_1["observacion"];?></td>
@@ -176,6 +161,7 @@ $('.carousel').carousel({
 </script>
 <script type="text/javascript" src="js/formulario_rol_usuario.js"></script>
 <script type="text/javascript" src="js/buscar.js"></script>
+<script type="text/javascript" src="js/mostrar_ocultar.js"></script>
 
 </body>
 

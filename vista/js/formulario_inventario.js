@@ -3,8 +3,7 @@ jQuery(document).ready(function() {
     $(".btnconfirmar").click(function() {
      var _reserva=$(this).attr("data-cantidad");
      var _id_producto=$(this).attr("data-idproducto");
-     var _codigo=$(this).attr("data-codigo");
-
+     var _codigo =$(this).attr("data-codigo");
      var producto='../controladores/producto.php?action=Reservar';
      var movimiento='../controladores/movimiento_inventario.php?action=Confirmar';
 
@@ -34,7 +33,8 @@ jQuery(document).ready(function() {
 
      var _codigo=$(this).attr("data-codigo");
      var movimiento='../controladores/movimiento_inventario.php?action=Rechazar';
-
+     var id=$(this).attr("data-id");
+     alert(id);
      $.ajax({
       type :"POST",
       url : movimiento,

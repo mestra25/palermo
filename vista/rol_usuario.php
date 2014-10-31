@@ -44,9 +44,7 @@
       <center>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li>
-              <a href="index.html">Inicio</a>
-            </li>
+            
             <li>
               <a href="rol_usuario.php">Inventario</a>
             </li>
@@ -100,14 +98,15 @@
                 require("php/lista_producto.php");
 
                 foreach ($consulta as $registro) {
-       
+                  $id_medi=$registro['medida'];
+                  require("php/p_medida.php");
                   ?>
                   <tbody>
                     <tr>
                       <td><a name="id_producto" href="reserva.php?id_producto=<?php echo $registro['id_producto']; ?>" onclick="reservar()"><img src="img/reserva.png"></a></td>
                       <td class="codigo"><?php echo $registro["codigo"];?></td>
                       <td><?php echo $registro["descripcion"];?></td>
-                      <td><?php echo $registro["medida"];?></td>
+                      <td><?php echo $registro_5["descripcion"];?></td>
                       <td><?php echo $registro["existencia"];?></td>
                       <td><?php echo $registro["reserva"];?></td>
                       <td><?php echo $registro["observacion"];?></td>
@@ -155,6 +154,7 @@ $('.carousel').carousel({
 </script>
 <script type="text/javascript" src="js/formulario_rol_usuario.js"></script>
 <script type="text/javascript" src="js/buscar.js"></script>
+<script type="text/javascript" src="js/mostrar_ocultar.js"></script>
 
 </body>
 

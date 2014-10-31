@@ -107,23 +107,62 @@ class productoDao {
     }
 
     function modificar($Objproducto){
-      
+                    echo " 
+                <script language='JavaScript'> 
+alert('Editar Dao');
+                </script>";
       $conexion = new conexion();
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET id_categoria = :id_categoria, id_subcategoria = :id_subcategoria, id_proveedor = :id_proveedor, 
-        codigo = :codigo, descripcion = :descripcion, v_costo = :v_costo, venta_1 = :venta_1, p_utilidad = :p_utilidad, medida = :medida 
-        WHERE id_producto = :Cedula');
-        $consulta->bindParam(':Cedula', $Objproducto->getid_producto());
-        $consulta->bindParam(':id_categoria', $Objproducto->getid_categoria());
-        $consulta->bindParam(':id_subcategoria', $Objproducto->getid_subcategoria());
-        $consulta->bindParam(':id_proveedor', $Objproducto->getid_proveedor());
-        $consulta->bindParam(':codigo', $Objproducto->getcodigo());
-        $consulta->bindParam(':descripcion', $Objproducto->getdescripcion());
-        $consulta->bindParam(':v_costo', $Objproducto->getv_costo());
-        $consulta->bindParam(':venta_1', $Objproducto->getventa_1());
-        $consulta->bindParam(':p_utilidad', $Objproducto->getp_utilidad());
-        $consulta->bindParam(':medida', $Objproducto->getmedida());    
+        codigo = :codigo, descripcion = :descripcion, v_costo = :v_costo, venta_1 = :venta_1,venta_2 = :venta_2,venta_3 = :venta_3,venta_4 = :venta_4, p_utilidad = :p_utilidad,p_descuento = :p_descuento,stock_min = :stock_min, stock_max = :stock_max, medida = :medida, fmodificado=:fmodificado,observacion=:observacion
+        WHERE id_producto = :id_producto');
+            $consulta->bindParam(':id_producto', $Objproducto->getIdProducto());
+            $consulta->bindParam(':id_categoria', $Objproducto->getIdcategoria());
+            $consulta->bindParam(':id_subcategoria', $Objproducto->getIdsubcategoria());
+            $consulta->bindParam(':id_proveedor', $Objproducto->getIdproveedor());
+            $consulta->bindParam(':codigo', $Objproducto->getcodigo());
+            $consulta->bindParam(':descripcion', $Objproducto->getdescripcion());
+            $consulta->bindParam(':v_costo', $Objproducto->getVcosto());
+            $consulta->bindParam(':venta_1', $Objproducto->getVenta1());
+            $consulta->bindParam(':venta_2', $Objproducto->getVenta2());
+            $consulta->bindParam(':venta_3', $Objproducto->getVenta3());
+            $consulta->bindParam(':venta_4', $Objproducto->getVenta4());
+            $consulta->bindParam(':p_utilidad', $Objproducto->getPrecutil());
+            $consulta->bindParam(':medida', $Objproducto->getMedidad());
+            $consulta->bindParam(':p_descuento', $Objproducto->getPorcdescuento());
+            $consulta->bindParam(':stock_min', $Objproducto->getStockmin());
+            $consulta->bindParam(':stock_max', $Objproducto->getStockmax());
+            $consulta->bindParam(':fmodificado', $Objproducto->getModificado());
+            $consulta->bindParam(':observacion', $Objproducto->getObservaciones());
         
-        $consulta->execute();
+        if($consulta->execute()){
+          echo "<script language='javascript'>"; 
+     echo "function CustomAlert(){
+      this.render = function(dialog){
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var dialogoverlay = document.getElementById('dialogoverlay');
+        var dialogbox = document.getElementById('dialogbox');
+        dialogoverlay.style.display = 'block';
+        dialogoverlay.style.height = winH+'px';
+        dialogbox.style.left = (winW/2) - (550 * .5)+'px';
+        dialogbox.style.top = '100px';
+        dialogbox.style.display = 'block';
+        document.getElementById('dialogboxhead').innerHTML = 'Producto';
+        document.getElementById('dialogboxbody').innerHTML = dialog;
+      }
+      this.ok = function(){
+        document.getElementById('dialogbox').style.display = 'none';
+        document.getElementById('dialogoverlay').style.display = 'none';
+      }
+    }
+    var Alert = new CustomAlert();
+
+    Alert.render('Datos Editados Satisfactoriamente');
+    var pagina='../vista/productos.php';
+    location.href=pagina;
+    "; 
+    echo "</script>";
+        }
         $conexion = null;
       
     }

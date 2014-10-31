@@ -124,7 +124,6 @@
         <form>
 
           <br></br>              
-          <label for="name">Categoria:  </label> 
           <select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos">          
 
            <option value="">Categoria</option>
@@ -141,7 +140,6 @@
 
          <br></br>              
 
-         <label for="name">Subcategoria:  </label> 
          <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria" required class="campos">          
 
           <option value="" >Subcategoria</option>
@@ -158,7 +156,6 @@
        </select>
        <br></br>              
 
-       <label for="name">Proveedor:  </label> 
        <select id="txtid_proveedor" title="Se requiere un Proveedor" required class="campos">          
 
         <option value="" >Proveedor</option>
@@ -173,7 +170,6 @@
        ?>
      </select> 
      <br></br> 
-     <label for="name">Medida:  </label>   
      <select id="txtid_medida" title="Se requiere una Medida" required class="campos">          
 
         <option value="" >Medida</option>

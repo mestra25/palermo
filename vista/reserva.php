@@ -49,7 +49,7 @@
         <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
         <a class="navbar-brand" href="index.html">Data Sistemas</a>
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
+      
       <center>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
@@ -86,24 +86,7 @@
         <br></br> 
         <h2>Realizar Movimiento</h2>
         <form>
-<center>
-      <h2>usuario</h2>
 
-      <select id="txtid_usuario" onchange="mostrar()">
-       <option>Seleccione Usuario</option>
-
-       <?php
-       require("/php/lista_usuario.php");
-
-       foreach ($consulta as $registro) {
-
-         echo " <option value=".$registro['cedula'].">".$registro['nombre']."</option>";
-       }
-
-       ?>
-
-     </select>
-   </center>
          <?php
 
          require("php/tem.php");

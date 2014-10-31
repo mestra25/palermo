@@ -81,6 +81,11 @@
 
    <div id="tabla">
      <div id="page-wrap">
+     <input type="button" value="Aprovadas" class="btn" onclick="aprovadas()" id="aprovadas" >
+     <input type="button" value="Rechazadas" class="btn" onclick="rechazadas()" id="rechazada" >
+     <input type="button" value="En Espera" class="btn" onclick="espera()" id="en_espera" style="display:none;" >
+
+<div id="tabla_espera">
       <center> 
         <h2>Solicitud de Reserva</h2>
       </center>
@@ -91,7 +96,7 @@
       <input type="input" placeholder="Codigo Producto a Buscar" class="campo" id="buscar_" style="display:none">
       <br></br>
 <form>
-      <table id="tabla">
+      <table>
         <thead>
           <tr>
             <th> Codigo </th>
@@ -113,6 +118,7 @@
 
             <?php
             $i=0;
+            $j=1;
             require_once("php/lista_reserva.php");
             foreach ($consulta as $registro) {
               $codigo=$registro['codigo'];
@@ -135,21 +141,136 @@
                   <td><?php echo $disponible;?></td>
                   <td><?php echo $registro["estado"];?></td>
                   
-                  <td><center><input  type="button"  data-idproducto="<?php echo $registro_1['id_producto'];?>" data-codigo="<?php echo $registro['id_consecutivo'];?>" data-cantidad="<?php echo $registro['cantidad'];?>" class="btnconfirmar" value="Confirmar"></center></td>
-                  <td><center><input  type="button"  data-idproducto="<?php echo $registro_1['id_producto'];?>" data-codigo="<?php echo $registro['id_consecutivo'];?>" class="btnrechazar" value="Rechazar"></center></td>
+                  <td><center><input  type="button"   data-idproducto="<?php echo $registro_1['id_producto'];?>" data-codigo="<?php echo $registro['id_consecutivo'];?>" data-cantidad="<?php echo $registro['cantidad'];?>" class="btnconfirmar" value="Confirmar"></center></td>
+                  <td><center><input  type="button"   data-idproducto="<?php echo $registro_1['id_producto'];?>" data-codigo="<?php echo $registro['id_consecutivo'];?>" class="btnrechazar" value="Rechazar"></center></td>
                 </tr>
               </tbody>
               <?php
-             
+             $i++;
             }    
             ?>
           </tr>
         </tbody>
       </table>
       </form>
-      <br></br> 
     </div>
+<div id="tabla_aprovada" style="display:none;">
+  <center><h2 class="reservas">Reservas Aprovadas</h2></center>
+<table>
+
+  <br></br>
+        <thead>
+          <tr>
+            <th> Codigo </th>
+            <th> Usuario </th>
+            <th> Cantidad </th>
+            <th> Descripcion </th>
+            <th> V. Costo </th>
+            <th> Medida </th>
+            <th> Existencia </th>
+            <th> Reserva </th>
+            <th>Disponible</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+
+            <?php
+            require_once("php/lista_reserva_aprovada.php");
+            foreach ($consulta as $registro) {
+              $codigo=$registro['codigo'];
+              require("php/r_producto.php");
+              $existencia=$registro_1['existencia'];
+              $reserva=$registro_1['reserva'];
+              $disponible=$existencia-$reserva;
+              ?>
+                
+              <tbody>
+                <tr>
+                  <td class="codigo"><?php echo $registro["codigo"];?></td>
+                  <td><?php echo $registro["usuario"];?></td>
+                  <td><?php echo $registro["cantidad"];?></td>
+                  <td><?php echo $registro_1["descripcion"];?></td>
+                  <td><?php echo $registro_1["v_costo"];?></td>
+                  <td><?php echo $registro_1["medida"];?></td>
+                  <td><?php echo $registro_1["existencia"];?></td>
+                  <td><?php echo $registro_1["reserva"];?></td>
+                  <td><?php echo $disponible;?></td>
+                  <td><?php echo $registro["estado"];?></td>
+                </tr>
+              </tbody>
+              <?php
+             $i++;
+            }    
+            ?>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<div id="tabla_rechazada" style="display:none;">
+      <center><h2 class="reservas">Reservas Rechazadas</h2></center>
+<table>
+        <thead>
+          <tr>
+            <th> Codigo </th>
+            <th> Usuario </th>
+            <th> Cantidad </th>
+            <th> Descripcion </th>
+            <th> V. Costo </th>
+            <th> Medida </th>
+            <th> Existencia </th>
+            <th> Reserva </th>
+            <th>Disponible</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+
+            <?php
+            require_once("php/lista_reserva_rechazada.php");
+            foreach ($consulta as $registro) {
+              $codigo=$registro['codigo'];
+              require("php/r_producto.php");
+              $existencia=$registro_1['existencia'];
+              $reserva=$registro_1['reserva'];
+              $disponible=$existencia-$reserva;
+              ?>
+                
+              <tbody>
+                <tr>
+                  <td class="codigo"><?php echo $registro["codigo"];?></td>
+                  <td><?php echo $registro["usuario"];?></td>
+                  <td><?php echo $registro["cantidad"];?></td>
+                  <td><?php echo $registro_1["descripcion"];?></td>
+                  <td><?php echo $registro_1["v_costo"];?></td>
+                  <td><?php echo $registro_1["medida"];?></td>
+                  <td><?php echo $registro_1["existencia"];?></td>
+                  <td><?php echo $registro_1["reserva"];?></td>
+                  <td><?php echo $disponible;?></td>
+                  <td><?php echo $registro["estado"];?></td>
+                </tr>
+              </tbody>
+              <?php
+             $i++;
+            }    
+            ?>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      <br></br> 
+
+    </div>
+
+
   </div>
+
+
+
+
+
 
 </div>
 <span id="respuesta"></span>
