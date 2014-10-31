@@ -120,6 +120,10 @@
             <br></br> 
             <input name="txtemail" id="txtemail" title="Se requiere email de cliente" class="campos_edi" placeholder="E-mail" required>
             <br></br> 
+            <input name="txtpassword" id="txtpassword" title="Se requiere password de cliente" class="campos_edi" placeholder="Password" required>
+            <br></br> 
+            <input name="txtconfpassword" id="txtconfpassword" title="Se requiere confirmar password de usuario" class="campos_edi" placeholder="Confirmar Password" required>
+            <br></br> 
             
             <br></br>                         
             
@@ -144,6 +148,7 @@
                 <th>Direccion</th>
                 <th>E-mail</th>
                 <th>Rol</th>
+              
                 <th>Modificar</th>
                 <th>Eliminar</th>
 

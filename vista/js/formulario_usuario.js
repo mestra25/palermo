@@ -2,6 +2,7 @@ jQuery(document).ready(function() {
 
     $("#btn").click(function() {
 
+
      var _cedula=$("#txtcedula").val();
      var _nombre= $("#txtnombre").val();
      var _apellido=$("#txtapellido").val();
@@ -9,9 +10,13 @@ jQuery(document).ready(function() {
      var _direccion= $("#txtdireccion").val();
      var _email= $("#txtemail").val();
      var _rol= $("#txtrol").val();
-    
+     var _password= $("#txtpassword").val();
+     var _confpassword= $("#txtconfpassword").val();
 
-     var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email , rol : _rol };
+     if ( _password == _confpassword)
+     {
+
+     var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email , rol : _rol, password : _password ,confpassword: _confpassword };
      var archivo='../controladores/usuario.php?action=Guardar';
    
 
@@ -23,7 +28,10 @@ jQuery(document).ready(function() {
         $("#respuesta").html(datos);
       }
     });
-
+    }else{
+      alert(" Verifique su contraseña");
+     
+    }
     });
 
     $(".btneditar").click(function() {
