@@ -143,7 +143,11 @@ require_once("../modelo/conexion.php");
             <br></br> 
             <label for="name">E-mail:  </label>
             <input class="campos_edi" name="txtemail" id="txtemail"  value="<?php echo $row['email'];?>">
-            <br></br> 
+            <br></br>
+            <label for="name">Password:  </label>
+            <input class="campos_edi" name="txtpassword" id="txtpassword"  value="<?php echo $row['password'];?>">
+            <br></br>
+
             <input id="btn-boton" type="button" class="btneditar" value="Editar" >
             <a id="btn-boton" href="categoria.php">Cancelar</a>        
             <div id="rpt"></div>

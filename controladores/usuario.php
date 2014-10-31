@@ -5,6 +5,8 @@
    $objusuario = new usuario();
    $usuarioDAO = new usuarioDAO();
    if ($_GET['action'] =='Guardar'){
+    $vpass=$_POST['password'];
+    md5($vpass);
 	
     $objusuario->setcedula($_POST['cedula']);
     $objusuario->setnombre($_POST['nombre']);
@@ -13,7 +15,7 @@
     $objusuario->setdireccion($_POST['direccion']);
     $objusuario->setemail($_POST['email']);
     $objusuario->setrol($_POST['rol']);
-    $objusuario->setpassword($_POST['password']);
+    $objusuario->setpassword($vpass);
 
 
 
@@ -27,7 +29,7 @@
     $objusuario->setcelular($_POST['celular']);
     $objusuario->setdireccion($_POST['direccion']);
     $objusuario->setemail($_POST['email']);
-    $objusuario->setpassword($_POST['password']);
+    $objusuario->setpassword($vpass);
     $usuarioDAO->modificar($objusuario);
 
   }
