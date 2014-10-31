@@ -117,7 +117,7 @@
 
     <center>
 
-      <div id="formulario" style="display:none">
+      <div id="formulario" style="display:none;">
 
         <h2>Agregar Producto</h2>
 
