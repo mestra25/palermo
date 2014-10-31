@@ -43,7 +43,7 @@ $(".btneditar").click(function  () {
       url : archivo,
       data :parametros,
       success : function( datos){
-        $("#respuesta").html(datos);
+        $("#rpt").html(datos);
       }
       
     });

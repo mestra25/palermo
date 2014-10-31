@@ -5,8 +5,8 @@
    $objproveedor = new proveedor();
    $ProveedorDao = new proveedorDao();
 
-   if ($_GET['action'] ='Guardar'){
-  
+   if ($_GET['action'] =='Guardar')
+{
     $objproveedor->setNit($_POST['nit']);
     $objproveedor->setNombreEmpresa($_POST['nombre_empresa']);
     $objproveedor->setDireccion($_POST['direccion']);

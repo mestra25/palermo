@@ -101,10 +101,13 @@ class categoriaDao {
     function modificar($Objcategoria){
       
       $conexion = new conexion();
+
+  
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET descripcion = :descripcion, observacion = :observacion, fmodificado = :fmodificado WHERE id_categoria = :id_categoria');
       $consulta->bindParam(':id_categoria', $Objcategoria->getid_categoria());
       $consulta->bindParam(':descripcion', $Objcategoria->getdescripcion());
       $consulta->bindParam(':observacion', $Objcategoria->getobservacion());
+
       $consulta->bindParam(':fmodificado', $Objcategoria->getfmodificado());
            if ($consulta->execute())
             {

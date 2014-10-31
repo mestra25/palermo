@@ -37,9 +37,11 @@
 }
 if ($_GET['action'] == 'Eliminar'){
 
+
     $objcliente->setCedula($_GET['cedula']);
     
     $clienteDAO->eliminar($objcliente);
  
             }
+
 ?>

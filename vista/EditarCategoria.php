@@ -140,9 +140,13 @@ require_once("../modelo/conexion.php");
         <form>
             
             <br></br>              
+
+           
+
             <input  hidden id="txtidcategoria" name="txtidcategoria" value="<?php echo $row['id_categoria'];?>" >
             <label for="name">Descripcion:  </label>
             <input class="campo" id="txtdescripcion" name="txtdescripcion" value="<?php echo $row['descripcion'];?>" >
+
             <br></br> 
             <label for="name">Observacion:  </label>
             <input class="campo" id="txtobservacion" name="txtobservacion" value="<?php echo $row['observacion'];?>">
