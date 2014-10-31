@@ -16,8 +16,7 @@ class clienteDao {
             $consulta->bindParam(':celular', $Objcliente->getCelular());
             $consulta->bindParam(':direccion', $Objcliente->getDireccion());
             $consulta->bindParam(':email', $Objcliente->getEmail());
-            $consulta->execute();
-            if ($consulta) {
+            if ($consulta->execute()) {
      echo "<script language='javascript'>"; 
      echo "function CustomAlert(){
       this.render = function(dialog){
@@ -103,20 +102,35 @@ class clienteDao {
         $consulta->bindParam(':email', $Objcliente->getEmail());
        if ($consulta->execute())
             {
-              echo " 
-                <script language='JavaScript'> 
-                alert('Registro modificado correctamente.'); 
-                window.location='../vista/cliente.php'
-                </script>";
-            }else{
-               echo " 
-                <script language='JavaScript'> 
-                alert('Error al modificar el registro.'); 
-                window.location='../vista/cliente.php'
-                </script>";
-              
+echo "<script language='javascript'>"; 
+   echo "function CustomAlert(){
+    this.render = function(dialog){
+      var winW = window.innerWidth;
+      var winH = window.innerHeight;
+      var dialogoverlay = document.getElementById('dialogoverlay');
+      var dialogbox = document.getElementById('dialogbox');
+      dialogoverlay.style.display = 'block';
+      dialogoverlay.style.height = winH+'px';
+      dialogbox.style.left = (winW/2) - (550 * .5)+'px';
+      dialogbox.style.top = '100px';
+      dialogbox.style.display = 'block';
+      document.getElementById('dialogboxhead').innerHTML = 'Cliente';
+      document.getElementById('dialogboxbody').innerHTML = dialog;
+    }
+    this.ok = function(){
+      document.getElementById('dialogbox').style.display = 'none';
+      document.getElementById('dialogoverlay').style.display = 'none';
+    }
+  }
+  var Alert = new CustomAlert();
+
+  Alert.render('Modificado Correctamente');
+      var pagina='../vista/cliente.php';
+
+  location.href=pagina;
+  "; 
+  echo "</script>";  
             }
-              $consulta->execute();
       
       $conexion = null;
       

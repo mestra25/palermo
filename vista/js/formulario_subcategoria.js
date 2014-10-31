@@ -23,5 +23,25 @@ jQuery(document).ready(function() {
 
     });
     
+    $(".btneditar").click(function() {
+     var _id_categoria=$("#txtisubdcategoria").val();
+     var _descripcion=$("#txtdescripcion").val();
+     var _observacion= $("#txtobservacion").val();
+     var d = new Date(); 
+     $fecha =(d.getDate()+"/"+d.getMonth()+"/"+d.getFullYear()+" , "+d.getHours()+":"+d.getMinutes());
+     var _fmodificado=$fecha;
+    
+     var parametros={ id_subcategoria: _id_subcategoria, descripcion : _descripcion , observacion: _observacion , fmodificado :_fmodificado  };
+     var archivo='../controladores/subcategoria.php?action=Editar';
+    
+     $.ajax({
+      type :"POST",
+      url : archivo,
+      data :parametros,
+      success : function( datos){
+        $("#rpt").html(datos);
+      }
+    });
 
+});
 });

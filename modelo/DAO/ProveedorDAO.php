@@ -92,7 +92,6 @@ if ($consulta->execute()) {
                 alert('Registro Eliminado correctamente.'); 
                 window.location='../vista/proveedor.php'
                 </script>";
-=======
 
               echo " <html>
 <head> <title>HTML con PHP – aprenderaprogramar.com</title><style type='text/css'>

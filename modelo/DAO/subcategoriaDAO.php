@@ -86,17 +86,50 @@ class subcategoriaDao {
     function modificar($Objsubcategoria){
       
       $conexion = new conexion();
-      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET observacion = :observacion, fcreado = :fcreado, fmodificado = :fmodificado, 
-        direccion = :direccion, email = :email WHERE descripcion = :descripcion');
-        $consulta->bindParam(':descripcion', $Objsubcategoria->getdescripcion());
-        $consulta->bindParam(':observacion', $Objsubcategoria->getobservacion());
-        $consulta->bindParam(':fcreado', $Objsubcategoria->getfcreado());
-        $consulta->bindParam(':fmodificado', $Objsubcategoria->getfmodificado());
-        $consulta->bindParam(':direccion', $Objsubcategoria->getDireccion());
-        $consulta->bindParam(':email', $Objsubcategoria->getEmail());
-        $consulta->execute();
-        $conexion = null;
+      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET descripcion = :descripcion, observacion = :observacion, fmodificado = :fmodificado WHERE id_subcategoria = :id_subcategoria');
+      $consulta->bindParam(':id_subcategoria', $Objcategoria->getid_subcategoria());
+      $consulta->bindParam(':descripcion', $Objcategoria->getdescripcion());
+      $consulta->bindParam(':observacion', $Objcategoria->getobservacion());
+      $consulta->bindParam(':fmodificado', $Objcategoria->getfmodificado());
+           if ($consulta->execute())
+            {
+echo "<script language='javascript'>"; 
+     echo "function CustomAlert(){
+      this.render = function(dialog){
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+        var dialogoverlay = document.getElementById('dialogoverlay');
+        var dialogbox = document.getElementById('dialogbox');
+        dialogoverlay.style.display = 'block';
+        dialogoverlay.style.height = winH+'px';
+        dialogbox.style.left = (winW/2) - (550 * .5)+'px';
+        dialogbox.style.top = '100px';
+        dialogbox.style.display = 'block';
+        document.getElementById('dialogboxhead').innerHTML = 'Subcategoria';
+        document.getElementById('dialogboxbody').innerHTML = dialog;
+      }
+      this.ok = function(){
+        document.getElementById('dialogbox').style.display = 'none';
+        document.getElementById('dialogoverlay').style.display = 'none';
+      }
+    }
+    var Alert = new CustomAlert();
+
+    Alert.render('Datos Editados Satisfactoriamente');
+    var pagina='../vista/subcategoria.php';
+    location.href=pagina;
+    "; 
+    echo "</script>"; 
+            }else{
+               echo " 
+                <script language='JavaScript'> 
+                alert('Error al modificar el registro.'); 
+                window.location='../vista/categoria.php'
+                </script>";
+              
+            }
       
+      $conexion = null;
     }
 
     function buscar($descripcion){

@@ -22,8 +22,7 @@
 }
 
  if ($_GET['action'] =='Editar'){
-    
-  
+
     $objcliente->setcedula($_POST['cedula']);
     $objcliente->setnombre($_POST['nombre']);
     $objcliente->setapellido($_POST['apellido']);
@@ -33,6 +32,7 @@
 
 
     $clienteDAO->modificar($objcliente);
+
 
 }
 if ($_GET['action'] == 'Eliminar'){

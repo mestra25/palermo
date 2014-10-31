@@ -156,8 +156,6 @@
                             <td><?php echo $registro["email"];?></td>
                             <td><a  href="EditarCliente.php?cedula=<?php echo $registro["cedula"];?>" ><img src="img/editar.png"></a></td>
                             <td><a  href="../controladores/cliente.php?action=Eliminar&cedula=<?php echo $registro["cedula"];?>" onclick="return confirm('Desea eliminar el cliente?');" ><img src="img/delete.png"></td>
-
-
                         </tr>
 
                     </tbody>

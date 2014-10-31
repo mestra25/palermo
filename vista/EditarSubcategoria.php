@@ -6,11 +6,11 @@ require_once("../modelo/conexion.php");
   $row = null;
   $conn  = new conexion();
 
-  if (isset($_GET['id_categoria'])) {
+  if (isset($_GET['id_subcategoria'])) {
 
-    $sql = 'SELECT * FROM categoria WHERE id_categoria = ?';
+    $sql = 'SELECT * FROM subcategoria WHERE id_subcategoria = ?';
     $stmt = $conn->prepare($sql);
-    $results = $stmt->execute(array($_GET['id_categoria']));
+    $results = $stmt->execute(array($_GET['id_subcategoria']));
     $row = $stmt->fetch();
 
     if (empty($row)) {
@@ -140,7 +140,7 @@ require_once("../modelo/conexion.php");
         <form>
             
             <br></br>              
-            <input  hidden id="txtidcategoria" name="txtidcategoria" value="<?php echo $row['id_categoria'];?>" >
+            <input  hidden id="txtidsubcategoria" name="txtidsubcategoria" value="<?php echo $row['id_subcategoria'];?>" >
             <label for="name">Descripcion:  </label>
             <input class="campo" id="txtdescripcion" name="txtdescripcion" value="<?php echo $row['descripcion'];?>" >
             <br></br> 
@@ -148,12 +148,12 @@ require_once("../modelo/conexion.php");
             <input class="campo" id="txtobservacion" name="txtobservacion" value="<?php echo $row['observacion'];?>">
             <br></br> 
             <input id="btn-boton" type="button" class="btneditar" value="Editar" >
-            <a id="btn-boton" href="categoria.php">Cancelar</a>
+            <a id="btn-boton" href="subcategoria.php">Cancelar</a>
              <br></br>              
 
         </form>
         </center>
-        <span id="rpt"></span>
+        <span id="respuesta"></span>
 </div>
 
 

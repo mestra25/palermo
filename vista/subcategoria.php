@@ -166,7 +166,7 @@
                     <td><?php echo $registro["observacion"];?></td>
                     <td><?php echo $registro["fcreado"];?></td>
                     <td><?php echo $registro["fmodificado"];?></td>
-                    <td><a href=""><img src="img/editar.png"></a></td>
+                    <td><a  href="EditarSubcategoria.php?id_subcategoria=<?php echo $registro["id_subcategoria"];?>" ><img src="img/editar.png"></a></td>
                     <td><a href="" src="img/delete.png"><img src="img/delete.png"></a></td>
 
                 </tr>

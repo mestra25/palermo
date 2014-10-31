@@ -83,7 +83,6 @@ class categoriaDao {
             {
               echo " 
                 <script language='JavaScript'> 
-                alert('Registro Eliminado correctamente.'); 
                 window.location='../vista/categoria.php'
                 </script>";
             }else{
