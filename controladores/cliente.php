@@ -37,14 +37,11 @@
 }
 if ($_GET['action'] == 'Eliminar'){
 
-<<<<<<< HEAD
 
-
-=======
     $objcliente->setCedula($_GET['cedula']);
     
     $clienteDAO->eliminar($objcliente);
  
             }
->>>>>>> origin/master
+
 ?>

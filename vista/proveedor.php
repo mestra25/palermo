@@ -131,7 +131,7 @@
                 <h2>Agregar Proveedor</h2>
                 <br></br>              
 
-                <input name="txtnit" id="txtnit" title="Se requiere Nit de la empresa" class="campos_edi" placeholder="Nit" required>
+                <input name="txtnit" id="txtnit" pattern="[A-Za-z]{3}" title="3 primeras letras de tu pais" class="campos_edi" placeholder="Nit" required>
                 <br></br> 
                 <input name="txtnombre_empresa" id="txtnombre_empresa" title="Se requiere Nombre de la empresa" class="campos_edi" placeholder="Nombre de la Empresa" required>
                 <br></br>

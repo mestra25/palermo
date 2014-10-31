@@ -86,6 +86,7 @@ if ($consulta->execute()) {
         $consulta->bindParam(':nit', $Objproveedor->getnit());
         
         if ($consulta->execute())
+        {
     
               echo " 
                 <script language='JavaScript'> 

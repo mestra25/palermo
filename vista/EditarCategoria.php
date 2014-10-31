@@ -140,14 +140,12 @@ require_once("../modelo/conexion.php");
         <form>
             
             <br></br>              
-<<<<<<< HEAD
-            <input id="txtid_categoria" name="txtid_categoria" value="<?php echo $row['id_categoria'];?>" >
-            <br></br>
-            <input id="txtdescripcion" name="txtdescripcion" value="<?php echo $row['descripcion'];?>" >
-=======
+
+           
+
             <input  hidden id="txtidcategoria" name="txtidcategoria" value="<?php echo $row['id_categoria'];?>" >
             <input class="campo" id="txtdescripcion" name="txtdescripcion" value="<?php echo $row['descripcion'];?>" >
->>>>>>> origin/master
+
             <br></br> 
             <input class="campo" id="txtobservacion" name="txtobservacion" value="<?php echo $row['observacion'];?>">
             <br></br> 
