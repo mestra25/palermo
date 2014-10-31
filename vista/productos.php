@@ -124,7 +124,7 @@
         <form>
 
           <br></br>              
-
+          <label for="name">Categoria:  </label> 
           <select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos">          
 
            <option value="">Categoria</option>
@@ -141,7 +141,7 @@
 
          <br></br>              
 
-         
+         <label for="name">Subcategoria:  </label> 
          <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria" required class="campos">          
 
           <option value="" >Subcategoria</option>
@@ -158,7 +158,7 @@
        </select>
        <br></br>              
 
-       
+       <label for="name">Proveedor:  </label> 
        <select id="txtid_proveedor" title="Se requiere un Proveedor" required class="campos">          
 
         <option value="" >Proveedor</option>
@@ -168,11 +168,12 @@
 
         foreach ($consulta as $registro) {
 
-         echo " <option value=".$registro['id_proveedor'].">".$registro['nit']."</option>";
+         echo " <option value=".$registro['id_proveedor'].">".$registro['nombre_empresa']."</option>";
        }
        ?>
      </select> 
-     <br></br>   
+     <br></br> 
+     <label for="name">Medida:  </label>   
      <select id="txtid_medida" title="Se requiere una Medida" required class="campos">          
 
         <option value="" >Medida</option>
@@ -263,6 +264,7 @@
         $id_cat=$registro['id_categoria'];
         $id_sub=$registro['id_subcategoria'];
         $id_prove=$registro['id_proveedor'];
+        $id_medi=$registro['medida'];
          
           ?>
           <tbody>
@@ -287,7 +289,10 @@
               <td><?php echo $registro["venta_3"];?></td>
               <td><?php echo $registro["venta_4"];?></td>
               <td><?php echo $registro["p_utilidad"];?></td>
-              <td><?php echo $registro["medida"];?></td>
+              <?php
+              require("php/p_medida.php");
+              ?>
+              <td><?php echo $registro_5["descripcion"];?></td>
               <td><?php echo $registro["p_descuento"];?></td>
               <td><?php echo $registro["stock_min"];?></td>
               <td><?php echo $registro["stock_max"];?></td>
@@ -296,7 +301,7 @@
               <td><?php echo $registro["existencia"];?></td>
               <td><?php echo $registro["reserva"];?></td>
               <td><?php echo $registro["observacion"];?></td>
-              <td><a href=""><img src="img/editar.png"></a></td>
+              <td><a href="EditarProducto.php?id_producto=<?php echo $registro["id_producto"];?>"><img src="img/editar.png"></a></td>
               <td><a href="../controladores/producto.php?action=Eliminar&id_producto=<?php echo $registro["id_producto"];?>" onclick="return confirm('Desea eliminar el Producto?');" src="img/delete.png"><img src="img/delete.png"></a></td>
 
             </tr>
