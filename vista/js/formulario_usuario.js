@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
 
     $("#btn").click(function() {
 
-
+      alert("hol");
      var _cedula=$("#txtcedula").val();
      var _nombre= $("#txtnombre").val();
      var _apellido=$("#txtapellido").val();

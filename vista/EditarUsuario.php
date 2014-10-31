@@ -149,7 +149,7 @@ require_once("../modelo/conexion.php");
             <br></br>
 
             <input id="btn-boton" type="button" class="btneditar" value="Editar" >
-            <a id="btn-boton" href="categoria.php">Cancelar</a>        
+            <a id="btn-boton" href="usuarios.php">Cancelar</a>        
             <div id="rpt"></div>
             <br></br>
            </form>
