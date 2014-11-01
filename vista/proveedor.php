@@ -130,30 +130,47 @@
             <form>
                 <h2>Agregar Proveedor</h2>
                 <br></br>              
-
+                <div id="col1">
+                <label for="name">Nit:  </label>
                 <input name="txtnit" id="txtnit" pattern="[A-Za-z]{3}" title="3 primeras letras de tu pais" class="campos_edi" placeholder="Nit" required>
                 <br></br> 
+                <label for="name">Nombre:  </label>
                 <input name="txtnombre_empresa" id="txtnombre_empresa" title="Se requiere Nombre de la empresa" class="campos_edi" placeholder="Nombre de la Empresa" required>
                 <br></br>
+                <label for="name">Direccion:  </label>
                 <input name="txtdireccion" id="txtdireccion" title="Se requiere direccion" class="campos_edi" placeholder="Direccion" required>
                 <br></br> 
+                <label for="name">Telefono:  </label>
                 <input name"txttelefono" id="txttelefono" title="Se requiere telefono" onkeydown="" type="text" class="campos_edi" placeholder="Telefono" required>
                 <br></br> 
+                <label for="name">E-mail:  </label>
                 <input name="txtemail" id="txtemail" title="Se requiere e-mail" class="campos_edi" placeholder="E-mail" required>
                 <br></br>
+                <label for="name">Web:  </label>
                 <input name="txtweb" id="txtweb" title="Se requiere direccion web" class="campos_edi" placeholder="Web" required>
-                <br></br>
+                </div>
+                <div id="col2">
+                <label for="name">Contacto:  </label>
                 <input name="txtcontac" id="txtcontac" title="Se requiere datos de contacto" class="campos_edi" placeholder="Contacto" required>
                 <br></br>
-                <input name="txtreplegal" id="txtreplegal" title="Se requiere nombre representante legal" class="campos_edi" placeholder="Representante Legal" required>
+                <label for="name">N. Contacto:  </label>
+                <input name="txtnumcontac" id="txtnumcontac" title="Se requiere datos de numero contacto" class="campos_edi" placeholder="Numero Contacto" required>
                 <br></br>
-                <input  name="txtcedrep" id ="txtcedrep"title="Se requiere cedula representante legal" class="campos_edi" placeholder="Cedula Representante" required>
+                <label for="name">R. Legal:  </label>
+                <input name="txtreplegal" id="txtreplegal" title="Se requiere nombre representante legal" class="campos_edi" placeholder="Nombre Representante Legal" required>
                 <br></br>
-                <input name="txtcelrep" id="txtcelrep" title="Se requiere celular representante legal" class="campos_edi" placeholder="Representante Legal" required>
+                <label for="name">Ced. R. legal:  </label>
+                <input  name="txtcedrep" id ="txtcedrep"title="Se requiere cedula representante legal" class="campos_edi" placeholder="Cedula Representante Legal" required>
                 <br></br>
-                
+                <label for="name">Cel. R. Legal:  </label>
+                <input name="txtcelrep" id="txtcelrep" title="Se requiere celular representante legal" class="campos_edi" placeholder="Celular Representante Legal" required>
+                <br></br>
+                <br></br>
+                </div>
+                <center>
                 <input type="button" name="btnguardar" value="Guardar"  id="btn" class="btn">
                 <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+                </center>
                 <div id="respuesta"></div>
             </form>
         </div>
@@ -174,6 +191,7 @@
                <th>E-mail</th>
                <th>Web</th>
                <th>Contacto</th>
+               <th>Num Contacto</th>
                <th>R. Legal</th>
                <th>Cedula R. Legal</th>
                <th>Celular R. Legal</th>
@@ -199,6 +217,7 @@
                  <td><?php echo $registro["email"];?></td>
                  <td><?php echo $registro["web"];?></td>
                  <td><?php echo $registro["contac"];?></td>
+                 <td><?php echo $registro["numcontac"];?></td>
                  <td><?php echo $registro["replegal"];?></td>
                  <td><?php echo $registro["cedRep"];?></td>
                  <td><?php echo $registro["celRep"];?></td>

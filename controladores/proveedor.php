@@ -14,6 +14,7 @@
     $objproveedor->setEmail($_POST['email']);
     $objproveedor->setWeb($_POST['web']);
     $objproveedor->setContac($_POST['contac']);
+    $objproveedor->setnumContac($_POST['numcontac']);
     $objproveedor->setReplegal($_POST['replegal']);
     $objproveedor->setcedRep($_POST['cedrep']);
     $objproveedor->setcelRep($_POST['celrep']);
@@ -31,6 +32,7 @@ if ($_GET['action'] == 'Editar'){
     $objproveedor->setEmail($_POST['email']);
     $objproveedor->setWeb($_POST['web']);
     $objproveedor->setContac($_POST['contac']);
+    $objproveedor->setnumContac($_POST['numcontac']);
     $objproveedor->setReplegal($_POST['replegal']);
     $objproveedor->setcedRep($_POST['cedrep']);
     $objproveedor->setcelRep($_POST['celrep']);

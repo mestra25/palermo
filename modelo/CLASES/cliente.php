@@ -8,7 +8,7 @@ class cliente{
 	private $Celular;
 	private $Direccion;
 	private $Email;
-
+	private $Rol;
 
 	function __construct(){
 
@@ -18,6 +18,7 @@ class cliente{
 		$this->Celular=0;
 		$this->Direccion="";
 		$this->Email="";
+		$this->Rol="";
 	}
 
 	function setCedula($Cedula){
@@ -44,6 +45,10 @@ class cliente{
 		$this->Email=$Email;
 	}
 
+	function setRol($Rol){
+		$this->Rol=$Rol;
+	}
+
 
 	function getCedula(){
 		return $this->Cedula;
@@ -68,6 +73,9 @@ class cliente{
 
 	function getEmail(){
 		return $this->Email;
+	}
+	function getRol(){
+		return $this->Rol;
 	}
 }
 

@@ -122,9 +122,11 @@
         <h2>Agregar Producto</h2>
 
         <form>
-
-          <br></br>              
-          <select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos">          
+<div id="col1">
+  <br></br> 
+  <br></br> 
+          <label for="name">Categoria:  </label>
+          <select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos_edi">          
 
            <option value="">Categoria</option>
            <?php
@@ -139,8 +141,8 @@
          </select>  
 
          <br></br>              
-
-         <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria" required class="campos">          
+<label for="name">Subcategoria:  </label>
+         <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria" required class="campos_edi">          
 
           <option value="" >Subcategoria</option>
           <?php
@@ -155,8 +157,8 @@
 
        </select>
        <br></br>              
-
-       <select id="txtid_proveedor" title="Se requiere un Proveedor" required class="campos">          
+<label for="name">Proveedor:  </label>
+       <select id="txtid_proveedor" title="Se requiere un Proveedor" required class="campos_edi">          
 
         <option value="" >Proveedor</option>
 
@@ -170,7 +172,8 @@
        ?>
      </select> 
      <br></br> 
-     <select id="txtid_medida" title="Se requiere una Medida" required class="campos">          
+     <label for="name">Medida:  </label>
+     <select id="txtid_medida" title="Se requiere una Medida" required class="campos_edi">          
 
         <option value="" >Medida</option>
 
@@ -183,36 +186,54 @@
        }
        ?>
      </select>   
-     <br></br>                   
-
-     <input type="text" title="Se requiere una descripcion" onkeydown="return validarLetras(event)" name="txtdescripcion" id="txtdescripcion" class="campos_edi" placeholder="Descripcion" required>
+     <br></br>  
+     <label for="name">Descripcion:  </label>                 
+     <textarea class="campo_des" id="txtdescripcion" name="txtdescripcion" rows="4" cols="50" placeholder="Descripcion"></textarea>
      <br></br> 
+     <label for="name">V. Costo:  </label>
      <input name="txtvcosto" id="txtvcosto" title="Se requiere valor costo" onkeydown="return validarNumeros(event)" type="text" class="campos_edi" placeholder="Valor Costo" required>
      <br></br> 
+     <label for="name">Venta 1:  </label>
      <input name="txtventa1" id="txtventa1" title="Se requiere Precio Venta 1" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 1" required>
      <br></br> 
+     <label for="name">Venta 2:  </label>
      <input name="txtventa2" id="txtventa2" title="Se requiere Precio Venta 2" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 2" required>
+     <br></br>  
+
+
+       </div> 
+
+
+     <div id="col2">
+      <label for="name">Venta 3:  </label>
+      <input name="txtventa3" id="txtventa3" title="Se requiere Precio Venta 3" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 3" required>
      <br></br> 
-     <input name="txtventa3" id="txtventa3" title="Se requiere Precio Venta 3" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 3" required>
-     <br></br> 
+     <label for="name">Venta 4:  </label>
      <input name="txtventa4" id="txtventa4" title="Se requiere Precio Venta 4" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Precio Venta 4" required>
      <br></br> 
+     <label for="name">P. Utilidad:  </label>
      <input name="txtp_utilidad" id="txtp_utilidad" title="Se requiere Porcentaje de Utilidad" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Utilidad" required>
      <br></br>
+     <label for="name">Stock Min:  </label>
      <input name="txtstock_min" id="txtstock_min" title="Se requiere Stock Minimo" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Stock Minimo" required>
      <br></br>
+     <label for="name">Stock Max:  </label>
      <input name="txtstock_max" id="txtstock_max" title="Se requiere Stock Minimo" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Stock Maximo" required>
      <br></br> 
+     <label for="name">Existencia:  </label>
      <input name="txtexistencia" id="txtexistencia" title="Se requiere Cantidad de Producto" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Cantidad de Producto" required>
      <br></br> 
+     <label for="name">P. Descuento:  </label>
      <input name="txtp_descuento" id="txtp_descuento" title="Se requiere Porcentaje de Descuento" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Porcentaje Descuento" required>
      <br></br> 
+     <label for="name">Observacion:  </label>
      <input name="txtobservacion" id="txtobservacion" title="Se requiere las observaciones" class="campos_edi" placeholder="Observaciones" required>
      <br></br>
-
+</div>
+<center>
      <input type="button" id="btn" value="Guardar"  class="btn">
      <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
-
+</center>
    </form>
  </div>
 

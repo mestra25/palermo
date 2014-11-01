@@ -7,6 +7,7 @@ class proveedor {
     private $email;
     private $web;
     private $contac;
+    private $numcontac;
     private $replegal;
     private $cedRep;
     private $celRep;
@@ -19,6 +20,7 @@ function __construct() {
     $this->email="";
     $this->web="";
     $this->contac="";
+    $this->numcontac=0;
     $this->replegal="";
     $this->cedRep=0;
     $this->celrep=0;
@@ -46,6 +48,9 @@ $this->web= $web;
 }
 function setContac($contac){
 $this->contac= $contac;
+}
+function setnumContac($numcontac){
+$this->numcontac= $numcontac;
 }
 function setReplegal($replegal){
 $this->replegal= $replegal;
@@ -84,6 +89,10 @@ return $this->web;
 
 function getContac(){
 return $this->contac;
+}
+
+function getnumContac(){
+return $this->numcontac;
 }
 
 function getReplegal(){

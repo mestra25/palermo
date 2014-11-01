@@ -167,9 +167,10 @@
         <form>
             <h2>Agregar 
                 Medida</h2>
-            <br></br>              
+            <br></br>    
+            <label for="name">Unidad de Medida:  </label>          
+                <textarea class="campo_des" id="txtdescripcion" name="txtdescripcion" rows="4" cols="55" placeholder="Descripcion"></textarea>
 
-            <input id="txtdescripcion" name="txtdescripcion" title="Se requiere descripcion de categoria" class="campos_edi" placeholder="Descripcion" required>
             <br></br> 
             
             <input type="button" name="" value="Guardar" id="btn" class="btn">

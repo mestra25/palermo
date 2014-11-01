@@ -11,10 +11,11 @@ jQuery(document).ready(function()
      var _email=$("#txtemail").val();
      var _web= $("#txtweb").val();
      var _contac= $("#txtcontac").val();
+     var _numcontac= $("#txtnumcontac").val();
      var _replegal=$("#txtreplegal").val();
      var _cedrep= $("#txtcedrep").val();
      var _celrep= $("#txtcelrep").val();
-     var parametros={ nit : _nit, nombre_empresa : _nombre_empresa, direccion : _direccion , telefono : _telefono , email :_email , web : _web , contac : _contac ,replegal :_replegal , cedrep:_cedrep , celrep:_celrep};
+     var parametros={ nit : _nit, nombre_empresa : _nombre_empresa, direccion : _direccion , telefono : _telefono , email :_email , web : _web , contac : _contac, numcontac : _numcontac ,replegal :_replegal , cedrep:_cedrep , celrep:_celrep};
      var archivo='../controladores/proveedor.php?action=Guardar';
      $.ajax({
       type :"POST",
@@ -28,7 +29,6 @@ jQuery(document).ready(function()
     });
 
     $(".btneditar").click(function  () {
-      alert("js");
      var _nit=$("#txtnit").val();
      var _nombre_empresa=$("#txtnombre_empresa").val();
      var _direccion= $("#txtdireccion").val();
@@ -36,11 +36,12 @@ jQuery(document).ready(function()
      var _email=$("#txtemail").val();
      var _web= $("#txtweb").val();
      var _contac= $("#txtcontac").val();
+     var _numcontac= $("#txtnumcontac").val();
      var _replegal=$("#txtreplegal").val();
      var _cedrep= $("#txtcedrep").val();
      var _celrep= $("#txtcelrep").val();
 
-     var parametros={ nit : _nit, nombre_empresa : _nombre_empresa, direccion : _direccion , telefono : _telefono , email :_email , web : _web , contac : _contac ,replegal :_replegal , cedrep:_cedrep , celrep:_celrep};
+     var parametros={ nit : _nit, nombre_empresa : _nombre_empresa, direccion : _direccion , telefono : _telefono , email :_email , web : _web , contac : _contac,numcontac:_numcontac ,replegal :_replegal , cedrep:_cedrep , celrep:_celrep};
      var archivo='../controladores/proveedor.php?action=Editar';
    
      $.ajax({
@@ -52,10 +53,6 @@ jQuery(document).ready(function()
       }
     });
 
-     alert("ajax");
-   
- 
-  
     
     });
     

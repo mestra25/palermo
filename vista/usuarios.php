@@ -100,35 +100,48 @@
           <h2>Agregar Usuario</h2>
 
           <form>
-
-            <br></br>              
+<div id="col1">
+            <br></br>    
+            <label for="name">Rol:  </label>          
             <select id="txtrol" title="Se requiere Seleccion de Categoria" required class="campos_edi">  
               <option value="usuario">Usuario</option> 
               <option value="administrador-inventario">Administrador Inventario</option> 
               <option value="administrador">Administrador</option> 
             </select> 
             <br></br>  
+            <label for="name">Cedula:  </label>
             <input name="txtcedula" id="txtcedula" title="Se requiere numero de cedula" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Cedula" required>
             <br></br> 
+            <label for="name">Nombre:  </label>
             <input name="txtnombre" id="txtnombre" title="Se requiere nombre de cliente" class="campos_edi" placeholder="Nombre" required>
             <br></br>
+            <label for="name">Apellido:  </label>
             <input name="txtapellido" id="txtapellido" title="Se requiere apelldido" class="campos_edi" placeholder="Apellido" required>
             <br></br> 
+            <label for="name">Celular:  </label>
             <input name="txtcelular" id="txtcelular" title="Se requiere celular de cliente" class="campos_edi" onkeydown="return validarNumeros(event)" placeholder="Celular" required>
             <br></br> 
+             </div> 
+             <div id="col2">
+              <label for="name">Direccion:  </label>
             <input name="txtdireccion" id="txtdireccion" title="Se requiere direccion de cliente" class="campos_edi" placeholder="Direccion" required>
             <br></br> 
+            <label for="name">E-mail:  </label>
             <input name="txtemail" id="txtemail" title="Se requiere email de cliente" class="campos_edi" placeholder="E-mail" required>
             <br></br> 
+            <label for="name">Password:  </label>
             <input name="txtpassword" id="txtpassword" title="Se requiere password de cliente" class="campos_edi" placeholder="Password" required>
             <br></br> 
+            <label for="name">C. Password:  </label>
             <input name="txtconfpassword" id="txtconfpassword" title="Se requiere confirmar password de usuario" class="campos_edi" placeholder="Confirmar Password" required>
-            <br></br> 
-            
-            <br></br>                         
-            
+                 <br></br>                         
+          <br></br>        
+  </div>          
+
+    <center>
             <input type="button" name="" value="Guardar" id="btn"  class="btn">
             <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+            </center>
           </form>
         </div>
         <span id="respuesta"></span>

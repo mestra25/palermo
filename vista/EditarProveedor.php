@@ -176,6 +176,9 @@ require_once("../modelo/conexion.php");
                 <label for="name">Contacto:  </label>
                 <input class="campos_edi" name="txtcontac" id="txtcontac" value="<?php echo $row['contac'];?>">
                 <br></br>
+                <label for="name">Num Contacto:  </label>
+                <input class="campos_edi" name="txtnumcontac" id="txtnumcontac" value="<?php echo $row['numcontac'];?>">
+                <br></br>
                 <label for="name">R. Legal:  </label>
                 <input class="campos_edi" name="txtreplegal" id="txtreplegal" value="<?php echo $row['replegal'];?>">
                 <br></br>

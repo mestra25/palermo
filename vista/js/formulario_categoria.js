@@ -31,7 +31,6 @@ jQuery(document).ready(function() {
      var d = new Date(); 
      $fecha =(d.getDate()+"/"+d.getMonth()+"/"+d.getFullYear()+" , "+d.getHours()+":"+d.getMinutes());
      var _fmodificado=$fecha;
-   
      var parametros={ id_categoria: _id_categoria, descripcion : _descripcion , observacion: _observacion , fmodificado :_fmodificado  };
 
      var archivo='../controladores/categoria.php?action=Editar';

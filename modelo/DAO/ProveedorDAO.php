@@ -8,8 +8,8 @@ class proveedorDao {
 
     function guardar($Objproveedor){
             $conexion = new conexion();
-            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' ( nit, direccion,nombre_empresa,telefono ,email ,web ,contac ,replegal ,cedRep ,celRep ) 
-              VALUES( :nit,:direccion,:nombre_empresa, :telefono ,:email ,:web ,:contac ,:replegal ,:cedRep ,:celRep )');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' ( nit, direccion,nombre_empresa,telefono ,email ,web ,contac ,numcontac,replegal ,cedRep ,celRep ) 
+              VALUES( :nit,:direccion,:nombre_empresa, :telefono ,:email ,:web ,:contac,:numcontac ,:replegal ,:cedRep ,:celRep )');
             $consulta->bindParam(':nit', $Objproveedor->getnit());
             $consulta->bindParam(':direccion', $Objproveedor->getDireccion());
             $consulta->bindParam(':nombre_empresa', $Objproveedor->getNombreEmpresa());
@@ -17,6 +17,7 @@ class proveedorDao {
             $consulta->bindParam(':email', $Objproveedor->getEmail());
             $consulta->bindParam(':web', $Objproveedor->getWeb());
             $consulta->bindParam(':contac', $Objproveedor->getContac());
+            $consulta->bindParam(':numcontac', $Objproveedor->getnumContac());
             $consulta->bindParam(':replegal', $Objproveedor->getReplegal());
             $consulta->bindParam(':cedRep', $Objproveedor->getCedrep());
             $consulta->bindParam(':celRep', $Objproveedor->getCelrep());
@@ -105,7 +106,7 @@ if ($consulta->execute()) {
   
       $conexion = new conexion();
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET  nombre_empresa = :nombre_empresa ,direccion = :direccion , telefono = :telefono , email = :email , web = :web , 
-      contac = :contac , replegal = :replegal , cedRep = :cedRep , celRep = :celRep WHERE nit = :nit');
+      contac = :contac,numcontac=:numcontac , replegal = :replegal , cedRep = :cedRep , celRep = :celRep WHERE nit = :nit');
             $consulta->bindParam(':nit', $Objproveedor->getnit());
             $consulta->bindParam(':direccion', $Objproveedor->getDireccion());
             $consulta->bindParam(':nombre_empresa', $Objproveedor->getNombreEmpresa());
@@ -113,6 +114,7 @@ if ($consulta->execute()) {
             $consulta->bindParam(':email', $Objproveedor->getEmail());
             $consulta->bindParam(':web', $Objproveedor->getWeb());
             $consulta->bindParam(':contac', $Objproveedor->getContac());
+            $consulta->bindParam(':numcontac', $Objproveedor->getnumContac());
             $consulta->bindParam(':replegal', $Objproveedor->getReplegal());
             $consulta->bindParam(':cedRep', $Objproveedor->getCedrep());
             $consulta->bindParam(':celRep', $Objproveedor->getCelrep());

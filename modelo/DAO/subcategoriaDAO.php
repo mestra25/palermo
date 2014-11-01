@@ -9,7 +9,8 @@ class subcategoriaDao {
 
     function guardar($Objsubcategoria){
             $conexion = new conexion();
-            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (descripcion,  observacion, fcreado, fmodificado) VALUES(:descripcion, :observacion, :fcreado, :fmodificado)');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (descripcion,  observacion, fcreado, fmodificado,id_categoria) VALUES(:descripcion, :observacion, :fcreado, :fmodificado,:id_categoria)');
+            $consulta->bindParam(':id_categoria', $Objsubcategoria->getid_categoria());
             $consulta->bindParam(':descripcion', $Objsubcategoria->getdescripcion());
             $consulta->bindParam(':observacion', $Objsubcategoria->getobservacion());
             $consulta->bindParam(':fcreado', $Objsubcategoria->getfcreado());

@@ -15,6 +15,7 @@
     $objcliente->setcelular($_POST['celular']);
     $objcliente->setdireccion($_POST['direccion']);
     $objcliente->setemail($_POST['email']);
+    $objcliente->setrol($_POST['rol']);
 
 
     $clienteDAO->guardar($objcliente);

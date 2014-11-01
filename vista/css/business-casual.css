@@ -241,16 +241,28 @@ color: white;
     color: black;
 }
 
+#col1,#col2{
+    width: 40%;
+    display: inline-block;
+    margin: 0 auto;
+}
+
 .campos{
     padding: 6px;
     width: 400px;
     border-radius: 15px;
 
+}
+
+.campos_des{
+    
+    border-radius: 15px;
 
 }
+
 .campos_edi{
     padding: 6px;
-    width: 400px;
+    width: 75%;
     border-radius: 15px;
     margin-top: 20px;
 }

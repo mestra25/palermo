@@ -77,7 +77,7 @@
             <!-- /.container -->
         </nav>
 
-        <div class="container">
+        <div class="">
 
             <div class="contenido">
                 <div class="botones_form">
@@ -100,21 +100,31 @@
                       <form>
 
                           <br></br>              
-
+<div id="col1">
+  <label for="name">Cedula:  </label>  
                           <input name="txtcedula" id="txtcedula" title="Se requiere numero de cedula" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Cedula" required>
                           <br></br> 
+                          <label for="name">Nombre:  </label>
                           <input name="txtnombre" id="txtnombre" title="Se requiere nombre de cliente" class="campos_edi" placeholder="Nombre" required>
                           <br></br>
+                          <label for="name">Apellido:  </label>
                           <input name="txtapellido" id="txtapellido" title="Se requiere apelldido" class="campos_edi" placeholder="Apellido" required>
                           <br></br> 
+                          <label for="name">Celular:  </label>
                           <input name="txtcelular" id="txtcelular" title="Se requiere celular de cliente" class="campos_edi" placeholder="Celular" required>
                           <br></br> 
+                          <label for="name">Direccion:  </label>
                           <input name="txtdireccion" id="txtdireccion" title="Se requiere direccion de cliente" class="campos_edi" placeholder="Direccion" required>
                           <br></br> 
+                          <label for="name">E-mail:  </label>
                           <input name="txtemail" id="txtemail" title="Se requiere email de cliente" class="campos_edi" placeholder="E-mail" required>
                           <br></br> 
+                          </div>
+                          <center>
                           <input type="button" name="" value="Guardar" id="btn"  class="btn">
                           <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+                          </center>
+
                       </form>
                   </div>
 <span id="respuesta"></span>

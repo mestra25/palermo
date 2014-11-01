@@ -174,10 +174,11 @@
         <form>
             <h2>Agregar Categoria</h2>
             <br></br>              
-
-            <input id="txtdescripcion" name="txtdescripcion" title="Se requiere descripcion de categoria" class="campos_edi" placeholder="Descripcion" required>
+            <label for="name">Descripcion:  </label>
+            <textarea class="campo_des" id="txtdescripcion" name="txtdescripcion" rows="4" cols="55" placeholder="Descripcion"></textarea>
             <br></br> 
-            <input id="txtobservacion" name="txtobservacion" title="Se requiere observacion" class="campos_edi" placeholder="Observacion" required>
+            <label for="name">Observacion:  </label>
+            <input id="txtobservacion" name="txtobservacion" title="Se requiere observacion" class="campos" placeholder="Observacion" required>
             <br></br> 
 
 

@@ -118,16 +118,37 @@
         <div id="formulario" style="display:none">
             <form>
                 <h2>Agregar Subcategoria</h2>
+
+<br></br>
+<div id="col1">
+<label for="name">Categoria:  </label>
+
+            <select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos">          
+
+           <option value="">Categoria</option>
+           <?php
+           require("php/lista_categoria.php");
+           
+           foreach ($consulta as $registro) {
+
+             echo " <option value=".$registro['id_categoria'].">".$registro['descripcion']."</option>";
+           }
+           ?>
+
+         </select> 
+
                 <br></br>              
-                
-                <input id="txtdescripcion" name="txtdescripcion" title="Se requiere descripcion de subcategoria" class="campos_edi" placeholder="Descripcion" required>
+                <label for="name">Descripcion:  </label>
+                <textarea class="campo_des" id="txtdescripcion" name="txtdescripcion" rows="4" cols="55" placeholder="Descripcion"></textarea>
                 <br></br> 
+                <label for="name">Observacion:  </label>
                 <input id="txtobservacion" name="txtobservacion" title="Se requiere observacion" class="campos_edi" placeholder="Observacion" required>
                 <br></br> 
-                
-
+ </div>               
+                <center>
                 <input type="button" name="" value="Guardar" id="btn"  class="btn">
                 <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+                </center>
             </form>
         </div>
         <span id="respuesta"></span>
@@ -141,6 +162,7 @@
             <thead>
               <tr>
                 <th>Codigo</th>
+                <th>Categoria</th>
                 <th>Descripcion</th>
                 <th>Creado</th>
                 <th>Modificado</th>
@@ -154,16 +176,21 @@
           <tr>
             <?php
             require("php/lista_subcategoria.php");
+
             foreach ($consulta as $registro) {
+                $id_cat=$registro['id_categoria'];
+                require("php/p_categoria.php")
                 ?>
                 <tbody> 
 
                   <tr>
                     <td class="codigo"><?php echo $registro["id_subcategoria"];?></td>
+                    <td><?php echo $registro_1["descripcion"];?></td>
                     <td><?php echo $registro["descripcion"];?></td>
-                    <td><?php echo $registro["observacion"];?></td>
+                    
                     <td><?php echo $registro["fcreado"];?></td>
                     <td><?php echo $registro["fmodificado"];?></td>
+                    <td><?php echo $registro["observacion"];?></td>
                     <td><a  href="EditarSubcategoria.php?id_subcategoria=<?php echo $registro["id_subcategoria"];?>" ><img src="img/editar.png"></a></td>
                     <td><a href="../controladores/subcategoria.php?action=Eliminar&id_subcategoria=<?php echo $registro["id_subcategoria"];?>" onclick="return confirm('Desea eliminar subcategoria?');" src="img/delete.png"><img src="img/delete.png"></a></td>
 
