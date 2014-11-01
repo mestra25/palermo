@@ -122,6 +122,7 @@
         <h2>Agregar Producto</h2>
 
         <form>
+
 <div id="col1">
   <br></br> 
   <br></br> 
@@ -156,6 +157,8 @@
          ?>
 
        </select>
+
+
        <br></br>              
 <label for="name">Proveedor:  </label>
        <select id="txtid_proveedor" title="Se requiere un Proveedor" required class="campos_edi">          
@@ -171,6 +174,8 @@
        }
        ?>
      </select> 
+
+
      <br></br> 
      <label for="name">Medida:  </label>
      <select id="txtid_medida" title="Se requiere una Medida" required class="campos_edi">          
@@ -185,7 +190,12 @@
          echo " <option value=".$registro['id_medida'].">".$registro['descripcion']."</option>";
        }
        ?>
-     </select>   
+     </select> 
+<?php
+require("php/estado.php");
+?>
+
+     <input hidden type="text" name="txtincrementable" id="txtincrementable" value="<?php echo $registro_6['Auto_increment']; ?>">
      <br></br>  
      <label for="name">Descripcion:  </label>                 
      <textarea class="campo_des" id="txtdescripcion" name="txtdescripcion" rows="4" cols="50" placeholder="Descripcion"></textarea>

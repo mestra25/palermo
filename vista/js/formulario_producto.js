@@ -3,7 +3,7 @@ jQuery(document).ready(function() {
     var _id_categoria=$("#txtid_categoria").val();
     var _id_subcategoria= $("#txtid_subcategoria").val();
     var _id_proveedor=$("#txtid_proveedor").val();
-    var _codigo=$("#txtid_categoria").val()+""+$("#txtid_subcategoria").val();
+    var _codigo=$("#txtid_categoria").val()+""+$("#txtid_subcategoria").val()+""+$("#txtincrementable").val();
     var _descripcion=$("#txtdescripcion").val();
     var _v_costo= $("#txtvcosto").val();
     var _venta_1= $("#txtventa1").val();
