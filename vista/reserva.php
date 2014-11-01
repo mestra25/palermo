@@ -88,10 +88,23 @@
         <form>
 
          <?php
-
          require("php/tem.php");
-
          ?>
+         <p>Cliente:
+      <select id="txtcliente" title="Se requiere un Cliente" required class="campos">          
+
+        <option value="">Cliente</option>
+
+        <?php
+
+        foreach ($consulta_6 as $registro_6) {
+
+         echo " <option value=".$registro_6['cedula'].">".$registro_6['nombre'].' '.$registro_6['apellido']."</option>";
+       }
+       ?>
+     </select> 
+
+</p>
          <input hidden type="text" name="txtidproducto" class="campos_edi" id="txtidproducto" value="<?php echo $registro['id_producto']?>" readonly>
          <input hidden type="text" name="txtidproducto" class="campos_edi" id="txtidproducto" value="<?php echo $registro['id_producto']?>" readonly>
          <p>Cantidad:  <input type="text" name="txtreservar" id="txtreservar" class="campos_edi"></p>

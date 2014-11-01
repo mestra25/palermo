@@ -9,7 +9,7 @@ class clienteDao {
 
     function guardar($Objcliente){
             $conexion = new conexion();
-            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cedula,  nombre, apellido, celular, direccion, email) VALUES(:cedula, :nombre, :apellido, :direccion, :celular,:email)');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cedula,  nombre, apellido, celular, direccion, email) VALUES(:cedula, :nombre, :apellido,  :celular,:direccion,:email)');
             $consulta->bindParam(':cedula', $Objcliente->getCedula());
             $consulta->bindParam(':nombre', $Objcliente->getNombre());
             $consulta->bindParam(':apellido', $Objcliente->getApellido());

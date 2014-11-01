@@ -85,6 +85,7 @@
                 <th> Reservar </th>
                 <th> Codigo </th>
                 <th> Descripcion </th>
+                <th>Proveedor</th>
                 <th> Medida </th>
                 <th> Existencia </th>
                 <th> Reserva </th>
@@ -99,13 +100,16 @@
 
                 foreach ($consulta as $registro) {
                   $id_medi=$registro['medida'];
+                  $id_prove=$registro['id_proveedor'];
                   require("php/p_medida.php");
+                  require("php/p_proveedor.php");
                   ?>
                   <tbody>
                     <tr>
                       <td><a name="id_producto" href="reserva.php?id_producto=<?php echo $registro['id_producto']; ?>" onclick="reservar()"><img src="img/reserva.png"></a></td>
                       <td class="codigo"><?php echo $registro["codigo"];?></td>
                       <td><?php echo $registro["descripcion"];?></td>
+                      <td><?php echo $registro_3["nombre_empresa"];?></td>
                       <td><?php echo $registro_5["descripcion"];?></td>
                       <td><?php echo $registro["existencia"];?></td>
                       <td><?php echo $registro["reserva"];?></td>

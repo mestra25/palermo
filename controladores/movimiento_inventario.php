@@ -7,10 +7,11 @@ $movimiento_inventarioDao = new movimiento_inventarioDao;
 
 if ($_GET['action'] =='GuardarUsuario'){
 
+    $cliente=$_POST['cliente'];
     $id_producto=$_POST['id_producto'];
-    $id_usuario=$_POST['id_usuario'];
     $cantidad=$_POST['reserva'];
     $estado="en espera";
+
     require_once("../modelo/conexion.php");
     $conexion = new conexion();
     $consulta = $conexion->prepare('SELECT * FROM producto WHERE id_producto="'.$id_producto.'"');
@@ -26,6 +27,7 @@ if ($_GET['action'] =='GuardarUsuario'){
 
         if ($tem>=$cantidad) {
 
+            $objmovimiento_inventario->setcliente($cliente);
             $objmovimiento_inventario->setusuario($id_usuario);
             $objmovimiento_inventario->setcodigo($id_producto);
             $objmovimiento_inventario->setcantidad($cantidad);

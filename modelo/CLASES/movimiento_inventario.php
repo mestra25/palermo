@@ -33,6 +33,9 @@ $this->estado= $estado;
 function setusuario($usuario){
 $this->usuario= $usuario;
 }
+function setcliente($cliente){
+$this->cliente= $cliente;
+}
 function setcantidad($cantidad){
 $this->cantidad= $cantidad;
 }
@@ -51,6 +54,9 @@ $this->id_consecutivo= $id_consecutivo;
 
 function getid_consecutivo(){
 return $this->id_consecutivo;
+}
+function getcliente(){
+return $this->cliente;
 }
 function getestado(){
 return $this->estado;

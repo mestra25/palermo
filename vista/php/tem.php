@@ -31,4 +31,10 @@ $consulta_4->execute();
 $registro_4 = $consulta_4;
 foreach ($consulta_4 as $registro_4) {
 }
+
+$conexion = new conexion();
+$consulta_6 = $conexion->prepare('SELECT * FROM cliente');
+$consulta_6->execute();
+$registro_6 = $consulta_6;
+$conexion=null;
 ?>
