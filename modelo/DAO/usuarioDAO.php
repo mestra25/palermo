@@ -9,7 +9,7 @@ class usuarioDAO {
 
     function guardar($Objusuario){
             $conexion = new conexion();
-            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cedula,  nombre, apellido, celular, direccion, email, rol , password) VALUES(:cedula, :nombre, :apellido, :direccion, :celular,:email, :rol , :password)');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cedula,  nombre, apellido, celular, direccion, email, rol , password) VALUES(:cedula, :nombre, :apellido, :celular, :direccion,:email, :rol , :password)');
             $consulta->bindParam(':cedula', $Objusuario->getCedula());
             $consulta->bindParam(':nombre', $Objusuario->getNombre());
             $consulta->bindParam(':apellido', $Objusuario->getApellido());

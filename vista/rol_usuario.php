@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+if ($_SESSION['usuario']=="si") {
+  
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -51,6 +59,9 @@
              <li>
               <a href="mi_reserva.php">Reservas </a>
             </li>
+            <li>
+                            <a href="logout.php">Salir</a>
+                        </li>
           </ul>
         </div>
       </center>
@@ -163,3 +174,11 @@ $('.carousel').carousel({
 </body>
 
 </html>
+<?php
+
+}else {
+
+  header("location:login.html");
+}
+
+?>

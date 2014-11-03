@@ -8,9 +8,10 @@ class proveedorDao {
 
     function guardar($Objproveedor){
             $conexion = new conexion();
-            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' ( nit, direccion,nombre_empresa,telefono ,email ,web ,contac ,numcontac,replegal ,cedRep ,celRep ) 
-              VALUES( :nit,:direccion,:nombre_empresa, :telefono ,:email ,:web ,:contac,:numcontac ,:replegal ,:cedRep ,:celRep )');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' ( nit, direccion,nombre_empresa,telefono ,email ,web ,contac ,numcontac,replegal ,cedRep ,celRep,nueva) 
+              VALUES( :nit,:direccion,:nombre_empresa, :telefono ,:email ,:web ,:contac,:numcontac ,:replegal ,:cedRep ,:celRep,:nueva)');
             $consulta->bindParam(':nit', $Objproveedor->getnit());
+            $consulta->bindParam(':nueva', $Objproveedor->getnueva());
             $consulta->bindParam(':direccion', $Objproveedor->getDireccion());
             $consulta->bindParam(':nombre_empresa', $Objproveedor->getNombreEmpresa());
             $consulta->bindParam(':telefono', $Objproveedor->getTelefono());
@@ -23,6 +24,8 @@ class proveedorDao {
             $consulta->bindParam(':celRep', $Objproveedor->getCelrep());
             
 if ($consulta->execute()) {
+
+  if($Objproveedor->getnueva()=="0"){
      echo "<script language='javascript'>"; 
      echo "function CustomAlert(){
       this.render = function(dialog){
@@ -50,34 +53,8 @@ if ($consulta->execute()) {
     location.href=pagina;
     "; 
     echo "</script>";  
-  }else{
-   echo "<script language='javascript'>"; 
-   echo "function CustomAlert(){
-    this.render = function(dialog){
-      var winW = window.innerWidth;
-      var winH = window.innerHeight;
-      var dialogoverlay = document.getElementById('dialogoverlay');
-      var dialogbox = document.getElementById('dialogbox');
-      dialogoverlay.style.display = 'block';
-      dialogoverlay.style.height = winH+'px';
-      dialogbox.style.left = (winW/2) - (550 * .5)+'px';
-      dialogbox.style.top = '100px';
-      dialogbox.style.display = 'block';
-      document.getElementById('dialogboxhead').innerHTML = 'Proveedor';
-      document.getElementById('dialogboxbody').innerHTML = dialog;
-    }
-    this.ok = function(){
-      document.getElementById('dialogbox').style.display = 'none';
-      document.getElementById('dialogoverlay').style.display = 'none';
-    }
   }
-  var Alert = new CustomAlert();
-
-  Alert.render('Error al Guardar los Datos');
-  var pagina='../vista/proveedor.php';
-  location.href=pagina;
-  "; 
-  echo "</script>";  
+} 
 }
             $conexion = null;
     }

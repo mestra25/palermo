@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+if ($_SESSION['administrador']=="si") {
+  
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -58,7 +66,7 @@
                                 <a href="index.html">Inicio</a>
                             </li>
                             <li>
-                                <a href="administrar.html">Administrar</a>
+                                <a href="administrar.php">Administrar</a>
                             </li>
                             <li>
                                 <a href="usuarios.php">Usuarios</a>
@@ -69,6 +77,9 @@
                             <li>
                                 <a href="clientes.php">Clientes</a>
                             </li>
+                            <li>
+                            <a href="logout.php">Salir</a>
+                        </li>
                         </ul>
                     </div>
                 </center>
@@ -218,3 +229,11 @@ $('.carousel').carousel({
 </body>
 
 </html>
+<?php
+
+}else {
+
+  header("location:login.html");
+}
+
+?>

@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+if ($_SESSION['administrador']=="si") {
+  
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -57,7 +65,7 @@
               <a href="index.html">Inicio</a>
             </li>
             <li>
-              <a href="administrar.html">Administrar</a>
+              <a href="administrar.php">Administrar</a>
             </li>
             <li>
               <a href="usuarios.php">Usuarios</a>
@@ -68,6 +76,9 @@
             <li>
               <a href="clientes.php">Clientes</a>
             </li>
+            <li>
+                            <a href="logout.php">Salir</a>
+                        </li>
           </ul>
         </div>
       </center>
@@ -105,6 +116,8 @@
      </select> 
 
 </p>
+
+<div id="col1">
          <input hidden type="text" name="txtidproducto" class="campos_edi" id="txtidproducto" value="<?php echo $registro['id_producto']?>" readonly>
          <input hidden type="text" name="txtidproducto" class="campos_edi" id="txtidproducto" value="<?php echo $registro['id_producto']?>" readonly>
          <p>Cantidad:  <input type="text" name="txtreservar" id="txtreservar" class="campos_edi"></p>
@@ -119,10 +132,11 @@
          <p>P. Venta 2: <input type="text" name="txtventa2" id="txtventa2" value="<?php echo $registro['venta_2']?>" class="campos_edi" readonly></p>
          <p>P. Venta 3: <input type="text" name="txtventa3" id="txtventa3" value="<?php echo $registro['venta_3']?>" class="campos_edi" readonly></p>
          <p>P. Venta 4: <input type="text" name="txtventa4" id="txtventa4" value="<?php echo $registro['venta_4']?>" class="campos_edi" readonly></p>
-         
+</div>
+<center>         
          <input type="button" name="reservar" id="reservar" value="Reservar"  class="btn">
          <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
-
+</center>
          <span id="respuesta"></span>
 
        </form>
@@ -159,3 +173,11 @@ $('.carousel').carousel({
 </body>
 
 </html>
+<?php
+
+}else {
+
+  header("location:login.html");
+}
+
+?>

@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+if ($_SESSION['administrador']=="si") {
+  
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -58,7 +66,7 @@
                         <a href="index.html">Inicio</a>
                     </li>
                     <li>
-                        <a href="administrar.html">Administrar</a>
+                        <a href="administrar.php">Administrar</a>
                     </li>
                     <li>
                         <a href="usuarios.php">Usuarios</a>
@@ -69,6 +77,9 @@
                     <li>
                         <a href="cliente.php">Clientes</a>
                     </li>
+                    <li>
+                            <a href="logout.php">Salir</a>
+                        </li>
                 </ul>
             </div>
         </center>
@@ -123,7 +134,7 @@
 <div id="col1">
 <label for="name">Categoria:  </label>
 
-            <select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos">          
+<select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos">          
 
            <option value="">Categoria</option>
            <?php
@@ -136,6 +147,7 @@
            ?>
 
          </select> 
+            <input type="text" value="0" hidden id="txtnueva" name="txtnueva">
 
                 <br></br>              
                 <label for="name">Descripcion:  </label>
@@ -248,3 +260,11 @@ $('.carousel').carousel({
 
 
 
+<?php
+
+}else {
+
+  header("location:login.html");
+}
+
+?>

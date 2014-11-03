@@ -6,14 +6,13 @@ class categoria{
     private $observacion;
     private $fcreado;
     private $fmodificado;
-
-
+    private $nueva;
 
     function __construct(){
 
         
         $this->id_categoria=0;
-
+        $this->nueva=0;
         $this->descripcion="";
         $this->observacion="";
         $this->fcreado="";
@@ -26,9 +25,9 @@ class categoria{
     function setdescripcion($descripcion){
         $this->descripcion=$descripcion;
     }
-
-
-   
+    function setnueva($nueva){
+        $this->nueva=$nueva;
+    }   
     function setobservacion($observacion){
         $this->observacion=$observacion;
     }
@@ -48,7 +47,9 @@ class categoria{
     function getid_categoria(){
         return $this->id_categoria;
     }
-
+    function getnueva(){
+        return $this->nueva;
+    }
     function getobservacion(){
         return $this->observacion;
     }

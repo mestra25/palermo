@@ -7,8 +7,8 @@
 
    if($_GET['action'] =='Guardar'){
     
-    
-	 $objcategoria->setdescripcion($_POST['descripcion']);
+    $objcategoria->setnueva($_POST['nueva']);   
+	  $objcategoria->setdescripcion($_POST['descripcion']);
     $objcategoria->setobservacion($_POST['observacion']);
     $objcategoria->setfcreado($_POST['fcreado']);
     $objcategoria->setfmodificado($_POST['fmodificado']);

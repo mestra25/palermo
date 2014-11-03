@@ -1,5 +1,10 @@
-
 <?php
+
+session_start();
+
+if ($_SESSION['administrador']=="si") {
+  
+
 require_once("../modelo/conexion.php");
   $result = "";
   $row = null;
@@ -94,7 +99,7 @@ require_once("../modelo/conexion.php");
                         <a href="index.html">Inicio</a>
                     </li>
                     <li>
-                        <a href="administrar.html">Administrar</a>
+                        <a href="administrar.php">Administrar</a>
                     </li>
                     <li>
                         <a href="usuarios.php">Usuarios</a>
@@ -105,6 +110,9 @@ require_once("../modelo/conexion.php");
                     <li>
                         <a href="cliente.php">Clientes</a>
                     </li>
+                    <li>
+                            <a href="logout.php">Salir</a>
+                        </li>
                 </ul>
             </div>
         </center>
@@ -238,3 +246,11 @@ $('.carousel').carousel({
 
 
 
+<?php
+
+}else {
+
+  header("location:login.html");
+}
+
+?>

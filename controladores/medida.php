@@ -7,7 +7,8 @@
     
      if($_GET['action'] =='Guardar'){
 	  $objmedida->setdescripcion($_POST['descripcion']);
-   
+	  $objmedida->setnueva($_POST['nueva']);
+   	  
       $medidaDAO->guardar($objmedida);
 }
 

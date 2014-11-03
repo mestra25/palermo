@@ -107,10 +107,7 @@ class productoDao {
     }
 
     function modificar($Objproducto){
-                    echo " 
-                <script language='JavaScript'> 
-alert('Editar Dao');
-                </script>";
+
       $conexion = new conexion();
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET id_categoria = :id_categoria, id_subcategoria = :id_subcategoria, id_proveedor = :id_proveedor, 
         codigo = :codigo, descripcion = :descripcion, v_costo = :v_costo, venta_1 = :venta_1,venta_2 = :venta_2,venta_3 = :venta_3,venta_4 = :venta_4, p_utilidad = :p_utilidad,p_descuento = :p_descuento,stock_min = :stock_min, stock_max = :stock_max, medida = :medida, fmodificado=:fmodificado,observacion=:observacion

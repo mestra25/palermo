@@ -9,7 +9,8 @@ class subcategoriaDao {
 
     function guardar($Objsubcategoria){
             $conexion = new conexion();
-            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (descripcion,  observacion, fcreado, fmodificado,id_categoria) VALUES(:descripcion, :observacion, :fcreado, :fmodificado,:id_categoria)');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (descripcion,  observacion, fcreado, fmodificado,id_categoria,nueva) VALUES(:descripcion, :observacion, :fcreado, :fmodificado,:id_categoria,:nueva)');
+            $consulta->bindParam(':nueva', $Objsubcategoria->getnueva());
             $consulta->bindParam(':id_categoria', $Objsubcategoria->getid_categoria());
             $consulta->bindParam(':descripcion', $Objsubcategoria->getdescripcion());
             $consulta->bindParam(':observacion', $Objsubcategoria->getobservacion());
@@ -17,6 +18,7 @@ class subcategoriaDao {
             $consulta->bindParam(':fmodificado', $Objsubcategoria->getfmodificado());
             $consulta->execute();
             if ($consulta) {
+              if($Objsubcategoria->getnueva()=="0"){
      echo "<script language='javascript'>"; 
      echo "function CustomAlert(){
       this.render = function(dialog){
@@ -44,34 +46,7 @@ class subcategoriaDao {
     location.href=pagina;
     "; 
     echo "</script>";  
-  }else{
-   echo "<script language='javascript'>"; 
-   echo "function CustomAlert(){
-    this.render = function(dialog){
-      var winW = window.innerWidth;
-      var winH = window.innerHeight;
-      var dialogoverlay = document.getElementById('dialogoverlay');
-      var dialogbox = document.getElementById('dialogbox');
-      dialogoverlay.style.display = 'block';
-      dialogoverlay.style.height = winH+'px';
-      dialogbox.style.left = (winW/2) - (550 * .5)+'px';
-      dialogbox.style.top = '100px';
-      dialogbox.style.display = 'block';
-      document.getElementById('dialogboxhead').innerHTML = 'Subcategoria';
-      document.getElementById('dialogboxbody').innerHTML = dialog;
-    }
-    this.ok = function(){
-      document.getElementById('dialogbox').style.display = 'none';
-      document.getElementById('dialogoverlay').style.display = 'none';
-    }
   }
-  var Alert = new CustomAlert();
-
-  Alert.render('Error al Guardar los Datos');
-  var pagina='../vista/subcategoria.php';
-  location.href=pagina;
-  "; 
-  echo "</script>";  
 }
             $conexion = null;
     }

@@ -54,6 +54,8 @@
 
     $productoDao->modificar($objproducto);
 }
+
+
 if ($_GET['action'] == 'Eliminar'){
 
     $objproducto->setidproducto($_GET['id_producto']);

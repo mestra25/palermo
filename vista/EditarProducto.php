@@ -1,5 +1,10 @@
-
 <?php
+
+session_start();
+
+if ($_SESSION['administrador']=="si") {
+  
+
 require_once("../modelo/conexion.php");
 
   $result = "";
@@ -44,7 +49,7 @@ require_once("../modelo/conexion.php");
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="js/formulario_producto.js"></script>
-
+<script type="text/javascript" src="js/codigo.js"></script>
 </head>
 
 <body>
@@ -80,7 +85,7 @@ require_once("../modelo/conexion.php");
                         <a href="index.html">Inicio</a>
                     </li>
                     <li>
-                        <a href="administrar.html">Administrar</a>
+                        <a href="administrar.php">Administrar</a>
                     </li>
                     <li>
                         <a href="usuarios.php">Usuarios</a>
@@ -91,6 +96,9 @@ require_once("../modelo/conexion.php");
                     <li>
                         <a href="cliente.php">Clientes</a>
                     </li>
+                    <li>
+                            <a href="logout.php">Salir</a>
+                        </li>
                 </ul>
             </div>
         </center>
@@ -136,11 +144,12 @@ require_once("../modelo/conexion.php");
       echo $result;
     }else{
   ?>
-    <center>
+   <center>
         <form>
-            
+ <h4>Codigo del Producto<input readonly type="text" id="codigo_producto" value="<?php echo $row['codigo'];?>" name="codigo_producto" ></h4>
+ <div id="col1">           
 <br></br>              
-
+<label for="name">Categoria:  </label>
 <select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos">          
     <?php
     require("php/lista_categoria_editar.php")
@@ -159,7 +168,7 @@ require_once("../modelo/conexion.php");
 
          <br></br>              
 
-         
+ <label for="name">Subcategoria:  </label>        
          <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria" required class="campos">          
     <?php
     require("php/lista_subcategoria_editar.php")
@@ -178,7 +187,7 @@ require_once("../modelo/conexion.php");
        </select>
        <br></br>              
 
-       
+ <label for="name">Proveedor:  </label>      
        <select id="txtid_proveedor" title="Se requiere un Proveedor" required class="campos">          
 
     <?php
@@ -195,7 +204,8 @@ require_once("../modelo/conexion.php");
        }
        ?>
      </select> 
-     <br></br>   
+     <br></br>  
+     <label for="name">Medida:  </label> 
      <select id="txtid_medida" title="Se requiere una Medida" required class="campos">          
     <?php
     require("php/lista_medida_editar.php")
@@ -212,7 +222,7 @@ require_once("../modelo/conexion.php");
        ?>
      </select>   
      <br></br>                      
-
+            <input hidden type="text" name="txtincrementable" id="txtincrementable" value="<?php echo $row['id_producto']; ?>">
             <input  hidden id="txtid_producto" name="txtid_producto" value="<?php echo $row['id_producto'];?>" >
             <label for="name">Descripcion:  </label>     
             <input class="campos_edi"  id="txtdescripcion" name="txtdescripcion" value="<?php echo $row['descripcion'];?>" >
@@ -226,7 +236,9 @@ require_once("../modelo/conexion.php");
             <label for="name">Venta 2:  </label>
             <input class="campos_edi"  id="txtventa2" name="txtventa2" value="<?php echo $row['venta_2'];?>" >
             <br></br> 
-            <label for="name">Veta 3:  </label>
+            </div>
+            <div id="col2">
+            <label for="name">Venta 3:  </label>
             <input class="campos_edi"  id="txtventa3" name="txtventa3" value="<?php echo $row['venta_3'];?>" >
             <br></br> 
             <label for="name">Venta 4:  </label>
@@ -247,11 +259,12 @@ require_once("../modelo/conexion.php");
             <label for="name">Observaciones:  </label>
             <input class="campos_edi"  id="txtobservacion" name="txtobservacion" value="<?php echo $row['observacion'];?>" >
             <br></br> 
-            
+            </div>
+            <center>
             <input id="btn-boton" type="button" class="btneditar" value="Editar" >
             <a id="btn-boton" href="productos.php">Cancelar</a>
              <br></br>              
-
+</center>
         </form>
         </center>
         <span id="rpt"></span>
@@ -297,3 +310,11 @@ $('.carousel').carousel({
 
 
 
+<?php
+
+}else {
+
+  header("location:login.html");
+}
+
+?>

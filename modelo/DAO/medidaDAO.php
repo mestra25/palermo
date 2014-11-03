@@ -9,10 +9,14 @@ class medidaDao {
 
   function guardar($Objmedida){
     $conexion = new conexion();
-    $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (descripcion) VALUES(:descripcion)');
+    $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (descripcion,nueva) VALUES(:descripcion,:nueva)');
     $consulta->bindParam(':descripcion', $Objmedida->getdescripcion());
+    $consulta->bindParam(':nueva', $Objmedida->getnueva());
+
     $consulta->execute();
     if ($consulta) {
+
+      if($Objmedida->getnueva()=="0"){
      echo "<script language='javascript'>"; 
      echo "function CustomAlert(){
       this.render = function(dialog){
@@ -40,34 +44,7 @@ class medidaDao {
     location.href=pagina;
     "; 
     echo "</script>";  
-  }else{
-   echo "<script language='javascript'>"; 
-   echo "function CustomAlert(){
-    this.render = function(dialog){
-      var winW = window.innerWidth;
-      var winH = window.innerHeight;
-      var dialogoverlay = document.getElementById('dialogoverlay');
-      var dialogbox = document.getElementById('dialogbox');
-      dialogoverlay.style.display = 'block';
-      dialogoverlay.style.height = winH+'px';
-      dialogbox.style.left = (winW/2) - (550 * .5)+'px';
-      dialogbox.style.top = '100px';
-      dialogbox.style.display = 'block';
-      document.getElementById('dialogboxhead').innerHTML = 'Medida';
-      document.getElementById('dialogboxbody').innerHTML = dialog;
-    }
-    this.ok = function(){
-      document.getElementById('dialogbox').style.display = 'none';
-      document.getElementById('dialogoverlay').style.display = 'none';
-    }
   }
-  var Alert = new CustomAlert();
-
-  Alert.render('Error al Guardar los Datos');
-  var pagina='../vista/medida.php';
-  location.href=pagina;
-  "; 
-  echo "</script>";  
 }
 $conexion = null;
 }

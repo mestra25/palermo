@@ -7,6 +7,8 @@
 
    if ($_GET['action'] =='Guardar')
 {
+  
+    $objproveedor->setnueva($_POST['nueva']);
     $objproveedor->setNit($_POST['nit']);
     $objproveedor->setNombreEmpresa($_POST['nombre_empresa']);
     $objproveedor->setDireccion($_POST['direccion']);

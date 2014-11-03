@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+if ($_SESSION['administrador']=="si") {
+  
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,8 +29,16 @@
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/tabla_productos.css">
-  <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+  <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>  
+<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.2/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.2/jquery-ui.theme.css">
+  <script type="text/javascript" src="js/codigo.js"></script>
   <script src="js/formulario_producto.js"  type="text/javascript"></script>
+  <script src="js/formulario_categoria.js"  type="text/javascript"></script>
+  <script src="js/formulario_subcategoria.js"  type="text/javascript"></script>
+  <script src="js/formulario_medida.js"  type="text/javascript"></script>
+  <script src="js/formulario_proveedor.js"  type="text/javascript"></script>
 
 </head>
 
@@ -57,7 +73,7 @@
               <a href="index.html">Inicio</a>
             </li>
             <li>
-              <a href="administrar.html">Administrar</a>
+              <a href="administrar.php">Administrar</a>
             </li>
             <li>
               <a href="usuarios.php">Usuarios</a>
@@ -68,6 +84,9 @@
             <li>
               <a href="cliente.php">Clientes</a>
             </li>
+            <li>
+                            <a href="logout.php">Salir</a>
+                        </li>
           </ul>
         </div>
       </center>
@@ -118,27 +137,30 @@
     <center>
 
       <div id="formulario" style="display:none;">
+<?php
+require("php/estado.php");
+?>
 
         <h2>Agregar Producto</h2>
-
-        <form>
+<h4>Codigo del Producto<input id="codigo_producto" name="txtcodigo_producto" readonly ></h4>
+        <form name="formulario">
 
 <div id="col1">
   <br></br> 
-  <br></br> 
           <label for="name">Categoria:  </label>
-          <select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos_edi">          
+          <select id="txtid_categoria" name="categoria" title="Se requiere Seleccion de Categoria" required class="campos_edi">          
 
-           <option value="">Categoria</option>
+           <option value="" >Categoria</option>
+
            <?php
            require("php/lista_categoria.php");
            
            foreach ($consulta as $registro) {
 
-             echo " <option value=".$registro['id_categoria'].">".$registro['descripcion']."</option>";
+           echo " <option value=".$registro['id_categoria'].">".$registro['descripcion']."</option>";
            }
            ?>
-
+           <option value="nueva_categoria">Nueva Categoría</option>
          </select>  
 
          <br></br>              
@@ -146,6 +168,7 @@
          <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria" required class="campos_edi">          
 
           <option value="" >Subcategoria</option>
+
           <?php
           require("php/lista_subcategoria.php");
           
@@ -155,7 +178,7 @@
 
          }
          ?>
-
+         <option value="nueva_subcategoria">Nueva Subcategoría</option>
        </select>
 
 
@@ -173,6 +196,8 @@
          echo " <option value=".$registro['id_proveedor'].">".$registro['nombre_empresa']."</option>";
        }
        ?>
+
+       <option value="nueva_proveedor">Nuevo Proveedor</option>
      </select> 
 
 
@@ -190,10 +215,9 @@
          echo " <option value=".$registro['id_medida'].">".$registro['descripcion']."</option>";
        }
        ?>
+       <option value="nueva_medida">Nueva Medida</option>
      </select> 
-<?php
-require("php/estado.php");
-?>
+
 
      <input hidden type="text" name="txtincrementable" id="txtincrementable" value="<?php echo $registro_6['Auto_increment']; ?>">
      <br></br>  
@@ -239,6 +263,7 @@ require("php/estado.php");
      <label for="name">Observacion:  </label>
      <input name="txtobservacion" id="txtobservacion" title="Se requiere las observaciones" class="campos_edi" placeholder="Observaciones" required>
      <br></br>
+     
 </div>
 <center>
      <input type="button" id="btn" value="Guardar"  class="btn">
@@ -349,6 +374,124 @@ require("php/estado.php");
 
 <span id="respuesta"></span>
 
+<div id="dialog-confirm_1" style="display:none;" title="Categoria">
+<div id="formulario">
+        <form>
+          <input type="text" value="1" hidden id="txtnueva" name="txtnueva">
+            <h2>Agregar Categoria</h2>
+            <br></br>              
+            <label for="name">Descripcion:  </label>
+            <textarea class="campo_des" id="txtdescripcion_cat" name="txtdescripcion_cat" rows="4" cols="48" placeholder="Descripcion"></textarea>
+            <br></br> 
+            <label for="name">Observacion:  </label>
+            <input id="txtobservacion_cat" name="txtobservacion_cat" title="Se requiere observacion" class="campos" placeholder="Observacion" required>
+            <br></br> 
+            <center>
+            <input type="button" name="" value="Guardar" id="btn_cat" class="btn">
+            </center>
+        </form>
+    </div>
+</div>
+
+
+<div id="dialog-confirm_2" style="display:none;" title="Subcategoria">
+<div>
+        <form>
+          <input type="text" value="1" hidden id="txtnueva" name="txtnueva">
+
+            <h2>Agregar Subcategoria</h2>
+            <label for="name">Categoria:  </label>
+            <select id="txtid_categoria_sub" title="Se requiere Seleccion de Categoria" required class="campos">          
+
+           <option value="">Categoria</option>
+           <?php
+           require("php/lista_categoria.php");
+           
+           foreach ($consulta as $registro) {
+
+             echo " <option value=".$registro['id_categoria'].">".$registro['descripcion']."</option>";
+           }
+           ?>
+
+         </select> 
+
+            <br></br>              
+            <label for="name">Descripcion:  </label>
+            <textarea class="campo_des" id="txtdescripcion_sub" name="txtdescripcion_sub" rows="4" cols="48" placeholder="Descripcion"></textarea>
+            <br></br> 
+            <label for="name">Observacion:  </label>
+            <input id="txtobservacion_sub" name="txtobservacion_sub" title="Se requiere observacion" class="campos" placeholder="Observacion" required>
+            <br></br> 
+            <center>
+            <input type="button" name="" value="Guardar" id="btn_sub" class="btn">
+            </center>
+        </form>
+    </div>
+</div>
+
+<div id="dialog-confirm_3" style="display:none;" title="Medida">
+<div id="formulario">
+        <form>
+           <input type="text" value="1" hidden id="txtnueva" name="txtnueva">
+            <h2>Agregar Medida</h2>
+            <br></br>              
+            <label for="name">Descripcion:  </label>
+            <textarea class="campo_des" id="txtdescripcion_med" name="txtdescripcion_med" rows="4" cols="48" placeholder="Descripcion"></textarea>
+            <br></br> 
+            <center>
+            <input type="button" name="" value="Guardar" id="btn_med" class="btn">
+            </center>
+        </form>
+    </div>
+</div>
+
+
+<div id="dialog-confirm_4" style="display:none;" title="Proveedor">
+<div id="formulario">
+        <form>
+          <center>
+           <input type="text" value="1" hidden id="txtnueva" name="txtnueva">
+            <h2>Agregar Proveedor</h2>
+                <br></br>              
+                <label for="name">Nit:  </label>
+                <input name="txtnit_pro" id="txtni_pro" pattern="[A-Za-z]{3}" title="3 primeras letras de tu pais" class="campos_edi" placeholder="Nit" required>
+                <br></br> 
+                <label for="name">Nombre:  </label>
+                <input name="txtnombre_empresa_pro" id="txtnombre_empresa_pro" title="Se requiere Nombre de la empresa" class="campos_edi" placeholder="Nombre de la Empresa" required>
+                <br></br>
+                <label for="name">Direccion:  </label>
+                <input name="txtdireccion_pro" id="txtdireccion_pro" title="Se requiere direccion" class="campos_edi" placeholder="Direccion" required>
+                <br></br> 
+                <label for="name">Telefono:  </label>
+                <input name"txttelefono_pro" id="txttelefono_pro" title="Se requiere telefono" onkeydown="" type="text" class="campos_edi" placeholder="Telefono" required>
+                <br></br> 
+                <label for="name">E-mail:  </label>
+                <input name="txtemail_pro" id="txtemail_pro" title="Se requiere e-mail" class="campos_edi" placeholder="E-mail" required>
+                <br></br>
+                <label for="name">Web:  </label>
+                <input name="txtweb_pro" id="txtweb_pro" title="Se requiere direccion web" class="campos_edi" placeholder="Web" required>
+                <br></br>
+                <label for="name">Contacto:  </label>
+                <input name="txtcontac_pro" id="txtcontac_pro" title="Se requiere datos de contacto" class="campos_edi" placeholder="Contacto" required>
+                <br></br>
+                <label for="name">N. Contacto:  </label>
+                <input name="txtnumcontac_pro" id="txtnumcontac_pro" title="Se requiere datos de numero contacto" class="campos_edi" placeholder="Numero Contacto" required>
+                <br></br>
+                <label for="name">R. Legal:  </label>
+                <input name="txtreplegal_pro" id="txtreplegal_pro" title="Se requiere nombre representante legal" class="campos_edi" placeholder="Nombre Representante Legal" required>
+                <br></br>
+                <label for="name">Ced. R.:  </label>
+                <input  name="txtcedrep_pro" id ="txtcedrep_pro"title="Se requiere cedula representante legal" class="campos_edi" placeholder="Cedula Representante Legal" required>
+                <br></br>
+                <label for="name">Cel. R.:  </label>
+                <input name="txtcelrep_pro" id="txtcelrep_pro" title="Se requiere celular representante legal" class="campos_edi" placeholder="Celular Representante Legal" required>
+                <br></br>
+            
+            <input type="button" name="" value="Guardar" id="btn_pro" class="btn">
+            </center>
+        </form>
+    </div>
+</div>
 
 <footer>
   <div class="container">
@@ -377,3 +520,11 @@ $('.carousel').carousel({
 </body>
 
 </html>
+<?php
+
+}else {
+
+  header("location:login.html");
+}
+
+?>

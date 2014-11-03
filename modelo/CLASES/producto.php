@@ -29,7 +29,7 @@ function __construct() {
    $this->Idcategoria = 0;
    $this->Idsubcategoria=0;
    $this->Idproveedor=0;
-   $this->Codigo="";
+   $this->Codigo=0;
    $this->Descripcion="";
    $this->Vcosto=0;
    $this->Venta1=0;

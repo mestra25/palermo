@@ -247,6 +247,12 @@ color: white;
     margin: 0 auto;
 }
 
+#codigo_producto{
+        padding: 6px;
+    width: 200px;
+    border-radius: 15px;
+}
+
 .campos{
     padding: 6px;
     width: 400px;

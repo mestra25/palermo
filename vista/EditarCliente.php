@@ -1,4 +1,9 @@
 <?php
+
+session_start();
+
+if ($_SESSION['administrador']=="si") {
+  
 require_once("../modelo/conexion.php");
 $result = "";
 $row = null;
@@ -85,7 +90,7 @@ if (isset($_GET['cedula'])) {
                 <a href="index.html">Inicio</a>
               </li>
               <li>
-                <a href="administrar.html">Administrar</a>
+                <a href="administrar.php">Administrar</a>
               </li>
               <li>
                 <a href="usuarios.php">Usuarios</a>
@@ -96,6 +101,9 @@ if (isset($_GET['cedula'])) {
               <li>
                 <a href="clientes.php">Clientes</a>
               </li>
+              <li>
+                            <a href="logout.php">Salir</a>
+                        </li>
             </ul>
           </div>
         </center>
@@ -249,3 +257,11 @@ $('.carousel').carousel({
     <body>
 >>>>>>> origin/master
 </html>
+<?php
+
+}else {
+
+  header("location:login.html");
+}
+
+?>

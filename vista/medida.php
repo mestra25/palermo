@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+if ($_SESSION['administrador']=="si") {
+  
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -59,7 +67,7 @@
                         <a href="index.html">Inicio</a>
                     </li>
                     <li>
-                        <a href="administrar.html">Administrar</a>
+                        <a href="administrar.php">Administrar</a>
                     </li>
                     <li>
                         <a href="usuarios.php">Usuarios</a>
@@ -70,6 +78,9 @@
                     <li>
                         <a href="cliente.php">Clientes</a>
                     </li>
+                    <li>
+                            <a href="logout.php">Salir</a>
+                        </li>
                 </ul>
             </div>
         </center>
@@ -78,7 +89,7 @@
     <!-- /.container -->
 </nav>
 <div class="contenido">
- <div>
+   <div>
     <center>
         <ul class="nav navbar-nav">
             <li>
@@ -102,7 +113,7 @@
 </div>
 <div class="">
 
-   <div class="contenido">
+ <div class="contenido">
     <div class="botones_form">
         <input type="submit" value="Agregar Medida" class="btn" onclick="mostrar()">
 
@@ -116,7 +127,7 @@
     </div>
 
     <div>
-       
+     
 
         <div id="page-wrap">
             <center>
@@ -135,25 +146,25 @@
             
             <tbody>
               <tr>
-                 <?php
-                 require("php/lista_medida.php");
-                 foreach ($consulta as $registro) {
-                    ?>
-                    <tbody> 
+               <?php
+               require("php/lista_medida.php");
+               foreach ($consulta as $registro) {
+                ?>
+                <tbody> 
 
-                      <tr>
-                        <td class="codigo"><?php echo $registro["id_medida"];?></td>
-                        <td><?php echo $registro["descripcion"];?></td>
-                        <td><a href="../controladores/medida.php?action=Eliminar&id_medida=<?php echo $registro["id_medida"];?>" onclick="return confirm('Desea eliminar la Medida?');" src="img/delete.png"><img src="img/delete.png"></a></td>
+                  <tr>
+                    <td class="codigo"><?php echo $registro["id_medida"];?></td>
+                    <td><?php echo $registro["descripcion"];?></td>
+                    <td><a href="../controladores/medida.php?action=Eliminar&id_medida=<?php echo $registro["id_medida"];?>" onclick="return confirm('Desea eliminar la Medida?');" src="img/delete.png"><img src="img/delete.png"></a></td>
 
-                    </tr>
+                </tr>
 
-                </tbody>
-                <?php
-            }    
-            ?>
-        </tr>
-    </tbody>
+            </tbody>
+            <?php
+        }    
+        ?>
+    </tr>
+</tbody>
 
 
 </table>
@@ -167,18 +178,19 @@
         <form>
             <h2>Agregar 
                 Medida</h2>
-            <br></br>    
-            <label for="name">Unidad de Medida:  </label>          
+                <br></br> 
+                <input type="text" value="0" hidden id="txtnueva" name="txtnueva">   
+                <label for="name">Unidad de Medida:  </label>          
                 <textarea class="campo_des" id="txtdescripcion" name="txtdescripcion" rows="4" cols="55" placeholder="Descripcion"></textarea>
 
-            <br></br> 
-            
-            <input type="button" name="" value="Guardar" id="btn" class="btn">
-            <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
-        </form>
-    </div>
-    <span id="respuesta"></span>
-</center>
+                <br></br> 
+                
+                <input type="button" name="" value="Guardar" id="btn" class="btn">
+                <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+            </form>
+        </div>
+        <span id="respuesta"></span>
+    </center>
 
 
 </div>
@@ -218,3 +230,11 @@ $('.carousel').carousel({
 
 
 
+<?php
+
+}else {
+
+  header("location:login.html");
+}
+
+?>

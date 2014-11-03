@@ -6,4 +6,5 @@ $consulta = $conexion->prepare('SELECT * FROM categoria');
 $consulta->execute();
 $registro = $consulta;
 
+$conexion=null;
 ?>
