@@ -1,6 +1,29 @@
 jQuery(document).ready(function() {
 
-    $("#btn").click(function() {
+    $("#formUsur").validate({
+        rules: {
+            txtcedula: { required: true, minlength: 6},
+            txtnombre: { required: true,maxlength: 15},
+            txtapellido: { required:true, maxlength: 15},
+            txtcelular: {required:true,   maxlength: 15 },
+            txtdireccion: { required: true, maxlength: 30},
+            txtemail: {  email:true,required:true},
+            txtpassword :{ required: true ,minlength: 4, maxlength: 15},
+            txtconfpassword:{ equalTo:"#txtpassword"}
+            
+        },
+        messages: {
+            txtcedula: "Debe indicar su cedula",
+            txtnombre: "Debe  indicar su Nombre",
+            txtapellido:"Debe  indicar su Apellido",
+            txtcelular: "Debe indicar su telefono , solo numeros",
+            txtdireccion: "Indique una direccion",
+            txtemail: "Debe indicar un formato correcto",
+            txtpassword :{required:"Campo obligatorio"},
+            txtconfpassword:{equalTo:"La contraseña no es igual"}
+          },
+        submitHandler: function(form){
+          
 
      var _cedula=$("#txtcedula").val();
      var _nombre= $("#txtnombre").val();
@@ -12,8 +35,7 @@ jQuery(document).ready(function() {
      var _password= $("#txtpassword").val();
      var _confpassword= $("#txtconfpassword").val();
 
-     if ( _password == _confpassword)
-     {
+  
 
      var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email , rol : _rol, password : _password  };
      var archivo='../controladores/usuario.php?action=Guardar';
@@ -26,12 +48,9 @@ jQuery(document).ready(function() {
       success : function( datos){
         $("#respuesta").html(datos);
       }
-    });
-    }else{
-      alert(" Verifique si las contraseñas son iguales");
-     
-    }
-    });
+    });;
+        } 
+      });
 
     $(".btneditar").click(function() {
           
