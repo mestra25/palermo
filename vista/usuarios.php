@@ -141,10 +141,10 @@ if ($_SESSION['administrador']=="si") {
             <input name="txtemail" id="txtemail" title="Se requiere email de cliente" class="campos_edi" placeholder="E-mail" required>
             <br></br> 
             <label for="name">Password:  </label>
-            <input name="txtpassword" id="txtpassword" title="Se requiere password de cliente" class="campos_edi" placeholder="Password" required>
+            <input type="password" name="txtpassword" id="txtpassword" title="Se requiere password de cliente" class="campos_edi" placeholder="Password" required>
             <br></br> 
             <label for="name">C. Password:  </label>
-            <input name="txtconfpassword" id="txtconfpassword" title="Se requiere confirmar password de usuario" class="campos_edi" placeholder="Confirmar Password" required>
+            <input type="password"  name="txtconfpassword" id="txtconfpassword" title="Se requiere confirmar password de usuario" class="campos_edi" placeholder="Confirmar Password" required>
                  <br></br>                         
           <br></br>        
   </div>          

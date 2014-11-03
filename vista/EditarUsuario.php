@@ -131,7 +131,7 @@ require_once("../modelo/conexion.php");
 
         <form>
             
-     
+     <div id="col1">
             <br></br>  
             <label for="name">Cedula:  </label>
             <input readonly class="campos_edi" name="txtcedula" id="txtcedula"  value="<?php echo $row['cedula'];?>">
@@ -154,9 +154,11 @@ require_once("../modelo/conexion.php");
             <label for="name">Password:  </label>
             <input class="campos_edi" name="txtpassword" id="txtpassword"  value="<?php echo $row['password'];?>">
             <br></br>
-
+</div>
+<center>
             <input id="btn-boton" type="button" class="btneditar" value="Editar" >
             <a id="btn-boton" href="usuarios.php">Cancelar</a>        
+            </center>
             <div id="rpt"></div>
             <br></br>
            </form>
