@@ -162,11 +162,12 @@ require_once("../modelo/conexion.php");
 
        <div id="formulario" >
             <form>
-                <br></br>              
+                <br></br>     
+                <div id="col1">         
                 <label for="name">Nit:  </label>
                 <input readonly class="campos_edi" name="txtnit" id="txtnit" value="<?php echo $row['nit'];?>">
                 <br></br> 
-                <label for="name">Nombre Empresa:  </label>
+                <label for="name">Nombre:  </label>
                 <input class="campos_edi" name="txtnombre_empresa" id="txtnombre_empresa" value="<?php echo $row['nombre_empresa'];?>">
                 <br></br>
                 <label for="name">Direccion:  </label>
@@ -180,7 +181,8 @@ require_once("../modelo/conexion.php");
                 <br></br>
                 <label for="name">Web:  </label>
                 <input class="campos_edi" name="txtweb" id="txtweb" value="<?php echo $row['web'];?>">
-                <br></br>
+                </div>
+                <div id="col2">
                 <label for="name">Contacto:  </label>
                 <input class="campos_edi" name="txtcontac" id="txtcontac" value="<?php echo $row['contac'];?>">
                 <br></br>
@@ -196,8 +198,13 @@ require_once("../modelo/conexion.php");
                 <label for="name">Celular R. Legal:  </label>
                 <input class="campos_edi" name="txtcelrep" id="txtcelrep" value="<?php echo $row['celRep'];?>">
                 <br></br>
+                <br></br>
+                </div>
+                <center>
+                    <br></br>
                 <input id="btn-boton" type="button" class="btneditar" value="Editar" >
                 <a id="btn-boton" href="proveedor.php">Cancelar</a>
+                </center>
                 <div id="rpt"></div>
                                 <br></br>
 
