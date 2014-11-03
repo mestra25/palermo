@@ -9,7 +9,9 @@ class movimiento_inventarioDao {
 
   function guardarusuario($Objmovimiento_inventario){
     $conexion = new conexion();
-    $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cliente,codigo,cantidad,v_costo,estado) VALUES(:cliente,:codigo,:cantidad,:v_costo,:estado)');
+    $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cliente,codigo,usuario,cantidad,v_costo,estado) VALUES(:cliente,:codigo,:usuario,:cantidad,:v_costo,:estado)');
+    $consulta->bindParam(':usuario', $Objmovimiento_inventario->getusuario());
+
     $consulta->bindParam(':codigo', $Objmovimiento_inventario->getCodigo());
     $consulta->bindParam(':cantidad', $Objmovimiento_inventario->getcantidad());
     $consulta->bindParam(':estado', $Objmovimiento_inventario->getestado());  

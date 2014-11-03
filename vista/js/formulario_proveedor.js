@@ -26,7 +26,6 @@ jQuery(document).ready(function()
         $("#respuesta").html(datos);
       }
     });
-     ocultar();
     });
 
 

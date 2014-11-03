@@ -55,7 +55,7 @@ if ($consulta->execute()) {
     echo "</script>";  
   }
 } 
-}
+
             $conexion = null;
     }
 

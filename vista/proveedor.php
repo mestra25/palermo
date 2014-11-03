@@ -35,10 +35,6 @@ if ($_SESSION['administrador']=="si") {
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"  type="text/javascript"></script>
-    <script src="js/jquery-ui-1.10.2.js"  type="text/javascript"></script>
-    <script src="js/jquery-ui-1.10.2.js"  type="text/javascript"></script>
-    <script src="js/jquery-ui-1.11.2.js"  type="text/javascript"></script>
-    <script src="js/editar.js"  type="text/javascript"></script>
     <script src="js/formulario_proveedor.js"  type="text/javascript"></script>
     
 
@@ -183,7 +179,7 @@ if ($_SESSION['administrador']=="si") {
                 <input type="button" name="btnguardar" value="Guardar"  id="btn" class="btn">
                 <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
                 </center>
-                <div id="respuesta"></div>
+                <span id="respuesta"></span>
             </form>
         </div>
 
