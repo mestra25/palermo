@@ -152,7 +152,7 @@ require_once("../modelo/conexion.php");
     <h2>Editar Subcategoria</h2>
 
         <form>
-            
+            <div id="col1">
             <input hidden readonly class="campos_edi" id="txtid_subcategoria" name="txtid_subcategoria" value="<?php echo $row['id_subcategoria'];?>" >
             <input hidden readonly class="campos_edi" id="txtid_categoria" name="txtid_categoria" value="<?php echo $row['id_categoria'];?>" >
             <label for="name">Descripcion:  </label>
@@ -164,7 +164,7 @@ require_once("../modelo/conexion.php");
             <input id="btn-boton" type="button" class="btneditar" value="Editar" >
             <a id="btn-boton" href="subcategoria.php">Cancelar</a>
                         <br></br> 
-
+</div>
         <span id="rpt"></span>
         </form>
         
