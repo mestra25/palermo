@@ -3,7 +3,7 @@
 session_start();
 
 if ($_SESSION['usuario']=="si") {
-  $cedula=$_SESSION['cedula'];
+  $cedula=$_SESSION['cedula_usuario'];
 ?>
 
 <!DOCTYPE html>

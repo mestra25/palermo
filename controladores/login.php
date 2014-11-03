@@ -35,7 +35,7 @@ if ($registro['password']==$encpass && $registro['rol']=="usuario") {
 	
 	session_start();
 	$_SESSION['usuario']="si";
-	$_SESSION['cedula']=$ced;
+	$_SESSION['cedula_usuario']=$registro['cedula'];
 	header("location: ../vista/rol_usuario.php");
 	
 }
