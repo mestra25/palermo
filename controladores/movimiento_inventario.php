@@ -7,6 +7,7 @@ $movimiento_inventarioDao = new movimiento_inventarioDao;
 
 if ($_GET['action'] =='GuardarUsuario'){
 
+    $usuario=$_POST['usuario'];
     $cliente=$_POST['cliente'];
     $id_producto=$_POST['id_producto'];
     $cantidad=$_POST['reserva'];
@@ -28,7 +29,7 @@ if ($_GET['action'] =='GuardarUsuario'){
         if ($tem>=$cantidad) {
 
             $objmovimiento_inventario->setcliente($cliente);
-            $objmovimiento_inventario->setusuario($id_usuario);
+            $objmovimiento_inventario->setusuario($usuario);
             $objmovimiento_inventario->setcodigo($id_producto);
             $objmovimiento_inventario->setcantidad($cantidad);
             $objmovimiento_inventario->setestado($estado);

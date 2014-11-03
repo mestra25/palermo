@@ -3,6 +3,8 @@
 session_start();
 
 if ($_SESSION['usuario']=="si") {
+
+  $cedula_usuario=$_SESSION['cedula_usuario'];
   
 ?>
 
@@ -119,7 +121,7 @@ if ($_SESSION['usuario']=="si") {
 
 <div id="col1">
          <input hidden type="text" name="txtidproducto" class="campos_edi" id="txtidproducto" value="<?php echo $registro['id_producto']?>" readonly>
-         <input hidden type="text" name="txtidproducto" class="campos_edi" id="txtidproducto" value="<?php echo $registro['id_producto']?>" readonly>
+         <input hidden type="text" name="txtid_usuario" class="campos_edi" id="txtid_usuario" value="<?php echo $cedula_usuario?>" readonly>
          <p>Cantidad:  <input type="text" name="txtreservar" id="txtreservar" class="campos_edi"></p>
          <p>Medida:  <input type="text" name="txtmedida" class="campos_edi" id="txtmedida" value="<?php echo $registro_4['descripcion']?>" readonly></p>
          <p>Existencia:  <input type="text" name="txtexistencia" class="campos_edi" id="txtexistencia" value="<?php echo $registro['existencia']?>" readonly></p>
