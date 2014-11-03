@@ -2,7 +2,7 @@
 
 session_start();
 
-if ($_SESSION['administrador']=="si") {
+if ($_SESSION['usuario']=="si") {
   
 ?>
 
