@@ -9,15 +9,14 @@ class clienteDao {
 
     function guardar($Objcliente){
             $conexion = new conexion();
-            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cedula,  nombre, apellido, celular, direccion, email,rol) VALUES(:cedula, :nombre, :apellido,  :celular,:direccion,:email,:rol)');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cedula,  nombre, apellido, celular, direccion, email) VALUES(:cedula, :nombre, :apellido,  :celular,:direccion,:email)');
             $consulta->bindParam(':cedula', $Objcliente->getCedula());
             $consulta->bindParam(':nombre', $Objcliente->getNombre());
             $consulta->bindParam(':apellido', $Objcliente->getApellido());
             $consulta->bindParam(':celular', $Objcliente->getCelular());
             $consulta->bindParam(':direccion', $Objcliente->getDireccion());
             $consulta->bindParam(':email', $Objcliente->getEmail());
-            $consulta->bindParam(':rol', $Objcliente->getRol());
-            if ($consulta->execute()) {
+                        if ($consulta->execute()) {
      echo "<script language='javascript'>"; 
      echo "function CustomAlert(){
       this.render = function(dialog){

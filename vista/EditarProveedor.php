@@ -63,6 +63,10 @@ require_once("../modelo/conexion.php");
     <script src="js/jquery-ui-1.11.2.js"  type="text/javascript"></script>
     <script src="js/editar.js"  type="text/javascript"></script>
     <script src="js/formulario_proveedor.js"  type="text/javascript"></script>
+     <script src="js/jquery.mockjax.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.validate.js" type="text/javascript"></script>  
     
 
 </head>
@@ -160,7 +164,7 @@ require_once("../modelo/conexion.php");
 <br></br>  
           <h2>Editar Proveedor</h2>
 
-       <div id="formulario" >
+       <div id="editarProvee" >
             <form>
                 <br></br>     
                 <div id="col1">         
@@ -202,7 +206,7 @@ require_once("../modelo/conexion.php");
                 </div>
                 <center>
                     <br></br>
-                <input id="btn-boton" type="button" class="btneditar" value="Editar" >
+                <input type="submit" value="Editar">
                 <a id="btn-boton" href="proveedor.php">Cancelar</a>
                 </center>
                 <div id="rpt"></div>

@@ -36,6 +36,10 @@ if ($_SESSION['administrador']=="si") {
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"  type="text/javascript"></script>
     <script src="js/formulario_proveedor.js"  type="text/javascript"></script>
+     <script src="js/jquery.mockjax.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.validate.js" type="text/javascript"></script>  
     
 
 </head>
@@ -133,7 +137,7 @@ if ($_SESSION['administrador']=="si") {
     </div>
 
     <center>
-        <div id="formulario" style="display:none">
+        <div id="guardarProvee" style="display:none">
             <form>
                 <h2>Agregar Proveedor</h2>
                 <input type="text" value="0" hidden id="txtnueva" name="txtnueva">
