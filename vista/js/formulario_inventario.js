@@ -33,8 +33,7 @@ jQuery(document).ready(function() {
 
      var _codigo=$(this).attr("data-codigo");
      var movimiento='../controladores/movimiento_inventario.php?action=Rechazar';
-     var id=$(this).attr("data-id");
-     alert(id);
+     var id=$(this).attr("data-idproducto");
      $.ajax({
       type :"POST",
       url : movimiento,

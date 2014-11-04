@@ -136,7 +136,7 @@ if ($_SESSION['administrador']=="si") {
 
     <center>
 
-      <div id="formulario" style="display:none;">
+ <div id="formulario" style="display:none;">
 <?php
 require("php/estado.php");
 ?>
@@ -146,7 +146,11 @@ require("php/estado.php");
         <form name="formulario">
 
 <div id="col1">
-  <br></br> 
+  <br></br>
+
+
+
+
           <label for="name">Categoria:  </label>
           <select id="txtid_categoria" name="categoria" title="Se requiere Seleccion de Categoria" required class="campos_edi">          
 
@@ -162,6 +166,10 @@ require("php/estado.php");
            ?>
            <option value="nueva_categoria">Nueva Categoría</option>
          </select>  
+
+
+
+
 
          <br></br>              
 <label for="name">Subcategoria:  </label>
