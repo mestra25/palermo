@@ -166,7 +166,7 @@ require_once("../modelo/conexion.php");
           <h2>Editar Proveedor</h2>
 
        <div id="formulario" >
-            <form>
+            <form id="editarProvee">
                 <br></br>     
                 <div id="col1">         
                 <label for="name">Nit:  </label>
