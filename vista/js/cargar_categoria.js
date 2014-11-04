@@ -1,7 +1,5 @@
-$(document).ready(function()
-	{
-		$("#btn_cat").bind("click",function()
-		{
+$(document).ready(function(){
+		$("#btn_cat").bind("click",function(){
 			var miselect=$("#txtid_categoria");
 			/* VACIAMOS EL SELECT Y PONEMOS UNA OPCION QUE DIGA CARGANDO... */
 			miselect.find('option').remove().end().append('').val('');
@@ -13,6 +11,6 @@ $(document).ready(function()
 					}
 			}, "json");
 		});
-		$(".reiniciar").bind("click",function()
+		
 
 	});

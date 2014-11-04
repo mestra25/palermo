@@ -1,4 +1,5 @@
 jQuery(document).ready(function() {
+
    $("#editarCli").validate({
         rules: {
             txtcedula: { required: true, minlength: 6},
@@ -38,13 +39,12 @@ jQuery(document).ready(function() {
 
      var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email , rol : _rol, password : _password  };
      var archivo='../controladores/usuario.php?action=Editar';
-    alert("ghjk");
 
      $.ajax({
       type :"POST",
       url : archivo,
       data :parametros,
-      success : function( datos){
+      success : function(datos){
         $("#respuesta").html(datos);
       }
     });;
