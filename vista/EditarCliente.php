@@ -55,6 +55,10 @@ if (isset($_GET['cedula'])) {
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"  type="text/javascript"></script>
     <script src="js/formulario_cliente.js"  type="text/javascript"></script>
+     <script src="js/jquery.mockjax.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.validate.js" type="text/javascript"></script>  
 
   </head>
 
@@ -139,7 +143,7 @@ if (isset($_GET['cedula'])) {
          <br></br>
          <h2>Editar Cliente</h2>
 
-         <form id="dialog"  width ="100px" 
+         <form id="editarCli"  width ="100px" 
          height="300px" >
          <div>
           <label for="name">Cedula: </label>
@@ -160,7 +164,7 @@ if (isset($_GET['cedula'])) {
           <label for="password">Email: </label>
           <input name="txtemail" id="txtemail" value="<?php echo $row["email"];?>" title="Se requiere direccion web" class="campos_edi" placeholder="email" required>
           <br></br>
-          <input id="btn-boton" type="button" class="btneditar" value="Editar" >
+          <input type="submit">
           <a id="btn-boton" href="cliente.php">Cancelar</a>
           <br></br>
           <div id="respuesta"></div>
@@ -203,59 +207,6 @@ $('.carousel').carousel({
 
 </body>
 
-=======
-     <link rel="stylesheet" href="css/jquery-ui.css">
-        <meta http-equiv="X-UA-Compatible" content="IE=9,crome" />
-        <script src="js/jquery-1.11.0.js"  type="text/javascript"></script>
-     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-  
-    <script src="js/formulario_cliente.js"  type="text/javascript"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-   
- 
-
- 
-
-   
-  <?php
-    // If there are no records.
-    if(!empty($result)) :
-      echo $result;
-    else :
-  ?>
-    
-        <form>
-
-                          <br></br>              
-                          <label >Cedula*</label>
-                          <input name="txtcedula" id="txtcedula" value="<?php echo $row["cedula"];?>" pattern="[0-9 ]{3,20}" >
-                          <br></br> 
-                          <label >Nombre*</label>
-                          <input name="txtnombre" id="txtnombre" value="<?php echo $row["nombre"];?>" pattern="[a-z ]" >
-                          <br></br>
-                          <label >Apellido*</label>
-                          <input name="txtapellido" id="txtapellido" value="<?php echo $row["apellido"];?>" pattern="[a-z ]{3,20}" >
-                          <br></br> 
-                          <label >Celular</label>
-                          <input name="txtcelular" id="txtcelular" value="<?php echo $row["celular"];?>"pattern="[0-9 ]{3,20}" >
-                          <br></br> 
-                          <label >Direccion*</label>
-                          <input name="txtdireccion" id="txtdireccion"value="<?php echo $row["direccion"];?>"pattern="[a-z ]{3,20}" >
-                          <br></br> 
-                          <label >Email*</label>
-                          <input name="txtemail" id="txtemail" value="<?php echo $row["email"];?>"pattern="[a-z ]{3,20}">
-                          <br></br> 
-
-                          <input type="button" class="btneditar" name="btneditar" value="Editar" >
-                           <div id="rpt"></div>
-                      </form>
-      
-    <?php endif;?>
-    <body>
->>>>>>> origin/master
 </html>
 <?php
 

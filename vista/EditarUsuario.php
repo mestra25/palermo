@@ -54,6 +54,10 @@ require_once("../modelo/conexion.php");
   <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
   <script src="js/jquery-1.11.0.js"  type="text/javascript"></script>
   <script src="js/formulario_usuario.js"  type="text/javascript"></script>
+   <script src="js/jquery.mockjax.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.validate.js" type="text/javascript"></script>  
 
 
 </head>
@@ -129,7 +133,7 @@ require_once("../modelo/conexion.php");
  <br></br>  
           <h2>Editar Usuario</h2>
 
-        <form>
+        <form id="formEditar">
             
      <div id="col1">
             <br></br>  
@@ -156,7 +160,7 @@ require_once("../modelo/conexion.php");
             <br></br>
 </div>
 <center>
-            <input id="btn-boton" type="button" class="btneditar" value="Editar" >
+            <input type="submit">
             <a id="btn-boton" href="usuarios.php">Cancelar</a>        
             </center>
             <div id="rpt"></div>
