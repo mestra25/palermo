@@ -67,6 +67,7 @@ require_once("../modelo/conexion.php");
     <script src="js/jquery.form.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/jquery.validate.js" type="text/javascript"></script>  
+
     
 
 </head>
@@ -164,7 +165,7 @@ require_once("../modelo/conexion.php");
 <br></br>  
           <h2>Editar Proveedor</h2>
 
-       <div id="editarProvee" >
+       <div id="formulario" >
             <form>
                 <br></br>     
                 <div id="col1">         

@@ -24,7 +24,7 @@ jQuery(document).ready(function()
             txtemail: "Debe indicar un formato correcto",
           
           },
-        submitHandler: function(form
+        submitHandler: function(form){
          var _nueva=$("#txtnueva").val();
      var _nit=$("#txtnit_pro").val();
      var _nombre_empresa=$("#txtnombre_empresa_pro").val();
