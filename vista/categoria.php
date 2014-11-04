@@ -196,7 +196,7 @@ if ($_SESSION['administrador']=="si") {
             <textarea class="campo_des" id="txtdescripcion" name="txtdescripcion" rows="4" cols="55" placeholder="Descripcion"></textarea>
             <br></br> 
             <label for="name">Observacion:  </label>
-            <input id="txtobservacion" name="txtobservacion" title="Se requiere observacion" class="campos" placeholder="Observacion" required>
+            <input id="txtobservacion" name="txtobservacion"  class="campos" placeholder="Observacion" required>
             <br></br> 
 
 

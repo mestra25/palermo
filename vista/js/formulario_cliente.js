@@ -72,8 +72,7 @@ $("#guardarCli").validate({
      var _celular=$("#txtcelular").val();
      var _direccion= $("#txtdireccion").val();
      var _email= $("#txtemail").val();
-     var _rol="cliente";
-     var parametros={rol:_rol, cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email};
+     var parametros={ cedula :_cedula , nombre: _nombre , apellido : _apellido , celular :_celular , direccion : _direccion , email : _email};
      var archivo='../controladores/cliente.php?action=Guardar';
    
       
@@ -83,12 +82,8 @@ $("#guardarCli").validate({
       data :parametros,
       success : function( datos){
         $("#respuesta").html(datos);
-      }
-      
-    });
-   
-        } 
-      });
+      }  
+    });} });
     
 
 
