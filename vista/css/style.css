@@ -236,14 +236,26 @@ body {
 	font-size: 20px;
 	font-family: tahoma;
 	color: lightgray;
+	margin-top: 20px;	
 	border-radius: 10px;
 }
 #ingresar:hover{
-	background: #00A950;
+background: #00A950;
 color: white;
 	}
 
 .brand{
 	margin-top: 90px;
 
+}
+
+.input{
+	width: 90%;
+	margin-top: 40px;
+	padding: 8px;
+	border-radius: 10px;
+}
+
+#contenedor{
+	width: 80%;
 }

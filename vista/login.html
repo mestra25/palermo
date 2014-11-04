@@ -31,44 +31,17 @@
     <div id="wrappermiddle">
 
       <h2>Login</h2>
-
-      <div id="username_input">
-
-        <div id="username_inputleft"></div>
-
-        <div id="username_inputmiddle">
-          
-        <form action="../controladores/login.php" method="POST">
-          
-          <input class="url" type="text" name="cedula" id="cedula"  placeholder="Cedula Usuario">
-      
-        </div>
-
-        <div id="username_inputright"></div>
-
-      </div>
-
-      <div id="password_input">
-
-        <div id="password_inputleft"></div>
-
-        <div id="password_inputmiddle">
+ <center>     
+<div id="contenedor">
+      <form action="../controladores/login.php" method="POST">
         
-          <input class="url" type="password" name="password" id="password"  placeholder="Password">
-        
-        </form>
-        </div>
-
-        <div id="password_inputright"></div>
-
-      </div>
-
-      <div id="submit">
-        <form>
-        <input id="ingresar" name="iniciar" type="submit" id="sign-in">
-        </form>
-      </div>
-
+        <input class="input" type="text" id="cedula" name="cedula" placeholder="Cedula">
+        <input class="input" class type="password" id="password" name="password" placeholder="Password">
+        <input type="submit" value="entrar" id="ingresar">
+       
+      </form>
+</div>
+  </center>      
 
 <br></br>
     </div>
@@ -79,4 +52,4 @@
   </div>
 
 </body>
-</html>
+</html> 
