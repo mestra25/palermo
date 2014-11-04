@@ -16,8 +16,16 @@ class categoriaDao {
             $consulta->bindParam(':fcreado', $Objcategoria->getfcreado());
             $consulta->bindParam(':fmodificado', $Objcategoria->getfmodificado());
             $consulta->execute();
+
             if ($consulta) {
-              if ($Objcategoria->getnueva()=="0") {
+            $conexion=null;
+            $conexion = new conexion();
+            $consulta = $conexion->prepare('SELECT * FROM '. self::tabla .'  ORDER BY id_categoria DESC LIMIT 1' );
+            $consulta->execute();
+            $registro = $consulta->fetch();
+            echo json_encode($registro);  
+    if ($Objcategoria->getnueva()=="0") {
+                
               
      echo "<script language='javascript'>"; 
      echo "function CustomAlert(){
@@ -46,6 +54,7 @@ class categoriaDao {
     location.href=pagina;
     "; 
     echo "</script>";  
+
   }
   }
             $conexion = null;
