@@ -48,12 +48,8 @@ jQuery(document).ready(function() {
       var nuevo = $.parseJSON(datos); 
       alert(nuevo['descripcion']);
       alert(nuevo['id_categoria']);
-
-      var x = document.getElementById("txtid_categoria");
-      var option = document.createElement("option");
-      option.text = nuevo['descripcion'];
-      value.text=nuevo['id_categoria'];
-      x.add(option);
+      
+      $("#codigo_producto").val(nuevo['descripcion']);
 
       $("#respuesta").html(datos);
 
