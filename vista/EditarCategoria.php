@@ -166,8 +166,8 @@ require_once("../modelo/conexion.php");
             <label for="name">Observacion:  </label>
             <input class="campo" id="txtobservacion" name="txtobservacion" value="<?php echo $row['observacion'];?>">
             <br></br> 
-            <input  type="submit"  value="Editar" >
-            <a id="btn-boton" href="categoria.php">Cancelar</a>
+            <input class="btn" type="submit"  value="Editar" >
+            <a class="btn" id="btn-boton" href="categoria.php">Cancelar</a>
              <br></br>              
 
         </form>
