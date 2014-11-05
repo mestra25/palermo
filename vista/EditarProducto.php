@@ -49,6 +49,10 @@ require_once("../modelo/conexion.php");
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="js/formulario_producto.js"></script>
+    <script src="js/jquery.mockjax.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.validate.js" type="text/javascript"></script>  
 <script type="text/javascript" src="js/codigo.js"></script>
 </head>
 
@@ -145,7 +149,7 @@ require_once("../modelo/conexion.php");
     }else{
   ?>
    <center>
-        <form>
+        <form id="editarProd">
  <h4>Codigo del Producto<input readonly type="text" id="codigo_producto" value="<?php echo $row['codigo'];?>" name="codigo_producto" ></h4>
  <div id="col1">           
 <br></br>              
@@ -261,7 +265,7 @@ require_once("../modelo/conexion.php");
             <br></br> 
             </div>
             <center>
-            <input id="btn-boton" type="button" class="btneditar" value="Editar" >
+            <input id="btn-boton" type="submit"  value="Editar" >
             <a id="btn-boton" href="productos.php">Cancelar</a>
              <br></br>              
 </center>

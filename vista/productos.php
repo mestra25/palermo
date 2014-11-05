@@ -456,7 +456,7 @@ require("php/estado.php");
         <form>
           <center>
            <input type="text" value="1" hidden id="txtnueva" name="txtnueva">
-            <h2>Agregar Proveedor</h2>
+            <h2>Agregar Producto</h2>
                 <br></br>              
                 <label for="name">Nit:  </label>
                 <input name="txtnit_pro" id="txtni_pro" pattern="[A-Za-z]{3}" title="3 primeras letras de tu pais" class="campos_edi" placeholder="Nit" required>

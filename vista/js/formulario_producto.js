@@ -1,11 +1,52 @@
 jQuery(document).ready(function() {
-
-  $("#btn").click(function() {
+  $("#guardarProd").validate({
+        rules: {
+          txtid_categoria: { required: true},
+          txtid_subcategoria: { required: true},
+          txtid_proveedor: { required: true,minlength: 4},
+        txtcodigo_producto: { required: true,minlength: 4},
+        txtdescripcion: { required: true,minlength: 10},
+        txtvcosto: { required: true},
+        txtventa1: { required: true},
+        txtventa2: { required: true},
+        txtventa3: { required: true},
+       txtventa4: { required: true,minlength: 1},
+       txtp_utilidad: { required: true,minlength: 1},
+       txtstock_min: { required: true,minlength: 1},
+       txtstock_max: { required: true,minlength: 1},
+       txtexistencia: { required: true,minlength: 1},
+       txtid_medida: { required: true,minlength: 10},
+       txtp_descuento: { required: true,minlength: 3}, 
+       txtobservacion: { required: true,minlength: 10},
+        },
+        messages: {
+       
+          txtid_categoria: "Debe escribir una descripcion",
+          txtid_subcategoria: "indique la subcategoria",
+          txtid_proveedor: "indique el proveedor",
+        txtcodigo_producto: "indique codigo del producto",
+        txtdescripcion: "indique la descripcion",
+        txtvcosto: "indique el valor costo",
+        txtventa1: "indique la venta uno",
+        txtventa2: "indique la venta dos",
+        txtventa3: "indique la venta tres",
+       txtventa4: "indique la venta cuatro",
+       txtp_utilidad: "indique la utilidad",
+       txtstock_min: "indique stock minimo",
+       txtstock_max: "indique stock maximo",
+       txtexistencia: "indique la existencia",
+       txtid_medida: "indique la medida",
+       txtp_descuento: "indique el descuento", 
+       txtobservacion: "indique la obeservacion"
+          
+          },
+        submitHandler: function(form){
+          
     var _id_categoria=$("#txtid_categoria").val();
     var _id_subcategoria= $("#txtid_subcategoria").val();
     var _id_proveedor=$("#txtid_proveedor").val();
     var _codigo=$("#codigo_producto").val();
-    var _descripcion=$("#txtdescripcion").val();
+    var _=$("#txtdescripcion").val();
     var _v_costo= $("#txtvcosto").val();
     var _venta_1= $("#txtventa1").val();
     var _venta_2= $("#txtventa2").val();
@@ -32,11 +73,52 @@ jQuery(document).ready(function() {
         $("#respuesta").html(datos);
       }
     });
+} });
 
-  }); 
-
-  $(".btneditar").click(function() {
-    var _id_producto=$("#txtid_producto").val();
+$("#editarProd").validate({
+        rules: {
+          txtid_categoria: { required: true},
+          txtid_subcategoria: { required: true},
+          txtid_proveedor: { required: true,minlength: 4},
+        txtcodigo_producto: { required: true,minlength: 4},
+        txtdescripcion: { required: true,minlength: 10},
+        txtvcosto: { required: true},
+        txtventa1: { required: true},
+        txtventa2: { required: true},
+        txtventa3: { required: true},
+       txtventa4: { required: true,minlength: 1},
+       txtp_utilidad: { required: true,minlength: 1},
+       txtstock_min: { required: true,minlength: 1},
+       txtstock_max: { required: true,minlength: 1},
+       txtexistencia: { required: true,minlength: 1},
+       txtid_medida: { required: true,minlength: 10},
+       txtp_descuento: { required: true,minlength: 3}, 
+       txtobservacion: { required: true,minlength: 10},
+        },
+        messages: {
+       
+          txtid_categoria: "Debe escribir una descripcion",
+          txtid_subcategoria: "indique la subcategoria",
+          txtid_proveedor: "indique el proveedor",
+        txtcodigo_producto: "indique codigo del producto",
+        txtdescripcion: "indique la descripcion",
+        txtvcosto: "indique el valor costo",
+        txtventa1: "indique la venta uno",
+        txtventa2: "indique la venta dos",
+        txtventa3: "indique la venta tres",
+       txtventa4: "indique la venta cuatro",
+       txtp_utilidad: "indique la utilidad",
+       txtstock_min: "indique stock minimo",
+       txtstock_max: "indique stock maximo",
+       txtexistencia: "indique la existencia",
+       txtid_medida: "indique la medida",
+       txtp_descuento: "indique el descuento", 
+       txtobservacion: "indique la obeservacion"
+          
+          },
+        submitHandler: function(form){
+          
+  var _id_producto=$("#txtid_producto").val();
     var _id_categoria=$("#txtid_categoria").val();
     var _id_subcategoria= $("#txtid_subcategoria").val();
     var _id_proveedor=$("#txtid_proveedor").val();
@@ -67,6 +149,15 @@ jQuery(document).ready(function() {
         $("#rpt").html(datos);
       }
     });
+} });
+
+  $("#btn").click(function() {
+   
+
+  }); 
+
+  $(".btneditar").click(function() {
+    
   });
 
 
