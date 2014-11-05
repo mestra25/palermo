@@ -380,7 +380,7 @@ require("php/estado.php");
 </div>
 </div>
 
-<span id="respuesta"></span>
+<span hidden id="respuesta"></span>
 
 <div id="dialog-confirm_1" style="display:none;" title="Categoria">
 <div id="formulario">

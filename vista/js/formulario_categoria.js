@@ -46,13 +46,10 @@ jQuery(document).ready(function() {
       success : function(datos){
 
       var nuevo = $.parseJSON(datos); 
-      alert(nuevo['descripcion']);
-      alert(nuevo['id_categoria']);
-      
-      $("#codigo_producto").val(nuevo['descripcion']);
 
+      $('#txtid_categoria').append(new Option(nuevo['descripcion'], nuevo['id_categoria'], true, true));
       $("#respuesta").html(datos);
-
+      
       }
     });
 });
