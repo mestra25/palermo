@@ -12,7 +12,7 @@
     $objcategoria->setobservacion($_POST['observacion']);
     $objcategoria->setfcreado($_POST['fcreado']);
     $objcategoria->setfmodificado($_POST['fmodificado']);
-    
+                
     $categoriaDAO->guardar($objcategoria);
 }
 

@@ -35,8 +35,12 @@ if ($_SESSION['administrador']=="si") {
   <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.2/jquery-ui.theme.css">
   <script type="text/javascript" src="js/codigo.js"></script>
   <script src="js/formulario_producto.js"  type="text/javascript"></script>
+     <script src="js/jquery.mockjax.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <!-- <script src="js/jquery.js"></script> -->
+    <script src="js/jquery.validate.js" type="text/javascript"></script>  
   <script src="js/dialogos.js"  type="text/javascript"></script>
-  
+
 </head>
 
 <body>
@@ -140,13 +144,10 @@ require("php/estado.php");
 
         <h2>Agregar Producto</h2>
 <h4>Codigo del Producto<input id="codigo_producto" name="txtcodigo_producto" readonly ></h4>
-        <form name="formulario">
+        <form name="formulario" id="guardarProd">
 
 <div id="col1">
   <br></br>
-
-
-
 
           <label for="name">Categoria:  </label>
           <select id="txtid_categoria" name="categoria" title="Se requiere Seleccion de Categoria" required class="campos_edi">          
@@ -459,7 +460,7 @@ require("php/estado.php");
             <h2>Agregar Producto</h2>
                 <br></br>              
                 <label for="name">Nit:  </label>
-                <input name="txtnit_pro" id="txtni_pro" pattern="[A-Za-z]{3}" title="3 primeras letras de tu pais" class="campos_edi" placeholder="Nit" required>
+                <input name="txtnit_pro" id="txtnit_pro" pattern="[A-Za-z]{3}" title="3 primeras letras de tu pais" class="campos_edi" placeholder="Nit" required>
                 <br></br> 
                 <label for="name">Nombre:  </label>
                 <input name="txtnombre_empresa_pro" id="txtnombre_empresa_pro" title="Se requiere Nombre de la empresa" class="campos_edi" placeholder="Nombre de la Empresa" required>
@@ -513,7 +514,7 @@ require("php/estado.php");
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<!-- Script to Activate the Carousel -->
+<!-- Script to Activate the Carousel <script src="js/jquery.js"></script> -->
 <script>
 $('.carousel').carousel({
         interval: 5000 //changes the speed

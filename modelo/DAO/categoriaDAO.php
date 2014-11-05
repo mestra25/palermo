@@ -23,6 +23,7 @@ class categoriaDao {
             $consulta = $conexion->prepare('SELECT * FROM '. self::tabla .'  ORDER BY id_categoria DESC LIMIT 1' );
             $consulta->execute();
             $registro = $consulta->fetch();
+
             echo json_encode($registro);  
     if ($Objcategoria->getnueva()=="0") {
                 

@@ -7,10 +7,7 @@
 
    if ($_GET['action'] =='Guardar')
 {
-  echo " 
-                <script language='JavaScript'> 
-               alert('3');
-                </script>";
+
     $objproveedor->setnueva($_POST['nueva']);
     $objproveedor->setNit($_POST['nit']);
     $objproveedor->setNombreEmpresa($_POST['nombre_empresa']);
