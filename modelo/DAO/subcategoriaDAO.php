@@ -18,6 +18,12 @@ class subcategoriaDao {
             $consulta->bindParam(':fmodificado', $Objsubcategoria->getfmodificado());
             $consulta->execute();
             if ($consulta) {
+              $conexion=null;
+            $conexion = new conexion();
+            $consulta = $conexion->prepare('SELECT * FROM '. self::tabla .'  ORDER BY id_subcategoria DESC LIMIT 1' );
+            $consulta->execute();
+            $registro = $consulta->fetch();
+            echo json_encode($registro); 
               if($Objsubcategoria->getnueva()=="0"){
      echo "<script language='javascript'>"; 
      echo "function CustomAlert(){

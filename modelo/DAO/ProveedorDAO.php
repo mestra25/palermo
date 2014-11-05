@@ -24,7 +24,12 @@ class proveedorDao {
             $consulta->bindParam(':celRep', $Objproveedor->getCelrep());
             
 if ($consulta->execute()) {
-
+$conexion=null;
+            $conexion = new conexion();
+            $consulta = $conexion->prepare('SELECT * FROM '. self::tabla .'  ORDER BY id_proveedor DESC LIMIT 1' );
+            $consulta->execute();
+            $registro = $consulta->fetch();
+            echo json_encode($registro); 
   if($Objproveedor->getnueva()=="0"){
      echo "<script language='javascript'>"; 
      echo "function CustomAlert(){

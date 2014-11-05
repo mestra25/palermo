@@ -15,7 +15,12 @@ class medidaDao {
 
     $consulta->execute();
     if ($consulta) {
-
+$conexion=null;
+            $conexion = new conexion();
+            $consulta = $conexion->prepare('SELECT * FROM '. self::tabla .'  ORDER BY id_medida DESC LIMIT 1' );
+            $consulta->execute();
+            $registro = $consulta->fetch();
+            echo json_encode($registro); 
       if($Objmedida->getnueva()=="0"){
      echo "<script language='javascript'>"; 
      echo "function CustomAlert(){
