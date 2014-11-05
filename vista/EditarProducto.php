@@ -50,6 +50,7 @@ require_once("../modelo/conexion.php");
     <script src="js/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="js/formulario_producto.js"></script>
 <script type="text/javascript" src="js/codigo.js"></script>
+<script src="js/jquery.validate.js" type="text/javascript"></script>  
 </head>
 
 <body>
@@ -145,7 +146,7 @@ require_once("../modelo/conexion.php");
     }else{
   ?>
    <center>
-        <form>
+        <form id="editarProd">
  <h4>Codigo del Producto<input readonly type="text" id="codigo_producto" value="<?php echo $row['codigo'];?>" name="codigo_producto" ></h4>
  <div id="col1">           
 <br></br>              
@@ -261,13 +262,14 @@ require_once("../modelo/conexion.php");
             <br></br> 
             </div>
             <center>
-            <input id="btn-boton" type="button" class="btneditar" value="Editar" >
+            <input id="btn-boton" type="submit" class="btneditar" value="Editar" >
             <a id="btn-boton" href="productos.php">Cancelar</a>
-             <br></br>              
+             <br></br>  
+              <span id="rpt"></span>            
 </center>
         </form>
         </center>
-        <span id="rpt"></span>
+        
 </div>
 
 

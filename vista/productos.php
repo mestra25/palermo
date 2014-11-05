@@ -35,10 +35,8 @@ if ($_SESSION['administrador']=="si") {
   <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.2/jquery-ui.theme.css">
   <script type="text/javascript" src="js/codigo.js"></script>
   <script src="js/formulario_producto.js"  type="text/javascript"></script>
-    <script src="js/jquery.mockjax.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery.validate.js" type="text/javascript"></script>  
+  <script src="js/jquery.validate.js" type="text/javascript"></script> 
+     
   <script src="js/dialogos.js"  type="text/javascript"></script>
 
 
@@ -273,7 +271,7 @@ require("php/estado.php");
      
 </div>
 <center>
-     <input type="button" id="btn" value="Guardar"  class="btn">
+     <input type="submit" value="Guardar"  class="btn">
      <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
 </center>
    </form>
