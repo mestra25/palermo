@@ -31,6 +31,11 @@ if ($_SESSION['administrador']=="si") {
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="js/formulario_categoria.js"></script>
+     <script src="js/jquery.mockjax.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.validate.js" type="text/javascript"></script>  
+
 
 </head>
 
@@ -182,7 +187,7 @@ if ($_SESSION['administrador']=="si") {
 
 <center>
     <div id="formulario" style="display:none">
-        <form>
+        <form id="guardarcat">
             <h2>Agregar Categoria</h2>
             <br></br>              
             <input type="text" value="0" hidden id="txtnueva" name="txtnueva">
@@ -191,11 +196,11 @@ if ($_SESSION['administrador']=="si") {
             <textarea class="campo_des" id="txtdescripcion" name="txtdescripcion" rows="4" cols="55" placeholder="Descripcion"></textarea>
             <br></br> 
             <label for="name">Observacion:  </label>
-            <input id="txtobservacion" name="txtobservacion" title="Se requiere observacion" class="campos" placeholder="Observacion" required>
+            <input id="txtobservacion" name="txtobservacion"  class="campos" placeholder="Observacion" required>
             <br></br> 
 
 
-            <input type="button" name="" value="Guardar" id="btn" class="btn">
+            <input type="submit" value="Guardar">
             <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
         </form>
     </div>
