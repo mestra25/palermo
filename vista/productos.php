@@ -41,6 +41,7 @@ if ($_SESSION['administrador']=="si") {
     <script src="js/jquery.validate.js" type="text/javascript"></script>  
   <script src="js/dialogos.js"  type="text/javascript"></script>
 
+
 </head>
 
 <body>
@@ -154,6 +155,7 @@ require("php/estado.php");
 
            <option value="" >Categoria</option>
            <option value="nueva_categoria">Nueva Categoría</option>
+
            <?php
            require("php/lista_categoria.php");
            
@@ -162,7 +164,6 @@ require("php/estado.php");
            echo " <option value=".$registro['id_categoria'].">".$registro['descripcion']."</option>";
            }
            ?>
-           
          </select>  
 
 
@@ -174,7 +175,8 @@ require("php/estado.php");
          <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria" required class="campos_edi">          
 
           <option value="" >Subcategoria</option>
-          <option value="nueva_subcategoria">Nueva Subcategoría</option>
+         <option value="nueva_subcategoria">Nueva Subcategoría</option>
+
           <?php
           require("php/lista_subcategoria.php");
           
@@ -184,7 +186,6 @@ require("php/estado.php");
 
          }
          ?>
-         
        </select>
 
 
@@ -193,7 +194,8 @@ require("php/estado.php");
        <select id="txtid_proveedor" title="Se requiere un Proveedor" required class="campos_edi">          
 
         <option value="" >Proveedor</option>
-        <option value="nueva_proveedor">Nuevo Proveedor</option>
+       <option value="nueva_proveedor">Nuevo Proveedor</option>
+
         <?php
         require("php/lista_proveedor.php");
 
@@ -203,7 +205,6 @@ require("php/estado.php");
        }
        ?>
 
-       
      </select> 
 
 
@@ -212,7 +213,8 @@ require("php/estado.php");
      <select id="txtid_medida" title="Se requiere una Medida" required class="campos_edi">          
 
         <option value="" >Medida</option>
-        <option value="nueva_medida">Nueva Medida</option>
+       <option value="nueva_medida">Nueva Medida</option>
+
         <?php
         require("php/lista_medida.php");
 
@@ -221,7 +223,6 @@ require("php/estado.php");
          echo " <option value=".$registro['id_medida'].">".$registro['descripcion']."</option>";
        }
        ?>
-       
      </select> 
 
 
@@ -457,7 +458,7 @@ require("php/estado.php");
         <form>
           <center>
            <input type="text" value="1" hidden id="txtnueva" name="txtnueva">
-            <h2>Agregar Producto</h2>
+            <h2>Agregar Proveedor</h2>
                 <br></br>              
                 <label for="name">Nit:  </label>
                 <input name="txtnit_pro" id="txtnit_pro" pattern="[A-Za-z]{3}" title="3 primeras letras de tu pais" class="campos_edi" placeholder="Nit" required>
@@ -523,7 +524,6 @@ $('.carousel').carousel({
 <script type="text/javascript" src="js/validar.js"></script>
 <script type="text/javascript" src="js/mostrar_ocultar.js"></script>
 <script type="text/javascript" src="js/buscar.js"></script>
-
 </body>
 
 </html>
