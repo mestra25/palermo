@@ -79,7 +79,6 @@ $("#txtid_proveedor").change(function(event){
   $("#txtid_subcategoria").change(function(event){
  
 	var valor = $(this).val();
- 	alert(valor);
  	if (valor=="nueva_subcategoria") {
 
  		$( "#dialog-confirm_2" ).dialog({

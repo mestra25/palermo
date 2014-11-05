@@ -28,8 +28,8 @@ jQuery(document).ready(function() {
 });
 
      $("#btn_pro").click(function() {
-
-      var _nueva=$("#txtnueva").val();
+      alert("1");
+     var _nueva=$("#txtnueva").val();
      var _nit=$("#txtnit_pro").val();
      var _nombre_empresa=$("#txtnombre_empresa_pro").val();
      var _direccion= $("#txtdireccion_pro").val();
@@ -43,20 +43,21 @@ jQuery(document).ready(function() {
      var _celrep= $("#txtcelrep_pro").val();
      var parametros={nueva:_nueva, nit : _nit, nombre_empresa : _nombre_empresa, direccion : _direccion , telefono : _telefono , email :_email , web : _web , contac : _contac, numcontac : _numcontac ,replegal :_replegal , cedrep:_cedrep , celrep:_celrep};
      var archivo='../controladores/proveedor.php?action=Guardar';
-     $.ajax({
+           alert("2");
+
+$.ajax({
       type :"POST",
       url : archivo,
       data :parametros,
       success : function(datos){
 
-        var nuevo = $.parseJSON(datos); 
-
+      var nuevo = $.parseJSON(datos); 
+      alert(nuevo['id_proveedor']);
       $('#txtid_proveedor').append(new Option(nuevo['nombre_empresa'], nuevo['id_proveedor'], true, true));
       $('#txtid_proveedor').prop('selectedIndex',0);
-        $("#respuesta").html(datos);
-      }
+}
     });
-
+        
     });
 
 

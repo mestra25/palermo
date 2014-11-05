@@ -7,6 +7,10 @@ class proveedorDao {
     const tabla="proveedor";
 
     function guardar($Objproveedor){
+        echo " 
+                <script language='JavaScript'> 
+               alert('5');
+                </script>";
             $conexion = new conexion();
             $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' ( nit, direccion,nombre_empresa,telefono ,email ,web ,contac ,numcontac,replegal ,cedRep ,celRep,nueva) 
               VALUES( :nit,:direccion,:nombre_empresa, :telefono ,:email ,:web ,:contac,:numcontac ,:replegal ,:cedRep ,:celRep,:nueva)');
@@ -22,13 +26,20 @@ class proveedorDao {
             $consulta->bindParam(':replegal', $Objproveedor->getReplegal());
             $consulta->bindParam(':cedRep', $Objproveedor->getCedrep());
             $consulta->bindParam(':celRep', $Objproveedor->getCelrep());
-            
+              echo " 
+                <script language='JavaScript'> 
+               alert('6');
+                </script>";
 if ($consulta->execute()) {
 $conexion=null;
             $conexion = new conexion();
             $consulta = $conexion->prepare('SELECT * FROM '. self::tabla .'  ORDER BY id_proveedor DESC LIMIT 1' );
             $consulta->execute();
             $registro = $consulta->fetch();
+                echo " 
+                <script language='JavaScript'> 
+               alert(".$registro['id_proveedor'].");
+                </script>";
             echo json_encode($registro); 
   if($Objproveedor->getnueva()=="0"){
      echo "<script language='javascript'>"; 
@@ -59,8 +70,12 @@ $conexion=null;
     "; 
     echo "</script>";  
   }
+  exit();
 } 
-
+  echo " 
+                <script language='JavaScript'> 
+               alert('7');
+                </script>";
             $conexion = null;
     }
 

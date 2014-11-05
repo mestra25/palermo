@@ -7,7 +7,10 @@
 
    if ($_GET['action'] =='Guardar')
 {
-  
+  echo " 
+                <script language='JavaScript'> 
+               alert('3');
+                </script>";
     $objproveedor->setnueva($_POST['nueva']);
     $objproveedor->setNit($_POST['nit']);
     $objproveedor->setNombreEmpresa($_POST['nombre_empresa']);
@@ -20,7 +23,10 @@
     $objproveedor->setReplegal($_POST['replegal']);
     $objproveedor->setcedRep($_POST['cedrep']);
     $objproveedor->setcelRep($_POST['celrep']);
-
+  echo " 
+                <script language='JavaScript'> 
+               alert('4');
+                </script>";
     $ProveedorDao->guardar($objproveedor);
 
 }

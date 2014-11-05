@@ -12,6 +12,7 @@ class proveedor {
     private $cedRep;
     private $celRep;
     private $nueva;
+    private $id_proveedor;
 function __construct() {
     
     $this->nit="";
@@ -27,11 +28,15 @@ function __construct() {
     $this->celrep=0;
     $this->idproveedor=0;
     $this->nueva="";
+    $this->id_proveedor=0;
 
     }
 
 function setNit($nit){
 $this->nit= $nit;
+}
+function setid_proveedor($id_proveedor){
+$this->id_proveedor= $id_proveedor;
 }
 function setnueva($nueva){
 $this->nueva=$nueva;
@@ -78,6 +83,9 @@ function getnueva(){
     }
 function getNit(){
 return $this->nit;
+}
+function getid_proveedor(){
+return $this->id_proveedor;
 }
 
 function getDireccion(){
