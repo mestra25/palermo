@@ -1,7 +1,22 @@
 jQuery(document).ready(function() {
 
-    $("#btn").click(function() {
-     
+   $("#guardarSub").validate({
+        rules: {
+          
+            txtdescripcion: { required: true, minlength: 6},
+            txtobservacion: { required: true,minlength: 10},
+            
+            
+            
+        },
+        messages: {
+       
+            txtdescripcion: "Debe escribir una descripcion",
+            txtobservacion: "Debe  indicar una observacion"
+            
+          
+          },
+        submitHandler: function(form){
      var _nueva=$("#txtnueva").val();
      var _id_categoria=$("#txtid_categoria").val();
      var _descripcion=$("#txtdescripcion").val();
@@ -22,10 +37,24 @@ jQuery(document).ready(function() {
         $("#respuesta").html(datos);
       }
     });
-
-    });
-    
-    $(".btneditar").click(function() {
+} });
+$("#editarSub").validate({
+        rules: {
+          
+            txtdescripcion: { required: true, minlength: 6},
+            txtobservacion: { required: true,minlength: 10},
+            
+            
+            
+        },
+        messages: {
+       
+            txtdescripcion: "Debe escribir una descripcion",
+            txtobservacion: "Debe  indicar una observacion"
+            
+          
+          },
+        submitHandler: function(form){
      var _id_subcategoria=$("#txtid_subcategoria").val();
 
      var _descripcion=$("#txtdescripcion").val();
@@ -45,5 +74,11 @@ jQuery(document).ready(function() {
       }
     });
 
+} });
+
+   
+    
+    $(".btneditar").click(function() {
+     
 });
 });

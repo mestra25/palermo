@@ -55,6 +55,10 @@ require_once("../modelo/conexion.php");
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="js/formulario_subcategoria.js"></script>
+    <script src="js/jquery.mockjax.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.validate.js" type="text/javascript"></script>  
 
 </head>
 
@@ -151,7 +155,7 @@ require_once("../modelo/conexion.php");
 <br></br> 
     <h2>Editar Subcategoria</h2>
 
-        <form>
+        <form id="editarSub">
             <div id="col1">
             <input hidden readonly class="campos_edi" id="txtid_subcategoria" name="txtid_subcategoria" value="<?php echo $row['id_subcategoria'];?>" >
             <input hidden readonly class="campos_edi" id="txtid_categoria" name="txtid_categoria" value="<?php echo $row['id_categoria'];?>" >
@@ -161,7 +165,7 @@ require_once("../modelo/conexion.php");
             <label for="name">Observacion:  </label>
             <input class="campos_edi" id="txtobservacion" name="txtobservacion" value="<?php echo $row['observacion'];?>">
             <br></br> 
-            <input id="btn-boton" type="button" class="btneditar" value="Editar" >
+            <input type="submit" value="Editar" >
             <a id="btn-boton" href="subcategoria.php">Cancelar</a>
                         <br></br> 
 </div>
