@@ -475,7 +475,7 @@ require("php/estado.php");
                 <input name="txtemail_pro" id="txtemail_pro" title="Se requiere e-mail" class="campos_edi" placeholder="E-mail" required>
                 <br></br>
                 <label for="name">Web:  </label>
-                <input name="txtweb_pro" id="txtweb_pro" title="Se requiere direccion web" class="campos_edi" placeholder="Web" required>
+                <input name="txtweb_pro" id="txtweb_pro" title="Se requiere web" class="campos_edi" placeholder="Web" required>
                 <br></br>
                 <label for="name">Contacto:  </label>
                 <input name="txtcontac_pro" id="txtcontac_pro" title="Se requiere datos de contacto" class="campos_edi" placeholder="Contacto" required>
