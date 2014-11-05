@@ -129,7 +129,7 @@ $("#editarCat").validate({
 
       $('#txtid_categoria').append(new Option(nuevo['descripcion'], nuevo['id_categoria'], true, true));
       $("#respuesta").html(datos);
-
+}
     });
 });
 

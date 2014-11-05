@@ -204,7 +204,7 @@ if ($_SESSION['administrador']=="si") {
             <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
         </form>
     </div>
-    <span id="respuesta"></span>
+    <span hidden id="respuesta"></span>
 </center>
 
 
