@@ -20,10 +20,7 @@
     $objproveedor->setReplegal($_POST['replegal']);
     $objproveedor->setcedRep($_POST['cedrep']);
     $objproveedor->setcelRep($_POST['celrep']);
-  echo " 
-                <script language='JavaScript'> 
-               alert('4');
-                </script>";
+
     $ProveedorDao->guardar($objproveedor);
 
 }

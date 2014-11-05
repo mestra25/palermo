@@ -29,13 +29,13 @@ if ($_SESSION['administrador']=="si") {
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/tabla_productos.css">
-  <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>  
 <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.2/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.2/jquery-ui.theme.css">
   <script type="text/javascript" src="js/codigo.js"></script>
   <script src="js/formulario_producto.js"  type="text/javascript"></script>
-     <script src="js/jquery.mockjax.js"></script>
+    <script src="js/jquery.mockjax.js"></script>
     <script src="js/jquery.form.js"></script>
     <!-- <script src="js/jquery.js"></script> -->
     <script src="js/jquery.validate.js" type="text/javascript"></script>  

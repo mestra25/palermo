@@ -29,7 +29,7 @@ if ($consulta->execute()) {
             $conexion = new conexion();
             $consulta = $conexion->prepare('SELECT * FROM '. self::tabla .'  ORDER BY id_proveedor DESC LIMIT 1' );
             $consulta->execute();
-            $registro = $consulta;
+            $registro = $consulta->fetch();
             echo json_encode($registro);  
 
   if($Objproveedor->getnueva()=="0"){

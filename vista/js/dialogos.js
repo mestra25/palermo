@@ -51,15 +51,15 @@ jQuery(document).ready(function() {
       success : function( datos){
 
         var nuevo = $.parseJSON(datos); 
-
-      $('#txtid_subcategoria').append(new Option(nuevo['descripcion'], nuevo['id_subcategoria'], true, true));
+    $('#txtid_subcategoria').append(new Option(nuevo['descripcion'], nuevo['id_subcategoria'], true, true));
       $('#txtid_subcategoria').prop('selectedIndex',0);
-        $("#respuesta").html(datos);
-        $("#txtdescripcion_sub").val("");
-        $("#txtobservacion_sub").val("");
-        $('#dialog-confirm_2').dialog( "close" );
-        alert("Subcategoria Agregada Correctamente");
-      }
+      $("#respuesta").html(datos);
+      $("#txtdescripcion_sub").val("");
+      $("#txtobservacion_sub").val("");      
+      $('#dialog-confirm_2').dialog( "close" );
+      alert("Subcategoria Agregada Correctamente");
+}
+
     });
 
     });
@@ -103,7 +103,7 @@ jQuery(document).ready(function() {
      var _replegal=$("#txtreplegal_pro").val();
      var _cedrep= $("#txtcedrep_pro").val();
      var _celrep= $("#txtcelrep_pro").val();
-     var parametros={nueva:_nueva, nit : _nit, nombre_empresa : _nombre_empresa, direccion : _direccion , telefono : _telefono , email :_email , web : _web , contac : _contac, numcontac : _numcontac ,replegal :_replegal , cedrep:_cedrep , celrep:_celrep};
+     var parametros={nit : _nit, nombre_empresa : _nombre_empresa, direccion : _direccion , telefono : _telefono , email :_email , web : _web , contac : _contac, numcontac : _numcontac ,replegal :_replegal , cedrep:_cedrep , celrep:_celrep,nueva:_nueva};
      var archivo='../controladores/proveedor.php?action=Guardar';
 
 $.ajax({
@@ -113,8 +113,13 @@ $.ajax({
       success : function(datos){
       var nuevo = $.parseJSON(datos);
       
-      $("#respuesta").html(datos);
-}
+      $('#txtid_proveedor').append(new Option(nuevo['nombre_empresa'], nuevo['id_proveedor'], true, true));
+      $('#txtid_proveedor').prop('selectedIndex',0);
+        $("#respuesta").html(datos);
+        $('#dialog-confirm_4').dialog( "close" );
+        alert("Proveedor Agregado Correctamente");
+      }
+
     });
         
     });
