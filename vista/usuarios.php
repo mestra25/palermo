@@ -154,8 +154,8 @@ if ($_SESSION['administrador']=="si") {
   </div>          
 
     <center>
-            <input type="submit">
-            <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+            <input class="btn" type="submit">
+            <input  type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
             </center>
           </form>
         </div>

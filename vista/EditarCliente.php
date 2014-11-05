@@ -145,7 +145,7 @@ if (isset($_GET['cedula'])) {
 
          <form id="editarCli"  width ="100px" 
          height="300px" >
-         <div>
+         <div id="col1">
           <label for="name">Cedula: </label>
           <input type="text" name="txtcedula" id="txtcedula" value="<?php echo $row['cedula'];?>" class="campos_edi" placeholder="cedula" readonly>
           <br></br>
@@ -164,8 +164,8 @@ if (isset($_GET['cedula'])) {
           <label for="password">Email: </label>
           <input name="txtemail" id="txtemail" value="<?php echo $row["email"];?>" title="Se requiere direccion web" class="campos_edi" placeholder="email" required>
           <br></br>
-          <input type="submit">
-          <a id="btn-boton" href="cliente.php">Cancelar</a>
+          <input class="btn" type="submit">
+          <a class="btn" id="btn-boton" href="cliente.php">Cancelar</a>
           <br></br>
           <div id="respuesta"></div>
         </div>
