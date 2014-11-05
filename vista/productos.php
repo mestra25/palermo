@@ -35,11 +35,8 @@ if ($_SESSION['administrador']=="si") {
   <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.2/jquery-ui.theme.css">
   <script type="text/javascript" src="js/codigo.js"></script>
   <script src="js/formulario_producto.js"  type="text/javascript"></script>
-  <script src="js/formulario_categoria.js"  type="text/javascript"></script>
-  <script src="js/formulario_subcategoria.js"  type="text/javascript"></script>
-  <script src="js/formulario_medida.js"  type="text/javascript"></script>
-  <script src="js/formulario_proveedor.js"  type="text/javascript"></script>
-
+  <script src="js/dialogos.js"  type="text/javascript"></script>
+  
 </head>
 
 <body>
@@ -155,7 +152,7 @@ require("php/estado.php");
           <select id="txtid_categoria" name="categoria" title="Se requiere Seleccion de Categoria" required class="campos_edi">          
 
            <option value="" >Categoria</option>
-
+           <option value="nueva_categoria">Nueva Categoría</option>
            <?php
            require("php/lista_categoria.php");
            
@@ -164,7 +161,7 @@ require("php/estado.php");
            echo " <option value=".$registro['id_categoria'].">".$registro['descripcion']."</option>";
            }
            ?>
-           <option value="nueva_categoria">Nueva Categoría</option>
+           
          </select>  
 
 
@@ -176,7 +173,7 @@ require("php/estado.php");
          <select id="txtid_subcategoria" title="Se requiere Seleccion de Subcategoria" required class="campos_edi">          
 
           <option value="" >Subcategoria</option>
-
+          <option value="nueva_subcategoria">Nueva Subcategoría</option>
           <?php
           require("php/lista_subcategoria.php");
           
@@ -186,7 +183,7 @@ require("php/estado.php");
 
          }
          ?>
-         <option value="nueva_subcategoria">Nueva Subcategoría</option>
+         
        </select>
 
 
@@ -195,7 +192,7 @@ require("php/estado.php");
        <select id="txtid_proveedor" title="Se requiere un Proveedor" required class="campos_edi">          
 
         <option value="" >Proveedor</option>
-
+        <option value="nueva_proveedor">Nuevo Proveedor</option>
         <?php
         require("php/lista_proveedor.php");
 
@@ -205,7 +202,7 @@ require("php/estado.php");
        }
        ?>
 
-       <option value="nueva_proveedor">Nuevo Proveedor</option>
+       
      </select> 
 
 
@@ -214,7 +211,7 @@ require("php/estado.php");
      <select id="txtid_medida" title="Se requiere una Medida" required class="campos_edi">          
 
         <option value="" >Medida</option>
-
+        <option value="nueva_medida">Nueva Medida</option>
         <?php
         require("php/lista_medida.php");
 
@@ -223,7 +220,7 @@ require("php/estado.php");
          echo " <option value=".$registro['id_medida'].">".$registro['descripcion']."</option>";
        }
        ?>
-       <option value="nueva_medida">Nueva Medida</option>
+       
      </select> 
 
 
@@ -525,6 +522,7 @@ $('.carousel').carousel({
 <script type="text/javascript" src="js/validar.js"></script>
 <script type="text/javascript" src="js/mostrar_ocultar.js"></script>
 <script type="text/javascript" src="js/buscar.js"></script>
+
 </body>
 
 </html>
