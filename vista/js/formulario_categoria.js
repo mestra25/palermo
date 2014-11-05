@@ -40,7 +40,7 @@ jQuery(document).ready(function() {
 $("#editarCat").validate({
         rules: {
          
-            txtdescripcion: { required: true, minlength: 6},
+            txtdescripcion: { required: true, minlength: 10},
             txtobservacion: { required: true,minlength: 10},
             
             
@@ -129,32 +129,9 @@ $("#editarCat").validate({
 
       $('#txtid_categoria').append(new Option(nuevo['descripcion'], nuevo['id_categoria'], true, true));
       $("#respuesta").html(datos);
-}
+
     });
 });
 
 
-    $(".btneditar").click(function() {
-
-    
-     var _id_categoria=$("#txtidcategoria").val();
-     var _descripcion=$("#txtdescripcion").val();
-     var _observacion= $("#txtobservacion").val();
-     var d = new Date(); 
-     $fecha =(d.getDate()+"/"+d.getMonth()+"/"+d.getFullYear()+" , "+d.getHours()+":"+d.getMinutes());
-     var _fmodificado=$fecha;
-     var parametros={ id_categoria: _id_categoria, descripcion : _descripcion , observacion: _observacion , fmodificado :_fmodificado  };
-
-     var archivo='../controladores/categoria.php?action=Editar';
-    
-     $.ajax({
-      type :"POST",
-      url : archivo,
-      data :parametros,
-      success : function( datos){
-        $("#rpt").html(datos);
-      }
-    });
-
-});
 });
