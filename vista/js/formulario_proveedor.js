@@ -50,7 +50,7 @@ jQuery(document).ready(function()
           
       } });
 
-$("#guardarProvee").validate({
+$("#editarProvee").validate({
         rules: {
             txtcedula: { required: true, minlength: 6},
             txtnombre: { required: true,maxlength: 15},
