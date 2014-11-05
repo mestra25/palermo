@@ -187,7 +187,7 @@ if ($_SESSION['administrador']=="si") {
 
 <center>
     <div id="formulario" style="display:none">
-        <form id="guardarcat">
+        <form id="guardarCat">
             <h2>Agregar Categoria</h2>
             <br></br>              
             <input type="text" value="0" hidden id="txtnueva" name="txtnueva">

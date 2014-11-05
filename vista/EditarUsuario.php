@@ -155,8 +155,7 @@ require_once("../modelo/conexion.php");
             <label for="name">E-mail:  </label>
             <input class="campos_edi" name="txtemail" id="txtemail"  value="<?php echo $row['email'];?>">
             <br></br>
-            <label for="name">Password:  </label>
-            <input class="campos_edi" name="txtpassword" id="txtpassword"  value="<?php echo $row['password'];?>">
+            
             <br></br>
 </div>
 <center>

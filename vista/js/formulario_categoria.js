@@ -39,7 +39,7 @@ jQuery(document).ready(function() {
 } });
 $("#editarCat").validate({
         rules: {
-          txtnueva: { required: true, minlength: 6},
+         
             txtdescripcion: { required: true, minlength: 6},
             txtobservacion: { required: true,minlength: 10},
             
