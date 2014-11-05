@@ -80,9 +80,9 @@ jQuery(document).ready(function() {
 
       $('#txtid_medida').append(new Option(nuevo['descripcion'], nuevo['id_medida'], true, true));
       $('#txtid_medida').prop('selectedIndex',0);
-        $("#respuesta").html(datos);
-        $("#txtdescripcion_med").val("");
-        $('#dialog-confirm_3').dialog( "close" );
+      $("#respuesta").html(datos);
+      $("#txtdescripcion_med").val("");
+      $('#dialog-confirm_3').dialog( "close" );
         alert("Medida Agregada Correctamente");
       }
     });
@@ -115,8 +115,16 @@ $.ajax({
       
       $('#txtid_proveedor').append(new Option(nuevo['nombre_empresa'], nuevo['id_proveedor'], true, true));
       $('#txtid_proveedor').prop('selectedIndex',0);
-        $("#respuesta").html(datos);
-        $('#dialog-confirm_4').dialog( "close" );
+      $("#respuesta").html(datos);
+      $("#").val("");
+      $("#").val("");
+      $("#").val("");
+      $("#").val("");
+      $("#").val("");
+      $("#").val("");
+      $("#").val("");
+
+      $('#dialog-confirm_4').dialog( "close" );
         alert("Proveedor Agregado Correctamente");
       }
 

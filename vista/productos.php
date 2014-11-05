@@ -37,7 +37,7 @@ if ($_SESSION['administrador']=="si") {
   <script src="js/formulario_producto.js"  type="text/javascript"></script>
     <script src="js/jquery.mockjax.js"></script>
     <script src="js/jquery.form.js"></script>
-    <!-- <script src="js/jquery.js"></script> -->
+    <script src="js/jquery.js"></script>
     <script src="js/jquery.validate.js" type="text/javascript"></script>  
   <script src="js/dialogos.js"  type="text/javascript"></script>
 
