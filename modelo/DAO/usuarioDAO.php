@@ -99,14 +99,13 @@ class usuarioDAO {
       
       $conexion = new conexion();
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET nombre = :nombre, apellido = :apellido, celular = :celular, 
-        direccion = :direccion, email = :email ,password = :password WHERE cedula = :cedula');
+        direccion = :direccion, email = :email WHERE cedula = :cedula');
         $consulta->bindParam(':cedula', $Objusuario->getCedula());
         $consulta->bindParam(':nombre', $Objusuario->getNombre());
         $consulta->bindParam(':apellido', $Objusuario->getApellido());
         $consulta->bindParam(':celular', $Objusuario->getCelular());
         $consulta->bindParam(':direccion', $Objusuario->getDireccion());
         $consulta->bindParam(':email', $Objusuario->getEmail());
-        $consulta->bindParam(':password', $Objusuario->getPassword());
 
         if ($consulta->execute())
             {

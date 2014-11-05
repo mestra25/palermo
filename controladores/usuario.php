@@ -29,7 +29,6 @@
     $objusuario->setcelular($_POST['celular']);
     $objusuario->setdireccion($_POST['direccion']);
     $objusuario->setemail($_POST['email']);
-    $objusuario->setpassword(md5($_POST['password']));
     $usuarioDAO->modificar($objusuario);
 
   }
