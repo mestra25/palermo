@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
 
-   $("#editarCli").validate({
+   $("#formEditar").validate({
         rules: {
             txtcedula: { required: true, minlength: 6},
             txtnombre: { required: true,maxlength: 15},
@@ -45,7 +45,7 @@ jQuery(document).ready(function() {
       url : archivo,
       data :parametros,
       success : function(datos){
-        $("#respuesta").html(datos);
+        $("#rpt").html(datos);
       }
     });;
         } 
