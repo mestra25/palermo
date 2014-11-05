@@ -37,6 +37,43 @@ jQuery(document).ready(function() {
       }
     });
 } });
+$("#editarCat").validate({
+        rules: {
+          txtnueva: { required: true, minlength: 6},
+            txtdescripcion: { required: true, minlength: 6},
+            txtobservacion: { required: true,minlength: 10},
+            
+            
+            
+        },
+        messages: {
+       
+            txtdescripcion: "Debe escribir una descripcion",
+            txtobservacion: "Debe  indicar una observacion"
+            
+          
+          },
+        submitHandler: function(form){
+          
+     var _id_categoria=$("#txtidcategoria").val();
+     var _descripcion=$("#txtdescripcion").val();
+     var _observacion= $("#txtobservacion").val();
+     var d = new Date(); 
+     $fecha =(d.getDate()+"/"+d.getMonth()+"/"+d.getFullYear()+" , "+d.getHours()+":"+d.getMinutes());
+     var _fmodificado=$fecha;
+     var parametros={ id_categoria: _id_categoria, descripcion : _descripcion , observacion: _observacion , fmodificado :_fmodificado  };
+
+     var archivo='../controladores/categoria.php?action=Editar';
+    
+     $.ajax({
+      type :"POST",
+      url : archivo,
+      data :parametros,
+      success : function( datos){
+        $("#rpt").html(datos);
+      }
+    });
+} });
 
 
     

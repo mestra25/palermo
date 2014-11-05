@@ -152,7 +152,7 @@ require_once("../modelo/conexion.php");
     }else{
   ?>
     <center>
-        <form>
+        <form id="editarCat">
             
             <br></br>              
 
