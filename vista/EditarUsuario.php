@@ -159,8 +159,8 @@ require_once("../modelo/conexion.php");
             <br></br>
 </div>
 <center>
-            <input type="submit">
-            <a id="btn-boton" href="usuarios.php">Cancelar</a>        
+            <input class="btn" value="Editar" type="submit">
+            <a class="btn" id="btn-boton" href="usuarios.php">Cancelar</a>        
             </center>
             <div id="rpt"></div>
             <br></br>
