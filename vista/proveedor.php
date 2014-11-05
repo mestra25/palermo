@@ -181,8 +181,8 @@ if ($_SESSION['administrador']=="si") {
                 <br></br>
                 </div>
                 <center>
-                <input type="submit" value="Guardar">
-                <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+                <input class="btn" type="submit" value="Guardar">
+                <input class="btn" type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
                 </center>
                 <span id="respuesta"></span>
             </form>
