@@ -1,12 +1,9 @@
 <?php
 
 require_once("../Modelo/DAO/movimiento_inventarioDAO.php");
-require_once("../Modelo/DAO/productoDAO.php");
 
 $objmovimiento_inventario = new movimiento_inventario();
 $movimiento_inventarioDao = new movimiento_inventarioDao;
-$objmovimiento_inventario = new producto();
-$movimiento_inventarioDao = new producto;
 
 if ($_GET['action'] =='GuardarUsuario'){
 
@@ -27,9 +24,9 @@ if ($_GET['action'] =='GuardarUsuario'){
         $existencia=$registro['existencia'];
     }
 
-        $tem=$existencia-$reserva;
+        
 
-        if ($tem>=$cantidad) {
+        if ($existencia>=$cantidad) {
 
             $objmovimiento_inventario->setcliente($cliente);
             $objmovimiento_inventario->setusuario($usuario);
@@ -42,7 +39,7 @@ if ($_GET['action'] =='GuardarUsuario'){
 
         }else{
             echo "      <script language='JavaScript'> 
-            alert('No hay suficiente material para la reserva el maximo que puede reservar es: ".$tem."'); 
+            alert('No hay suficiente material para la reserva el maximo que puede reservar es: ".$existencia."'); 
             window.location='../vista/rol_usuario.php'
             </script>";
         }
@@ -51,42 +48,16 @@ if ($_GET['action'] =='GuardarUsuario'){
 if ($_GET['action'] =='Confirmar'){
 
     $codigo=$_POST['codigo'];
-    $id_producto=$_POST['id_producto'];
     $estado="aprobado";
-    $cantidad=$_POST['reserva'];
 
-    require_once("../modelo/conexion.php");
-    $conexion = new conexion();
-    $consulta = $conexion->prepare('SELECT * FROM producto WHERE id_producto="'.$id_producto.'"');
-    $consulta->execute();
-    $registro = $consulta;
-
-    $conexion=null;
-
-    foreach ($consulta as $registro) {
-        $reserva=$registro['reserva'];
-        $existencia=$registro['existencia'];
-        $dif=$reserva+$cantidad;
-        $new_existencia=$existencia-$dif;
-    }
-
-    $tem=$existencia-$reserva;
-
-    if($tem>=$cantidad){
-    
     $objmovimiento_inventario->setcodigo($codigo);
     $objmovimiento_inventario->setestado($estado);
-    $objproducto->setIdProducto($id_producto);
-    $objproducto->setExistencia($new_existencia);
-    $productoDao->val($objproducto);
     $movimiento_inventarioDao->confirmar($objmovimiento_inventario);
-
-
    
 }
 
 
-}
+
 
 
 if ($_GET['action'] =='Rechazar'){

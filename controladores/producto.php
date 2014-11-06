@@ -87,23 +87,24 @@ $registro = $consulta;
 
 foreach ($consulta as $registro) {
 $reserva=$registro['reserva'];
-$existencia=$registro['existencia'];
+$new=$registro['existencia'];
 }
-$aux=$existencia-$reserva;
 $tem=$res+$reserva;
-
-if ($existencia>=$tem) {
+$existencia=$new-$res;
+if ($new>=$res) {
 
 $objproducto->setIdProducto($id_producto);
 $objproducto->setReserva($tem);
+$objproducto->setExistencia($existencia);
 $productoDao->reservar($objproducto);
 
 }else{
  
     echo "      <script language='JavaScript'> 
-                alert('No hay suficiente material para la reserva el maximo que puede reservar es: ".$aux."'); 
+                alert('No hay suficiente material para la reserva el maximo que puede reservar es: ".$new."'); 
                 window.location='../vista/inventario.php'
                 </script>";
+exit();
 }
 $conexion=null;
 

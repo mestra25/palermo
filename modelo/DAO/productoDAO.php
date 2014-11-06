@@ -219,9 +219,10 @@ function reservar($Objproducto){
 
     $conexion = new conexion();
          
-      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET reserva = :reserva WHERE id_producto = :id_producto');
+      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET existencia=:existencia, reserva = :reserva WHERE id_producto = :id_producto');
       $consulta->bindParam(':reserva', $Objproducto->getReserva());
       $consulta->bindParam(':id_producto', $Objproducto->getIdProducto());
+      $consulta->bindParam(':existencia', $Objproducto->getExistencia());
       if($consulta->execute()){
 
 echo "<script language='javascript'>"; 

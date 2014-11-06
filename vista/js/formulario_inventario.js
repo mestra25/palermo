@@ -19,7 +19,7 @@ jQuery(document).ready(function() {
      $.ajax({
       type :"POST",
       url : movimiento,
-      data :{ id_producto : _id_producto, reserva : _reserva  , codigo: _codigo },
+      data :{ codigo: _codigo },
       success : function(datos){
         $("#respuesta").html(datos);
       }

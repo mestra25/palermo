@@ -64,23 +64,14 @@ if ($_SESSION['usuario']=="si") {
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li>
-              <a href="index.html">Inicio</a>
+              <a href="rol_usuario.php">Inventario</a>
+            </li>
+             <li>
+              <a href="mi_reserva.php">Reservas </a>
             </li>
             <li>
-              <a href="administrar.php">Administrar</a>
+            <a href="logout.php">Salir</a>
             </li>
-            <li>
-              <a href="usuarios.php">Usuarios</a>
-            </li>
-            <li>
-              <a href="inventario.php">Inventario</a>
-            </li>
-            <li>
-              <a href="clientes.php">Clientes</a>
-            </li>
-            <li>
-                            <a href="logout.php">Salir</a>
-                        </li>
           </ul>
         </div>
       </center>

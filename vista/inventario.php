@@ -156,7 +156,6 @@ if ($_SESSION['administrador']=="si") {
               require("php/r_producto.php");
               $existencia=$registro_1['existencia'];
               $reserva=$registro_1['reserva'];
-              $disponible=$existencia-$reserva;
               ?>
                 
               <tbody>
@@ -169,7 +168,7 @@ if ($_SESSION['administrador']=="si") {
                   <td><?php echo $registro_1["medida"];?></td>
                   <td><?php echo $registro_1["existencia"];?></td>
                   <td><?php echo $registro_1["reserva"];?></td>
-                  <td><?php echo $disponible;?></td>
+                  <td><?php echo $existencia;?></td>
                   <td><?php echo $registro["estado"];?></td>
                   
                   <td><center><input  type="button"   data-idproducto="<?php echo $registro_1['id_producto'];?>" data-codigo="<?php echo $registro['id_consecutivo'];?>" data-cantidad="<?php echo $registro['cantidad'];?>" class="btnconfirmar" value="Confirmar"></center></td>
@@ -214,7 +213,6 @@ if ($_SESSION['administrador']=="si") {
               require("php/r_producto.php");
               $existencia=$registro_1['existencia'];
               $reserva=$registro_1['reserva'];
-              $disponible=$existencia-$reserva;
               ?>
                 
               <tbody>
@@ -227,7 +225,7 @@ if ($_SESSION['administrador']=="si") {
                   <td><?php echo $registro_1["medida"];?></td>
                   <td><?php echo $registro_1["existencia"];?></td>
                   <td><?php echo $registro_1["reserva"];?></td>
-                  <td><?php echo $disponible;?></td>
+                  <td><?php echo $existencia;?></td>
                   <td><?php echo $registro["estado"];?></td>
                 </tr>
               </tbody>
@@ -267,7 +265,7 @@ if ($_SESSION['administrador']=="si") {
               require("php/r_producto.php");
               $existencia=$registro_1['existencia'];
               $reserva=$registro_1['reserva'];
-              $disponible=$existencia-$reserva;
+              
               ?>
                 
               <tbody>
@@ -280,7 +278,7 @@ if ($_SESSION['administrador']=="si") {
                   <td><?php echo $registro_1["medida"];?></td>
                   <td><?php echo $registro_1["existencia"];?></td>
                   <td><?php echo $registro_1["reserva"];?></td>
-                  <td><?php echo $disponible;?></td>
+                  <td><?php echo $existencia;?></td>
                   <td><?php echo $registro["estado"];?></td>
                 </tr>
               </tbody>
