@@ -1,9 +1,12 @@
 <?php
 
 require_once("../Modelo/DAO/movimiento_inventarioDAO.php");
+require_once("../Modelo/DAO/productoDAO.php");
 
 $objmovimiento_inventario = new movimiento_inventario();
 $movimiento_inventarioDao = new movimiento_inventarioDao;
+$objmovimiento_inventario = new producto();
+$movimiento_inventarioDao = new producto;
 
 if ($_GET['action'] =='GuardarUsuario'){
 
@@ -49,7 +52,7 @@ if ($_GET['action'] =='Confirmar'){
 
     $codigo=$_POST['codigo'];
     $id_producto=$_POST['id_producto'];
-    $estado="aprovado";
+    $estado="aprobado";
     $cantidad=$_POST['reserva'];
 
     require_once("../modelo/conexion.php");
@@ -58,18 +61,28 @@ if ($_GET['action'] =='Confirmar'){
     $consulta->execute();
     $registro = $consulta;
 
+    $conexion=null;
+
     foreach ($consulta as $registro) {
         $reserva=$registro['reserva'];
         $existencia=$registro['existencia'];
+        $dif=$reserva+$cantidad;
+        $new_existencia=$existencia-$dif;
     }
 
     $tem=$existencia-$reserva;
 
     if($tem>=$cantidad){
-  
+    
     $objmovimiento_inventario->setcodigo($codigo);
     $objmovimiento_inventario->setestado($estado);
+    $objproducto->setIdProducto($id_producto);
+    $objproducto->setExistencia($new_existencia);
+    $productoDao->val($objproducto);
     $movimiento_inventarioDao->confirmar($objmovimiento_inventario);
+
+
+   
 }
 
 

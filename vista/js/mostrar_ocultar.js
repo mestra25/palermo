@@ -59,3 +59,5 @@ document.getElementById('aprovadas').style.display = 'inline';
 document.getElementById('en_espera').style.display = 'inline';
 document.getElementById('rechazada').style.display = 'none';
 }
+
+

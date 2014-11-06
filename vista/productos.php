@@ -136,7 +136,7 @@ if ($_SESSION['administrador']=="si") {
 
     <center>
 
- <div id="formulario" style="display:none;">
+<div id="formulario" style="display:none;">
 <?php
 require("php/estado.php");
 ?>
@@ -259,7 +259,7 @@ require("php/estado.php");
      <label for="name">Stock Max:  </label>
      <input name="txtstock_max" id="txtstock_max" title="Se requiere Stock Minimo" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Stock Maximo" required>
      <br></br> 
-     <label for="name">Existencia:  </label>
+     <label for="name">Cantidad:  </label>
      <input name="txtexistencia" id="txtexistencia" title="Se requiere Cantidad de Producto" onkeydown="return validarNumeros(event)" class="campos_edi" placeholder="Cantidad de Producto" required>
      <br></br> 
      <label for="name">P. Descuento:  </label>

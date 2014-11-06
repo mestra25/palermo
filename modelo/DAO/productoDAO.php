@@ -105,7 +105,14 @@ class productoDao {
         }
         $conexion = null;
     }
-
+function val($Objproducto){
+$conexion = new conexion();
+      $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET existencia=:existencia WHERE id_producto = :id_producto');
+            $consulta->bindParam(':id_producto', $Objproducto->getIdProducto());
+            $consulta->bindParam(':existencia', $Objproducto->getExistencia());
+            $consulta->execute();
+$conexion = null;
+}
     function modificar($Objproducto){
 
       $conexion = new conexion();
@@ -165,7 +172,6 @@ class productoDao {
     }
 function reservar($Objproducto){
 
-
     $conexion = new conexion();
          
       $consulta = $conexion->prepare('UPDATE ' . self::tabla . ' SET reserva = :reserva WHERE id_producto = :id_producto');
@@ -206,19 +212,7 @@ echo "<script language='javascript'>";
                  $conexion = null;
     }
 
-    function buscar($Cedula){
-      $conexion = new conexion();
-      $consulta = $conexion->prepare('SELECT id_producto, id_categoria, id_subcategoria, id_proveedor, codigo, descripcion, v_costo, venta_1, p_utilidad, medida 
-       FROM ' . self::tabla . ' WHERE id_producto = :Cedula');
-      $consulta->bindParam(':Cedula', $Cedula); 
-        $consulta->execute();
-        $registro = $consulta->fetch(PDO::FETCH_OBJ);
-          
-            return $registro;
-
-        $conexion = null;
-
-    }
+   
 
     function listar(){
       $conexion = new conexion();

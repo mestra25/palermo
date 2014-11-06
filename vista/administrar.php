@@ -96,7 +96,7 @@ if ($_SESSION['administrador']=="si") {
                             <a href="subcategoria.php">Subcategoria</a>
                         </li>
                         <li>
-                            <a href="proveedor.php">Provedor</a>
+                            <a href="proveedor.php">Proveedor</a>
                         </li>
                         <li>
                         <a href="medida.php">Medida</a>

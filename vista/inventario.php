@@ -76,8 +76,8 @@ if ($_SESSION['administrador']=="si") {
               <a href="cliente.php">Clientes</a>
             </li>
             <li>
-                            <a href="logout.php">Salir</a>
-                        </li>
+            <a href="logout.php">Salir</a>
+            </li>
           </ul>
         </div>
       </center>
@@ -85,14 +85,34 @@ if ($_SESSION['administrador']=="si") {
     </div>
     <!-- /.container -->
   </nav>
+    <div class="">
 
+        <div class="contenido">
+            <div>
+                <center>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="inventario.php">Reservas</a>
+                        </li>
+                        <li>
+                            <a href="compras.php">Compras</a>
+                        </li>
+                        <li>
+                            <a href="act_inventario.php">Act. Inventario</a>
+                        </li>
+                        </ul>
+                </center>
+            </div>
+        </div>
+
+    </div><!-- end contenedor-->
   <div class="">
 
    <div class="contenido">
 
    <div id="tabla">
      <div id="page-wrap">
-     <input type="button" value="Aprovadas" class="btn" onclick="aprovadas()" id="aprovadas" >
+     <input type="button" value="Aprobadas" class="btn" onclick="aprovadas()" id="aprovadas" >
      <input type="button" value="Rechazadas" class="btn" onclick="rechazadas()" id="rechazada" >
      <input type="button" value="En Espera" class="btn" onclick="espera()" id="en_espera" style="display:none;" >
 
