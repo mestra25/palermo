@@ -1,10 +1,5 @@
 jQuery(document).ready(function() {
 
-
-  $("#act_inv").click(function() {
-    alert("inventario");
-      });
-
   $("#guardarProd").validate({
         rules: {
           txtid_categoria: { required: true},

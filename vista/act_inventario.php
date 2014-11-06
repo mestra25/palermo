@@ -28,7 +28,6 @@ if ($_SESSION['administrador']=="si") {
 
   <!-- Fonts -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/formulario_producto.php"></script>
 </head>
 
 <body>
@@ -146,9 +145,9 @@ echo " <option < value=".$registro['id_producto'].">".$registro_1['descripcion']
 }
 ?>
 </select>
-
+<input hidden type="text" id="txtid_producto">
 <br></br>
-<label>Existencia:  </label><input readonly id="existencia" class="campos_edi" type="text" value="" >
+<label>Existencia:  </label><input readonly id="txtexistencia" class="campos_edi" type="text" value="" >
 <br></br>
 <label>Ingresa:  </label><input class="campos_edi" type="text" name="txtingresa" id="txtingresa">
 </div>

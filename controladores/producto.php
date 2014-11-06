@@ -5,6 +5,15 @@
    $objproducto = new producto();
    $productoDao = new ProductoDao;
 
+
+
+   if ($_GET['action'] =='Actualizar'){
+$new=$_POST['existencia']+$_POST['ingresa'];
+$objproducto->setIdProducto($_POST['id_producto']);
+$objproducto->setExistencia($new);
+$objproducto->setModificado($_POST['fmodificado']);
+$productoDao->actualizar($objproducto);
+   }
     if ($_GET['action'] =='Guardar'){
 
 	$objproducto->setIdCategoria($_POST['id_categoria']);
