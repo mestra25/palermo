@@ -133,7 +133,7 @@ if ($_SESSION['administrador']=="si") {
 <select id="producto" class="campos_edi">
 <option>Producto</option>
 <?php
-require_once("php/lista_producto.php");
+require("php/lista_producto.php");
 foreach ($consulta as $registro) {
  $id_cat=$registro['id_categoria'];
  $id_sub=$registro['id_subcategoria'];
@@ -157,6 +157,51 @@ echo " <option < value=".$registro['id_producto'].">".$registro_1['descripcion']
 </center>
 </div>
 
+
+<div id"mov_salida">
+
+<br></br>
+<center>
+  <h3>Movimiento de Salida</h3>
+<div id="col1">
+         <?php
+         require_once("php/lista_cliente.php");
+         ?>
+         <label>Cliente: </label>
+      <select id="txtcliente" title="Se requiere un Cliente" required class="campos">          
+        <option value="">Cliente</option>
+        <?php
+        foreach ($consulta as $registro) {
+         echo " <option value=".$registro['cedula'].">".$registro['nombre'].' '.$registro['apellido']."</option>";
+       }
+       ?>
+     </select> 
+     <br></br>
+  <label>Producto:  </label>
+<select id="producto" class="campos_edi">
+<option>Producto</option>
+<?php
+require("php/lista_producto.php");
+foreach ($consulta as $registro) {
+ $id_cat=$registro['id_categoria'];
+ $id_sub=$registro['id_subcategoria'];
+   
+ require("php/p_categoria.php");
+ require("php/p_subcategoria.php");
+              
+echo " <option < value=".$registro['id_producto'].">".$registro_1['descripcion']." ".$registro_2['descripcion']." ".$registro['descripcion']."</option>";
+}
+?>
+</select>
+<input hidden type="text" id="txtid_producto">
+<br></br>
+<label>Cantidad: </label><input id="txtcantidad" class="campos_edi" type="text">
+</div>
+<br></br>
+<input type="button" value="Actualizar" id="act_inv" class="btn">
+<br></br>
+</center>
+</div>
 
 </div>
 
