@@ -4,9 +4,6 @@ session_start();
 
 if ($_SESSION['administrador']=="si") {
 
-
-
-
 ?>
 
 <!DOCTYPE html>

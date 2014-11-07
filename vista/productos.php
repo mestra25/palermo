@@ -289,8 +289,8 @@ require("php/estado.php");
         <th>Codigo</th>
         <th>Categoria</th>
         <th>Subcategoria</th>
-        <th>Proveedor</th>
         <th>Descripcion</th>
+        <th>Proveedor</th>
         <th>V. Costo</th>
         <th>Venta 1</th>
         <th>Venta 2</th>
@@ -338,8 +338,8 @@ require("php/estado.php");
               <?php
               require("php/p_proveedor.php");
               ?>
-              <td><?php echo $registro_3["nombre_empresa"];?></td>
               <td><?php echo $registro["descripcion"];?></td>
+              <td><?php echo $registro_3["nombre_empresa"];?></td>
               <td><?php echo $registro["v_costo"];?></td>
               <td><?php echo $registro["venta_1"];?></td>
               <td><?php echo $registro["venta_2"];?></td>
