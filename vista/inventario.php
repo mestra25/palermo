@@ -27,6 +27,7 @@ if ($_SESSION['administrador']=="si") {
   <link href="css/business-casual.css" rel="stylesheet">
 
   <!-- Fonts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 </head>
 
@@ -148,8 +149,7 @@ if ($_SESSION['administrador']=="si") {
           <tr>
 
             <?php
-            $i=0;
-            $j=1;
+
             require_once("php/lista_reserva.php");
             foreach ($consulta as $registro) {
               $codigo=$registro['codigo'];
@@ -160,7 +160,7 @@ if ($_SESSION['administrador']=="si") {
                 
               <tbody>
                 <tr>
-                  <td class="codigo"><?php echo $registro["codigo"];?></td>
+                  <td class="codigo"><?php echo $registro["id_consecutivo"];?></td>
                   <td><?php echo $registro["usuario"];?></td>
                   <td><?php echo $registro["cantidad"];?></td>
                   <td><?php echo $registro_1["descripcion"];?></td>
@@ -176,7 +176,6 @@ if ($_SESSION['administrador']=="si") {
                 </tr>
               </tbody>
               <?php
-             $i++;
             }    
             ?>
           </tr>
@@ -185,7 +184,7 @@ if ($_SESSION['administrador']=="si") {
       </form>
     </div>
 <div id="tabla_aprovada" style="display:none;">
-  <center><h2 class="reservas">Reservas Aprovadas</h2></center>
+  <center><h2 class="reservas">Reservas Aprobadas</h2></center>
 <table>
 
   <br></br>
@@ -217,7 +216,7 @@ if ($_SESSION['administrador']=="si") {
                 
               <tbody>
                 <tr>
-                  <td class="codigo"><?php echo $registro["codigo"];?></td>
+                  <td class="codigo"><?php echo $registro["id_consecutivo"];?></td>
                   <td><?php echo $registro["usuario"];?></td>
                   <td><?php echo $registro["cantidad"];?></td>
                   <td><?php echo $registro_1["descripcion"];?></td>
@@ -230,8 +229,7 @@ if ($_SESSION['administrador']=="si") {
                 </tr>
               </tbody>
               <?php
-             $i++;
-            }    
+                       }    
             ?>
           </tr>
         </tbody>
@@ -270,7 +268,7 @@ if ($_SESSION['administrador']=="si") {
                 
               <tbody>
                 <tr>
-                  <td class="codigo"><?php echo $registro["codigo"];?></td>
+                  <td class="codigo"><?php echo $registro["id_consecutivo"];?></td>
                   <td><?php echo $registro["usuario"];?></td>
                   <td><?php echo $registro["cantidad"];?></td>
                   <td><?php echo $registro_1["descripcion"];?></td>
@@ -283,7 +281,6 @@ if ($_SESSION['administrador']=="si") {
                 </tr>
               </tbody>
               <?php
-             $i++;
             }    
             ?>
           </tr>
@@ -303,7 +300,7 @@ if ($_SESSION['administrador']=="si") {
 
 
 </div>
-<span id="respuesta"></span>
+<span hidden id="respuesta"></span>
 </div><!-- end contenedor-->
 
 
@@ -319,7 +316,6 @@ if ($_SESSION['administrador']=="si") {
 </footer>
 
 <!-- jQuery Version 1.11.0 -->
-<script src="js/jquery-1.11.0.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>

@@ -40,7 +40,6 @@ if ($_GET['action'] =='GuardarUsuario'){
         }else{
             echo "      <script language='JavaScript'> 
             alert('No hay suficiente material para la reserva el maximo que puede reservar es: ".$existencia."'); 
-            window.location='../vista/rol_usuario.php'
             </script>";
         }
 }    

@@ -7,7 +7,7 @@
 
 
 
-   if ($_GET['action'] =='Actualizar'){
+if ($_GET['action'] =='Actualizar'){
 $new=$_POST['existencia']+$_POST['ingresa'];
 $objproducto->setIdProducto($_POST['id_producto']);
 $objproducto->setExistencia($new);
@@ -73,7 +73,6 @@ if ($_GET['action'] == 'Eliminar'){
 
   }
 
-
 if ($_GET['action'] =='Reservar'){
 
 require_once("../modelo/conexion.php");
@@ -92,18 +91,14 @@ $new=$registro['existencia'];
 $tem=$res+$reserva;
 $existencia=$new-$res;
 if ($new>=$res) {
-
 $objproducto->setIdProducto($id_producto);
 $objproducto->setReserva($tem);
 $objproducto->setExistencia($existencia);
 $productoDao->reservar($objproducto);
 
 }else{
- 
-    echo "      <script language='JavaScript'> 
-                alert('No hay suficiente material para la reserva el maximo que puede reservar es: ".$new."'); 
-                window.location='../vista/inventario.php'
-                </script>";
+echo "No hay suficiente material para confirmar la reserva el maximo que puede reservar es:".$new." ";
+$conexion=null;
 exit();
 }
 $conexion=null;
