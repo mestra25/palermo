@@ -3,7 +3,7 @@
 session_start();
 
 if ($_SESSION['administrador']=="si") {
-  
+
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +28,8 @@ if ($_SESSION['administrador']=="si") {
 
   <!-- Fonts -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/act_inventario.js"></script>
+
 </head>
 
 <body>
@@ -146,6 +148,9 @@ echo " <option < value=".$registro['id_producto'].">".$registro_1['descripcion']
 ?>
 </select>
 <input hidden type="text" id="txtid_producto">
+
+<input hidden type="text" value="<?php echo $_SESSION['cedula']; ?>" id="txtid_usuario">
+
 <br></br>
 <label>Existencia:  </label><input readonly id="txtexistencia" class="campos_edi" type="text" value="" >
 <br></br>
@@ -153,6 +158,8 @@ echo " <option < value=".$registro['id_producto'].">".$registro_1['descripcion']
 </div>
 <br></br>
 <input type="button" value="Actualizar" id="act_inv" class="btn">
+<input type="button" value="Cancelar" id="can_inv" class="btn">
+
 <br></br>
 </center>
 </div>
@@ -163,6 +170,7 @@ echo " <option < value=".$registro['id_producto'].">".$registro_1['descripcion']
 <br></br>
 <center>
   <h3>Movimiento de Salida</h3>
+  <br></br>
 <div id="col1">
          <?php
          require_once("php/lista_cliente.php");
@@ -198,7 +206,8 @@ echo " <option < value=".$registro['id_producto'].">".$registro_1['descripcion']
 <label>Cantidad: </label><input id="txtcantidad" class="campos_edi" type="text">
 </div>
 <br></br>
-<input type="button" value="Actualizar" id="act_inv" class="btn">
+<input type="button" value="Vender" id="ven_inv" class="btn">
+<input type="button" value="Cancelar" id="can_inv" class="btn">
 <br></br>
 </center>
 </div>
@@ -238,7 +247,6 @@ $('.carousel').carousel({
 
 <script type="text/javascript" src="js/buscar.js"></script>
 <script type="text/javascript" src="js/mostrar_ocultar.js"></script>
-<script type="text/javascript" src="js/act_inventario.js"></script>
 </body>
 
 </html>
