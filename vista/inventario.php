@@ -116,16 +116,16 @@ if ($_SESSION['administrador']=="si") {
      <input type="button" value="Aprobadas" class="btn" onclick="aprovadas()" id="aprovadas" >
      <input type="button" value="Rechazadas" class="btn" onclick="rechazadas()" id="rechazada" >
      <input type="button" value="En Espera" class="btn" onclick="espera()" id="en_espera" style="display:none;" >
+<input type="button" value="Buscar" class="btn" onclick="mostrar_buscar()" id="buscar" >
 
+<input type="button" value="Cancelar" class="btn" id="cancelar" style="display:none" onclick="mostrar_boton_buscar()" >
+
+<input type="input" placeholder="Codigo Cedula a Buscar" class="campo" id="buscar_" style="display:none">
+      
 <div id="tabla_espera">
       <center> 
         <h2>Solicitud de Reserva</h2>
       </center>
-      <input type="button" value="Buscar" class="btn" onclick="mostrar_buscar()" id="buscar" >
-
-      <input type="button" value="Cancelar" class="btn" id="cancelar" style="display:none" onclick="mostrar_boton_buscar()" >
-
-      <input type="input" placeholder="Codigo Producto a Buscar" class="campo" id="buscar_" style="display:none">
       <br></br>
 <form>
       <table>
@@ -154,18 +154,20 @@ if ($_SESSION['administrador']=="si") {
             foreach ($consulta as $registro) {
               $codigo=$registro['codigo'];
               require("php/r_producto.php");
+              $id_medi=$registro_1['medida'];
+              require("php/p_medida.php");
               $existencia=$registro_1['existencia'];
               $reserva=$registro_1['reserva'];
               ?>
                 
               <tbody>
                 <tr>
-                  <td class="codigo"><?php echo $registro["id_consecutivo"];?></td>
-                  <td><?php echo $registro["usuario"];?></td>
+                  <td><?php echo $registro["id_consecutivo"];?></td>
+                  <td class="codigo"><?php echo $registro["usuario"];?></td>
                   <td><?php echo $registro["cantidad"];?></td>
                   <td><?php echo $registro_1["descripcion"];?></td>
                   <td><?php echo $registro_1["v_costo"];?></td>
-                  <td><?php echo $registro_1["medida"];?></td>
+                  <td><?php echo $registro_5["descripcion"];?></td>
                   <td><?php echo $registro_1["existencia"];?></td>
                   <td><?php echo $registro_1["reserva"];?></td>
                   <td><?php echo $existencia;?></td>
@@ -185,6 +187,8 @@ if ($_SESSION['administrador']=="si") {
     </div>
 <div id="tabla_aprovada" style="display:none;">
   <center><h2 class="reservas">Reservas Aprobadas</h2></center>
+  <br></br>
+  
 <table>
 
   <br></br>
@@ -210,18 +214,20 @@ if ($_SESSION['administrador']=="si") {
             foreach ($consulta as $registro) {
               $codigo=$registro['codigo'];
               require("php/r_producto.php");
+              $id_medi=$registro_1['medida'];
+              require("php/p_medida.php");
               $existencia=$registro_1['existencia'];
               $reserva=$registro_1['reserva'];
               ?>
                 
               <tbody>
                 <tr>
-                  <td class="codigo"><?php echo $registro["id_consecutivo"];?></td>
-                  <td><?php echo $registro["usuario"];?></td>
+                  <td><?php echo $registro["id_consecutivo"];?></td>
+                  <td class="codigo"><?php echo $registro["usuario"];?></td>
                   <td><?php echo $registro["cantidad"];?></td>
                   <td><?php echo $registro_1["descripcion"];?></td>
                   <td><?php echo $registro_1["v_costo"];?></td>
-                  <td><?php echo $registro_1["medida"];?></td>
+                  <td><?php echo $registro_5["descripcion"];?></td>
                   <td><?php echo $registro_1["existencia"];?></td>
                   <td><?php echo $registro_1["reserva"];?></td>
                   <td><?php echo $existencia;?></td>
@@ -261,6 +267,8 @@ if ($_SESSION['administrador']=="si") {
             foreach ($consulta as $registro) {
               $codigo=$registro['codigo'];
               require("php/r_producto.php");
+              $id_medi=$registro_1['medida'];
+              require("php/p_medida.php");
               $existencia=$registro_1['existencia'];
               $reserva=$registro_1['reserva'];
               
@@ -268,12 +276,12 @@ if ($_SESSION['administrador']=="si") {
                 
               <tbody>
                 <tr>
-                  <td class="codigo"><?php echo $registro["id_consecutivo"];?></td>
-                  <td><?php echo $registro["usuario"];?></td>
+                  <td><?php echo $registro["id_consecutivo"];?></td>
+                  <td class="codigo"><?php echo $registro["usuario"];?></td>
                   <td><?php echo $registro["cantidad"];?></td>
                   <td><?php echo $registro_1["descripcion"];?></td>
                   <td><?php echo $registro_1["v_costo"];?></td>
-                  <td><?php echo $registro_1["medida"];?></td>
+                  <td><?php echo $registro_5["descripcion"];?></td>
                   <td><?php echo $registro_1["existencia"];?></td>
                   <td><?php echo $registro_1["reserva"];?></td>
                   <td><?php echo $existencia;?></td>
@@ -300,7 +308,7 @@ if ($_SESSION['administrador']=="si") {
 
 
 </div>
-<span hidden id="respuesta"></span>
+<span  id="respuesta"></span>
 </div><!-- end contenedor-->
 
 
