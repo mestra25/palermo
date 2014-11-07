@@ -11,7 +11,6 @@ class movimiento_inventarioDao {
     $conexion = new conexion();
     $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (cliente,codigo,usuario,cantidad,v_costo,estado) VALUES(:cliente,:codigo,:usuario,:cantidad,:v_costo,:estado)');
     $consulta->bindParam(':usuario', $Objmovimiento_inventario->getusuario());
-
     $consulta->bindParam(':codigo', $Objmovimiento_inventario->getCodigo());
     $consulta->bindParam(':cantidad', $Objmovimiento_inventario->getcantidad());
     $consulta->bindParam(':estado', $Objmovimiento_inventario->getestado());  
@@ -113,6 +112,7 @@ function confirmar($Objmovimiento_inventario){
   
   }
 
+
 function rechazar($Objmovimiento_inventario){
   
   $conexion = new conexion();
@@ -166,6 +166,19 @@ function buscar($descripcion){
   $conexion = null;
 
 }
+
+  function movimiento($Objmovimiento_inventario){
+
+    $conexion = new conexion();
+    $consulta = $conexion->prepare('INSERT INTO ' . self::tabla . ' (usuario,tip_mov,cantidad,codigo) VALUES(:usuario,:tip_mov,:cantidad,:codigo)');
+    $consulta->bindParam(':usuario', $Objmovimiento_inventario->getusuario());
+    $consulta->bindParam(':tip_mov', $Objmovimiento_inventario->gettip_mov());
+    $consulta->bindParam(':cantidad', $Objmovimiento_inventario->getcantidad());
+    $consulta->bindParam(':codigo', $Objmovimiento_inventario->getcodigo());  
+    $consulta->execute();
+$conexion = null;
+}
+
 
 function listar(){
   $conexion = new conexion();

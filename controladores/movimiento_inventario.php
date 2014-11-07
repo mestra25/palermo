@@ -38,7 +38,7 @@ if ($_GET['action'] =='GuardarUsuario'){
             $movimiento_inventarioDao->guardarusuario($objmovimiento_inventario);
 
         }else{
-            echo "      <script language='JavaScript'> 
+            echo "<script language='JavaScript'> 
             alert('No hay suficiente material para la reserva el maximo que puede reservar es: ".$existencia."'); 
             </script>";
         }
@@ -55,7 +55,20 @@ if ($_GET['action'] =='Confirmar'){
    
 }
 
+if ($_GET['action'] =='Movimiento'){
 
+    $codigo=$_POST['id_producto'];
+    $usuario=$_POST['id_usuario'];
+    $cantidad=$_POST['ingresa'];
+    $tip_mov="Entrada";
+
+    $objmovimiento_inventario->setCodigo($codigo);
+    $objmovimiento_inventario->setusuario($usuario);
+    $objmovimiento_inventario->setcantidad($cantidad);
+    $objmovimiento_inventario->settip_mov($tip_mov);
+    $movimiento_inventarioDao->movimiento($objmovimiento_inventario);
+   
+}
 
 
 

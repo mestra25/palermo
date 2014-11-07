@@ -9,6 +9,7 @@ class movimiento_inventario {
     private $impuesto;
     private $valor_venta;
     private $estado;
+    private $tip_mov;
     
 function __construct() {
     
@@ -20,12 +21,15 @@ function __construct() {
     $this->impuesto=0;
     $this->valor_venta=0;
     $this->estado="en espera";
-    
+    $this->tip_mov="";
 
     }
 
 function setcodigo($codigo){
 $this->codigo= $codigo;
+}
+function settip_mov($tip_mov){
+$this->tip_mov= $tip_mov;
 }
 function setestado($estado){
 $this->estado= $estado;
@@ -54,6 +58,9 @@ $this->id_consecutivo= $id_consecutivo;
 
 function getid_consecutivo(){
 return $this->id_consecutivo;
+}
+function gettip_mov(){
+return $this->tip_mov;
 }
 function getcliente(){
 return $this->cliente;
