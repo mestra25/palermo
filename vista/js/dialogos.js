@@ -19,7 +19,9 @@ jQuery(document).ready(function() {
       var nuevo = $.parseJSON(datos); 
 
       $('#txtid_categoria').append(new Option(nuevo['descripcion'], nuevo['id_categoria'], true, true));
+      $('#txtid_categoria_sub').append(new Option(nuevo['descripcion'], nuevo['id_categoria'], true, true));
       $('#txtid_categoria').prop('selectedIndex',0);
+      $('#txtid_categoria_sub').prop('selectedIndex',0);
       $("#respuesta").html(datos);
       $("#txtdescripcion_cat").val("");
       $("#txtobservacion_cat").val("");      

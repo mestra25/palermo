@@ -4,6 +4,9 @@ session_start();
 
 if ($_SESSION['administrador']=="si") {
 
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -22,14 +25,13 @@ if ($_SESSION['administrador']=="si") {
 
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet"> 
-
+<link rel="stylesheet" href="css/tabla_productos.css">
   <!-- Custom CSS -->
   <link href="css/business-casual.css" rel="stylesheet">
 
   <!-- Fonts -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/act_inventario.js"></script>
-
+<script type="text/javascript" src="js/plugin.js"></script>
 </head>
 
 <body>
@@ -185,30 +187,98 @@ echo " <option < value=".$registro['id_producto'].">".$registro_1['descripcion']
        ?>
      </select> 
      <br></br>
-  <label>Producto:  </label>
-<select id="producto" class="campos_edi">
-<option>Producto</option>
-<?php
-require("php/lista_producto.php");
-foreach ($consulta as $registro) {
- $id_cat=$registro['id_categoria'];
- $id_sub=$registro['id_subcategoria'];
-   
- require("php/p_categoria.php");
- require("php/p_subcategoria.php");
-              
-echo " <option < value=".$registro['id_producto'].">".$registro_1['descripcion']." ".$registro_2['descripcion']." ".$registro['descripcion']."</option>";
-}
-?>
-</select>
-<input hidden type="text" id="txtid_producto">
-<br></br>
-<label>Cantidad: </label><input id="txtcantidad" class="campos_edi" type="text">
 </div>
-<br></br>
+</center>
+ <div id="page-wrap">
+  <form>
+<table id="tabla">
+    <thead>
+      <tr>
+        <th>Añadir</th>
+        <th>Codigo</th>
+        <th>Categoria</th>
+        <th>Subcategoria</th>
+        <th>Descripcion</th>
+        <th>Proveedor</th>
+        <th>V. Costo</th>
+        <th>Venta 1</th>
+        <th>Venta 2</th>
+        <th>Venta 3</th>
+        <th>Venta 4</th>
+        <th>P. Utilidad</th>
+        <th>Medida</th>
+        <th>P. Descuento</th>
+        <th>Existencia</th>
+        <th>Observaciones</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <?php
+        require("php/lista_producto.php");
+        foreach ($consulta as $registro) {
+        $id_cat=$registro['id_categoria'];
+        $id_sub=$registro['id_subcategoria'];
+        $id_prove=$registro['id_proveedor'];
+        $id_medi=$registro['medida'];
+          ?>
+          <tbody>
+              <td><center><input class="vender"  type="button" data-descripcion="<?php echo $registro['descripcion']; ?>"  data-idproducto="<?php echo $registro['id_producto']; ?>" value="boton"></center></td>
+              <td class="codigo"><?php echo $registro["codigo"];?></td>
+              <?php
+              require("php/p_categoria.php");
+              ?>
+              <td><?php echo $registro_1["descripcion"];?></td>
+              <?php
+              require("php/p_subcategoria.php");
+              ?>
+              <td><?php echo $registro_2["descripcion"];?></td>
+              <?php
+              require("php/p_proveedor.php");
+              ?>
+              <td><?php echo $registro["descripcion"];?></td>
+              <td><?php echo $registro_3["nombre_empresa"];?></td>
+              <td><?php echo $registro["v_costo"];?></td>
+              <td><?php echo $registro["venta_1"];?></td>
+              <td><?php echo $registro["venta_2"];?></td>
+              <td><?php echo $registro["venta_3"];?></td>
+              <td><?php echo $registro["venta_4"];?></td>
+              <td><?php echo $registro["p_utilidad"];?></td>
+              <?php
+              require("php/p_medida.php");
+              ?>
+              <td><?php echo $registro_5["descripcion"];?></td>
+              <td><?php echo $registro["p_descuento"];?></td>
+              <td><?php echo $registro["existencia"];?></td>
+              <td><?php echo $registro["observacion"];?></td>
+            </tr>
+          </tbody>
+          <?php
+        }    
+        ?>
+      </tr>
+    </tbody>
+  </table>
+  </form>
+</div>
+<center>
+
+
+<fieldset id="fs">
+
+</fieldset>
+
+
+
+<div id="col2">
+<input hidden type="text" id="txtid_producto">
 <input type="button" value="Vender" id="ven_inv" class="btn">
 <input type="button" value="Cancelar" id="can_inv" class="btn">
 <br></br>
+</div>
+
 </center>
 </div>
 
