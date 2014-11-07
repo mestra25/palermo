@@ -107,6 +107,9 @@ if ($_SESSION['administrador']=="si") {
             <li>
                 <a href="medida.php">Medida</a>
             </li>
+                    <li>
+          <a href="ubicacion.php">Ubicacion</a>
+        </li>
         </ul>
     </center>
 </div>

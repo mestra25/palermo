@@ -92,6 +92,35 @@ jQuery(document).ready(function() {
 
 });
 
+        $("#btn_ubi").click(function() {
+
+     var _nueva=$("#txtnueva").val();
+     var _descripcion=$("#txtdescripcion_ubi").val();
+     var parametros={ nueva:_nueva,descripcion : _descripcion };
+     var archivo='../controladores/ubicacion.php?action=Guardar';
+   
+     $.ajax({
+      type :"POST",
+      url : archivo,
+      data :parametros,
+      success : function(datos){
+
+      var nuevo = $.parseJSON(datos); 
+
+      $('#txtid_ubicacion').append(new Option(nuevo['descripcion'], nuevo['id_ubicacion'], true, true));
+      $('#txtid_ubicacion').prop('selectedIndex',0);
+      $("#respuesta").html(datos);
+      $("#txtdescripcion_ubi").val("");
+      $('#dialog-confirm_5').dialog( "close" );
+        alert("Ubicacion Agregada Correctamente");
+      }
+    });
+
+
+});
+
+
+
      $("#btn_pro").click(function() {
      var _nueva=$("#txtnueva").val();
      var _nit=$("#txtnit_pro").val();

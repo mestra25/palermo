@@ -213,7 +213,7 @@ require_once("../modelo/conexion.php");
     ?>
     <option value="<?php echo $registro['id_medida'];?>"><?php echo $registro['descripcion'];?></option>
 
-        <?php
+    <?php
         require("php/lista_medida.php");
 
         foreach ($consulta as $registro) {
@@ -222,7 +222,27 @@ require_once("../modelo/conexion.php");
        }
        ?>
      </select>   
-     <br></br>                      
+     <br></br>    
+
+
+     <br></br>  
+     <label for="name">Ubicacion:  </label> 
+     <select id="txtid_ubicacion" title="Se requiere una Ubicacion" required class="campos">          
+    <?php
+    require("php/lista_ubicacion_editar.php")
+    ?>
+    <option value="<?php echo $registro['id_ubicacion'];?>"><?php echo $registro['descripcion'];?></option>
+
+    <?php
+        require("php/lista_ubicacion.php");
+
+        foreach ($consulta as $registro) {
+
+         echo " <option value=".$registro['id_ubicacion'].">".$registro['descripcion']."</option>";
+       }
+       ?>
+     </select>   
+     <br></br>                   
             <input hidden type="text" name="txtincrementable" id="txtincrementable" value="<?php echo $row['id_producto']; ?>">
             <input  hidden id="txtid_producto" name="txtid_producto" value="<?php echo $row['id_producto'];?>" >
             <label for="name">Descripcion:  </label>     

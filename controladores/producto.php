@@ -16,10 +16,12 @@ $productoDao->actualizar($objproducto);
    }
     if ($_GET['action'] =='Guardar'){
 
+
 	$objproducto->setIdCategoria($_POST['id_categoria']);
     $objproducto->setIdSubcategoria($_POST['id_subcategoria']);
     $objproducto->setIdproveedor($_POST['id_proveedor']);
     $objproducto->setCodigo($_POST['codigo']);
+    $objproducto->setid_ubicacion($_POST['id_ubicacion']);
     $objproducto->setDescripcion($_POST['descripcion']);
     $objproducto->setVcosto($_POST['v_costo']);
     $objproducto->setVenta1($_POST['venta_1']);

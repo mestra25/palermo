@@ -24,17 +24,13 @@ if ($_SESSION['administrador']=="si") {
 
     <!-- Custom CSS -->
     <link href="css/business-casual.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/tabla_subcategoria.css">
+    <link rel="stylesheet" href="css/tabla_medida.css">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.0.js"></script>
-    <script type="text/javascript" src="js/formulario_subcategoria.js"></script>
-    <script src="js/jquery.mockjax.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery.validate.js" type="text/javascript"></script>  
+    <script type="text/javascript" src="js/formulario_ubicacion.js"></script>
 
 </head>
 
@@ -50,6 +46,7 @@ if ($_SESSION['administrador']=="si") {
 <div class="brand"><a href=""><img src="img/logo.png"></a></div>
 <!-- Navigation -->
 <nav class="navbar navbar-default" role="navigation">
+
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -83,7 +80,7 @@ if ($_SESSION['administrador']=="si") {
                     </li>
                     <li>
                             <a href="logout.php">Salir</a>
-                        </li>
+                    </li>
                 </ul>
             </div>
         </center>
@@ -119,101 +116,49 @@ if ($_SESSION['administrador']=="si") {
 </div>
 <div class="">
 
-   <div class="contenido">
+ <div class="contenido">
     <div class="botones_form">
-        <input type="submit" value="Agregar Subcategoria" class="btn" onclick="mostrar()">
-        
+        <input type="submit" value="Agregar Ubicacion" class="btn" onclick="mostrar()">
+
         <input type="submit" value="Buscar" class="btn" onclick="mostrar_buscar()" id="buscar" >
-        
+
         <input type="submit" value="Cancelar" class="btn" id="cancelar" style="display:none" onclick="mostrar_boton_buscar()" >
-        
-        <input type="input" placeholder="Codigo Subcategoria a Buscar" class="campo" id="buscar_" style="display:none">
+
+        <input type="input" placeholder="Codigo Ubicacion a Buscar" class="campo" id="buscar_" style="display:none">
 
 
     </div>
 
-    <center>
-        <div id="formulario" style="display:none">
-            <form id="guardarSub">
-                <h2>Agregar Subcategoria</h2>
-
-<br></br>
-<div id="col1">
-<label for="name">Categoria:  </label>
-
-<select id="txtid_categoria" title="Se requiere Seleccion de Categoria" required class="campos">          
-
-           <option value="">Categoria</option>
-           <?php
-           require("php/lista_categoria.php");
-           
-           foreach ($consulta as $registro) {
-
-             echo " <option value=".$registro['id_categoria'].">".$registro['descripcion']."</option>";
-           }
-           ?>
-
-         </select> 
-            <input type="text" value="0" hidden id="txtnueva" name="txtnueva">
-
-                <br></br>              
-                <label for="name">Descripcion:  </label>
-                <textarea class="campo_des" id="txtdescripcion" name="txtdescripcion" rows="4" cols="55" placeholder="Descripcion"></textarea>
-                <br></br> 
-                <label for="name">Observacion:  </label>
-                <input id="txtobservacion" name="txtobservacion" title="Se requiere observacion" class="campos_edi" placeholder="Observacion" required>
-                <br></br> 
- </div>               
-                <center>
-                <input class="btn" type="submit" name="" value="Guardar" >
-                <input class="btn" type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
-                <span id="respuesta"></span>
-
-                </center>
-            </form>
-        </div>
-        <span hidden id="respuesta"></span>
+    <div>
+     
 
         <div id="page-wrap">
-          <h2>Lista de Subcategoria</h2>
-
-
-          <br></br>
-          <table id="tabla">
-            <thead>
+            <center>
+                <h2>Lista de Ubicaciones</h2>
+            </center>
+            <br></br>
+            <table id="tabla">
+                <thead>
+                  <tr>
+                    <th>Codigo</th>
+                    <th>Descripcion</th>
+                    <th>Eliminar</th>
+                    
+                </tr>
+            </thead>
+            
+            <tbody>
               <tr>
-                <th>Codigo</th>
-                <th>Categoria</th>
-                <th>Descripcion</th>
-                <th>Creado</th>
-                <th>Modificado</th>
-                <th>Observaciones</th>
-                <th>Modificar</th>
-                <th>Eliminar</th>
-
-            </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <?php
-            require("php/lista_subcategoria.php");
-
-            foreach ($consulta as $registro) {
-                $id_cat=$registro['id_categoria'];
-                require("php/p_categoria.php")
+               <?php
+               require("php/lista_ubicacion.php");
+               foreach ($consulta as $registro) {
                 ?>
                 <tbody> 
 
                   <tr>
-                    <td class="codigo"><?php echo $registro["id_subcategoria"];?></td>
-                    <td><?php echo $registro_1["descripcion"];?></td>
+                    <td class="codigo"><?php echo $registro["id_ubicacion"];?></td>
                     <td><?php echo $registro["descripcion"];?></td>
-                    
-                    <td><?php echo $registro["fcreado"];?></td>
-                    <td><?php echo $registro["fmodificado"];?></td>
-                    <td><?php echo $registro["observacion"];?></td>
-                    <td><a  href="EditarSubcategoria.php?id_subcategoria=<?php echo $registro["id_subcategoria"];?>" ><img src="img/editar.png"></a></td>
-                    <td><a href="../controladores/subcategoria.php?action=Eliminar&id_subcategoria=<?php echo $registro["id_subcategoria"];?>" onclick="return confirm('Desea eliminar subcategoria?');" src="img/delete.png"><img src="img/delete.png"></a></td>
+                    <td><a href="../controladores/ubicacion.php?action=Eliminar&id_ubicacion=<?php echo $registro["id_ubicacion"];?>" onclick="return confirm('Desea eliminar la Ubicacion?');" src="img/delete.png"><img src="img/delete.png"></a></td>
 
                 </tr>
 
@@ -223,16 +168,36 @@ if ($_SESSION['administrador']=="si") {
         ?>
     </tr>
 </tbody>
+
+
 </table>
 
-</div>
 <br></br>
+</div>
+</div>
+<span id="respuesta"></span>
+<center>
+    <div id="formulario" style="display:none">
+        <form>
+            <h2>Agregar 
+                Ubicacion</h2>
+                <br></br> 
+                <input type="text" value="0" hidden id="txtnueva" name="txtnueva">   
+                <label for="name">Unidad de Medida:  </label>          
+                <textarea class="campo_des" id="txtdescripcion" name="txtdescripcion" rows="4" cols="55" placeholder="Descripcion"></textarea>
 
+                <br></br> 
+                
+                <input type="button" name="" value="Guardar" id="btn" class="btn">
+                <input type="button" name="" value="Cancelar" class="btn" onclick="ocultar()">
+            </form>
+        </div>
+        <span id="respuesta"></span>
+    </center>
 
 
 </div>
 </div>
-</center>
 
 
 </div><!-- end contenedor-->
@@ -249,7 +214,6 @@ if ($_SESSION['administrador']=="si") {
     </div>
 </footer>
 
-<!-- jQuery Version 1.11.0 -->
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>

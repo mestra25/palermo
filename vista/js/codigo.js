@@ -54,6 +54,28 @@ jQuery(document).ready(function() {
         });
 
 
+ $("#txtid_ubicacion").change(function(event){
+
+ 	var valor = $(this).val();
+ 	//alert(valor);
+ 	if (valor=="nueva_ubicacion") {
+
+ 		$( "#dialog-confirm_5" ).dialog({
+	      resizable: false,
+	      height:430,
+    	  width:450,
+	      modal: true,
+	      buttons: {
+
+	        Cancelar: function() {
+	          $( this ).dialog( "close" );
+
+	        }
+	      }
+	    });
+  	};
+        });
+
 $("#txtid_proveedor").change(function(event){
 
  	var valor = $(this).val();

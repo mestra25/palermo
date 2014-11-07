@@ -21,6 +21,7 @@ class producto {
     private $Existencia;
     private $Reserva;
     private $Observaciones;
+    private $id_ubicacion;
    
   
 
@@ -46,6 +47,7 @@ function __construct() {
    $this->Existencia=0;
    $this->Reserva=0;
    $this->Observaciones="";
+   $this->id_ubicacion="";
 
 }
 
@@ -66,6 +68,9 @@ $this->Idproveedor= $Idproveedor;
 }
 function setCodigo($Codigo){
 $this->Codigo= $Codigo;
+}
+function setid_ubicacion($id_ubicacion){
+$this->id_ubicacion= $id_ubicacion;
 }
 function setDescripcion($Descripcion){
 $this->Descripcion= $Descripcion;
@@ -149,6 +154,9 @@ return $this->Vcosto;
 }
 function getCodigo(){
 return $this->Codigo;
+}
+function getid_ubicacion(){
+return $this->id_ubicacion;
 }
 function getDescripcion(){
 return $this->Descripcion;
