@@ -95,6 +95,8 @@ if ($_SESSION['usuario']=="si") {
               <tr>
                 <th> Reservar </th>
                 <th> Codigo </th>
+                <th>Categoria</th>
+                <th>Subcategoria</th>
                 <th> Descripcion </th>
                 <th>Proveedor</th>
                 <th> Medida </th>
@@ -110,15 +112,21 @@ if ($_SESSION['usuario']=="si") {
                 require("php/lista_producto.php");
 
                 foreach ($consulta as $registro) {
+                  $id_cat=$registro['id_categoria'];
+                  $id_sub=$registro['id_subcategoria'];
                   $id_medi=$registro['medida'];
                   $id_prove=$registro['id_proveedor'];
                   require("php/p_medida.php");
                   require("php/p_proveedor.php");
+                  require("php/p_categoria.php");
+                  require("php/p_subcategoria.php");
                   ?>
                   <tbody>
                     <tr>
                       <td><a name="id_producto" href="reserva.php?id_producto=<?php echo $registro['id_producto']; ?>" onclick="reservar()"><img src="img/reserva.png"></a></td>
                       <td class="codigo"><?php echo $registro["codigo"];?></td>
+                      <td><?php echo $registro_1["descripcion"];?></td>
+                      <td><?php echo $registro_2["descripcion"];?></td>
                       <td><?php echo $registro["descripcion"];?></td>
                       <td><?php echo $registro_3["nombre_empresa"];?></td>
                       <td><?php echo $registro_5["descripcion"];?></td>
