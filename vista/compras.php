@@ -4,6 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Guardar checkbox</title>
+<script src="js/jquery.js"></script>
 </head>
 
 <body>
@@ -32,24 +33,33 @@
   </tr>
   <tr>
     <td>Productos</td>
-    <td> <a href="">Mas Productos<img src=""></a></td>
-     <td> <?php
-			require("php/lista_producto.php");
-			foreach ($consulta as $registro)
-			 {
-			 $id_cat=$registro['id_categoria'];
-			 $id_sub=$registro['id_subcategoria'];
-			   
-			 require("php/p_categoria.php");
-			 require("php/p_subcategoria.php");
-			 echo " <input name='checkbox[]' type='checkbox' value=".$registro_1['descripcion']." ".$registro_2['descripcion']." ".$registro['descripcion']."/>";             
-			
-			}
-			?></td>
+    <td> <a onclick="mostrar()" href="">Mas Productos<img src=""></a></td>
+     
+  </tr>
+  <tr>
+    <td id="listaProd"  style="display:none;"> <?php
+      require("php/lista_producto.php");
+      foreach ($consulta as $registro)
+       {
+       $id_cat=$registro['id_categoria'];
+       $id_sub=$registro['id_subcategoria'];
+         
+       require("php/p_categoria.php");
+       require("php/p_subcategoria.php");
+       echo " <br><input type='checkbox' value='".$registro_1['descripcion'].":".$registro_1['descripcion']."'/>";    
+        echo" <input type='hidden' id='registro1' value='".$registro_1['descripcion']."' />"  ;
+       echo" <input type='hidden' id='registro2' value='".$registro_2['descripcion']."' />"  ;         
+      echo "</br>";
+
+
+      }
+      ?>
+      <input type="button" class="validar"  value="Enviar" /></td>
   </tr>
 </table>
 
- 
+<script type="text/javascript" src="js/mostrar_ocultar.js"></script> 
+<script type="text/javascript" src="js/formulario_compras.js"></script> 
 
 </body>
 </html>

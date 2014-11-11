@@ -1,10 +1,12 @@
 
 function mostrar(){
+	document.getElementById('listaProd').style.display = 'block';
 document.getElementById('formulario').style.display = 'block';
 document.getElementById('page-wrap').style.display = 'none';
 document.getElementById('cancelar').style.display = 'none';
 document.getElementById('buscar').style.display = 'none';
 document.getElementById('buscar_').style.display = 'none';
+
 
 }
 
