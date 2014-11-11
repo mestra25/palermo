@@ -47,8 +47,8 @@
        require("php/p_categoria.php");
        require("php/p_subcategoria.php");
        echo " <br><input type='checkbox' value='".$registro_1['descripcion'].":".$registro_1['descripcion']."'/>";    
-        echo" <input type='hidden' id='registro1' value='".$registro_1['descripcion']."' />"  ;
-       echo" <input type='hidden' id='registro2' value='".$registro_2['descripcion']."' />"  ;         
+       echo $registro_1['descripcion'];   
+       echo $registro_2['descripcion'];         
       echo "</br>";
 
 
