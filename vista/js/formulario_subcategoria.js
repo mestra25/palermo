@@ -4,15 +4,14 @@ jQuery(document).ready(function() {
         rules: {
           
             txtdescripcion: { required: true, minlength: 6},
-            txtobservacion: { required: true,minlength: 10},
+            
             
             
             
         },
         messages: {
        
-            txtdescripcion: "Debe escribir una descripcion",
-            txtobservacion: "Debe  indicar una observacion"
+            txtdescripcion: "Debe escribir una descripcion"
             
           
           },
@@ -42,15 +41,14 @@ $("#editarSub").validate({
         rules: {
           
             txtdescripcion: { required: true, minlength: 6},
-            txtobservacion: { required: true,minlength: 10},
+          
             
             
             
         },
         messages: {
        
-            txtdescripcion: "Debe escribir una descripcion",
-            txtobservacion: "Debe  indicar una observacion"
+            txtdescripcion: "Debe escribir una descripcion"
             
           
           },

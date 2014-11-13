@@ -6,7 +6,7 @@ jQuery(document).ready(function() {
             txtapellido: { required:true, maxlength: 15},
             txtcelular: {required:true,   maxlength: 15 },
             txtdireccion: { required: true, maxlength: 30},
-            txtemail: {  email:true,required:true},
+            
             
             
         },
@@ -16,7 +16,6 @@ jQuery(document).ready(function() {
             txtapellido:"Debe  indicar su Apellido",
             txtcelular: "Debe indicar su telefono , solo numeros",
             txtdireccion: "Indique una direccion",
-            txtemail: "Debe indicar un formato correcto",
           
           },
         submitHandler: function(form){
@@ -51,7 +50,7 @@ $("#guardarCli").validate({
             txtapellido: { required:true, maxlength: 15},
             txtcelular: {required:true,   maxlength: 15 },
             txtdireccion: { required: true, maxlength: 30},
-            txtemail: {  email:true,required:true},
+        
             
             
         },
@@ -61,7 +60,7 @@ $("#guardarCli").validate({
             txtapellido:"Debe  indicar su Apellido",
             txtcelular: "Debe indicar su telefono , solo numeros",
             txtdireccion: "Indique una direccion",
-            txtemail: "Debe indicar un formato correcto",
+            
           
           },
         submitHandler: function(form){

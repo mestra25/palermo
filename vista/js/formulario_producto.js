@@ -4,29 +4,22 @@ jQuery(document).ready(function() {
         rules: {
         txtid_categoria: { required: true},
         txtid_subcategoria: { required: true},
-        txtid_proveedor: { required: true,minlength: 4},
-        txtid_ubicacion: { required: true},
-        txtcodigo_producto: { required: true,minlength: 4},
+        txtid_proveedor: { required: true},
+        txtcodigo_producto: { required: true},
         txtdescripcion: { required: true,minlength: 4},
         txtvcosto: { required: true},
         txtventa1: { required: true},
         txtventa2: { required: true},
         txtventa3: { required: true},
        txtventa4: { required: true,minlength: 1},
-       txtp_utilidad: { required: true,minlength: 1},
-       txtstock_min: { required: true,minlength: 1},
-       txtstock_max: { required: true,minlength: 1},
        txtexistencia: { required: true,minlength: 1},
-       txtid_medida: { required: true,minlength: 10},
-       txtp_descuento: { required: true,minlength: 1}, 
-       txtobservacion: { required: true,minlength:4},
+       
         },
         messages: {
        
           txtid_categoria: "Debe escribir una descripcion",
           txtid_subcategoria: "indique la subcategoria",
           txtid_proveedor: "indique el proveedor",
-          txtid_ubicacion: "indique la ubicacion",
         txtcodigo_producto: "indique codigo del producto",
         txtdescripcion: "indique la descripcion",
         txtvcosto: "indique el valor costo",
@@ -34,14 +27,7 @@ jQuery(document).ready(function() {
         txtventa2: "indique la venta dos",
         txtventa3: "indique la venta tres",
        txtventa4: "indique la venta cuatro",
-       txtp_utilidad: "indique la utilidad",
-       txtstock_min: "indique stock minimo",
-       txtstock_max: "indique stock maximo",
-       txtexistencia: "indique la existencia",
-       txtid_medida: "indique la medida",
-       txtp_descuento: "indique el descuento", 
-       txtobservacion: "indique la obeservacion"
-          
+       txtexistencia: "indique la existencia"
           },
         submitHandler: function(form){
           

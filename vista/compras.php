@@ -33,7 +33,7 @@
   </tr>
   <tr>
     <td>Productos</td>
-    <td> <a onclick="mostrar()" href="">Mas Productos<img src=""></a></td>
+    <td> <a onclick="mostrar()" href="#">Mas Productos<img src=""></a></td>
      
   </tr>
   <tr>
@@ -43,12 +43,16 @@
        {
        $id_cat=$registro['id_categoria'];
        $id_sub=$registro['id_subcategoria'];
+       $id_prod=$registro['id_producto'];
          
        require("php/p_categoria.php");
        require("php/p_subcategoria.php");
-       echo " <br><input type='checkbox' value='".$registro_1['descripcion'].":".$registro_1['descripcion']."'/>";    
+       echo " <br><input type='checkbox' value='".$registro_1['descripcion'].":".$registro_2['descripcion']."'/>";    
        echo $registro_1['descripcion'];   
-       echo $registro_2['descripcion'];         
+       echo $registro_2['descripcion']; 
+       echo "<input type='hidden' id='id_prod' value='".$registro['id_producto']."'/>"; 
+       echo "<input  id='costo' value='".$registro['v_costo']."'/>";        
+      
       echo "</br>";
 
 

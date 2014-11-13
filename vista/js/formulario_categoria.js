@@ -3,15 +3,14 @@ jQuery(document).ready(function() {
         rules: {
           txtnueva: { required: true, minlength: 6},
             txtdescripcion: { required: true, minlength: 6},
-            txtobservacion: { required: true,minlength: 10},
             
             
             
         },
         messages: {
        
-            txtdescripcion: "Debe escribir una descripcion",
-            txtobservacion: "Debe  indicar una observacion"
+            txtdescripcion: "Debe escribir una descripcion"
+           
             
           
           },
@@ -41,15 +40,15 @@ $("#editarCat").validate({
         rules: {
          
             txtdescripcion: { required: true, minlength: 10},
-            txtobservacion: { required: true,minlength: 10},
+            
             
             
             
         },
         messages: {
        
-            txtdescripcion: "Debe escribir una descripcion",
-            txtobservacion: "Debe  indicar una observacion"
+            txtdescripcion: "Debe escribir una descripcion"
+            
             
           
           },
