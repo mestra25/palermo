@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
   $("#guardarCat").validate({
         rules: {
           txtnueva: { required: true, minlength: 6},
-            txtdescripcion: { required: true, minlength: 6},
+            txtdescripcion: { required: true, minlength: 1},
             
             
             
