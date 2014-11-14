@@ -1,11 +1,11 @@
 jQuery(document).ready(function() {
         $("#editarCli").validate({
         rules: {
-            txtcedula: { required: true, minlength: 6},
-            txtnombre: { required: true,maxlength: 15},
-            txtapellido: { required:true, maxlength: 15},
-            txtcelular: {required:true,   maxlength: 15 },
-            txtdireccion: { required: true, maxlength: 30},
+            txtcedula: { required: true},
+            txtnombre: { required: true},
+            txtapellido: { required:true},
+            txtcelular: {required:true},
+            txtdireccion: { required: true},
             
             
             

@@ -40,7 +40,7 @@ jQuery(document).ready(function() {
 $("#editarSub").validate({
         rules: {
           
-            txtdescripcion: { required: true, minlength: 6},
+            txtdescripcion: { required: true, minlength: 1},
           
             
             
